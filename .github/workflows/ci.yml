@@ -1,4 +1,4 @@
-name: ATLAS preview regression checks
+name: ATLAS preview and AdFit regression checks
 on:
   push:
     paths:
@@ -35,6 +35,7 @@ jobs:
       - name: Check JavaScript syntax and compile the standalone app
         run: |
           node --check src/app.js
+          node --check src/advertising.js
           for file in src/previews/*.js; do node --check "$file"; done
           node --check worker.mjs
           python scripts/build.py
@@ -46,9 +47,10 @@ jobs:
           else
             python -m playwright install --with-deps chromium
           fi
-      - name: Test previews, responsive UI, language and reduced motion
+      - name: Test previews, UI and mock-only advertising lifecycle
         run: |
           python scripts/test-previews.py
+          python scripts/test-adfit.py
           python scripts/build.py
       - name: Ensure committed data and build match editable source
         run: git diff --exit-code -- public/index.html data/atlas-gallery-bilingual.json

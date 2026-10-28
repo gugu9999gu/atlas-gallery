@@ -1,0 +1,73 @@
+# key|English|한국어|engine|category|ko definition|English definition
+hover-fade|Hover Fade|마우스오버 페이드|dom|호버·포커스|포인터를 올리거나 키보드 초점을 주면 보조 내용의 투명도가 서서히 변합니다.|Secondary content changes opacity when hovered or keyboard-focused.
+hover-crossfade|Hover Crossfade|마우스오버 교차 페이드|dom|호버·포커스|겹친 두 패널의 투명도를 반대로 바꿔 한 장면에서 다음 장면으로 교체합니다.|Two overlapping panels change opacity in opposite directions to swap scenes.
+hover-lift|Hover Lift|마우스오버 떠오름|dom|호버·포커스|카드가 위로 이동하고 그림자가 넓어져 선택 가능한 대상임을 알립니다.|A card moves upward and expands its shadow to signal an actionable target.
+hover-scale|Hover Scale|마우스오버 확대|dom|호버·포커스|요소 중심을 유지하며 크기를 키웁니다. 주변 문서의 배치는 바뀌지 않습니다.|The target scales from its center without changing surrounding document layout.
+hover-slide|Hover Slide Reveal|마우스오버 슬라이드 공개|dom|호버·포커스|패널 아래에 숨겨진 설명을 위로 이동시켜 공개합니다.|A concealed description slides up from the bottom of a panel.
+hover-outline|Hover Outline Draw|마우스오버 외곽선 그리기|dom|호버·포커스|네 모서리 방향으로 테두리가 자라며 요소의 윤곽을 완성합니다.|Border segments grow toward the corners to complete a target outline.
+hover-underline|Animated Underline|밑줄 확장 애니메이션|dom|호버·포커스|링크 아래의 선이 왼쪽에서 오른쪽으로 확장됩니다.|An underline expands from left to right beneath a link.
+hover-shine|Hover Shine Sweep|마우스오버 광택 스윕|dom|호버·포커스|기울어진 밝은 띠가 표면을 한 번 통과해 반사광을 표현합니다.|A tilted bright band crosses a surface once to suggest a reflection.
+hover-clip|Hover Clip Reveal|마우스오버 클립 공개|dom|호버·포커스|클리핑 영역을 원형으로 확장하여 뒤쪽 패널을 공개합니다.|A circular clipping region expands to reveal the panel beneath.
+hover-blur|Hover Blur Focus|마우스오버 선명화|dom|호버·포커스|흐릿한 그래픽의 블러를 줄여 선명하게 만듭니다. 필수 본문은 흐리지 않습니다.|A decorative graphic becomes sharp as its blur decreases; essential text stays readable.
+hover-grayscale|Hover Color Reveal|마우스오버 컬러 공개|dom|호버·포커스|무채색 그래픽의 색을 되살려 강조합니다.|A grayscale decorative graphic regains its color on interaction.
+hover-gradient|Hover Gradient Shift|마우스오버 그라디언트 이동|dom|호버·포커스|넓은 그라디언트 배경의 위치를 이동하여 색의 흐름을 표현합니다.|A large gradient background changes position to create a flowing color transition.
+hover-glow|Hover Border Glow|마우스오버 테두리 발광|dom|호버·포커스|요소의 외곽선과 그림자를 밝게 바꿔 대상의 경계를 강조합니다.|A brighter border and outer glow emphasize the boundary of a target.
+hover-expand|Hover Expand Panel|마우스오버 패널 확장|dom|호버·포커스|접힌 패널의 보조 영역을 펼칩니다. 초점과 터치로도 내용을 공개합니다.|A collapsed panel reveals secondary content, with focus and touch alternatives.
+hover-stagger|Hover Stagger Reveal|마우스오버 순차 공개|dom|호버·포커스|여러 요소에 서로 다른 지연을 주어 순서대로 등장시킵니다.|Several child elements enter with different delays to form a visible sequence.
+hover-reveal|Hover Reveal|호버 공개|dom|호버·포커스|포인터 또는 초점이 대상 안에 있을 때만 보조 정보를 표시합니다.|Supporting information is revealed while a pointer or keyboard focus is inside the target.
+track-light|Pointer Spotlight|포인터 추적 스포트라이트|dom|포인터 추적|포인터의 로컬 좌표를 중심으로 원형 빛을 이동시킵니다.|A circular light follows the pointer in the local coordinate system of the surface.
+track-follow|Cursor-follow Effect|커서 추적 효과|dom|포인터 추적|작은 표시자가 포인터 위치를 직접 따라갑니다. 기본 커서는 숨기지 않습니다.|A small marker follows the pointer directly without hiding the system cursor.
+track-trail|Cursor Trail|커서 잔상|dom|포인터 추적|포인터의 최근 위치를 여러 점으로 남기고 오래된 점부터 지웁니다.|Recent pointer positions form a trail whose oldest points fade first.
+track-spring|Spring Cursor Follower|스프링 커서 추적|dom|포인터 추적|추적 표시자가 즉시 이동하지 않고 감쇠된 스프링 운동으로 포인터에 접근합니다.|A follower approaches the pointer with a damped spring rather than moving immediately.
+track-magnetic|Magnetic Button|마그네틱 버튼|dom|포인터 추적|버튼이 중심에서 포인터 방향으로 조금 이동하고 이탈하면 복귀합니다.|A button moves slightly toward the pointer and returns when the pointer leaves.
+track-gradient|Pointer Gradient|포인터 추적 그라디언트|dom|포인터 추적|포인터 좌표에 따라 그라디언트 중심과 색상 각도를 바꿉니다.|The gradient center and hue change with pointer coordinates.
+track-pan|Pointer Image Pan|포인터 이미지 패닝|dom|포인터 추적|확대된 그래픽을 포인터의 반대 방향으로 옮겨 다른 부분을 보여줍니다.|An enlarged decorative image moves opposite the pointer to expose another region.
+track-reveal|Pointer Mask Reveal|포인터 마스크 공개|dom|포인터 추적|커서 주변의 원형 마스크를 통해 다른 색상의 레이어를 보여줍니다.|A circular mask around the pointer reveals a differently colored underlying layer.
+track-reticle|Pointer Reticle|포인터 조준선|dom|포인터 추적|십자선과 좌표값이 포인터를 따라가 현재 위치를 알려줍니다.|Crosshairs and coordinate values follow the pointer to indicate its current position.
+track-proximity|Proximity Highlight|근접 강조|dom|포인터 추적|여러 타일 중 포인터에 가까운 타일일수록 더 밝게 표시합니다.|Tiles brighten according to their distance from the pointer.
+track-parallax|Pointer Parallax Layers|포인터 패럴랙스 레이어|dom|포인터 추적|여러 평면 레이어를 서로 다른 비율로 이동하여 깊이감을 암시합니다.|Multiple flat layers move at different rates to suggest depth; this is a 2D effect.
+track-stretch|Velocity Cursor Stretch|속도 기반 커서 늘어남|dom|포인터 추적|포인터 이동 속도와 방향에 맞춰 추적 표시자의 길이와 각도를 바꿉니다.|A follower stretches and rotates according to pointer velocity and direction.
+click-ripple|Ripple Effect|리플 효과|dom|클릭·탭 피드백|누른 위치에서 원이 퍼지고 사라져 입력이 접수되었음을 알립니다.|A circle expands and fades from the pressed position to acknowledge input.
+click-rings|Click Shockwave Rings|클릭 동심원 파동|dom|클릭·탭 피드백|클릭 위치에서 시간차를 둔 여러 고리가 퍼집니다.|Several delayed rings expand from the clicked location.
+click-burst|Click Particle Burst|클릭 파티클 버스트|dom|클릭·탭 피드백|누른 지점에서 작은 입자가 각기 다른 방향으로 흩어집니다.|Small particles scatter in different directions from the pressed point.
+click-confetti|Click Confetti|클릭 색종이|dom|클릭·탭 피드백|성공 동작 이후 사각 조각이 위로 솟은 뒤 아래로 떨어집니다.|After a success action, rectangular pieces rise and then fall under gravity.
+click-toggle|Animated Toggle|애니메이션 토글|dom|클릭·탭 피드백|켜짐과 꺼짐을 손잡이 위치·문구·상태 속성으로 함께 표시합니다.|A knob, label and state attribute change together to indicate an on/off state.
+click-like|Like Pop|좋아요 팝|dom|클릭·탭 피드백|좋아요를 선택하면 하트가 튀고 개수가 변하며 다시 누르면 해제됩니다.|A heart pops and the count changes when liked; pressing again reverses it.
+click-press|Press Depth Feedback|눌림 깊이 피드백|dom|클릭·탭 피드백|버튼의 위치와 그림자를 줄여 눌리는 느낌을 만듭니다.|The button moves and its shadow shortens to convey a physical press.
+click-check|Success Check Draw|성공 체크 그리기|dom|클릭·탭 피드백|작업 성공을 표시하는 체크 선을 순서대로 그립니다.|A check-mark stroke is progressively drawn to communicate success.
+click-shake|Error Shake Feedback|오류 흔들림 피드백|dom|클릭·탭 피드백|오류 메시지와 함께 입력 영역을 짧게 좌우로 흔듭니다.|A short horizontal shake accompanies an explicit error message.
+click-counter|Animated Number Counter|숫자 카운터 전환|dom|클릭·탭 피드백|목표값을 바꾸면 이전 숫자에서 새 숫자로 부드럽게 보간합니다.|When a target changes, the displayed number interpolates from its previous value.
+click-accordion|Animated Accordion|애니메이션 아코디언|dom|클릭·탭 피드백|요약을 누르면 본문 영역의 높이를 펼치거나 접습니다.|Pressing a summary expands or collapses the content region with a height transition.
+click-loading|Button Loading Transition|버튼 로딩 전환|dom|클릭·탭 피드백|버튼을 누르면 진행 중 상태를 거쳐 완료 상태를 표시하는 시연입니다.|A demonstration button moves from idle through a busy state to completion.
+click-radial|Radial Menu Reveal|방사형 메뉴 공개|dom|클릭·탭 피드백|중앙 버튼을 누르면 주변 액션들이 원형으로 펼쳐집니다.|Pressing a center button expands surrounding actions into a radial arrangement.
+drag-snap|Drag Snap Grid|드래그 격자 스냅|dom|드래그·제스처|대상을 놓으면 가장 가까운 격자 교차점으로 정렬합니다.|A dragged object snaps to the nearest grid intersection on release.
+drag-elastic|Elastic Drag Return|탄성 드래그 복귀|dom|드래그·제스처|드래그 중 이동한 요소가 놓았을 때 스프링처럼 원위치로 돌아옵니다.|A dragged object returns to its origin with a spring-like transition after release.
+drag-compare|Before After Slider|전후 비교 슬라이더|dom|드래그·제스처|분할선을 옮겨 두 레이어의 보이는 비율을 바꿉니다.|Moving a divider changes the visible proportion of two overlapping layers.
+drag-dismiss|Swipe Dismiss Card|스와이프 닫기 카드|dom|드래그·제스처|카드를 충분히 옆으로 끌면 제거하고, 짧게 끌면 복귀시킵니다.|A sufficiently long horizontal drag dismisses a card; a shorter one returns it.
+drag-free|Bounded Drag|영역 제한 드래그|dom|드래그·제스처|요소를 드래그하되 컨테이너 밖으로 벗어나지 않도록 좌표를 제한합니다.|An object can be dragged, but its coordinates are clamped to the container bounds.
+press-hold|Hold to Confirm|길게 눌러 확인|dom|드래그·제스처|일정 시간 계속 눌러야 진행 표시가 차오르고 동작이 확정됩니다.|The control confirms an action only after it remains pressed for a set duration.
+three-tilt|3D Tilt Card|3D 틸트 카드|three|실시간 3D|실제 3D 메시 카드를 포인터 방향으로 회전하여 원근·조명 변화를 보여줍니다.|A real 3D card mesh rotates toward the pointer, revealing perspective and lighting changes.
+three-flip|Card Flip Animation|카드 뒤집기 애니메이션|three|실시간 3D|카드 메시를 180도 회전시켜 서로 다른 앞면과 뒷면을 보여줍니다.|A card mesh rotates 180 degrees to show distinct front and back surfaces.
+three-holo|Holographic Tilt Card|홀로그램 틸트 카드|three|실시간 3D|회전 각도에 따라 재질 색상과 스펙큘러 반사가 변하는 카드입니다.|A card changes material color and specular reflection as its viewing angle changes.
+three-glass|3D Glass Card|3D 유리 카드|three|실시간 3D|투과 재질을 가진 카드와 뒤쪽 형상을 렌더링하여 유리의 공간감을 보여줍니다.|A transmissive card and objects behind it demonstrate spatial glass rendering.
+three-stack|3D Depth Stack|3D 깊이 스택|three|실시간 3D|서로 다른 Z 위치의 카드들이 포인터에 반응하며 겹침과 시차를 보여줍니다.|Cards at different Z positions react to input to reveal occlusion and parallax.
+three-float|Floating 3D Card|떠 있는 3D 카드|three|실시간 3D|입체 카드가 위아래로 움직이며 공간 안에서 부유하는 느낌을 만듭니다.|A dimensional card moves vertically to create a floating appearance.
+three-orbit|Orbit Controls|오비트 컨트롤|three|실시간 3D|드래그로 카메라를 대상 주위로 회전시켜 여러 방향에서 관찰합니다.|Dragging rotates the camera around a target so it can be examined from different directions.
+three-pick|Raycast Hover Highlight|레이캐스트 호버 강조|three|실시간 3D|포인터에서 광선을 발사해 교차한 3D 오브젝트만 강조합니다.|A ray cast from the pointer highlights only the 3D object it intersects.
+three-explode|Exploded 3D View|3D 분해도|three|실시간 3D|클릭하면 여러 부품의 간격을 벌리고 다시 클릭하면 조립 상태로 복귀합니다.|A click separates component parts; another click returns them to the assembled state.
+three-light|Pointer Controlled Light|포인터 조명 제어|three|실시간 3D|포인터로 점광원 위치를 바꾸어 표면의 음영과 반사가 변하는 것을 확인합니다.|The pointer moves a point light to demonstrate changing shading and reflections.
+three-ripple|Interactive 3D Ripple Plane|상호작용 3D 파동 평면|three|실시간 3D|평면 메시의 정점 높이를 시간과 거리로 바꾸어 실제 표면 파동을 만듭니다.|Plane vertices change height with time and distance to produce a real geometric wave.
+three-particles|3D Pointer Particle Field|3D 포인터 입자장|three|실시간 3D|공간에 배치된 입자들의 위치를 포인터와의 거리로 변경합니다.|Particle positions in space respond to their distance from the pointer.
+three-wire|Wireframe Overlay|와이어프레임 오버레이|three|실시간 3D|입체 표면 위에 메시 삼각형의 모서리를 겹쳐 토폴로지를 확인합니다.|Triangle edges are drawn over a 3D surface to expose mesh topology.
+three-vertex|Vertex|정점|three|실시간 3D|메시를 이루는 꼭짓점을 점으로 강조합니다. 면이나 모서리 강조와 구분합니다.|The points that define a mesh are highlighted, distinct from edge or face selection.
+three-edge|Edge|모서리|three|실시간 3D|메시의 정점을 연결하는 선분을 강조합니다.|Line segments connecting mesh vertices are emphasized.
+three-face|Face|면|three|실시간 3D|메시를 이루는 한 면을 다른 색으로 표시하고 회전하며 확인합니다.|One surface of a mesh is shown in a different color and can be inspected by rotating it.
+three-mesh|Mesh|메시|three|실시간 3D|기하 형상과 재질을 결합한 실제 렌더링 오브젝트를 보여줍니다.|A rendered object demonstrates the combination of geometry and material.
+three-normal|Surface Normal|표면 법선|three|실시간 3D|표면 각 지점의 수직 방향을 선으로 표시합니다.|Lines indicate the perpendicular direction at sampled points on a surface.
+three-translate|Translation Gizmo|이동 기즈모|three|실시간 3D|축 표시와 함께 드래그로 오브젝트의 X·Y 위치를 변경합니다.|Dragging changes an object's X and Y positions while visible axes provide spatial context.
+three-rotate|Rotation Gizmo|회전 기즈모|three|실시간 3D|회전 고리와 함께 오브젝트의 방향을 바꿉니다.|Rotation rings accompany changes to an object's orientation.
+three-scale|Scale Gizmo|스케일 기즈모|three|실시간 3D|모서리 핸들과 함께 오브젝트의 전체 크기를 변경합니다.|Corner handles accompany changes to the overall scale of an object.
+three-instance|Instanced Wave Grid|인스턴스 파동 격자|three|실시간 3D|하나의 기하 형상을 여러 인스턴스로 배치하고 각 높이를 다르게 움직입니다.|Many instances share one geometry while their heights move at different phases.
+three-morph|3D Morph Target|3D 모프 타깃|three|실시간 3D|정점 위치를 두 형상 사이에서 보간하여 표면 모양을 바꿉니다.|Vertex positions interpolate between two shapes to change a surface's form.
+three-toon|Toon Shading|툰 셰이딩|three|실시간 3D|명암을 단순한 색 단계로 나눈 입체 재질을 보여줍니다.|A dimensional material demonstrates simplified bands of light and shade.
+click-morph|Morphing Action Icon|변형 액션 아이콘|dom|클릭·탭 피드백|누르면 더하기 아이콘이 닫기 아이콘으로 바뀌며 조작 상태를 알립니다.|Pressing transforms a plus action into a close symbol to expose the current control state.

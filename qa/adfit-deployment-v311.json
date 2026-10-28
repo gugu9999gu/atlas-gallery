@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-28",
+  "site": "https://atlas-gallery.app/",
+  "version": "3.1.1",
+  "sourceCommit": "861ec39440740806ba58a5fc2c2bf7fb076a7791",
+  "ciCommit": "eb1cb3110444d926e59528a999f65a642bf80689",
+  "ciRun": "https://github.com/gugu9999gu/atlas-gallery/actions/runs/40667796850",
+  "workerVersionId": "c24c5c5f657e422fa4c9376ef7a51414",
+  "productionHtml": {
+    "httpStatus": 200,
+    "bytes": 3755504,
+    "sha256": "0541019fbcfdb738315418f4c8d553671a5a6d9c49f6ea5246f2b54e0d0a019b",
+    "matchesReviewedBuild": true
+  },
+  "sidebarKnowledgeCardRemoved": true,
+  "automatedTests": {
+    "previewChecksPassed": 40,
+    "mockAdFitChecksPassed": 45,
+    "liveRequestsInAutomatedTests": 0,
+    "ciConclusion": "success"
+  },
+  "liveDefaultPage": {
+    "initialCards": 24,
+    "sdkScriptsBeforeConsent": 0,
+    "adRequestsBeforeConsent": 0,
+    "consentControlsPresent": true,
+    "preferencesControlPresent": true,
+    "horizontalOverflowAt1440": false,
+    "privacyAndAdvertisingPagesStatus": 200
+  },
+  "placementPreview": {
+    "desktopWidth": 1440,
+    "desktopUnits": ["728x90", "300x250"],
+    "mobileWidth": 390,
+    "mobileUnits": ["320x100", "300x250"],
+    "positionsAfterCards": [16, 40],
+    "previewAdRequests": 0,
+    "mobileLanguageSwitch": "en",
+    "desktopHorizontalOverflow": false,
+    "mobileHorizontalOverflow": false
+  },
+  "limitedLiveSdkCheck": {
+    "scope": "One desktop connectivity check, with no creative clicks or refreshes",
+    "sdkScripts": 1,
+    "renderApiAvailable": true,
+    "unit": "DAN-Axsm48rrgFFIzM0r",
+    "width": 728,
+    "height": 90,
+    "cspViolationsObserved": [],
+    "javascriptErrorsObserved": [],
+    "slotStateAfter11Seconds": "requested",
+    "creativeFramesObserved": 0,
+    "creativeDeliveryVerified": false,
+    "mediaApprovalVerified": false,
+    "note": "SDK loaded successfully, but this browser check did not verify delivery of a real ad creative. No approval, fill rate or revenue claim is made."
+  },
+  "rollback": {
+    "previousHtmlAndPoliciesPreserved": true,
+    "previousWorkerUploadPreserved": true,
+    "privatePrefix": "releases/3.1.0/"
+  },
+  "outstandingOperatorInformation": ["Dedicated privacy contact"]
+}

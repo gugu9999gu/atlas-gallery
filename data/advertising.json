@@ -1,0 +1,29 @@
+{
+  "enabled": false,
+  "provider": "none",
+  "maxSlots": 2,
+  "positionsAfterCards": [
+    16,
+    40
+  ],
+  "autoAds": false,
+  "stickyAds": false,
+  "interstitials": false,
+  "review": {
+    "publisherApproved": false,
+    "privacyReady": false,
+    "consentIntegrationReady": false
+  },
+  "adsense": {
+    "client": "",
+    "slots": [
+      "",
+      ""
+    ]
+  },
+  "adfit": {
+    "desktop": [],
+    "mobile": []
+  },
+  "note": "Disabled until issued publisher/unit IDs, publisher approval, privacy details and a reviewed consent integration are configured. No third-party requests in this release."
+}

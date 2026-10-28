@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /*?adpreview=
+Disallow: /*?qa=
+Sitemap: https://atlas-gallery.app/sitemap.xml

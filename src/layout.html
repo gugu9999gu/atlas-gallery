@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%235368ff'/%3E%3Cpath d='M12 25 32 14 52 25 32 36ZM12 35 32 46 52 35M12 45 32 56 52 45' stroke='white' stroke-width='3' fill='none'/%3E%3C/svg%3E"/>
+<link rel="canonical" href="https://atlas-gallery.app/"/>
+<meta property="og:title" content="ATLAS Gallery — Visual Design Reference"/>
+<meta property="og:description" content="디자인을 눈으로 찾는 백과사전. 차트·분석 UI·UX부터 아이콘·모션·게임 VFX까지."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://atlas-gallery.app/"/>
+<meta name="theme-color" content="#142037" />
+<meta name="description" content="디자인 레퍼런스 백과사전. 웹·UI·UX·모션·게임 이펙트·기즈모·맵·3D 및 디자인 라이브러리 2,109개를 카드별 미리보기로 탐색하는 시각적 도감."/>
+<title>ATLAS — Visual Design Encyclopedia</title>
+<style>/*__STYLE_0__*/</style>
+</head>
+<body>
+<noscript><p style="padding:24px">ATLAS Gallery는 검색과 미리보기에 JavaScript를 사용합니다. <a href="/catalog.html">전체 용어 색인 보기 / Read the index</a></p></noscript>
+<div class="mobile-backdrop" id="mobile-backdrop"></div>
+<div class="layout">
+<aside class="sidebar" id="sidebar" aria-label="디자인 분야 탐색">
+  <div class="logo-row"><span class="logo-icon" id="logo-symbol"></span><div class="logo-type">ATLAS<span>DESIGN REFERENCE</span></div><button class="mobile-nav" id="mobile-close" aria-label="메뉴 닫기" style="margin-left:auto;background:#2c3d5c;color:white"><span id="icon-close-mobile"></span></button></div>
+  <div class="side-label">Explore collections</div>
+  <nav id="nav-list" aria-label="디자인 카테고리"></nav>
+  <div class="side-bottom"><div class="mini-note"><b>VISUAL KNOWLEDGE BASE</b><span id="side-footer-count">2,109</span>개 용어와 구현 기술을 미리보기로 탐색하세요.<br />선택한 항목은 브라우저에 저장됩니다.</div></div>
+</aside>
+<div class="main">
+<header class="topbar"><button class="mobile-nav" id="mobile-open" aria-label="카테고리 메뉴 열기"><span id="icon-menu"></span></button><div class="trail"><span>COLLECTIONS</span><span aria-hidden="true">/</span><strong>VISUAL ENCYCLOPEDIA</strong></div><div class="top-actions"><label class="locale-control"><span class="locale-symbol" aria-hidden="true">◎</span><span class="sr-only" data-locale-label>언어 설정</span><select class="locale-select" id="language-select" aria-label="언어 설정"><option value="ko" lang="ko">한국어</option><option value="en" lang="en">English</option></select></label><span class="top-count">총 <b id="top-total">2,109</b> terms</span><button class="icon-control" id="theme-button" aria-label="라이트·다크 테마 변경" title="테마 변경"></button><button class="top-action-btn" id="export-button">현재 검색결과 내보내기</button></div></header>
+<main class="content">
+  <section class="hero" aria-labelledby="hero-heading"><div class="hero-copy"><div class="eyebrow"><span class="dot"></span> THE DESIGN REFERENCE INDEX / 2026</div><h1 id="hero-heading">디자인을 <em>눈으로 찾는</em><br />새로운 방법.</h1><p>용어를 읽는 것에서 그치지 않고, 패턴과 움직임, 구조를 카드에서 직접 확인하세요. UI부터 게임 VFX, 맵, 3D, 구현 라이브러리까지.</p><div class="hero-actions"><button id="hero-browse" class="primary-cta">전체 도감 탐색 <span id="icon-hero-arrow"></span></button><button id="hero-motion" class="secondary-cta">모션 미리보기 ↗</button></div></div><div class="hero-art" aria-hidden="true"><div class="hero-lens"></div><div class="hero-orbit1"></div><div class="hero-orbit2"></div><div class="hero-gizmo" id="hero-axis"></div><div class="hero-tags"><span>XYZ / TRANSFORM</span><span>LIVE CONCEPTS</span></div></div></section>
+  <section class="stats" aria-label="사전 통계">
+   <div class="stat"><div><div class="value" id="root-count">2,109</div><div class="hint">수록 용어 및 기술</div></div><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 5c3-2 6-2 9 0 3-2 6-2 9 0v15c-3-1.5-6-1.5-9 0-3-1.5-6-1.5-9 0Z"/><path d="M12 5v15"/></svg></span></div>
+   <div class="stat"><div><div class="value" id="domain-count">25</div><div class="hint">디자인 분야</div></div><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7" rx="1.3"/><rect x="14" y="3" width="7" height="7" rx="1.3"/><rect x="3" y="14" width="7" height="7" rx="1.3"/><rect x="14" y="14" width="7" height="7" rx="1.3"/></svg></span></div>
+   <div class="stat"><div><div class="value" id="category-count">111</div><div class="hint">세부 카테고리</div></div><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m12 3 9 5-9 5-9-5 9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"/></svg></span></div>
+   <div class="stat"><div><div class="value" id="motion-count">192</div><div class="hint">게임 VFX 항목</div></div><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m12 3 2.6 6.4L21 12l-6.4 2.6L12 21l-2.6-6.4L3 12l6.4-2.6L12 3Z"/></svg></span></div>
+  </section>
+  <section class="analytics-feature" id="analytics-feature" aria-label="분석·차트 레퍼런스"></section>
+  <section id="gallery" aria-label="디자인 용어 카드 목록">
+  <div class="toolbar"><div class="section-header"><h2>Explore the collection</h2><p>한국어·영어로 검색하거나 분야별로 탐색할 수 있습니다.</p></div><div class="section-head-tools"><span class="small-meta">Quick search</span><kbd class="kbd">/</kbd></div></div>
+  <div class="search-row"><div class="searchbox"><span id="icon-search"></span><input id="search" type="search" autocomplete="off" spellcheck="false" placeholder="Spinner, 기즈모, 폭발, Python GUI, 디자인 시스템 검색..." aria-label="디자인 용어 검색"/><button class="clear" id="clear" aria-label="검색어 지우기">×</button></div><div class="select-wrap"><select id="kind" class="sort" aria-label="용어 종류 필터"><option value="all">모든 종류</option><option value="terms">용어·패턴·스타일</option><option value="tools">라이브러리·기술·도구</option></select><span class="select-arrow">⌄</span></div><div class="select-wrap"><select id="category" class="sort category-select" aria-label="세부 카테고리 필터"><option value="all">모든 세부 분류</option></select><span class="select-arrow">⌄</span></div><div class="select-wrap"><select id="sort" class="sort" aria-label="정렬 방식"><option value="default">기본 순서</option><option value="az">영문 가나다순</option><option value="ko">한글 가나다순</option><option value="category">카테고리 순</option></select><span class="select-arrow">⌄</span></div></div>
+  <div class="chips" id="quick-chips" aria-label="빠른 카테고리 선택"></div>
+  <div class="resultbar"><div><h3 id="result-title">전체 레퍼런스</h3><p id="result-summary">카드 미리보기로 개념을 확인하세요</p></div><div class="result-actions"><span class="small-meta" style="margin-right:4px"><b id="result-count">2,109</b> results</span><button class="active" id="grid-button" title="그리드 보기" aria-label="그리드 보기"><span id="icon-grid"></span> 그리드</button><button id="list-button" title="리스트 보기" aria-label="리스트 보기"><span id="icon-list"></span> 리스트</button></div></div>
+  <div class="preview-controls" id="preview-controls"></div>
+  <div class="cards" id="cards"></div>
+  <div id="empty" class="empty" role="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="10.8" cy="10.8" r="7"/><path d="m16 16 5 5"/></svg><b>검색된 항목이 없습니다.</b><span>검색어를 줄이거나 다른 카테고리를 선택해보세요.</span></div>
+  <button id="load-more" class="load-more">더 보기</button>
+  </section>
+  <footer class="footer"><span>© <span id="year">2026</span> ATLAS — The Visual Design Encyclopedia · Preview edition</span><span>표시 <b id="loaded-count">24</b>개 · 전체 용어 <b>2,109개</b> · 상용 배포 전 디자인 검토용</span></footer>
+</main></div></div>
+<div class="drawer-backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="선택한 용어 상세 정보" aria-hidden="true"><div class="drawer-head"><strong>ATLAS / TERM DETAIL</strong><div class="actions"><label class="locale-control"><span class="locale-symbol" aria-hidden="true">◎</span><span class="sr-only" data-locale-label>언어 설정</span><select class="locale-select" id="drawer-language-select" aria-label="언어 설정"><option value="ko" lang="ko">한국어</option><option value="en" lang="en">English</option></select></label><button id="export-fav-button" title="즐겨찾기 JSON 내려받기" aria-label="즐겨찾기 내보내기"><span id="icon-exportfav"></span>♥</button><button id="close-drawer" aria-label="상세창 닫기"><span id="icon-close"></span></button></div></div><div class="drawer-content" id="detail-body"></div></aside>
+<div class="sr-only" id="live-status" role="status" aria-live="polite"></div>
+<script id="atlas-ads" type="application/json">/*__ATLAS_ADS__*/</script>
+<script id="atlas-i18n" type="application/json">/*__ATLAS_I18N__*/</script>
+<script id="atlas-data" type="application/json">/*__ATLAS_DATA__*/</script>
+<script>/*__APP_0__*/</script>
+</body></html>

@@ -1,0 +1,72 @@
+name: Apply reviewed ATLAS v3.1 source
+on:
+  push:
+    paths: [.github/workflows/apply-reviewed-v31.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: atlas-reviewed-source
+  cancel-in-progress: false
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify and import the reviewed public source bundle
+        shell: python
+        run: |
+          import gzip,hashlib,json,pathlib,subprocess
+          root=pathlib.Path('.')
+          current=json.loads((root/'data/atlas-gallery-bilingual.json').read_text())
+          if current['metadata'].get('version')=='3.1.0':
+              print('Reviewed release already imported; not overwriting source.')
+              raise SystemExit(0)
+          baseline='e13b8480f21b5efb3c9cb078003e797961623a26e5bc133cce85563d88aadd4b'
+          if hashlib.sha256((root/'public/index.html').read_bytes()).hexdigest()!=baseline:
+              raise RuntimeError('Source has changed since review; refusing to overwrite.')
+          raw=subprocess.run(['curl','--fail','--silent','--show-error','--compressed','--retry','2','--max-time','90','https://atlas-gallery.app/source-v31-review.json.gz'],check=True,stdout=subprocess.PIPE).stdout
+          expected='fa6ad1f95731a99c8931a8f6a28dba1685ec7f8efb41edc5c5b4f572b6b6f0a4'
+          if len(raw)!=1506483 or hashlib.sha256(raw).hexdigest()!=expected:raise RuntimeError('Source bundle checksum mismatch')
+          expanded=gzip.decompress(raw)
+          if len(expanded)!=12529027:raise RuntimeError('Unexpected source bundle size')
+          bundle=json.loads(expanded)
+          if bundle['version']!='3.1.0' or len(bundle['files'])!=150:raise RuntimeError('Manifest mismatch')
+          top={'README.md','CHANGELOG.md','worker.mjs','wrangler.jsonc','requirements-test.txt','.gitignore'}
+          prefixes={'src','data','public','scripts','docs','qa'}
+          for entry in bundle['files']:
+              path=pathlib.PurePosixPath(entry['path'])
+              if path.is_absolute() or '..' in path.parts or '\\' in entry['path'] or not(path.parts[0] in prefixes or entry['path'] in top):raise RuntimeError('Unsafe source path')
+              content=entry['content'].encode('utf-8')
+              if hashlib.sha256(content).hexdigest()!=entry['sha256']:raise RuntimeError('File checksum mismatch: '+entry['path'])
+              target=root/path;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(content)
+          receipt={'version':'3.1.0','bundle_sha256':expected,'files':150,'index_sha256':bundle['index_sha256'],'source':'Reviewed authored source; imported with per-file SHA-256 checks'}
+          (root/'qa/repository-import-v31.json').write_text(json.dumps(receipt,indent=2)+'\n')
+      - name: Build and validate source syntax
+        run: |
+          python scripts/build.py
+          node --check src/app.js
+          for file in src/previews/*.js; do node --check "$file"; done
+          node --check worker.mjs
+      - name: Install pinned browser test dependency
+        run: |
+          python -m pip install --disable-pip-version-check -r requirements-test.txt
+          if command -v google-chrome >/dev/null 2>&1; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            python -m playwright install --with-deps chromium
+          fi
+      - name: Run browser regression checks
+        run: |
+          python scripts/test-previews.py
+          python scripts/build.py
+          python -c "import hashlib,pathlib; p=pathlib.Path('public/index.html'); assert hashlib.sha256(p.read_bytes()).hexdigest()=='6f28c4529c151044588a6f58d9ccc07041a584e003a782f761adb33812af4ea9', 'Build differs from reviewed release'"
+      - name: Commit verified source without rewriting history
+        run: |
+          git config user.name 'ATLAS Reviewed Release'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src data public scripts docs qa README.md CHANGELOG.md worker.mjs wrangler.jsonc requirements-test.txt .gitignore
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'feat: add 237 distinct motion, VFX, map and 3D previews with interactive studies'
+          git push origin HEAD:main

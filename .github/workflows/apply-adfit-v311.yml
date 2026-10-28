@@ -1,0 +1,57 @@
+name: Apply reviewed AdFit v3.1.1
+on:
+  push:
+    paths: [".github/workflows/apply-adfit-v311.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: atlas-adfit-v311-apply
+  cancel-in-progress: false
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Apply checksum-guarded source migration
+        run: |
+          python scripts/migrations/adfit-v311.py
+          node --check src/app.js
+          node --check src/advertising.js
+          node --check worker.mjs
+          python scripts/build.py
+      - name: Install pinned browser tests
+        run: |
+          python -m pip install --disable-pip-version-check -r requirements-test.txt
+          if command -v google-chrome >/dev/null 2>&1; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            python -m playwright install --with-deps chromium
+          fi
+      - name: Verify previews and mock-only advertising lifecycle
+        run: |
+          python scripts/test-previews.py
+          python scripts/test-adfit.py
+          python scripts/build.py
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+          expected='0541019fbcfdb738315418f4c8d553671a5a6d9c49f6ea5246f2b54e0d0a019b'
+          actual=hashlib.sha256(Path('public/index.html').read_bytes()).hexdigest()
+          if actual!=expected: raise RuntimeError('Reviewed HTML checksum differs: '+actual)
+          print('Reviewed HTML checksum matches; 85 browser checks completed without live ad requests.')
+          PY
+      - name: Save verified source without rewriting history
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/app.js src/layout.html src/style.css scripts/build.py data/advertising.json worker.mjs public/_headers public/index.html public/privacy.html public/advertising.html README.md qa/adfit-tests.json
+          if git diff --cached --quiet; then
+            echo 'No changes to commit.'
+          else
+            git commit -m 'feat: remove sidebar promo and activate consent-aware AdFit banners'
+            git push origin HEAD:main
+          fi
+          # Workflow files are intentionally not committed by the Actions token.
+          # The repository owner connection applies the CI update separately.

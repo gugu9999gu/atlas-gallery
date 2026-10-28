@@ -1,6 +1,9 @@
 {
-  "enabled": false,
-  "provider": "none",
+  "enabled": true,
+  "provider": "adfit",
+  "productionHosts": [
+    "atlas-gallery.app"
+  ],
   "maxSlots": 2,
   "positionsAfterCards": [
     16,
@@ -9,21 +12,66 @@
   "autoAds": false,
   "stickyAds": false,
   "interstitials": false,
-  "review": {
-    "publisherApproved": false,
-    "privacyReady": false,
-    "consentIntegrationReady": false
+  "consent": {
+    "mode": "explicit-opt-in",
+    "storageKey": "atlas-adfit-consent-v1",
+    "ttlDays": 180,
+    "respectGlobalPrivacyControl": true
   },
-  "adsense": {
-    "client": "",
-    "slots": [
-      "",
-      ""
-    ]
+  "review": {
+    "installationAuthorized": true,
+    "publisherApprovalStatus": "not-verified",
+    "note": "Unit IDs supplied by the operator; actual approval and inventory are managed by Kakao. No assertion of legal compliance."
   },
   "adfit": {
-    "desktop": [],
-    "mobile": []
+    "units": {
+      "desktopLeaderboard": {
+        "id": "DAN-Axsm48rrgFFIzM0r",
+        "width": 728,
+        "height": 90
+      },
+      "mobilePortrait": {
+        "id": "DAN-fVHQWJZGKRBjIkql",
+        "width": 320,
+        "height": 480
+      },
+      "mobileBanner": {
+        "id": "DAN-UZvTvQHDzkXHOdgI",
+        "width": 320,
+        "height": 100
+      },
+      "desktopSkyscraper": {
+        "id": "DAN-eDWj3VILEMnval7j",
+        "width": 160,
+        "height": 600
+      },
+      "mobileStrip": {
+        "id": "DAN-s5JxbyCTNXSxkm6T",
+        "width": 320,
+        "height": 50
+      },
+      "rectangle": {
+        "id": "DAN-dXqYEuIKMUp9iN9Z",
+        "width": 300,
+        "height": 250
+      },
+      "compactSquare": {
+        "id": "DAN-HeS6GkO12A1Vgi8s",
+        "width": 250,
+        "height": 250
+      }
+    },
+    "activePlacements": [
+      "desktopLeaderboard",
+      "mobileBanner",
+      "rectangle"
+    ],
+    "narrowFallback": "compactSquare",
+    "reservedUnits": [
+      "mobilePortrait",
+      "desktopSkyscraper",
+      "mobileStrip"
+    ]
   },
-  "note": "Disabled until issued publisher/unit IDs, publisher approval, privacy details and a reviewed consent integration are configured. No third-party requests in this release."
+  "note": "At most two original-size, in-flow ads. No SDK request before opt-in, on preview/QA/offline hosts, after opt-out or GPC. No-fill slots collapse; no application-driven refresh."
 }

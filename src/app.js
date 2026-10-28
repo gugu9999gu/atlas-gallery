@@ -616,41 +616,7 @@ function demoControls(e){const added=waveControls(e);if(added)return added;
  return '';
 }
 function inspectPreviewCoverage(){return entries.map(e=>{const a=art(e);return {id:e.id,en:e.en,key:a.key,mode:a.mode,specific:a.specific,html:a.html}});}
-// No external requests unless both advertising and publication review are enabled.
-const AD=JSON.parse(document.getElementById('atlas-ads').textContent);
-const adPreview=new URL(location.href).searchParams.get('adpreview')==='1';
-const adCache=new Map();const initializedAds=new WeakSet();let adScriptPromise=null;
-const adsEligible=()=>AD.enabled===true&&AD.review?.publisherApproved===true&&AD.review?.privacyReady===true&&AD.review?.consentIntegrationReady===true;
-function adScript(src){if(!adScriptPromise)adScriptPromise=new Promise((resolve,reject)=>{const s=document.createElement('script');s.async=true;s.src=src;s.crossOrigin='anonymous';s.onload=resolve;s.onerror=reject;document.head.appendChild(s)});return adScriptPromise;}
-async function activateAd(el,index){
- if(initializedAds.has(el)||!adsEligible())return;initializedAds.add(el);
- // The operator's reviewed CMP integration must grant ad permission before this runs.
- if(typeof window.atlasAdConsent!=='function'||!(await window.atlasAdConsent()))return;
- const target=el.querySelector('.ad-content');const mobile=matchMedia('(max-width:740px)').matches;
- try{
-  if(AD.provider==='adsense'&&/^ca-pub-\d{16}$/.test(AD.adsense?.client||'')&&/^\d+$/.test(AD.adsense?.slots?.[index]||'')){
-   const ins=document.createElement('ins');ins.className='adsbygoogle';ins.style.cssText='display:block;width:100%;min-height:'+(mobile?50:90)+'px';ins.dataset.adClient=AD.adsense.client;ins.dataset.adSlot=AD.adsense.slots[index];ins.dataset.adFormat='horizontal';ins.dataset.fullWidthResponsive='true';target.appendChild(ins);
-   await adScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='+encodeURIComponent(AD.adsense.client));(window.adsbygoogle=window.adsbygoogle||[]).push({});
-  }else if(AD.provider==='adfit'){
-   const unit=(mobile?AD.adfit?.mobile:AD.adfit?.desktop)?.[index];if(!unit||!/^DAN-[A-Za-z0-9_-]+$/.test(unit.id||''))return;
-   const ins=document.createElement('ins');ins.className='kakao_ad_area';ins.style.cssText='display:none;width:100%';ins.dataset.adUnit=unit.id;ins.dataset.adWidth=String(unit.width);ins.dataset.adHeight=String(unit.height);target.style.minHeight=unit.height+'px';target.appendChild(ins);await adScript('https://t1.kakaocdn.net/kas/static/ba.min.js');
-  }
- }catch{el.hidden=true;}
-}
-const adObserver='IntersectionObserver'in window?new IntersectionObserver(items=>items.forEach(x=>{if(x.isIntersecting){adObserver.unobserve(x.target);void activateAd(x.target,Number(x.target.dataset.slot));}}),{rootMargin:'150px 0px'}):null;
-function mountAds(){
- if(!adPreview&&!adsEligible())return;
- const cards=qa('#cards>.term-card');
- [16,40].forEach((position,index)=>{
-  if(cards.length<position)return;
-  let el=adCache.get(index);
-  if(!el){el=document.createElement('aside');el.className='ad-slot'+(adPreview?' ad-preview':'');el.dataset.slot=String(index);el.setAttribute('aria-label',tr('광고 영역','Advertisement area'));el.innerHTML='<div class="ad-label"></div><div class="ad-content"></div>';adCache.set(index,el);}
-  el.querySelector('.ad-label').textContent=tr('광고','Advertisement');
-  if(adPreview){el.querySelector('.ad-content').innerHTML=`<b>${tr('배너 광고 위치 미리보기','Banner placement preview')}</b><small>${tr('실제 광고가 아닙니다 · 최대 2개 · 고정형/전면 광고 없음','Not a live ad · maximum 2 slots · no sticky or fullscreen ads')}</small>`;}
-  cards[position-1].after(el);
-  if(!adPreview&&adObserver)adObserver.observe(el);
- });
-}
+/*__ADFIT_MODULE__*/
 
 function renderNav(){
  const top=new Set(['데이터 시각화','분석 UI·UX','UI·UX','아이콘·상태 표시','기즈모·편집기 조작','UI·UX 모션','게임 VFX','웹·CSS','게임 디자인','맵·레벨 디자인','Python·데스크톱','3D·렌더링']);
@@ -675,7 +641,7 @@ function renderCategoryOptions(){
  q('#category').innerHTML=`<option value="all">${t('allCategories')}</option>`+choices.map(c=>`<option value="${esc(c.name)}">${esc(label('categories',c.name))} (${number(c.count)})</option>`).join('');
  q('#category').value=state.category;
 }
-function updateFooter(){q('.footer').innerHTML=`<div class="footer-top"><span>© 2026 ATLAS Gallery · ${tr('디자인 레퍼런스 백과사전','Visual design encyclopedia')}</span><nav aria-label="${tr('사이트 안내','Site information')}"><a href="/about.html?lang=${locale}">${tr('소개·출처','About & sources')}</a><a href="/privacy.html?lang=${locale}">${tr('개인정보처리방침','Privacy')}</a><a href="/terms.html?lang=${locale}">${tr('이용안내','Terms')}</a><a href="/advertising.html?lang=${locale}">${tr('광고 안내','Advertising')}</a><a href="/catalog.html?lang=${locale}">${tr('전체 색인','Full index')}</a></nav></div><div class="business-info"><span><b>${tr('상호','Business')}</b> 스투피아드</span><span>${tr('사업자등록번호','Business registration')} 868-24-02133</span><span>${tr('통신판매업 신고번호','Mail-order business registration')} 2026-화성동탄-0527</span></div><div id="footer-count">${t('footer',{loaded:number(state.rendered),count:number(entries.length)})} · ${tr('차트 수치는 가상 데이터입니다.','Chart values are synthetic.')}</div>`;}
+function updateFooter(){q('.footer').innerHTML=`<div class="footer-top"><span>© 2026 ATLAS Gallery · ${tr('디자인 레퍼런스 백과사전','Visual design encyclopedia')}</span><nav aria-label="${tr('사이트 안내','Site information')}"><a href="/about.html?lang=${locale}">${tr('소개·출처','About & sources')}</a><a href="/privacy.html?lang=${locale}">${tr('개인정보처리방침','Privacy')}</a><a href="/terms.html?lang=${locale}">${tr('이용안내','Terms')}</a><a href="/advertising.html?lang=${locale}">${tr('광고 안내','Advertising')}</a><button type="button" data-ad-settings>${tr('광고 설정','Ad preferences')}</button><a href="/catalog.html?lang=${locale}">${tr('전체 색인','Full index')}</a></nav></div><div class="business-info"><span><b>${tr('상호','Business')}</b> 스투피아드</span><span>${tr('사업자등록번호','Business registration')} 868-24-02133</span><span>${tr('통신판매업 신고번호','Mail-order business registration')} 2026-화성동탄-0527</span></div><div id="footer-count">${t('footer',{loaded:number(state.rendered),count:number(entries.length)})} · ${tr('차트 수치는 가상 데이터입니다.','Chart values are synthetic.')}</div>`;}
 function filter(limit=PAGE){
  const tokens=state.search.split(/\s+/).filter(Boolean);
  let a=entries.filter((e,i)=>(state.category==='all'||e.category===state.category)&&(state.onlyFav?fav.has(e.id):(state.domain==='all'||e.domain===state.domain))&&(state.kind==='all'||(state.kind==='tools'?e.kind!=='용어·패턴'&&e.kind!=='시각 스타일':e.kind==='용어·패턴'||e.kind==='시각 스타일'))&&tokens.every(term=>indexes[i].includes(term))&&(previewFilter==='all'||(previewFilter==='expanded'?waveRegistry.has(e.en):(previewFilter==='specific')===referenceView(e).specific)));
@@ -685,7 +651,7 @@ function filter(limit=PAGE){
  q('#result-title').textContent=state.onlyFav?t('myFavorites'):state.domain==='all'?t('allReferences'):label('domains',state.domain);
  q('#result-summary').textContent=t('resultSummary',{count:number(a.length)});
  q('#result-count').textContent=number(a.length);q('#empty').style.display=a.length?'none':'flex';
- visualObserver?.disconnect();q('#cards').innerHTML='';renderNext(limit);
+ visualObserver?.disconnect();clearAdCards();renderNext(limit);
  q('#clear').style.display=q('#search').value?'block':'none';
 }
 function card(e){
@@ -694,7 +660,7 @@ function card(e){
 }
 function renderNext(count=PAGE){
  const batch=state.result.slice(state.rendered,state.rendered+count);
- if(batch.length)q('#cards').insertAdjacentHTML('beforeend',batch.map(card).join(''));
+ if(batch.length)appendAdCards(batch.map(card),state.rendered);
  state.rendered+=batch.length;const remaining=state.result.length-state.rendered,btn=q('#load-more');
  btn.style.display=remaining?'block':'none';btn.textContent=remaining?t('loadMore',{count:number(remaining)}):t('loadComplete');
  updateFooter();mountAds();
@@ -709,7 +675,6 @@ function applyStatic(){
  qa('.locale-select').forEach(el=>{el.value=locale;el.setAttribute('aria-label',t('language'));});qa('[data-locale-label]').forEach(el=>el.textContent=t('language'));
  const textMap={'.sidebar > .side-label':'exploreCollections','.trail span:first-child':'collections','.trail strong':'visualEncyclopedia','#export-button':'export','.hero-copy > p':'heroIntro','#hero-motion':'heroMotion','.section-header h2':'galleryTitle','.section-header p':'galleryIntro','.section-head-tools .small-meta':'quickSearch','#empty b':'emptyTitle','#empty span':'emptyHelp','.drawer-head > strong':'detailHeading'};
  Object.entries(textMap).forEach(([selector,key])=>{const el=q(selector);if(el)el.textContent=t(key)});
- q('.mini-note').innerHTML=`<b>VISUAL KNOWLEDGE BASE</b>${esc(t('sideNote',{count:number(entries.length)}))}`;
  q('.top-count').textContent=t('topCount',{count:number(entries.length)});
  q('#hero-heading').innerHTML=locale==='en'?`${t('heroStart')}<br><em>${t('heroEm')}</em>`:`${t('heroStart')} <em>${t('heroEm')}</em><br>${t('heroEnd')}`;
  q('#hero-browse').innerHTML=esc(t('heroBrowse'))+` <span>${icon('arrow')}</span>`;

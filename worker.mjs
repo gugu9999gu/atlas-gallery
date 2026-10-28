@@ -126,7 +126,7 @@ const SECURITY = {
   'Referrer-Policy': 'strict-origin-when-cross-origin',
   'X-Frame-Options': 'SAMEORIGIN',
   'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
-  'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; frame-src 'none'; form-action 'self'; upgrade-insecure-requests"
+  'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' https://t1.kakaocdn.net https://t1.daumcdn.net https://display.ad.daum.net https://*.ad.daum.net https://serv.ds.kakao.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.kakaocdn.net https://*.daumcdn.net https://*.ad.daum.net https://*.ds.kakao.com; connect-src 'self' https://*.ad.daum.net https://*.ds.kakao.com https://aem-kakao-collector.onkakao.net; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; frame-src https://*.ad.daum.net https://*.ds.kakao.com https://t1.kakaocdn.net; form-action 'self'; upgrade-insecure-requests"
 };
 export default {
   async fetch(request, env, ctx) {
@@ -142,7 +142,7 @@ export default {
     if (!found) path = '/404.html';
     // Query state is client-side only; use one cache entry per file and release.
     const cacheURL = new URL(url.origin + path);
-    cacheURL.search = '?atlas-version=3.1.0';
+    cacheURL.search = '?atlas-version=3.1.1';
     const key = new Request(cacheURL, {method: 'GET'});
     let response = found ? await caches.default.match(key) : null;
     if (!response) {
@@ -153,7 +153,7 @@ export default {
       headers.set('ETag', object.httpEtag);
       headers.set('Last-Modified', object.uploaded.toUTCString());
       headers.set('Cache-Control', found ? 'public, max-age=300, stale-while-revalidate=600' : 'no-store');
-      headers.set('X-Atlas-Version', '3.1.0');
+      headers.set('X-Atlas-Version', '3.1.1');
       headers.set('Content-Length', String(object.size));
       if (!found) headers.set('X-Robots-Tag', 'noindex');
       response = new Response(object.body, {status: found ? 200 : 404, headers});

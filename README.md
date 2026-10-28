@@ -1,4 +1,4 @@
-# ATLAS Gallery v3.1.0
+# ATLAS Gallery v3.1.1
 
 배포 주소: https://atlas-gallery.app/
 
@@ -97,3 +97,7 @@ python scripts/test-previews.py
 python scripts/build.py
 ```
 설치된 Chromium을 쓰려면 `CHROMIUM_PATH`를 지정합니다. GitHub Actions는 검증만 담당하며 Cloudflare에 대한 배포 비밀키를 저장하거나 자동 공개 배포하지 않습니다. 운영 게시에는 검증한 커밋과 빌드 산출물의 해시를 확인한 별도 승인된 배포를 사용합니다.
+
+
+## v3.1.1: Kakao AdFit
+The sidebar knowledge-base card is removed. AdFit uses up to two original-size in-flow slots, explicit opt-in, no-fill collapse and stable ad DOM across search/locale changes. All seven operator-supplied IDs are recorded in data/advertising.json; portrait, skyscraper and thin-strip units are reserved, not active. Preview with ?adpreview=1 without live ad requests. Dedicated tests use an in-memory SDK mock. Media approval and actual inventory are not verified by code installation. The operator must still provide a privacy contact.

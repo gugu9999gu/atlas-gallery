@@ -8,11 +8,13 @@ def main():
     text=(ROOT/'src/layout.html').read_text(encoding='utf-8')
     for marker,filename in [('ATLAS_DATA','atlas-gallery-bilingual.json'),('ATLAS_I18N','i18n.json'),('ATLAS_ADS','advertising.json')]:
         text=text.replace('/*__'+marker+'__*/',embed(json.loads((ROOT/'data'/filename).read_text(encoding='utf-8'))))
-    text=text.replace('/*__STYLE_0__*/',(ROOT/'src/style.css').read_text(encoding='utf-8'))
+    text=text.replace('/*__STYLE_0__*/',(ROOT/'src/style.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/advertising.css').read_text(encoding='utf-8'))
     app=(ROOT/'src/app.js').read_text(encoding='utf-8')
     modules='\n'.join((ROOT/'src/previews'/name).read_text(encoding='utf-8') for name in ['core.js','motion.js','vfx.js','maps.js','model.js','finalize.js'])
     if app.count('/*__WAVE_MODULES__*/')!=1: raise RuntimeError('Expected one preview module marker')
     app=app.replace('/*__WAVE_MODULES__*/',modules)
+    if app.count('/*__ADFIT_MODULE__*/')!=1: raise RuntimeError('Expected one advertising module marker')
+    app=app.replace('/*__ADFIT_MODULE__*/',(ROOT/'src/advertising.js').read_text(encoding='utf-8'))
     text=text.replace('/*__APP_0__*/',app)
     if re.search(r'/\*__(?:ATLAS_|APP_|STYLE_)',text):
         raise RuntimeError('A build placeholder was not replaced')

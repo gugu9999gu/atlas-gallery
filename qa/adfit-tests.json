@@ -1,0 +1,256 @@
+{
+  "checks": [
+    {
+      "name": "sidebar knowledge-base card removed",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no third-party request before consent",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "unconsented users retain all initial cards",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "declining hides ad slots",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "declining does not load SDK",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "preferences accessible after refusal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "desktop issued unit exact",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "language change preserves connected ad iframe",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "language change sends no duplicate ad request",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "short search hides slots without new requests",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "restoring search preserves iframe identity",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "secondary unit is 300x250",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "SDK script loaded once",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "slots follow cards 16 and 40 in DOM order",
+      "passed": true,
+      "details": [
+        16,
+        40
+      ]
+    },
+    {
+      "name": "further pagination never creates a third slot",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "oversize desktop ad hidden without scaled creative",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "resized layout has no horizontal overflow",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "resize back reuses prior iframe",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "withdrawal requests a clean reload",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "withdrawal is saved",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "desktop interaction has no JS errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "390px selects fitting original-size unit",
+      "passed": true,
+      "details": {
+        "id": "DAN-UZvTvQHDzkXHOdgI",
+        "w": 320,
+        "h": 100
+      }
+    },
+    {
+      "name": "390px has no horizontal overflow",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "390px no page errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "360px selects fitting original-size unit",
+      "passed": true,
+      "details": {
+        "id": "DAN-UZvTvQHDzkXHOdgI",
+        "w": 320,
+        "h": 100
+      }
+    },
+    {
+      "name": "360px has no horizontal overflow",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "360px no page errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "320px selects fitting original-size unit",
+      "passed": true,
+      "details": {
+        "id": "DAN-HeS6GkO12A1Vgi8s",
+        "w": 250,
+        "h": 250
+      }
+    },
+    {
+      "name": "320px has no horizontal overflow",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "320px no page errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "768px selects fitting original-size unit",
+      "passed": true,
+      "details": {
+        "id": "DAN-UZvTvQHDzkXHOdgI",
+        "w": 320,
+        "h": 100
+      }
+    },
+    {
+      "name": "768px has no horizontal overflow",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "768px no page errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "1024px selects fitting original-size unit",
+      "passed": true,
+      "details": {
+        "id": "DAN-Axsm48rrgFFIzM0r",
+        "w": 728,
+        "h": 90
+      }
+    },
+    {
+      "name": "1024px has no horizontal overflow",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "1024px no page errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "nofill hides empty space",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "nofill does not retry on locale change",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "blocked hides empty space",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "blocked does not retry on locale change",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "preview never requests live advertising",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "preview has two sized slots",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "GPC overrides previous opt-in",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "QA route never loads SDK",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "unused large placements absent from live code path",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "passed": 45,
+  "total": 45,
+  "liveAdRequests": 0,
+  "mode": "mocked SDK, network intercepted"
+}

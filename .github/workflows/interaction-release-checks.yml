@@ -1,0 +1,52 @@
+name: ATLAS v3.2 interaction and search checks
+on:
+  push:
+    paths:
+      - src/interactive/**
+      - data/interaction-recipes.tsv
+      - scripts/build-interactions.py
+      - scripts/test-interactions.py
+      - worker-v32.mjs
+      - wrangler-v32.jsonc
+      - package.json
+      - .github/workflows/interaction-release-checks.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: atlas-v32-checks-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install the pinned runtime and browser testing dependencies
+        run: |
+          npm install --no-audit --no-fund
+          python -m pip install --disable-pip-version-check -r requirements-test.txt
+          python -m playwright install --with-deps chromium
+      - name: Preserve original preview and advertising behavior
+        run: |
+          python scripts/build.py
+          python scripts/test-previews.py
+          python scripts/test-adfit.py
+      - name: Build and verify interactions, Three.js and reference pages
+        run: |
+          npm run check
+          npm run build
+          python scripts/test-interactions.py
+          npx wrangler deploy --config wrangler-v32.jsonc --dry-run --outdir /tmp/atlas-worker-check
+      - name: Save verification reports only
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: atlas-v32-verification
+          path: |
+            qa/interaction-tests-v32.json
+            qa/build-v32.json
+          retention-days: 7
+          if-no-files-found: warn

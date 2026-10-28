@@ -1,0 +1,78 @@
+name: Import reviewed ATLAS baseline
+on:
+  push:
+    paths:
+      - .github/workflows/import-reviewed-site.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: atlas-baseline-import
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Import only the verified, already-public snapshot
+        shell: python
+        run: |
+          import hashlib, json, pathlib, re, urllib.request
+          root = pathlib.Path('.')
+          if (root / 'data/atlas-gallery-bilingual.json').exists():
+              print('Baseline already imported; refusing to overwrite editable source.')
+              raise SystemExit(0)
+          origin = 'https://atlas-gallery.app'
+          expected = 'e13b8480f21b5efb3c9cb078003e797961623a26e5bc133cce85563d88aadd4b'
+          def get(path):
+              request = urllib.request.Request(origin + path, headers={'User-Agent':'ATLAS-reviewed-source-import/1.0'})
+              with urllib.request.urlopen(request, timeout=45) as response:
+                  if not response.url.startswith(origin + '/'):
+                      raise RuntimeError('Unexpected origin redirect')
+                  return response.read()
+          raw = get('/')
+          if hashlib.sha256(raw).hexdigest() != expected:
+              raise RuntimeError('Published snapshot changed; review its checksum before importing.')
+          html = raw.decode('utf-8')
+          for folder in ['src', 'data', 'public', 'scripts', 'qa']:
+              (root / folder).mkdir(exist_ok=True)
+          (root / 'public/index.html').write_bytes(raw)
+          for script_id, filename, marker in [
+              ('atlas-data','atlas-gallery-bilingual.json','ATLAS_DATA'),
+              ('atlas-i18n','i18n.json','ATLAS_I18N'),
+              ('atlas-ads','advertising.json','ATLAS_ADS')]:
+              pattern = r'(<script\b[^>]*\bid="' + script_id + r'"[^>]*>)(.*?)(</script>)'
+              match = re.search(pattern, html, re.S)
+              if not match:
+                  raise RuntimeError('Missing bundled source: ' + script_id)
+              data = json.loads(match.group(2))
+              (root / 'data' / filename).write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+              html = html[:match.start(2)] + '/*__' + marker + '__*/' + html[match.end(2):]
+          styles = list(re.finditer(r'<style[^>]*>(.*?)</style>', html, re.S))
+          if len(styles) != 1:
+              raise RuntimeError('Expected exactly one compiled stylesheet')
+          match = styles[0]
+          (root / 'src/style.css').write_text(match.group(1), encoding='utf-8')
+          html = html[:match.start(1)] + '/*__STYLE_0__*/' + html[match.end(1):]
+          scripts = [m for m in re.finditer(r'<script>(.*?)</script>', html, re.S) if 'function referenceView' in m.group(1)]
+          if len(scripts) != 1:
+              raise RuntimeError('Expected exactly one compiled application script')
+          match = scripts[0]
+          (root / 'src/app.js').write_text(match.group(1), encoding='utf-8')
+          html = html[:match.start(1)] + '/*__APP_0__*/' + html[match.end(1):]
+          (root / 'src/layout.html').write_text(html, encoding='utf-8')
+          paths = ['/404.html','/about.html','/advertising.html','/catalog.html','/favicon.svg','/privacy.html','/robots.txt','/sitemap.xml','/terms.html']
+          paths += [f'/category-{i:03d}.html' for i in range(1,112)]
+          for path in paths:
+              (root / 'public' / path[1:]).write_bytes(get(path))
+          (root / 'qa/import-receipt.json').write_text(json.dumps({'origin':origin,'baseline_sha256':expected,'files':121,'source':'Verified production snapshot, not a rebuilt screenshot'},indent=2)+'\n')
+          print('Imported complete source, bilingual data and 121 public assets.')
+      - name: Save imported source without rewriting history
+        run: |
+          git config user.name 'ATLAS Source Import'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src data public qa
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'chore: preserve verified v3 production source and bilingual catalog'
+          git push origin HEAD:main

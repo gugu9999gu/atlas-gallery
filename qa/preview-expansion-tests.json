@@ -1,0 +1,215 @@
+{
+  "checks": [
+    {
+      "name": "catalog retained",
+      "passed": true,
+      "details": {
+        "all": 2112,
+        "canonical": 2109,
+        "categories": 111
+      }
+    },
+    {
+      "name": "237 exact-name preview registrations",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "all 948 sampled render states are finite",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no identical new geometry sequences after removing labels",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "specific and remaining preview totals",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "all canonical items have a preview identifier",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "new preview collection filter",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "remaining concept filter",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "keyboard reachable slider outside inert scene",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "path search slider changes geometry",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "slider exposes current value",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "reset restores default",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "pathfinding comparison panel",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "user-triggered replay changes time",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "reduced motion stops playback",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "reduced motion does not autoplay after replay",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "escape closes detail",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "astar path avoids obstacles and is four-connected",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "dijkstra path avoids obstacles and is four-connected",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "bfs path avoids obstacles and is four-connected",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "A* and Dijkstra agree on optimal weighted cost",
+      "passed": true,
+      "details": [
+        15,
+        15,
+        15,
+        0
+      ]
+    },
+    {
+      "name": "separated goal is unreachable",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "language ko",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "translated specific description ko",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "language en",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "translated specific description en",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "language switch preserves search and collection",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gallery does not overflow at 360",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "detail does not overflow at 360",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gallery does not overflow at 390",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "detail does not overflow at 390",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gallery does not overflow at 768",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "detail does not overflow at 768",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gallery does not overflow at 1024",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "detail does not overflow at 1024",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "gallery does not overflow at 1440",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "detail does not overflow at 1440",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "existing progress control preserved",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no advertising requests",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "no runtime page exceptions",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "passed": 40,
+  "total": 40
+}

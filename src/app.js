@@ -565,9 +565,11 @@ function supplementaryVisual(e,k){let b='';const frame=()=>rect(27,29,246,128,'w
  else return null;
  return svgFrame(e,b);}
 
+/*__WAVE_MODULES__*/
+
 // Fallbacks are honest term-specific explanations, never an unrelated chart or logo.
 function conceptVisual(e){const implementation=e.kind!=='용어·패턴'&&e.kind!=='시각 스타일';const definition=localText(e,'description'),use=localText(e,'usage');return `<div class="concept-board ${implementation?'concept-implementation':''}"><div class="concept-head"><span>${implementation?tr('구현 구조','IMPLEMENTATION'):tr('개념 구조','CONCEPT MAP')}</span><b>${esc(e.en)}</b></div><div class="concept-flow"><span>${esc(implementation?label('ecosystem',e.ecosystem)||label('domains',e.domain):label('categories',e.category))}</span><i>↓</i><p>${esc(definition)}</p></div><div class="concept-application">${esc(use)}</div></div>`;}
-function referenceView(e){if(e.preview?.engine==='atlas-svg'){const body=progressVisual(e)||chartVisual(e);if(body)return {html:body,mode:'exact',type:'개념 시각화',key:e.preview.key,specific:true};}
+function referenceView(e){const added=waveView(e);if(added)return added;if(e.preview?.engine==='atlas-svg'){const body=progressVisual(e)||chartVisual(e);if(body)return {html:body,mode:'exact',type:'개념 시각화',key:e.preview.key,specific:true};}
  if(uiExact[e.en]){const body=uiVisual(e,uiExact[e.en]);if(body)return {html:body,mode:'exact',type:'개념 시각화',key:'ui-'+uiExact[e.en],specific:true};}
  if(iconNames[e.en]){const body=iconVisual(e,iconNames[e.en]);if(body)return {html:body,mode:'exact',type:'개념 시각화',key:'icon-'+iconNames[e.en],specific:true};}
  if(gizmoNames[e.en]){const body=gizmoVisual(e,gizmoNames[e.en]);if(body)return {html:body,mode:'exact',type:'개념 시각화',key:'gizmo-'+gizmoNames[e.en],specific:true};}
@@ -576,7 +578,7 @@ function referenceView(e){if(e.preview?.engine==='atlas-svg'){const body=progres
  if(['Blur-up Image','Optimistic UI','Streaming Text'].includes(e.en)){const old=legacyArt(e);return {html:old.html,mode:'legacy-exact',type:old.previewType,key:e.id,specific:true};}
  if(supplementary[e.en]){const body=supplementaryVisual(e,supplementary[e.en]);if(body)return {html:body,mode:'exact',type:'개념 시각화',key:'specific-'+supplementary[e.en],specific:true};}
  return {html:conceptVisual(e),mode:'diagram',type:'구조·시각 예시',key:'concept-'+e.id,specific:false};}
-function art(e){const view=referenceView(e);if(view.mode==='legacy-exact')return {html:view.html,mode:view.mode,previewType:view.type,key:view.key,specific:view.specific};return {html:`<div class="scene scene-reference scene-${view.mode}" data-preview-key="${esc(view.key)}" aria-hidden="true" inert><span class="preview-label">${view.mode==='diagram'?tr('개념 도식','CONCEPT DIAGRAM'):view.mode==='effect'?'VFX CONCEPT':view.mode==='native'?'MOTION DEMO':e.preview?.sampleData?'DATA REFERENCE':tr('구분형 미리보기','REFERENCE PREVIEW')}</span><div class="reference-stage">${view.html}</div><span class="preview-zoom">${icon('external')}</span></div>`,mode:view.mode,previewType:view.type,key:view.key,specific:view.specific};}
+function art(e){const view=referenceView(e);if(view.mode==='legacy-exact')return {html:view.html,mode:view.mode,previewType:view.type,key:view.key,specific:view.specific};return {html:`<div class="scene scene-reference scene-${view.mode}" data-preview-key="${esc(view.key)}" aria-hidden="true" inert><span class="preview-label">${waveRegistry.get(e.en)?.interactive?tr('조작형 미리보기','INTERACTIVE STUDY'):view.mode==='diagram'?tr('개념 도식','CONCEPT DIAGRAM'):view.mode==='effect'?'VFX CONCEPT':view.mode==='native'?'MOTION DEMO':e.preview?.sampleData?'DATA REFERENCE':tr('구분형 미리보기','REFERENCE PREVIEW')}</span><div class="reference-stage">${view.html}</div><span class="preview-zoom">${icon('external')}</span></div>`,mode:view.mode,previewType:view.type,key:view.key,specific:view.specific};}
 
 // Additional UI; this file is bundled inside the app closure.
 let motionPaused=store.getItem('atlas-motion-paused')==='1';
@@ -584,16 +586,16 @@ let previewFilter='all';
 const featureTerms=['Bar Chart','Line Chart','Donut Chart'];
 function renderFeature(){
  const node=q('#analytics-feature');if(!node)return;
- node.innerHTML=`<div><div class="eyebrow">NEW COLLECTION / DATA & ANALYTICS</div><h2>${tr('데이터를 읽는 화면에도, 이름이 있습니다.','Every way to see data has a name.')}</h2><p>${tr('차트의 모양부터 분석 화면의 상호작용까지. 비교·추세·분포·관계·흐름과 분석 UI 110개를 정확히 구분해 보세요.','From chart shapes to analytical interactions. Explore 110 references for comparison, trends, distribution, relationships, flows and analytics UX.')}</p><div class="feature-actions"><button data-dom="데이터 시각화">${tr('차트·그래프 탐색','Explore charts')}</button><button data-dom="분석 UI·UX">${tr('분석 UI·UX','Analytics UI & UX')}</button><button data-related="${esc(entries.find(e=>e.en==='Circular Progress Indicator')?.id||'')}">${tr('유사 개념 비교','Compare similar concepts')}</button></div></div><div class="feature-art" aria-hidden="true">${featureTerms.map(name=>{const e=entries.find(x=>x.en===name);return e?`<div>${chartVisual(e)}<b>${esc(e.en)}</b></div>`:''}).join('')}</div>`;
+ node.innerHTML=`<div><div class="eyebrow">NEW COLLECTION / DATA & ANALYTICS</div><h2>${tr('데이터를 읽는 화면에도, 이름이 있습니다.','Every way to see data has a name.')}</h2><p>${tr('차트의 모양부터 분석 화면의 상호작용까지. 비교·추세·분포·관계·흐름과 분석 UI 110개를 정확히 구분해 보세요.','From chart shapes to analytical interactions. Explore 110 references for comparison, trends, distribution, relationships, flows and analytics UX.')}</p><div class="feature-actions"><button data-new-previews="1">${tr('새 미리보기 237개','237 new preview studies')}</button><button data-dom="데이터 시각화">${tr('차트·그래프 탐색','Explore charts')}</button><button data-dom="분석 UI·UX">${tr('분석 UI·UX','Analytics UI & UX')}</button><button data-related="${esc(entries.find(e=>e.en==='Circular Progress Indicator')?.id||'')}">${tr('유사 개념 비교','Compare similar concepts')}</button></div></div><div class="feature-art" aria-hidden="true">${featureTerms.map(name=>{const e=entries.find(x=>x.en===name);return e?`<div>${chartVisual(e)}<b>${esc(e.en)}</b></div>`:''}).join('')}</div>`;
 }
 function renderPreviewControls(){
- q('#preview-controls').innerHTML=`<label>${tr('미리보기','Preview')} <select id="preview-filter"><option value="all">${tr('모든 레퍼런스','All references')}</option><option value="specific">${tr('항목별 시각 예시','Specific visual examples')}</option><option value="diagram">${tr('개념·구현 도식','Concept / implementation')}</option></select></label><button id="motion-toggle" type="button" aria-pressed="${motionPaused}">${icon(motionPaused?'play':'pause')}${tr(motionPaused?'모션 재생':'모션 일시정지',motionPaused?'Play motion':'Pause motion')}</button><span class="controls-caption">${tr('차트는 가상 데이터 · 같은 뜻은 별칭으로 연결','Synthetic chart data · true synonyms share a canonical entry')}</span>`;
+ q('#preview-controls').innerHTML=`<label>${tr('미리보기','Preview')} <select id="preview-filter"><option value="all">${tr('모든 레퍼런스','All references')}</option><option value="expanded">${tr('새로 추가한 미리보기','New preview studies')}</option><option value="specific">${tr('항목별 시각 예시','Specific visual examples')}</option><option value="diagram">${tr('개념·구현 도식','Concept / implementation')}</option></select></label><button id="motion-toggle" type="button" aria-pressed="${motionPaused}">${icon(motionPaused?'play':'pause')}${tr(motionPaused?'모션 재생':'모션 일시정지',motionPaused?'Play motion':'Pause motion')}</button><span class="controls-caption">${tr('차트는 가상 데이터 · 같은 뜻은 별칭으로 연결','Synthetic chart data · true synonyms share a canonical entry')}</span>`;
  q('#preview-filter').value=previewFilter;
  q('#preview-filter').addEventListener('change',ev=>{previewFilter=ev.target.value;filter()});
- q('#motion-toggle').addEventListener('click',()=>{motionPaused=!motionPaused;store.setItem('atlas-motion-paused',motionPaused?'1':'0');document.documentElement.classList.toggle('motion-paused',motionPaused);renderPreviewControls()});
+ q('#motion-toggle').addEventListener('click',()=>{motionPaused=!motionPaused;if(motionPaused)waveStop();store.setItem('atlas-motion-paused',motionPaused?'1':'0');document.documentElement.classList.toggle('motion-paused',motionPaused);renderPreviewControls()});
  document.documentElement.classList.toggle('motion-paused',motionPaused);
 }
-function previewNotice(e,a){
+function previewNotice(e,a){if(waveRegistry.has(e.en))return waveNotice(e);
  if(a.mode==='diagram')return tr('이 항목은 개념·적용 관계를 정리한 도식입니다. 해당 라이브러리 실행 결과나 실제 제품 화면이 아닙니다.','This is an explanatory concept / application diagram, not a running library or an official product screenshot.');
  if(a.mode==='effect')return tr('이 이펙트는 원리를 설명하는 CSS·벡터 시각화이며, 실제 게임 엔진 렌더링이 아닙니다.','This CSS / vector effect illustrates the idea; it is not a game-engine render.');
  if(e.preview?.sampleData)return tr('직접 제작한 벡터 예시입니다. 수치는 가상 데이터이며 실제 사업·투자·실험 결과가 아닙니다.','An original vector illustration using synthetic data, not real business, investment or experimental results.');
@@ -608,7 +610,7 @@ function comparisonMarkup(e){
 const adjustableKeys=new Set(['progress-ring','progress-bar','determinate','linear-family','progress-family']);
 const sampleKeys=new Set(['bar','grouped','stacked','stacked100','line','multiline','step','area','stackedarea','confidence','directlabels','missinggap','benchmark','anomaly','combo','datatooltip','crosshair','uncertainty','kpi','dashboard','widget','smallmultiples']);
 let sampleStep=0;
-function demoControls(e){
+function demoControls(e){const added=waveControls(e);if(added)return added;
  if(adjustableKeys.has(e.preview?.key))return `<div class="demo-controls"><label for="progress-demo">${tr('진행률 조절','Adjust completion')}</label><input id="progress-demo" type="range" min="0" max="100" step="1" value="68" aria-valuetext="68%"><output for="progress-demo" id="progress-output">68%</output></div>`;
  if(sampleKeys.has(e.preview?.key))return `<div class="demo-controls"><span>${tr('가상 수치로 형태 확인','Explore with synthetic values')}</span><button class="drawer-pill clickable" id="sample-refresh" type="button">${tr('예시 데이터 변경','Change sample data')}</button></div>`;
  return '';
@@ -676,7 +678,7 @@ function renderCategoryOptions(){
 function updateFooter(){q('.footer').innerHTML=`<div class="footer-top"><span>© 2026 ATLAS Gallery · ${tr('디자인 레퍼런스 백과사전','Visual design encyclopedia')}</span><nav aria-label="${tr('사이트 안내','Site information')}"><a href="/about.html?lang=${locale}">${tr('소개·출처','About & sources')}</a><a href="/privacy.html?lang=${locale}">${tr('개인정보처리방침','Privacy')}</a><a href="/terms.html?lang=${locale}">${tr('이용안내','Terms')}</a><a href="/advertising.html?lang=${locale}">${tr('광고 안내','Advertising')}</a><a href="/catalog.html?lang=${locale}">${tr('전체 색인','Full index')}</a></nav></div><div class="business-info"><span><b>${tr('상호','Business')}</b> 스투피아드</span><span>${tr('사업자등록번호','Business registration')} 868-24-02133</span><span>${tr('통신판매업 신고번호','Mail-order business registration')} 2026-화성동탄-0527</span></div><div id="footer-count">${t('footer',{loaded:number(state.rendered),count:number(entries.length)})} · ${tr('차트 수치는 가상 데이터입니다.','Chart values are synthetic.')}</div>`;}
 function filter(limit=PAGE){
  const tokens=state.search.split(/\s+/).filter(Boolean);
- let a=entries.filter((e,i)=>(state.category==='all'||e.category===state.category)&&(state.onlyFav?fav.has(e.id):(state.domain==='all'||e.domain===state.domain))&&(state.kind==='all'||(state.kind==='tools'?e.kind!=='용어·패턴'&&e.kind!=='시각 스타일':e.kind==='용어·패턴'||e.kind==='시각 스타일'))&&tokens.every(term=>indexes[i].includes(term))&&(previewFilter==='all'||(previewFilter==='specific')===referenceView(e).specific));
+ let a=entries.filter((e,i)=>(state.category==='all'||e.category===state.category)&&(state.onlyFav?fav.has(e.id):(state.domain==='all'||e.domain===state.domain))&&(state.kind==='all'||(state.kind==='tools'?e.kind!=='용어·패턴'&&e.kind!=='시각 스타일':e.kind==='용어·패턴'||e.kind==='시각 스타일'))&&tokens.every(term=>indexes[i].includes(term))&&(previewFilter==='all'||(previewFilter==='expanded'?waveRegistry.has(e.en):(previewFilter==='specific')===referenceView(e).specific)));
  if(state.sort==='default'&&state.search){const rank=e=>normalize(e.en)===state.search||normalize(e.ko)===state.search?0:normalize(e.en+' '+e.ko).includes(state.search)?1:normalize(e.aliases).includes(state.search)?2:3;a.sort((x,y)=>rank(x)-rank(y));}
  if(state.sort==='az')a.sort((x,y)=>x.en.localeCompare(y.en,'en'));else if(state.sort==='ko')a.sort((x,y)=>x.ko.localeCompare(y.ko,'ko'));else if(state.sort==='category')a.sort((x,y)=>label('categories',x.category).localeCompare(label('categories',y.category),locale));
  state.result=a;state.rendered=0;
@@ -688,7 +690,7 @@ function filter(limit=PAGE){
 }
 function card(e){
  const a=art(e),isFav=fav.has(e.id);
- return `<article class="term-card" data-id="${esc(e.id)}"><button class="card-hit-target" data-open="${esc(e.id)}" aria-label="${esc(t('openDetails',{title:localTitle(e)}))}"></button>${a.html}<div class="card-body"><div class="card-meta"><span class="card-category" title="${esc(label('categories',e.category))}">${esc(label('categories',e.category))}</span><button class="fav-btn ${isFav?'saved':''}" data-fav="${esc(e.id)}" aria-pressed="${isFav}" aria-label="${t(isFav?'favoriteRemove':'favoriteAdd')}">${icon('heart')}</button></div><h4 class="card-title">${esc(localTitle(e))}</h4><div class="card-en" lang="${locale==='en'?'ko':'en'}">${esc(locale==='en'?e.ko:e.en)}</div><p class="card-desc">${esc(localText(e,'description'))}</p>${e.difference?`<p class="card-difference">${esc(localText(e,'difference'))}</p>`:''}<div class="card-footer"><span class="card-type"><span class="mini-dot"></span>${esc(label('kinds',e.kind))}</span><span class="preview-kind">${a.mode==='diagram'?tr('개념 도식','Concept map'):a.mode==='native'||a.mode==='effect'?tr('모션 예시','Motion'):tr('시각 예시','Visual')}</span><span class="card-link">${t('more')} ${icon('arrow')}</span></div></div></article>`;
+ return `<article class="term-card" data-id="${esc(e.id)}"><button class="card-hit-target" data-open="${esc(e.id)}" aria-label="${esc(t('openDetails',{title:localTitle(e)}))}"></button>${a.html}<div class="card-body"><div class="card-meta"><span class="card-category" title="${esc(label('categories',e.category))}">${esc(label('categories',e.category))}</span><button class="fav-btn ${isFav?'saved':''}" data-fav="${esc(e.id)}" aria-pressed="${isFav}" aria-label="${t(isFav?'favoriteRemove':'favoriteAdd')}">${icon('heart')}</button></div><h4 class="card-title">${esc(localTitle(e))}</h4><div class="card-en" lang="${locale==='en'?'ko':'en'}">${esc(locale==='en'?e.ko:e.en)}</div><p class="card-desc">${esc(localText(e,'description'))}</p>${e.difference?`<p class="card-difference">${esc(localText(e,'difference'))}</p>`:''}<div class="card-footer"><span class="card-type"><span class="mini-dot"></span>${esc(label('kinds',e.kind))}</span><span class="preview-kind">${waveRegistry.get(e.en)?.interactive?tr('조작 가능','Interactive'):a.mode==='diagram'?tr('개념 도식','Concept map'):a.mode==='native'||a.mode==='effect'?tr('모션 예시','Motion'):tr('시각 예시','Visual')}</span><span class="card-link">${t('more')} ${icon('arrow')}</span></div></div></article>`;
 }
 function renderNext(count=PAGE){
  const batch=state.result.slice(state.rendered,state.rendered+count);
@@ -750,7 +752,7 @@ function openDetail(id){
  if(!state.active){activeBefore=document.activeElement;activeBeforeId=activeBefore?.closest('.term-card')?.dataset.id;}
  closeMobile();state.active=id;renderDetail(id);q('#backdrop').classList.add('show');q('#drawer').classList.add('show');q('#drawer').inert=false;q('#drawer').setAttribute('aria-hidden','false');q('.layout').inert=true;document.body.style.overflow='hidden';q('#drawer').scrollTop=0;q('#close-drawer').focus();syncUrl();
 }
-function closeDetail(){
+function closeDetail(){waveStop();
  if(!state.active)return;state.active=null;q('#backdrop').classList.remove('show');q('#drawer').classList.remove('show');q('#drawer').setAttribute('aria-hidden','true');q('#drawer').inert=true;q('.layout').inert=false;document.body.style.overflow='';syncUrl();
  const replacement=activeBeforeId?q(`[data-open="${activeBeforeId}"]`):null;
  if(replacement)replacement.focus({preventScroll:true});else if(activeBefore?.isConnected)activeBefore.focus({preventScroll:true});else q('#search').focus({preventScroll:true});
@@ -775,6 +777,7 @@ function init(){
  q('#export-fav-button').innerHTML=icon('download');q('#drawer').inert=true;closeMobile();applyStatic();renderCategoryOptions();renderNav();renderChips();filter();q('#result-summary').setAttribute('aria-live','polite');
  qa('.locale-select').forEach(el=>el.addEventListener('change',ev=>setLocale(ev.target.value)));
  document.addEventListener('click',ev=>{
+  if(ev.target.closest('[data-new-previews]')){previewFilter='expanded';setDomain('all');renderPreviewControls();return;}
   const dom=ev.target.closest('[data-dom]');if(dom){setDomain(dom.dataset.dom);return;}
   if(ev.target.closest('[data-favorites]')){setDomain('favorites');return;}
   const quickButton=ev.target.closest('[data-quick]');if(quickButton){setDomain(quickButton.dataset.quick);return;}
@@ -801,17 +804,18 @@ function init(){
  q('#mobile-close').addEventListener('click',()=>{closeMobile();q('#mobile-open').focus()});q('#mobile-backdrop').addEventListener('click',closeMobile);
  matchMedia('(max-width:740px)').addEventListener('change',()=>closeMobile());
  q('#close-drawer').addEventListener('click',closeDetail);q('#backdrop').addEventListener('click',closeDetail);
- q('#detail-body').addEventListener('input',ev=>{if(ev.target.id==='progress-demo'){const v=Number(ev.target.value),e=byId.get(state.active);q('#progress-output').textContent=v+'%';ev.target.setAttribute('aria-valuetext',v+'%');q('#detail-body > .scene .reference-stage').innerHTML=progressVisual(e,v);}});
- q('#detail-body').addEventListener('click',async ev=>{
+ q('#detail-body').addEventListener('input',ev=>{if(ev.target.id==='wave-progress'){waveStop();waveSetProgress(ev.target.value);return;}if(ev.target.id==='progress-demo'){const v=Number(ev.target.value),e=byId.get(state.active);q('#progress-output').textContent=v+'%';ev.target.setAttribute('aria-valuetext',v+'%');q('#detail-body > .scene .reference-stage').innerHTML=progressVisual(e,v);}});
+ q('#detail-body').addEventListener('click',async ev=>{if(ev.target.closest('#wave-reset')){waveStop();waveSetProgress(60);return;}
   if(ev.target.closest('#sample-refresh')){const e=byId.get(state.active);sampleStep=(sampleStep+1)%5;q('#detail-body > .scene .reference-stage').innerHTML=chartVisual(e,sampleStep);announce(tr('가상 예시 데이터를 변경했습니다.','Synthetic sample values changed.'));return;}
-  if(ev.target.closest('#replay')){const scene=q('#drawer .scene');if(scene)scene.replaceWith(scene.cloneNode(true));return;}
+  if(ev.target.closest('#replay')){const e=byId.get(state.active);if(waveRegistry.get(e?.en)?.interactive){wavePlay(e,q('#detail-body > .scene .reference-stage'),true);return;}const scene=q('#drawer .scene');if(scene)scene.replaceWith(scene.cloneNode(true));return;}
   if(ev.target.closest('#save-detail')){changeFav(state.active);return;}
   if(ev.target.closest('#copy-link')){syncUrl();const link=location.href;try{await navigator.clipboard.writeText(link);const btn=q('#copy-link');if(btn){btn.innerHTML=icon('check')+' '+t('copied');setTimeout(()=>{if(btn.isConnected)btn.innerHTML=icon('copy')+' '+t('copyLink')},1500)}}catch{window.prompt(t('copyPrompt'),link)}return;}
  });
  q('#export-button').addEventListener('click',()=>exportEntries(state.result,'atlas-search-results'));q('#export-fav-button').addEventListener('click',()=>exportEntries(entries.filter(x=>fav.has(x.id)),'atlas-bookmarks'));
  q('#hero-browse').addEventListener('click',()=>setDomain('all'));q('#hero-motion').addEventListener('click',()=>setDomain('UI·UX 모션'));
- const preset=new URL(location.href).searchParams.get('collection');if(preset==='charts'||preset==='analytics'){state.domain=preset==='charts'?'데이터 시각화':'분석 UI·UX';renderCategoryOptions();renderNav();renderChips();filter();}
- if(new URL(location.href).searchParams.get('qa')==='1'){Object.defineProperty(window,'atlasQA',{value:{inspect:inspectPreviewCoverage,open:openDetail,renderAll:()=>renderNext(entries.length),counts:()=>({all:allEntries.length,canonical:entries.length,categories:cats.length})},writable:false});}
+ installWaveInteractions();
+ const preset=new URL(location.href).searchParams.get('collection');if(preset==='expanded'){previewFilter='expanded';renderPreviewControls();filter();}if(preset==='charts'||preset==='analytics'){state.domain=preset==='charts'?'데이터 시각화':'분석 UI·UX';renderCategoryOptions();renderNav();renderChips();filter();}
+ if(new URL(location.href).searchParams.get('qa')==='1'){Object.defineProperty(window,'atlasQA',{value:{inspect:inspectPreviewCoverage,waveData:()=>DB,wavePlaybackActive:()=>!!wavePlayback,waveEntries:()=>entries.filter(e=>waveRegistry.has(e.en)).map(e=>({...waveRegistry.get(e.en),differenceKo:waveRegistry.get(e.en).ko,differenceEn:waveRegistry.get(e.en).en,id:e.id,en:e.en,ko:e.ko,draw:undefined})),waveRender:(name,value)=>waveView(entries.find(e=>e.en===name),value),searchGrid:wxSearch,open:openDetail,renderAll:()=>renderNext(entries.length),counts:()=>({all:allEntries.length,canonical:entries.length,categories:cats.length})},writable:false});}
  try{if(location.hash.startsWith('#term=')){const id=decodeURIComponent(location.hash.slice(6));if(byId.has(id))openDetail(id);}}catch{/* Ignore malformed fragments. */}
 }
 init();

@@ -1,0 +1,1912 @@
+{
+  "version": "3.1.0",
+  "canonical": 2109,
+  "specific": 999,
+  "remaining": 1110,
+  "added": 237,
+  "interactive_added": 104,
+  "families": {
+    "motion": 38,
+    "model": 43,
+    "map": 51,
+    "vfx": 105
+  },
+  "entries": [
+    {
+      "id": "dar-5c168aeb307e",
+      "en": "Easing",
+      "ko": "이징",
+      "family": "motion",
+      "key": "easing",
+      "interactive": true
+    },
+    {
+      "id": "dar-e0ccef52769a",
+      "en": "Shared Element Transition",
+      "ko": "공유 요소 전환",
+      "family": "motion",
+      "key": "shared",
+      "interactive": true
+    },
+    {
+      "id": "dar-8df5ee49f66f",
+      "en": "Parallax",
+      "ko": "패럴랙스",
+      "family": "motion",
+      "key": "parallax",
+      "interactive": true
+    },
+    {
+      "id": "dar-a4ebe675ab79",
+      "en": "Scroll-triggered Animation",
+      "ko": "스크롤 트리거 애니메이션",
+      "family": "motion",
+      "key": "scrolltrigger",
+      "interactive": true
+    },
+    {
+      "id": "dar-2be996baff75",
+      "en": "Orbit Controls",
+      "ko": "오빗 컨트롤",
+      "family": "model",
+      "key": "orbit",
+      "interactive": true
+    },
+    {
+      "id": "dar-5154878f570a",
+      "en": "Pan Controls",
+      "ko": "팬 컨트롤",
+      "family": "model",
+      "key": "pan",
+      "interactive": false
+    },
+    {
+      "id": "dar-9abee110c016",
+      "en": "Zoom / Dolly",
+      "ko": "줌·돌리",
+      "family": "model",
+      "key": "dolly",
+      "interactive": true
+    },
+    {
+      "id": "dar-143c1a941b1e",
+      "en": "Scroll-driven Animation",
+      "ko": "스크롤 구동 애니메이션",
+      "family": "motion",
+      "key": "scrolldriven",
+      "interactive": true
+    },
+    {
+      "id": "dar-2bc1d1eb0cf7",
+      "en": "Blockout / Graybox",
+      "ko": "블록아웃·그레이박스",
+      "family": "map",
+      "key": "blockout",
+      "interactive": false
+    },
+    {
+      "id": "dar-ad0827ec6a15",
+      "en": "Whitebox",
+      "ko": "화이트박스",
+      "family": "map",
+      "key": "whitebox",
+      "interactive": false
+    },
+    {
+      "id": "dar-a4ecc434ad05",
+      "en": "Level Metrics",
+      "ko": "레벨 치수 기준",
+      "family": "map",
+      "key": "metrics",
+      "interactive": false
+    },
+    {
+      "id": "dar-264b6ca38ec6",
+      "en": "Critical Path",
+      "ko": "핵심 진행 경로",
+      "family": "map",
+      "key": "critical",
+      "interactive": false
+    },
+    {
+      "id": "dar-26b841495d7c",
+      "en": "Golden Path",
+      "ko": "권장 진행 경로",
+      "family": "map",
+      "key": "golden",
+      "interactive": false
+    },
+    {
+      "id": "dar-2b22a8627f25",
+      "en": "Optional Path",
+      "ko": "선택 경로",
+      "family": "map",
+      "key": "optional",
+      "interactive": false
+    },
+    {
+      "id": "dar-c2dca2756df8",
+      "en": "Looping Path",
+      "ko": "순환 동선",
+      "family": "map",
+      "key": "loop",
+      "interactive": false
+    },
+    {
+      "id": "dar-6233545e410a",
+      "en": "Shortcut",
+      "ko": "지름길",
+      "family": "map",
+      "key": "shortcut",
+      "interactive": false
+    },
+    {
+      "id": "dar-ad51afe9bb08",
+      "en": "Chokepoint",
+      "ko": "병목 지점",
+      "family": "map",
+      "key": "choke",
+      "interactive": false
+    },
+    {
+      "id": "dar-5600d194654a",
+      "en": "Flanking Route",
+      "ko": "우회 공격 경로",
+      "family": "map",
+      "key": "flank",
+      "interactive": false
+    },
+    {
+      "id": "dar-731b742285ca",
+      "en": "Sightline",
+      "ko": "시야선",
+      "family": "map",
+      "key": "sightline",
+      "interactive": false
+    },
+    {
+      "id": "dar-35eac19b8c66",
+      "en": "Line of Sight",
+      "ko": "가시선",
+      "family": "map",
+      "key": "los",
+      "interactive": false
+    },
+    {
+      "id": "dar-b0c18b08ccd9",
+      "en": "Landmark",
+      "ko": "랜드마크",
+      "family": "map",
+      "key": "landmark",
+      "interactive": false
+    },
+    {
+      "id": "dar-7e00cef65f04",
+      "en": "Vista",
+      "ko": "조망 지점",
+      "family": "map",
+      "key": "vista",
+      "interactive": false
+    },
+    {
+      "id": "dar-09eb866e0385",
+      "en": "Reveal",
+      "ko": "공간 공개 연출",
+      "family": "map",
+      "key": "reveal",
+      "interactive": false
+    },
+    {
+      "id": "dar-25bb3d38a883",
+      "en": "Gating",
+      "ko": "진행 제한",
+      "family": "map",
+      "key": "gating",
+      "interactive": false
+    },
+    {
+      "id": "dar-5e3aab05c075",
+      "en": "Soft Gate",
+      "ko": "소프트 게이트",
+      "family": "map",
+      "key": "softgate",
+      "interactive": false
+    },
+    {
+      "id": "dar-c83e58f48c29",
+      "en": "Hard Gate",
+      "ko": "하드 게이트",
+      "family": "map",
+      "key": "hardgate",
+      "interactive": false
+    },
+    {
+      "id": "dar-eb551594ec76",
+      "en": "Hub and Spoke",
+      "ko": "허브·분기 구조",
+      "family": "map",
+      "key": "hub",
+      "interactive": false
+    },
+    {
+      "id": "dar-ad584e08250c",
+      "en": "Breadcrumbing",
+      "ko": "단서 유도",
+      "family": "map",
+      "key": "breadcrumb",
+      "interactive": false
+    },
+    {
+      "id": "dar-36a875ad423a",
+      "en": "Cover Placement",
+      "ko": "엄폐 배치",
+      "family": "map",
+      "key": "cover",
+      "interactive": false
+    },
+    {
+      "id": "dar-a09487ba6d05",
+      "en": "Combat Arena",
+      "ko": "전투 아레나",
+      "family": "map",
+      "key": "arena",
+      "interactive": false
+    },
+    {
+      "id": "dar-0f33cd8d93cd",
+      "en": "Safe Room",
+      "ko": "안전 구역",
+      "family": "map",
+      "key": "safe",
+      "interactive": false
+    },
+    {
+      "id": "dar-19456a85ce6a",
+      "en": "Backtracking",
+      "ko": "되돌아가기",
+      "family": "map",
+      "key": "backtrack",
+      "interactive": false
+    },
+    {
+      "id": "dar-ffd08dbfe497",
+      "en": "One-way Drop",
+      "ko": "일방향 낙하",
+      "family": "map",
+      "key": "drop",
+      "interactive": false
+    },
+    {
+      "id": "dar-5d1a8b649363",
+      "en": "Softlock",
+      "ko": "진행 불능 상태",
+      "family": "map",
+      "key": "softlock",
+      "interactive": false
+    },
+    {
+      "id": "dar-ce3ddf218733",
+      "en": "Kill Volume",
+      "ko": "사망 판정 영역",
+      "family": "map",
+      "key": "kill",
+      "interactive": false
+    },
+    {
+      "id": "dar-7b1061fa2593",
+      "en": "Navigation Mesh",
+      "ko": "내비게이션 메시",
+      "family": "map",
+      "key": "navmesh",
+      "interactive": false
+    },
+    {
+      "id": "dar-53fc2f646e79",
+      "en": "Off-mesh Link",
+      "ko": "영역 간 특수 연결",
+      "family": "map",
+      "key": "offmesh",
+      "interactive": false
+    },
+    {
+      "id": "dar-e1b844947895",
+      "en": "Heightmap",
+      "ko": "높이맵",
+      "family": "map",
+      "key": "heightmap",
+      "interactive": false
+    },
+    {
+      "id": "dar-420a2c0d0280",
+      "en": "Splat Map",
+      "ko": "혼합 가중치 맵",
+      "family": "map",
+      "key": "splat",
+      "interactive": false
+    },
+    {
+      "id": "dar-8754521d75df",
+      "en": "Scatter",
+      "ko": "산포 배치",
+      "family": "map",
+      "key": "scatter",
+      "interactive": false
+    },
+    {
+      "id": "dar-95a0731d2150",
+      "en": "Foliage",
+      "ko": "식생 오브젝트",
+      "family": "map",
+      "key": "foliage",
+      "interactive": false
+    },
+    {
+      "id": "dar-63802dad5272",
+      "en": "Modular Kit",
+      "ko": "모듈러 키트",
+      "family": "map",
+      "key": "modular",
+      "interactive": false
+    },
+    {
+      "id": "dar-2fcd6d481ddf",
+      "en": "World Streaming",
+      "ko": "월드 스트리밍",
+      "family": "map",
+      "key": "streaming",
+      "interactive": false
+    },
+    {
+      "id": "dar-a434b129a5b5",
+      "en": "World Partition",
+      "ko": "월드 파티션",
+      "family": "map",
+      "key": "partition",
+      "interactive": false
+    },
+    {
+      "id": "dar-b162f4eaa6ef",
+      "en": "Chunk",
+      "ko": "청크",
+      "family": "map",
+      "key": "chunk",
+      "interactive": false
+    },
+    {
+      "id": "dar-6d5258e9f0bc",
+      "en": "Tileset",
+      "ko": "타일셋",
+      "family": "map",
+      "key": "tileset",
+      "interactive": false
+    },
+    {
+      "id": "dar-794544d2a74d",
+      "en": "Tilemap",
+      "ko": "타일맵",
+      "family": "map",
+      "key": "tilemap",
+      "interactive": false
+    },
+    {
+      "id": "dar-58e787eceeaa",
+      "en": "Autotiling",
+      "ko": "오토타일링",
+      "family": "map",
+      "key": "autotile",
+      "interactive": false
+    },
+    {
+      "id": "dar-a909a2918c7f",
+      "en": "Object Layer",
+      "ko": "오브젝트 레이어",
+      "family": "map",
+      "key": "objectlayer",
+      "interactive": false
+    },
+    {
+      "id": "dar-6288cb3965cd",
+      "en": "Collision Layer",
+      "ko": "충돌 레이어",
+      "family": "map",
+      "key": "collisionlayer",
+      "interactive": false
+    },
+    {
+      "id": "dar-f12c17d4abc4",
+      "en": "Hex Grid",
+      "ko": "육각 격자",
+      "family": "map",
+      "key": "hex",
+      "interactive": false
+    },
+    {
+      "id": "dar-6980cc5d27af",
+      "en": "Isometric Grid",
+      "ko": "아이소메트릭 격자",
+      "family": "map",
+      "key": "iso",
+      "interactive": false
+    },
+    {
+      "id": "dar-8dfc83c518a6",
+      "en": "A* Search",
+      "ko": "A* 탐색",
+      "family": "map",
+      "key": "astar",
+      "interactive": true
+    },
+    {
+      "id": "dar-60a9404946da",
+      "en": "Dijkstra Algorithm",
+      "ko": "다익스트라 알고리즘",
+      "family": "map",
+      "key": "dijkstra",
+      "interactive": true
+    },
+    {
+      "id": "dar-524e3f734ccd",
+      "en": "Breadth-first Search",
+      "ko": "너비 우선 탐색",
+      "family": "map",
+      "key": "bfs",
+      "interactive": true
+    },
+    {
+      "id": "dar-d77504792c31",
+      "en": "Flood Fill",
+      "ko": "플러드 필",
+      "family": "map",
+      "key": "flood",
+      "interactive": true
+    },
+    {
+      "id": "dar-6cb76d24f5d6",
+      "en": "Poisson Disk Sampling",
+      "ko": "포아송 디스크 샘플링",
+      "family": "map",
+      "key": "poisson",
+      "interactive": false
+    },
+    {
+      "id": "dar-3c96baa9e594",
+      "en": "Connectivity Check",
+      "ko": "연결성 검사",
+      "family": "map",
+      "key": "connectivity",
+      "interactive": true
+    },
+    {
+      "id": "dar-6fafebad2c8b",
+      "en": "Reachability",
+      "ko": "도달 가능성",
+      "family": "map",
+      "key": "reachable",
+      "interactive": true
+    },
+    {
+      "id": "dar-1b24b83f353f",
+      "en": "Mesh",
+      "ko": "메시",
+      "family": "model",
+      "key": "mesh",
+      "interactive": false
+    },
+    {
+      "id": "dar-db8b9d40e0e2",
+      "en": "Vertex",
+      "ko": "정점",
+      "family": "model",
+      "key": "vertex",
+      "interactive": false
+    },
+    {
+      "id": "dar-bd2e9d455c77",
+      "en": "Edge",
+      "ko": "모서리",
+      "family": "model",
+      "key": "edge",
+      "interactive": false
+    },
+    {
+      "id": "dar-bd3d929626d3",
+      "en": "Face",
+      "ko": "면",
+      "family": "model",
+      "key": "face",
+      "interactive": false
+    },
+    {
+      "id": "dar-bf4d263348ef",
+      "en": "Polygon",
+      "ko": "다각형",
+      "family": "model",
+      "key": "polygon",
+      "interactive": false
+    },
+    {
+      "id": "dar-e734709ef34e",
+      "en": "Triangle / Quad / N-gon",
+      "ko": "삼각형·사각형·다변형",
+      "family": "model",
+      "key": "tris",
+      "interactive": false
+    },
+    {
+      "id": "dar-71db736c4f18",
+      "en": "Topology",
+      "ko": "토폴로지",
+      "family": "model",
+      "key": "topology",
+      "interactive": false
+    },
+    {
+      "id": "dar-1d3be273d8b0",
+      "en": "Edge Loop",
+      "ko": "엣지 루프",
+      "family": "model",
+      "key": "edgeloop",
+      "interactive": false
+    },
+    {
+      "id": "dar-bca97fdcc9dc",
+      "en": "Surface Normal",
+      "ko": "표면 법선",
+      "family": "model",
+      "key": "normal",
+      "interactive": false
+    },
+    {
+      "id": "dar-d39f075a842f",
+      "en": "Bevel",
+      "ko": "베벨",
+      "family": "model",
+      "key": "bevel",
+      "interactive": false
+    },
+    {
+      "id": "dar-a0942503fa6f",
+      "en": "Extrude",
+      "ko": "돌출",
+      "family": "model",
+      "key": "extrude",
+      "interactive": true
+    },
+    {
+      "id": "dar-71ecc3f2fc19",
+      "en": "Inset",
+      "ko": "인셋",
+      "family": "model",
+      "key": "inset",
+      "interactive": false
+    },
+    {
+      "id": "dar-91d1b0df514e",
+      "en": "Subdivision Surface",
+      "ko": "세분화 표면",
+      "family": "model",
+      "key": "subdivision",
+      "interactive": false
+    },
+    {
+      "id": "dar-9277d67ceeef",
+      "en": "Boolean Modeling",
+      "ko": "불리언 모델링",
+      "family": "model",
+      "key": "boolean",
+      "interactive": false
+    },
+    {
+      "id": "dar-363d27f6af5d",
+      "en": "Decimation",
+      "ko": "폴리곤 감소",
+      "family": "model",
+      "key": "decimate",
+      "interactive": false
+    },
+    {
+      "id": "dar-a0cca52f30d7",
+      "en": "Non-manifold Geometry",
+      "ko": "비매니폴드 기하",
+      "family": "model",
+      "key": "nonmanifold",
+      "interactive": false
+    },
+    {
+      "id": "dar-fffe1f28ebd2",
+      "en": "UV Mapping",
+      "ko": "UV 매핑",
+      "family": "model",
+      "key": "uv",
+      "interactive": false
+    },
+    {
+      "id": "dar-39a2357138e1",
+      "en": "UV Unwrap",
+      "ko": "UV 펼치기",
+      "family": "model",
+      "key": "unwrap",
+      "interactive": false
+    },
+    {
+      "id": "dar-fc6217f2d60b",
+      "en": "UV Island",
+      "ko": "UV 아일랜드",
+      "family": "model",
+      "key": "island",
+      "interactive": false
+    },
+    {
+      "id": "dar-0195ac8d944e",
+      "en": "UV Seam",
+      "ko": "UV 심",
+      "family": "model",
+      "key": "seam",
+      "interactive": false
+    },
+    {
+      "id": "dar-4212e1e44f65",
+      "en": "Texel Density",
+      "ko": "텍셀 밀도",
+      "family": "model",
+      "key": "density",
+      "interactive": false
+    },
+    {
+      "id": "dar-560e83cbdec2",
+      "en": "Texture Atlas",
+      "ko": "텍스처 아틀라스",
+      "family": "vfx",
+      "key": "atlas",
+      "interactive": false
+    },
+    {
+      "id": "dar-90ebc54a43fc",
+      "en": "Trim Sheet",
+      "ko": "트림 시트",
+      "family": "model",
+      "key": "trim",
+      "interactive": false
+    },
+    {
+      "id": "dar-be32935bc7c3",
+      "en": "UDIM",
+      "ko": "UDIM 타일 체계",
+      "family": "model",
+      "key": "udim",
+      "interactive": false
+    },
+    {
+      "id": "dar-7fec831fcc0e",
+      "en": "Local / World Space",
+      "ko": "로컬·월드 공간",
+      "family": "model",
+      "key": "localworld",
+      "interactive": false
+    },
+    {
+      "id": "dar-3f753ed905dd",
+      "en": "Albedo / Base Color",
+      "ko": "알베도·기본색",
+      "family": "model",
+      "key": "albedo",
+      "interactive": false
+    },
+    {
+      "id": "dar-306805b1c95b",
+      "en": "Metallic",
+      "ko": "금속성",
+      "family": "model",
+      "key": "metallic",
+      "interactive": false
+    },
+    {
+      "id": "dar-d2dd9daadcc2",
+      "en": "Roughness",
+      "ko": "거칠기",
+      "family": "model",
+      "key": "roughness",
+      "interactive": false
+    },
+    {
+      "id": "dar-2f57f3d2811a",
+      "en": "Normal Map",
+      "ko": "노멀맵",
+      "family": "model",
+      "key": "normalmap",
+      "interactive": false
+    },
+    {
+      "id": "dar-1dd398dd7d3b",
+      "en": "Bump Map",
+      "ko": "범프맵",
+      "family": "model",
+      "key": "bump",
+      "interactive": false
+    },
+    {
+      "id": "dar-bdf5a0a15b12",
+      "en": "Displacement Map",
+      "ko": "디스플레이스먼트맵",
+      "family": "model",
+      "key": "displacement",
+      "interactive": false
+    },
+    {
+      "id": "dar-c7ddd422cb11",
+      "en": "Ambient Occlusion",
+      "ko": "앰비언트 오클루전",
+      "family": "model",
+      "key": "ao",
+      "interactive": false
+    },
+    {
+      "id": "dar-f8b176e72eb3",
+      "en": "Emission",
+      "ko": "자체 발광",
+      "family": "model",
+      "key": "emission",
+      "interactive": false
+    },
+    {
+      "id": "dar-df083084e764",
+      "en": "Transmission",
+      "ko": "투과",
+      "family": "model",
+      "key": "transmission",
+      "interactive": false
+    },
+    {
+      "id": "dar-953cbc32f4e3",
+      "en": "Fresnel Effect",
+      "ko": "프레넬 효과",
+      "family": "vfx",
+      "key": "fresnel",
+      "interactive": false
+    },
+    {
+      "id": "dar-f93bbf478117",
+      "en": "Frustum Culling",
+      "ko": "시야체 절두체 컬링",
+      "family": "model",
+      "key": "frustum",
+      "interactive": false
+    },
+    {
+      "id": "dar-42c535524a7b",
+      "en": "Occlusion Culling",
+      "ko": "가림 컬링",
+      "family": "model",
+      "key": "occlusion",
+      "interactive": false
+    },
+    {
+      "id": "dar-27d1c0379547",
+      "en": "Back-face Culling",
+      "ko": "뒷면 컬링",
+      "family": "model",
+      "key": "backface",
+      "interactive": false
+    },
+    {
+      "id": "dar-23915ce839c3",
+      "en": "Mipmap",
+      "ko": "밉맵",
+      "family": "model",
+      "key": "mipmap",
+      "interactive": false
+    },
+    {
+      "id": "dar-3ece2e0d4d1f",
+      "en": "Depth Buffer",
+      "ko": "깊이 버퍼",
+      "family": "model",
+      "key": "depth",
+      "interactive": false
+    },
+    {
+      "id": "dar-bdab31658afa",
+      "en": "Depth of Field",
+      "ko": "피사계 심도",
+      "family": "vfx",
+      "key": "dof",
+      "interactive": false
+    },
+    {
+      "id": "dar-5dce6d746620",
+      "en": "Motion Blur",
+      "ko": "모션 블러",
+      "family": "vfx",
+      "key": "motionblur",
+      "interactive": false
+    },
+    {
+      "id": "dar-52b799ca2cb1",
+      "en": "Field of View",
+      "ko": "시야각",
+      "family": "model",
+      "key": "fov",
+      "interactive": true
+    },
+    {
+      "id": "dar-e95baf2eb99f",
+      "en": "Near / Far Clip Plane",
+      "ko": "근·원 클리핑 평면",
+      "family": "model",
+      "key": "clip",
+      "interactive": false
+    },
+    {
+      "id": "dar-83accbd2a081",
+      "en": "Frame Budget",
+      "ko": "프레임 시간 예산",
+      "family": "motion",
+      "key": "budget",
+      "interactive": false
+    },
+    {
+      "id": "dar-4523ea190759",
+      "en": "Interpolation",
+      "ko": "보간",
+      "family": "motion",
+      "key": "interpolate",
+      "interactive": true
+    },
+    {
+      "id": "dar-a55a3294dd1f",
+      "en": "Squash and Stretch",
+      "ko": "눌림과 늘어남",
+      "family": "motion",
+      "key": "squash",
+      "interactive": true
+    },
+    {
+      "id": "dar-281fbefd02a0",
+      "en": "Anticipation",
+      "ko": "예비 동작",
+      "family": "motion",
+      "key": "anticipation",
+      "interactive": true
+    },
+    {
+      "id": "dar-074b1bb1a000",
+      "en": "Follow-through",
+      "ko": "후속 동작",
+      "family": "motion",
+      "key": "follow",
+      "interactive": true
+    },
+    {
+      "id": "dar-804b09cd285a",
+      "en": "Particle Lifetime",
+      "ko": "입자 수명",
+      "family": "vfx",
+      "key": "lifetime",
+      "interactive": true
+    },
+    {
+      "id": "dar-402048525549",
+      "en": "Keyframe",
+      "ko": "키프레임",
+      "family": "motion",
+      "key": "keyframe",
+      "interactive": true
+    },
+    {
+      "id": "dar-0a52b630bff0",
+      "en": "Cubic Bézier Easing",
+      "ko": "큐빅 베지어 이징",
+      "family": "motion",
+      "key": "bezier",
+      "interactive": true
+    },
+    {
+      "id": "dar-2a2608846665",
+      "en": "Stiffness",
+      "ko": "강성",
+      "family": "motion",
+      "key": "stiffness",
+      "interactive": true
+    },
+    {
+      "id": "dar-b160db5bbe7c",
+      "en": "Damping",
+      "ko": "감쇠",
+      "family": "motion",
+      "key": "damping",
+      "interactive": true
+    },
+    {
+      "id": "dar-9e8c0e17f31a",
+      "en": "Mass",
+      "ko": "질량 파라미터",
+      "family": "motion",
+      "key": "mass",
+      "interactive": true
+    },
+    {
+      "id": "dar-f071475735bf",
+      "en": "Undershoot",
+      "ko": "언더슈트",
+      "family": "motion",
+      "key": "undershoot",
+      "interactive": true
+    },
+    {
+      "id": "dar-edbc20fb250d",
+      "en": "Page Transition",
+      "ko": "페이지 전환",
+      "family": "motion",
+      "key": "page",
+      "interactive": true
+    },
+    {
+      "id": "dar-3f2d6c544f00",
+      "en": "Container Transform",
+      "ko": "컨테이너 변환",
+      "family": "motion",
+      "key": "container",
+      "interactive": true
+    },
+    {
+      "id": "dar-c08b9bd7931a",
+      "en": "Layout Animation",
+      "ko": "레이아웃 애니메이션",
+      "family": "motion",
+      "key": "layout",
+      "interactive": false
+    },
+    {
+      "id": "dar-1c69f918a1a9",
+      "en": "Expand / Collapse Motion",
+      "ko": "펼침·접힘 모션",
+      "family": "motion",
+      "key": "expand",
+      "interactive": true
+    },
+    {
+      "id": "dar-3fd8fd067911",
+      "en": "Focus Transition",
+      "ko": "포커스 전환 표현",
+      "family": "motion",
+      "key": "focus",
+      "interactive": true
+    },
+    {
+      "id": "dar-4baee690104e",
+      "en": "Progress Interpolation",
+      "ko": "진행률 보간",
+      "family": "motion",
+      "key": "progress",
+      "interactive": true
+    },
+    {
+      "id": "dar-4ca0b00b7cd5",
+      "en": "Success Check Animation",
+      "ko": "성공 체크 모션",
+      "family": "motion",
+      "key": "check",
+      "interactive": true
+    },
+    {
+      "id": "dar-b33c1eee238b",
+      "en": "Notification Arrival Motion",
+      "ko": "알림 도착 모션",
+      "family": "motion",
+      "key": "notification",
+      "interactive": true
+    },
+    {
+      "id": "dar-21e46590b145",
+      "en": "Scroll Reveal",
+      "ko": "스크롤 리빌",
+      "family": "motion",
+      "key": "reveal",
+      "interactive": true
+    },
+    {
+      "id": "dar-1d89cf6d264e",
+      "en": "Sticky Pinning",
+      "ko": "스크롤 고정 연출",
+      "family": "motion",
+      "key": "pinning",
+      "interactive": true
+    },
+    {
+      "id": "dar-d29826ce2274",
+      "en": "Rubber Banding",
+      "ko": "고무줄 반발",
+      "family": "motion",
+      "key": "rubber",
+      "interactive": true
+    },
+    {
+      "id": "dar-e575513e7a8c",
+      "en": "Snap-back",
+      "ko": "스냅백",
+      "family": "motion",
+      "key": "snapback",
+      "interactive": true
+    },
+    {
+      "id": "dar-853922733624",
+      "en": "Snap Point",
+      "ko": "스냅 지점",
+      "family": "motion",
+      "key": "snappoint",
+      "interactive": true
+    },
+    {
+      "id": "dar-f1f0aed08ee5",
+      "en": "Drag-to-dismiss",
+      "ko": "끌어서 닫기",
+      "family": "motion",
+      "key": "dismiss",
+      "interactive": true
+    },
+    {
+      "id": "dar-9b1cb3a61494",
+      "en": "Pull-to-refresh Motion",
+      "ko": "당겨서 새로고침 모션",
+      "family": "motion",
+      "key": "pull",
+      "interactive": true
+    },
+    {
+      "id": "dar-3d3cac963f08",
+      "en": "Motion Choreography",
+      "ko": "모션 안무",
+      "family": "motion",
+      "key": "choreography",
+      "interactive": true
+    },
+    {
+      "id": "dar-101fc99d7e85",
+      "en": "Animation Timeline",
+      "ko": "애니메이션 타임라인",
+      "family": "motion",
+      "key": "timeline",
+      "interactive": true
+    },
+    {
+      "id": "dar-96d64b70036d",
+      "en": "Secondary Motion",
+      "ko": "보조 모션",
+      "family": "motion",
+      "key": "secondary",
+      "interactive": true
+    },
+    {
+      "id": "dar-f4994a315b5c",
+      "en": "Motion Arc",
+      "ko": "모션 아크",
+      "family": "motion",
+      "key": "arc",
+      "interactive": true
+    },
+    {
+      "id": "dar-06fa317bc341",
+      "en": "Motion Token",
+      "ko": "모션 토큰",
+      "family": "motion",
+      "key": "motiontoken",
+      "interactive": false
+    },
+    {
+      "id": "dar-ad65e902a876",
+      "en": "Frame Pacing",
+      "ko": "프레임 페이싱",
+      "family": "motion",
+      "key": "pacing",
+      "interactive": false
+    },
+    {
+      "id": "dar-ee4f2d7850ee",
+      "en": "Jank",
+      "ko": "잰크·끊김",
+      "family": "motion",
+      "key": "jank",
+      "interactive": false
+    },
+    {
+      "id": "dar-64bd2bac1fe4",
+      "en": "Spawn Rate",
+      "ko": "스폰 속도",
+      "family": "vfx",
+      "key": "spawnrate",
+      "interactive": true
+    },
+    {
+      "id": "dar-d6c6671ef6c1",
+      "en": "Burst Emission",
+      "ko": "버스트 방출",
+      "family": "vfx",
+      "key": "burst",
+      "interactive": true
+    },
+    {
+      "id": "dar-8100e53e9795",
+      "en": "Emission Shape",
+      "ko": "방출 형태",
+      "family": "vfx",
+      "key": "shape",
+      "interactive": false
+    },
+    {
+      "id": "dar-ff75cf1fa06b",
+      "en": "Spawn Position",
+      "ko": "생성 위치",
+      "family": "vfx",
+      "key": "spawnpos",
+      "interactive": false
+    },
+    {
+      "id": "dar-7d4422f7da92",
+      "en": "Initial Velocity",
+      "ko": "초기 속도",
+      "family": "vfx",
+      "key": "velocity",
+      "interactive": false
+    },
+    {
+      "id": "dar-1f45360c16c2",
+      "en": "Normalized Age",
+      "ko": "정규화된 입자 나이",
+      "family": "vfx",
+      "key": "age",
+      "interactive": true
+    },
+    {
+      "id": "dar-b723dad8aa11",
+      "en": "Color over Lifetime",
+      "ko": "수명별 색 변화",
+      "family": "vfx",
+      "key": "colorlife",
+      "interactive": true
+    },
+    {
+      "id": "dar-c188479f695f",
+      "en": "Size over Lifetime",
+      "ko": "수명별 크기 변화",
+      "family": "vfx",
+      "key": "sizelife",
+      "interactive": true
+    },
+    {
+      "id": "dar-f2afb7669f3d",
+      "en": "Rotation over Lifetime",
+      "ko": "수명별 회전 변화",
+      "family": "vfx",
+      "key": "rotlife",
+      "interactive": true
+    },
+    {
+      "id": "dar-f5c247ffd40a",
+      "en": "Velocity over Lifetime",
+      "ko": "수명별 속도 변화",
+      "family": "vfx",
+      "key": "vellife",
+      "interactive": true
+    },
+    {
+      "id": "dar-77e041897963",
+      "en": "Spawn Randomization",
+      "ko": "생성 무작위화",
+      "family": "vfx",
+      "key": "random",
+      "interactive": false
+    },
+    {
+      "id": "dar-c3095621f1e8",
+      "en": "Random Seed",
+      "ko": "난수 시드",
+      "family": "vfx",
+      "key": "seed",
+      "interactive": true
+    },
+    {
+      "id": "dar-0f1040a37dc1",
+      "en": "Prewarm",
+      "ko": "프리웜·사전 진행",
+      "family": "vfx",
+      "key": "prewarm",
+      "interactive": true
+    },
+    {
+      "id": "dar-5073b1310458",
+      "en": "Looping Emitter",
+      "ko": "반복 이미터",
+      "family": "vfx",
+      "key": "loop",
+      "interactive": false
+    },
+    {
+      "id": "dar-127fa71bc7d9",
+      "en": "One-shot Effect",
+      "ko": "단발 효과",
+      "family": "vfx",
+      "key": "oneshot",
+      "interactive": false
+    },
+    {
+      "id": "dar-50876bf04355",
+      "en": "Sub-emitter",
+      "ko": "서브 이미터",
+      "family": "vfx",
+      "key": "subemitter",
+      "interactive": false
+    },
+    {
+      "id": "dar-edcd3c0a4d16",
+      "en": "Particle Event",
+      "ko": "파티클 이벤트",
+      "family": "vfx",
+      "key": "event",
+      "interactive": false
+    },
+    {
+      "id": "dar-662247d32e60",
+      "en": "Gravity Force",
+      "ko": "중력 효과",
+      "family": "vfx",
+      "key": "gravity",
+      "interactive": true
+    },
+    {
+      "id": "dar-d3c2c003743a",
+      "en": "Drag Force",
+      "ko": "항력",
+      "family": "vfx",
+      "key": "drag",
+      "interactive": true
+    },
+    {
+      "id": "dar-b3694681e3cd",
+      "en": "Attractor",
+      "ko": "어트랙터·흡인체",
+      "family": "vfx",
+      "key": "attractor",
+      "interactive": true
+    },
+    {
+      "id": "dar-dacbb28ae7ab",
+      "en": "Repulsor",
+      "ko": "반발체",
+      "family": "vfx",
+      "key": "repulsor",
+      "interactive": true
+    },
+    {
+      "id": "dar-3a3e4b7aff05",
+      "en": "Vortex Force",
+      "ko": "소용돌이 힘",
+      "family": "vfx",
+      "key": "vortex",
+      "interactive": true
+    },
+    {
+      "id": "dar-674d9c8b2a7c",
+      "en": "Turbulence",
+      "ko": "난류",
+      "family": "vfx",
+      "key": "turbulence",
+      "interactive": true
+    },
+    {
+      "id": "dar-1b9e383ebabe",
+      "en": "Curl Noise",
+      "ko": "컬 노이즈",
+      "family": "vfx",
+      "key": "curl",
+      "interactive": true
+    },
+    {
+      "id": "dar-77314de33e3f",
+      "en": "Vector Field",
+      "ko": "벡터 필드",
+      "family": "vfx",
+      "key": "vector",
+      "interactive": false
+    },
+    {
+      "id": "dar-dc08b55b3cd5",
+      "en": "Particle Flow Field",
+      "ko": "입자 플로우 필드",
+      "family": "vfx",
+      "key": "flowfield",
+      "interactive": true
+    },
+    {
+      "id": "dar-d0805ba92d1d",
+      "en": "Brownian Motion",
+      "ko": "브라운 운동형 움직임",
+      "family": "vfx",
+      "key": "brownian",
+      "interactive": true
+    },
+    {
+      "id": "dar-8303b76547a7",
+      "en": "Particle Collision",
+      "ko": "입자 충돌",
+      "family": "vfx",
+      "key": "collision",
+      "interactive": true
+    },
+    {
+      "id": "dar-81496eb986d2",
+      "en": "Restitution",
+      "ko": "반발 계수",
+      "family": "vfx",
+      "key": "bounce",
+      "interactive": true
+    },
+    {
+      "id": "dar-e082c1f2c568",
+      "en": "Collision Friction",
+      "ko": "충돌 마찰",
+      "family": "vfx",
+      "key": "friction",
+      "interactive": true
+    },
+    {
+      "id": "dar-6d26745f0639",
+      "en": "SDF Collision",
+      "ko": "부호 거리장 충돌",
+      "family": "vfx",
+      "key": "sdf",
+      "interactive": true
+    },
+    {
+      "id": "dar-b144738873b3",
+      "en": "Depth-buffer Collision",
+      "ko": "깊이 버퍼 충돌",
+      "family": "vfx",
+      "key": "depthcollision",
+      "interactive": true
+    },
+    {
+      "id": "dar-52f9af4394a4",
+      "en": "Inherit Velocity",
+      "ko": "속도 상속",
+      "family": "vfx",
+      "key": "inherit",
+      "interactive": true
+    },
+    {
+      "id": "dar-7650ce09e06f",
+      "en": "Local-space Simulation",
+      "ko": "로컬 공간 시뮬레이션",
+      "family": "vfx",
+      "key": "localspace",
+      "interactive": true
+    },
+    {
+      "id": "dar-59da524f6a1c",
+      "en": "World-space Simulation",
+      "ko": "월드 공간 시뮬레이션",
+      "family": "vfx",
+      "key": "worldspace",
+      "interactive": true
+    },
+    {
+      "id": "dar-7f2f2f691f51",
+      "en": "Spline-following Particles",
+      "ko": "스플라인 추종 입자",
+      "family": "vfx",
+      "key": "spline",
+      "interactive": true
+    },
+    {
+      "id": "dar-d26f38f769f7",
+      "en": "Particle Flocking",
+      "ko": "입자 군집",
+      "family": "vfx",
+      "key": "flocking",
+      "interactive": true
+    },
+    {
+      "id": "dar-6c3c02c5593b",
+      "en": "Sprite Particle",
+      "ko": "스프라이트 입자",
+      "family": "vfx",
+      "key": "sprite",
+      "interactive": false
+    },
+    {
+      "id": "dar-6904a45617ef",
+      "en": "Billboard",
+      "ko": "빌보드",
+      "family": "vfx",
+      "key": "billboard",
+      "interactive": false
+    },
+    {
+      "id": "dar-f41bd0d1b676",
+      "en": "Stretched Billboard",
+      "ko": "늘어난 빌보드",
+      "family": "vfx",
+      "key": "stretched",
+      "interactive": false
+    },
+    {
+      "id": "dar-ce4d3b1b8d2a",
+      "en": "Mesh Particle",
+      "ko": "메시 입자",
+      "family": "vfx",
+      "key": "mesh",
+      "interactive": false
+    },
+    {
+      "id": "dar-a301d8c9e224",
+      "en": "Ribbon Width Curve",
+      "ko": "리본 폭 곡선",
+      "family": "vfx",
+      "key": "ribbonwidth",
+      "interactive": false
+    },
+    {
+      "id": "dar-5ac591a778eb",
+      "en": "Trail Lifetime",
+      "ko": "트레일 유지 시간",
+      "family": "vfx",
+      "key": "trailtime",
+      "interactive": true
+    },
+    {
+      "id": "dar-2f250d1c9e32",
+      "en": "Geometry Trail",
+      "ko": "기하 트레일",
+      "family": "vfx",
+      "key": "geotrail",
+      "interactive": false
+    },
+    {
+      "id": "dar-28935371194d",
+      "en": "Flipbook Texture",
+      "ko": "플립북 텍스처",
+      "family": "vfx",
+      "key": "flipbook",
+      "interactive": true
+    },
+    {
+      "id": "dar-6c4ec9ebec11",
+      "en": "Texture Sheet Animation",
+      "ko": "텍스처 시트 애니메이션",
+      "family": "vfx",
+      "key": "sheet",
+      "interactive": true
+    },
+    {
+      "id": "dar-322506504eab",
+      "en": "Flow Map",
+      "ko": "플로우 맵",
+      "family": "vfx",
+      "key": "flowmap",
+      "interactive": false
+    },
+    {
+      "id": "dar-7a28a1002645",
+      "en": "Noise Texture",
+      "ko": "노이즈 텍스처",
+      "family": "vfx",
+      "key": "noise",
+      "interactive": false
+    },
+    {
+      "id": "dar-6c906d6e4f4e",
+      "en": "Erosion Mask",
+      "ko": "침식 마스크",
+      "family": "vfx",
+      "key": "erosion",
+      "interactive": true
+    },
+    {
+      "id": "dar-4b6390bc4208",
+      "en": "Alpha Mask",
+      "ko": "알파 마스크",
+      "family": "vfx",
+      "key": "mask",
+      "interactive": false
+    },
+    {
+      "id": "dar-6d352b77dba7",
+      "en": "Alpha Clip",
+      "ko": "알파 클립",
+      "family": "vfx",
+      "key": "alphaclip",
+      "interactive": true
+    },
+    {
+      "id": "dar-18ea9c47d61f",
+      "en": "Alpha Blending",
+      "ko": "알파 블렌딩",
+      "family": "vfx",
+      "key": "alpha",
+      "interactive": true
+    },
+    {
+      "id": "dar-8f7ec21854b4",
+      "en": "Premultiplied Alpha",
+      "ko": "프리멀티플라이드 알파",
+      "family": "vfx",
+      "key": "premultiplied",
+      "interactive": false
+    },
+    {
+      "id": "dar-49664dac6c13",
+      "en": "Additive Blending",
+      "ko": "가산 합성",
+      "family": "vfx",
+      "key": "additive",
+      "interactive": false
+    },
+    {
+      "id": "dar-8c399fd0ad92",
+      "en": "Multiplicative Blending",
+      "ko": "곱셈 합성",
+      "family": "vfx",
+      "key": "multiply",
+      "interactive": false
+    },
+    {
+      "id": "dar-a29aa97c1f6c",
+      "en": "Distortion Shader",
+      "ko": "왜곡 셰이더",
+      "family": "vfx",
+      "key": "distort",
+      "interactive": true
+    },
+    {
+      "id": "dar-ed0a42512090",
+      "en": "Vertex Displacement",
+      "ko": "정점 변위",
+      "family": "vfx",
+      "key": "displace",
+      "interactive": true
+    },
+    {
+      "id": "dar-75398ac1e22e",
+      "en": "Fresnel Rim Mask",
+      "ko": "프레넬 림 마스크",
+      "family": "vfx",
+      "key": "rim",
+      "interactive": false
+    },
+    {
+      "id": "dar-68ca7f599aec",
+      "en": "Channel Packing",
+      "ko": "채널 패킹",
+      "family": "vfx",
+      "key": "channel",
+      "interactive": false
+    },
+    {
+      "id": "dar-7da71e5e99f4",
+      "en": "Impact Spark",
+      "ko": "충돌 불꽃",
+      "family": "vfx",
+      "key": "impact",
+      "interactive": false
+    },
+    {
+      "id": "dar-dcd07a13db32",
+      "en": "Slash Effect",
+      "ko": "슬래시·검기 효과",
+      "family": "vfx",
+      "key": "slash",
+      "interactive": false
+    },
+    {
+      "id": "dar-e9677f42c62c",
+      "en": "Projectile Effect",
+      "ko": "발사체 효과",
+      "family": "vfx",
+      "key": "projectile",
+      "interactive": true
+    },
+    {
+      "id": "dar-8a93fc62ae28",
+      "en": "Charge-up Effect",
+      "ko": "충전 효과",
+      "family": "vfx",
+      "key": "charge",
+      "interactive": true
+    },
+    {
+      "id": "dar-cfaf66e728e0",
+      "en": "Cast Effect",
+      "ko": "시전 효과",
+      "family": "vfx",
+      "key": "cast",
+      "interactive": true
+    },
+    {
+      "id": "dar-96da6e832ffa",
+      "en": "Channeling Effect",
+      "ko": "유지 시전 효과",
+      "family": "vfx",
+      "key": "channeling",
+      "interactive": true
+    },
+    {
+      "id": "dar-11ad5cb2e8fc",
+      "en": "Ground Target Indicator",
+      "ko": "지면 타깃 표시",
+      "family": "vfx",
+      "key": "target",
+      "interactive": true
+    },
+    {
+      "id": "dar-16fdd6d90da6",
+      "en": "Aura",
+      "ko": "오라",
+      "family": "vfx",
+      "key": "aura",
+      "interactive": true
+    },
+    {
+      "id": "dar-54a3809288f1",
+      "en": "Shield Effect",
+      "ko": "방어막 효과",
+      "family": "vfx",
+      "key": "shield",
+      "interactive": true
+    },
+    {
+      "id": "dar-21ec9aa588fc",
+      "en": "Shield Hit Ripple",
+      "ko": "방어막 충격 파문",
+      "family": "vfx",
+      "key": "shieldhit",
+      "interactive": true
+    },
+    {
+      "id": "dar-81ee78d3121d",
+      "en": "Heal Effect",
+      "ko": "회복 효과",
+      "family": "vfx",
+      "key": "heal",
+      "interactive": true
+    },
+    {
+      "id": "dar-241f250943d8",
+      "en": "Teleport Effect",
+      "ko": "순간이동 효과",
+      "family": "vfx",
+      "key": "teleport",
+      "interactive": true
+    },
+    {
+      "id": "dar-b9cdceb0f640",
+      "en": "Summoning Effect",
+      "ko": "소환 효과",
+      "family": "vfx",
+      "key": "summon",
+      "interactive": true
+    },
+    {
+      "id": "dar-af4cc1fac1a9",
+      "en": "Disintegration Effect",
+      "ko": "분해 소멸 효과",
+      "family": "vfx",
+      "key": "disintegrate",
+      "interactive": true
+    },
+    {
+      "id": "dar-73d1d95a02c5",
+      "en": "Critical Hit Effect",
+      "ko": "치명타 효과",
+      "family": "vfx",
+      "key": "critical",
+      "interactive": false
+    },
+    {
+      "id": "dar-f87284374e01",
+      "en": "Loot Beam",
+      "ko": "전리품 빛기둥",
+      "family": "vfx",
+      "key": "loot",
+      "interactive": false
+    },
+    {
+      "id": "dar-dfa79fed3b3b",
+      "en": "Fire Effect",
+      "ko": "화염 효과",
+      "family": "vfx",
+      "key": "fire",
+      "interactive": false
+    },
+    {
+      "id": "dar-b174e0532938",
+      "en": "Smoke Plume",
+      "ko": "연기 기둥",
+      "family": "vfx",
+      "key": "smoke",
+      "interactive": true
+    },
+    {
+      "id": "dar-627cb463d9fc",
+      "en": "Dust Puff",
+      "ko": "먼지 퍼프",
+      "family": "vfx",
+      "key": "dust",
+      "interactive": false
+    },
+    {
+      "id": "dar-8d554f927c23",
+      "en": "Dust Motes",
+      "ko": "부유 먼지",
+      "family": "vfx",
+      "key": "motes",
+      "interactive": true
+    },
+    {
+      "id": "dar-bb08f547b168",
+      "en": "Debris",
+      "ko": "파편",
+      "family": "vfx",
+      "key": "debris",
+      "interactive": true
+    },
+    {
+      "id": "dar-6e660d9b9d18",
+      "en": "Rain Streak",
+      "ko": "빗줄기",
+      "family": "vfx",
+      "key": "rain",
+      "interactive": true
+    },
+    {
+      "id": "dar-2249df762498",
+      "en": "Rain Splash",
+      "ko": "빗방울 튀김",
+      "family": "vfx",
+      "key": "rainsplash",
+      "interactive": true
+    },
+    {
+      "id": "dar-a6289da050c1",
+      "en": "Snow Particles",
+      "ko": "눈 입자",
+      "family": "vfx",
+      "key": "snow",
+      "interactive": true
+    },
+    {
+      "id": "dar-06353c942dfb",
+      "en": "Fog",
+      "ko": "안개",
+      "family": "vfx",
+      "key": "fog",
+      "interactive": false
+    },
+    {
+      "id": "dar-34ecddcbdaeb",
+      "en": "Foam",
+      "ko": "거품",
+      "family": "vfx",
+      "key": "foam",
+      "interactive": false
+    },
+    {
+      "id": "dar-2b2974c05ccb",
+      "en": "Water Ripple",
+      "ko": "수면 파문",
+      "family": "vfx",
+      "key": "ripple",
+      "interactive": true
+    },
+    {
+      "id": "dar-687c06b9ea52",
+      "en": "Water Wake",
+      "ko": "항적",
+      "family": "vfx",
+      "key": "wake",
+      "interactive": true
+    },
+    {
+      "id": "dar-71ce9c7c09ca",
+      "en": "Lightning Arc",
+      "ko": "번개 아크",
+      "family": "vfx",
+      "key": "lightning",
+      "interactive": false
+    },
+    {
+      "id": "dar-b8c1eb4144c1",
+      "en": "Electric Spark",
+      "ko": "전기 스파크",
+      "family": "vfx",
+      "key": "electric",
+      "interactive": false
+    },
+    {
+      "id": "dar-91ee36efbd9a",
+      "en": "Wind Streak",
+      "ko": "바람 궤적",
+      "family": "vfx",
+      "key": "wind",
+      "interactive": false
+    },
+    {
+      "id": "dar-27396950f9d0",
+      "en": "Falling Leaves",
+      "ko": "낙엽 효과",
+      "family": "vfx",
+      "key": "leaves",
+      "interactive": true
+    },
+    {
+      "id": "dar-54949305c977",
+      "en": "Fireflies",
+      "ko": "반딧불이 효과",
+      "family": "vfx",
+      "key": "fireflies",
+      "interactive": true
+    },
+    {
+      "id": "dar-5d3addea90f4",
+      "en": "Lens Flare",
+      "ko": "렌즈 플레어",
+      "family": "vfx",
+      "key": "flare",
+      "interactive": false
+    },
+    {
+      "id": "dar-312c6eb270ed",
+      "en": "Lens Dirt",
+      "ko": "렌즈 오염 효과",
+      "family": "vfx",
+      "key": "lensdirt",
+      "interactive": false
+    },
+    {
+      "id": "dar-24ca4cf52444",
+      "en": "Vignette",
+      "ko": "비네트",
+      "family": "vfx",
+      "key": "vignette",
+      "interactive": false
+    },
+    {
+      "id": "dar-2235d8fba8cf",
+      "en": "Camera Impulse",
+      "ko": "카메라 임펄스",
+      "family": "vfx",
+      "key": "impulse",
+      "interactive": true
+    },
+    {
+      "id": "dar-4fedb1084d4d",
+      "en": "Zoom Punch",
+      "ko": "줌 펀치",
+      "family": "vfx",
+      "key": "zoom",
+      "interactive": true
+    },
+    {
+      "id": "dar-3e5ed2d41914",
+      "en": "Radial Blur",
+      "ko": "방사형 블러",
+      "family": "vfx",
+      "key": "radial",
+      "interactive": false
+    },
+    {
+      "id": "dar-e295a187b558",
+      "en": "Speed Lines",
+      "ko": "속도선",
+      "family": "vfx",
+      "key": "speed",
+      "interactive": false
+    },
+    {
+      "id": "dar-43671848d8c6",
+      "en": "Damage Vignette",
+      "ko": "피해 비네트",
+      "family": "vfx",
+      "key": "damage",
+      "interactive": false
+    }
+  ]
+}

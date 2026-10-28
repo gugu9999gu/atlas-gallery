@@ -161,3 +161,6 @@ html[lang=en] .card-title{font-size:16px;line-height:1.35}html[lang=en] .card-de
 /* Explicitly size the SVG stage: intrinsic SVG aspect ratio must not enlarge a grid row. */
 .scene-reference{display:block!important}.reference-stage{position:absolute;inset:0;min-width:0;min-height:0;width:100%;height:100%}.reference-svg{min-width:0;min-height:0;flex:1}
 
+
+/* Preview expansion: controls sit outside the inert visual stage. */
+.wave-controls{gap:10px;flex-wrap:wrap}.wave-controls input[type=range]{min-width:95px;flex:1;accent-color:var(--accent,#6174ef)}.wave-controls output{min-width:38px;font-variant-numeric:tabular-nums}.wave-help{font-size:12px;line-height:1.7;color:var(--muted,#77849a);margin:6px 0 16px}.wave-controls button{min-height:36px}.wave-controls input:focus-visible,.wave-controls button:focus-visible{outline:3px solid #94a3ff;outline-offset:3px}

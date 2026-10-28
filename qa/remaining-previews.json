@@ -1,0 +1,7772 @@
+[
+  {
+    "id": "dar-ebfe5f265026",
+    "en": "Live Region Announcement",
+    "key": "concept-dar-ebfe5f265026",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fcd3259a0e10",
+    "en": "Haptic Feedback",
+    "key": "concept-dar-fcd3259a0e10",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-61b3f6bc4056",
+    "en": "Overflow Button",
+    "key": "concept-dar-61b3f6bc4056",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-545fc4be48bb",
+    "en": "Drag and Drop",
+    "key": "concept-dar-545fc4be48bb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-85118b034eab",
+    "en": "Swipe Gesture",
+    "key": "concept-dar-85118b034eab",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8d306986a6f2",
+    "en": "Long Press",
+    "key": "concept-dar-8d306986a6f2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-25bf2e3d9322",
+    "en": "Double Tap",
+    "key": "concept-dar-25bf2e3d9322",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2399fd6c8cee",
+    "en": "Pinch to Zoom",
+    "key": "concept-dar-2399fd6c8cee",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bd1958c91b73",
+    "en": "Pull to Refresh",
+    "key": "concept-dar-bd1958c91b73",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b9d67d8a392a",
+    "en": "Swipe to Dismiss",
+    "key": "concept-dar-b9d67d8a392a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fc951dce1f65",
+    "en": "Swipe Actions",
+    "key": "concept-dar-fc951dce1f65",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2be2d32b44b6",
+    "en": "Reorderable List",
+    "key": "concept-dar-2be2d32b44b6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f35047952796",
+    "en": "Sort by Dragging",
+    "key": "concept-dar-f35047952796",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-708c2361303f",
+    "en": "Keyboard Shortcut",
+    "key": "concept-dar-708c2361303f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2d873c2e10bf",
+    "en": "Contextual Actions",
+    "key": "concept-dar-2d873c2e10bf",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6dee3ab1b41a",
+    "en": "Microinteraction",
+    "key": "concept-dar-6dee3ab1b41a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5a768048f84b",
+    "en": "Hover Reveal",
+    "key": "concept-dar-5a768048f84b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7a2021f20615",
+    "en": "Undo / Redo",
+    "key": "concept-dar-7a2021f20615",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-63839e533a64",
+    "en": "Confirmation Pattern",
+    "key": "concept-dar-63839e533a64",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b17cb721f637",
+    "en": "Debounce",
+    "key": "concept-dar-b17cb721f637",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d8f689e7d1e3",
+    "en": "Throttle",
+    "key": "concept-dar-d8f689e7d1e3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-689eb5b54bad",
+    "en": "Transition",
+    "key": "concept-dar-689eb5b54bad",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3b91d7023dc3",
+    "en": "Entrance Animation",
+    "key": "concept-dar-3b91d7023dc3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-062ca5cf5e1c",
+    "en": "Exit Animation",
+    "key": "concept-dar-062ca5cf5e1c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-48430ce158a6",
+    "en": "Fade In / Out",
+    "key": "concept-dar-48430ce158a6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-33493183cd83",
+    "en": "Slide In / Out",
+    "key": "concept-dar-33493183cd83",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b63a09cd4d89",
+    "en": "Ease-in / Ease-out",
+    "key": "concept-dar-b63a09cd4d89",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-73dd62eaa300",
+    "en": "Lottie Animation",
+    "key": "concept-dar-73dd62eaa300",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-73dc5760b2e3",
+    "en": "Rive Animation",
+    "key": "concept-dar-73dc5760b2e3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f1f166433dc9",
+    "en": "Blur Effect",
+    "key": "concept-dar-f1f166433dc9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2d34f4c380fd",
+    "en": "Backdrop Blur",
+    "key": "concept-dar-2d34f4c380fd",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-40060ccb344d",
+    "en": "Glassmorphism",
+    "key": "concept-dar-40060ccb344d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2e8318e2a883",
+    "en": "Neumorphism",
+    "key": "concept-dar-2e8318e2a883",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-57844d130862",
+    "en": "WCAG",
+    "key": "concept-dar-57844d130862",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8cfbdc21134f",
+    "en": "ARIA",
+    "key": "concept-dar-8cfbdc21134f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1e3848e9f733",
+    "en": "Accessible Name",
+    "key": "concept-dar-1e3848e9f733",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9ea514a8f561",
+    "en": "Semantic HTML",
+    "key": "concept-dar-9ea514a8f561",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-42984ca1fae2",
+    "en": "Keyboard Navigation",
+    "key": "concept-dar-42984ca1fae2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-43bcd014d561",
+    "en": "Focus Order",
+    "key": "concept-dar-43bcd014d561",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-128374930bb2",
+    "en": "Focus Trap",
+    "key": "concept-dar-128374930bb2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bd7e946d5822",
+    "en": "Focus Indicator",
+    "key": "concept-dar-bd7e946d5822",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ee539945151c",
+    "en": "Screen Reader",
+    "key": "concept-dar-ee539945151c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b9b46b70c848",
+    "en": "Contrast Ratio",
+    "key": "concept-dar-b9b46b70c848",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b8d2ae2a8b4e",
+    "en": "Color Independence",
+    "key": "concept-dar-b8d2ae2a8b4e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-42b3d54116a8",
+    "en": "Alt Text",
+    "key": "concept-dar-42b3d54116a8",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b5e4c3947681",
+    "en": "Captions",
+    "key": "concept-dar-b5e4c3947681",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d64eec28f2b4",
+    "en": "Reduced Motion",
+    "key": "concept-dar-d64eec28f2b4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c6fce7061f57",
+    "en": "High Contrast Mode",
+    "key": "concept-dar-c6fce7061f57",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ec23650a6ab9",
+    "en": "Skip Link",
+    "key": "concept-dar-ec23650a6ab9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0b387ee82481",
+    "en": "Touch Accessibility",
+    "key": "concept-dar-0b387ee82481",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d9e055025e0f",
+    "en": "Error Prevention",
+    "key": "concept-dar-d9e055025e0f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8db576b6448a",
+    "en": "Error Identification",
+    "key": "concept-dar-8db576b6448a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-098a884586fa",
+    "en": "Progressive Enhancement",
+    "key": "concept-dar-098a884586fa",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6e79e2d3035b",
+    "en": "Design System",
+    "key": "concept-dar-6e79e2d3035b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5ba35b70bda8",
+    "en": "Component Library",
+    "key": "concept-dar-5ba35b70bda8",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-315ff4e2f3a8",
+    "en": "Pattern Library",
+    "key": "concept-dar-315ff4e2f3a8",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-56c76dc21f77",
+    "en": "Design Token",
+    "key": "concept-dar-56c76dc21f77",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a7aa653e398e",
+    "en": "Semantic Token",
+    "key": "concept-dar-a7aa653e398e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a20a9dd9e013",
+    "en": "Typography Scale",
+    "key": "concept-dar-a20a9dd9e013",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-665fb415c686",
+    "en": "Type Hierarchy",
+    "key": "concept-dar-665fb415c686",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-47349af8cdbf",
+    "en": "Spacing Scale",
+    "key": "concept-dar-47349af8cdbf",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-450879d0ce78",
+    "en": "Elevation",
+    "key": "concept-dar-450879d0ce78",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9935f0d5cd91",
+    "en": "Shadow Token",
+    "key": "concept-dar-9935f0d5cd91",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e3890d08ce15",
+    "en": "Stroke / Border",
+    "key": "concept-dar-e3890d08ce15",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b81c3cb4249e",
+    "en": "Iconography",
+    "key": "concept-dar-b81c3cb4249e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-df3bf952dc81",
+    "en": "Illustration System",
+    "key": "concept-dar-df3bf952dc81",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3b0e485255df",
+    "en": "Design Variant",
+    "key": "concept-dar-3b0e485255df",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6fd583d4a6e1",
+    "en": "Component State",
+    "key": "concept-dar-6fd583d4a6e1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ab2c1c5a269c",
+    "en": "Atomic Design",
+    "key": "concept-dar-ab2c1c5a269c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-91232a2f620b",
+    "en": "Wireframe",
+    "key": "concept-dar-91232a2f620b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5e954334387b",
+    "en": "Mockup",
+    "key": "concept-dar-5e954334387b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0b48cacf2751",
+    "en": "Prototype",
+    "key": "concept-dar-0b48cacf2751",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d2ea32afd202",
+    "en": "Interaction Spec",
+    "key": "concept-dar-d2ea32afd202",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-04dd8ace06ed",
+    "en": "Information Architecture (IA)",
+    "key": "concept-dar-04dd8ace06ed",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-64a7fc9fab50",
+    "en": "User Flow",
+    "key": "concept-dar-64a7fc9fab50",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e09f44244ea3",
+    "en": "Task Flow",
+    "key": "concept-dar-e09f44244ea3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6f898c58315e",
+    "en": "User Journey Map",
+    "key": "concept-dar-6f898c58315e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d783e29e433b",
+    "en": "Service Blueprint",
+    "key": "concept-dar-d783e29e433b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-935948cbb920",
+    "en": "Persona",
+    "key": "concept-dar-935948cbb920",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9b7a24a6d214",
+    "en": "Jobs To Be Done (JTBD)",
+    "key": "concept-dar-9b7a24a6d214",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-edf8d697653d",
+    "en": "Usability Testing",
+    "key": "concept-dar-edf8d697653d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7d17b28695f3",
+    "en": "Heuristic Evaluation",
+    "key": "concept-dar-7d17b28695f3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3bc66b146ab2",
+    "en": "Cognitive Walkthrough",
+    "key": "concept-dar-3bc66b146ab2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-684ed5a6d984",
+    "en": "A/B Testing",
+    "key": "concept-dar-684ed5a6d984",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3eb43daaf59d",
+    "en": "Funnel Analysis",
+    "key": "concept-dar-3eb43daaf59d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-23f9a1de0dec",
+    "en": "Heatmap Analysis",
+    "key": "concept-dar-23f9a1de0dec",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-40d4bd0ca323",
+    "en": "Card Sorting",
+    "key": "concept-dar-40d4bd0ca323",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c32c873aa4d2",
+    "en": "Tree Testing",
+    "key": "concept-dar-c32c873aa4d2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1e1fb144a0d5",
+    "en": "Design Critique",
+    "key": "concept-dar-1e1fb144a0d5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a01220fd37ad",
+    "en": "Design Handoff",
+    "key": "concept-dar-a01220fd37ad",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-45e83dd66970",
+    "en": "Affordance",
+    "key": "concept-dar-45e83dd66970",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-396ee9c708db",
+    "en": "Signifier",
+    "key": "concept-dar-396ee9c708db",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6fed3b688213",
+    "en": "Feedback Loop",
+    "key": "concept-dar-6fed3b688213",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1fd919133cfe",
+    "en": "Art Direction",
+    "key": "concept-dar-1fd919133cfe",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-676fc24147ca",
+    "en": "Glyph",
+    "key": "concept-dar-676fc24147ca",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1a5a5608f55b",
+    "en": "Minimalism",
+    "key": "concept-dar-1a5a5608f55b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d502c3b56db6",
+    "en": "Maximalism",
+    "key": "concept-dar-d502c3b56db6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1b5c8b3b178a",
+    "en": "Swiss / International Style",
+    "key": "concept-dar-1b5c8b3b178a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0c6af8473a85",
+    "en": "Bauhaus-inspired Design",
+    "key": "concept-dar-0c6af8473a85",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-098c64ab7d2b",
+    "en": "Brutalist Web Design",
+    "key": "concept-dar-098c64ab7d2b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-43fd8047c55b",
+    "en": "Neo-brutalism",
+    "key": "concept-dar-43fd8047c55b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d6f2375db099",
+    "en": "Flat Design",
+    "key": "concept-dar-d6f2375db099",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-883cb89f7cd3",
+    "en": "Skeuomorphism",
+    "key": "concept-dar-883cb89f7cd3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bc1cc2175ada",
+    "en": "Neumorphism",
+    "key": "concept-dar-bc1cc2175ada",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-18b30c012c56",
+    "en": "Claymorphism",
+    "key": "concept-dar-18b30c012c56",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-daa488b0e624",
+    "en": "Bento Layout",
+    "key": "concept-dar-daa488b0e624",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c69e33170658",
+    "en": "Editorial Design",
+    "key": "concept-dar-c69e33170658",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9571d74b074a",
+    "en": "Y2K Aesthetic",
+    "key": "concept-dar-9571d74b074a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c219f9245cbf",
+    "en": "Retro-futurism",
+    "key": "concept-dar-c219f9245cbf",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2b54780d3fca",
+    "en": "Cyberpunk Aesthetic",
+    "key": "concept-dar-2b54780d3fca",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c05500d1c240",
+    "en": "Solarpunk Aesthetic",
+    "key": "concept-dar-c05500d1c240",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a81b28b53ff7",
+    "en": "Art Deco",
+    "key": "concept-dar-a81b28b53ff7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-597010fc6f3b",
+    "en": "Art Nouveau",
+    "key": "concept-dar-597010fc6f3b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e9c59f688df3",
+    "en": "Memphis Style",
+    "key": "concept-dar-e9c59f688df3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b0d87ce69dac",
+    "en": "Organic Design",
+    "key": "concept-dar-b0d87ce69dac",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e39aa25af783",
+    "en": "Pixel Art",
+    "key": "concept-dar-e39aa25af783",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-948236606365",
+    "en": "Voxel Art",
+    "key": "concept-dar-948236606365",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-55003ada25eb",
+    "en": "Low-poly Style",
+    "key": "concept-dar-55003ada25eb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6e714146d4d3",
+    "en": "Cel Shading",
+    "key": "concept-dar-6e714146d4d3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-741bb1c9a2ee",
+    "en": "Hand-painted Style",
+    "key": "concept-dar-741bb1c9a2ee",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2a6e5e741891",
+    "en": "Photorealism",
+    "key": "concept-dar-2a6e5e741891",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3e23389906b5",
+    "en": "Stylized Realism",
+    "key": "concept-dar-3e23389906b5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d75336f54599",
+    "en": "Isometric Illustration",
+    "key": "concept-dar-d75336f54599",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5ee3fff7162b",
+    "en": "Paper-cut Style",
+    "key": "concept-dar-5ee3fff7162b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7f263502739b",
+    "en": "Collage",
+    "key": "concept-dar-7f263502739b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d248e4f4a8cf",
+    "en": "Dithered Style",
+    "key": "concept-dar-d248e4f4a8cf",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-37976245ec19",
+    "en": "CRT Aesthetic",
+    "key": "concept-dar-37976245ec19",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ef3ef6dddd9d",
+    "en": "Scrollytelling",
+    "key": "concept-dar-ef3ef6dddd9d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b83d02947ded",
+    "en": "Content-first Design",
+    "key": "concept-dar-b83d02947ded",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4531712194da",
+    "en": "Graceful Degradation",
+    "key": "concept-dar-4531712194da",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7b2d06cacd74",
+    "en": "CSS",
+    "key": "concept-dar-7b2d06cacd74",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4e1841c5849b",
+    "en": "Selector",
+    "key": "concept-dar-4e1841c5849b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d750ec014549",
+    "en": "Cascade",
+    "key": "concept-dar-d750ec014549",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b30dc44b4d01",
+    "en": "Specificity",
+    "key": "concept-dar-b30dc44b4d01",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-986c3825c950",
+    "en": "Inheritance",
+    "key": "concept-dar-986c3825c950",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5d03e189c8bc",
+    "en": "Normal Flow",
+    "key": "concept-dar-5d03e189c8bc",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d3325a365219",
+    "en": "Block Formatting Context",
+    "key": "concept-dar-d3325a365219",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7c8184f3f755",
+    "en": "Intrinsic Sizing",
+    "key": "concept-dar-7c8184f3f755",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6deb0ccd0d7b",
+    "en": "min-content / max-content",
+    "key": "concept-dar-6deb0ccd0d7b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8edfdb87618d",
+    "en": "clamp()",
+    "key": "concept-dar-8edfdb87618d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-29f0cb5a39b0",
+    "en": "min() / max()",
+    "key": "concept-dar-29f0cb5a39b0",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-96155deaec6a",
+    "en": "calc()",
+    "key": "concept-dar-96155deaec6a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8aa070e009d1",
+    "en": "Containing Block",
+    "key": "concept-dar-8aa070e009d1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-317534e1dee4",
+    "en": "Logical Properties",
+    "key": "concept-dar-317534e1dee4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-48610ac183e1",
+    "en": "Viewport Units",
+    "key": "concept-dar-48610ac183e1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-275d2e829f8a",
+    "en": "Relative Units",
+    "key": "concept-dar-275d2e829f8a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-56700cff4d7a",
+    "en": "Custom Properties",
+    "key": "concept-dar-56700cff4d7a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-84b4257e6a59",
+    "en": "CSS Cascade Layers",
+    "key": "concept-dar-84b4257e6a59",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-10439e4fd9b6",
+    "en": "CSS Nesting",
+    "key": "concept-dar-10439e4fd9b6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a0344b3be6df",
+    "en": "Pseudo-class",
+    "key": "concept-dar-a0344b3be6df",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-602879a08019",
+    "en": "Pseudo-element",
+    "key": "concept-dar-602879a08019",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-97778b8080ea",
+    "en": ":has()",
+    "key": "concept-dar-97778b8080ea",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-75ac70d863ca",
+    "en": "CSS Transitions",
+    "key": "concept-dar-75ac70d863ca",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-15fd468c3558",
+    "en": "CSS Keyframes",
+    "key": "concept-dar-15fd468c3558",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f880883ac8d3",
+    "en": "Scroll Margin",
+    "key": "concept-dar-f880883ac8d3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7a8fef28336a",
+    "en": "View Transition API",
+    "key": "concept-dar-7a8fef28336a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a02965325ca2",
+    "en": "CSS Anchor Positioning",
+    "key": "concept-dar-a02965325ca2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a6063c12b30f",
+    "en": "content-visibility",
+    "key": "concept-dar-a6063c12b30f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5a0d646b3359",
+    "en": "CSS Containment",
+    "key": "concept-dar-5a0d646b3359",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7ceb41f16ee6",
+    "en": "BEM",
+    "key": "concept-dar-7ceb41f16ee6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b554c71acdb1",
+    "en": "Utility-first CSS",
+    "key": "concept-dar-b554c71acdb1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c3aa3dacf8e8",
+    "en": "CSS Modules",
+    "key": "concept-dar-c3aa3dacf8e8",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-da2146259fbd",
+    "en": "CSS-in-JS",
+    "key": "concept-dar-da2146259fbd",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6ba2aa0d8bb8",
+    "en": "CSS Reset",
+    "key": "concept-dar-6ba2aa0d8bb8",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3ff68dd12bbe",
+    "en": "Design Token Pipeline",
+    "key": "concept-dar-3ff68dd12bbe",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8f4f52a146fd",
+    "en": "Theme Provider",
+    "key": "concept-dar-8f4f52a146fd",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f13a697d793f",
+    "en": "Feature Query",
+    "key": "concept-dar-f13a697d793f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-03784e2dd7f4",
+    "en": "DOM",
+    "key": "concept-dar-03784e2dd7f4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5912bb7c1248",
+    "en": "CSSOM",
+    "key": "concept-dar-5912bb7c1248",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e2b02f2cb21e",
+    "en": "Layout / Reflow",
+    "key": "concept-dar-e2b02f2cb21e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e3b9daf5c03b",
+    "en": "Paint",
+    "key": "concept-dar-e3b9daf5c03b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-73be0167b745",
+    "en": "Compositing",
+    "key": "concept-dar-73be0167b745",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5ed4fd3c3b98",
+    "en": "Critical Rendering Path",
+    "key": "concept-dar-5ed4fd3c3b98",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c6935fbfa3c2",
+    "en": "CSR",
+    "key": "concept-dar-c6935fbfa3c2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1d892b657a92",
+    "en": "SSR",
+    "key": "concept-dar-1d892b657a92",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bc155cebac99",
+    "en": "SSG",
+    "key": "concept-dar-bc155cebac99",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-374fae2f5384",
+    "en": "Hydration",
+    "key": "concept-dar-374fae2f5384",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-468e11bd8c6a",
+    "en": "Islands Architecture",
+    "key": "concept-dar-468e11bd8c6a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1b0ebe710e1e",
+    "en": "Code Splitting",
+    "key": "concept-dar-1b0ebe710e1e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-eed6cddce434",
+    "en": "Tree Shaking",
+    "key": "concept-dar-eed6cddce434",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3e3708b7531a",
+    "en": "Virtualization",
+    "key": "concept-dar-3e3708b7531a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8fd635d0827e",
+    "en": "LCP",
+    "key": "concept-dar-8fd635d0827e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3b1910ae945b",
+    "en": "CLS",
+    "key": "concept-dar-3b1910ae945b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5b6925abbfd8",
+    "en": "INP",
+    "key": "concept-dar-5b6925abbfd8",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f25fef7d971b",
+    "en": "Performance Budget",
+    "key": "concept-dar-f25fef7d971b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1b19a8a2094e",
+    "en": "GUI Toolkit",
+    "key": "concept-dar-1b19a8a2094e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4e13d21092d7",
+    "en": "Native Widget",
+    "key": "concept-dar-4e13d21092d7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ac237e00809a",
+    "en": "Custom-drawn UI",
+    "key": "concept-dar-ac237e00809a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e3362b714417",
+    "en": "Retained-mode GUI",
+    "key": "concept-dar-e3362b714417",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c8dab7d14edb",
+    "en": "Immediate-mode GUI",
+    "key": "concept-dar-c8dab7d14edb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-75bab50b35a2",
+    "en": "Event Loop",
+    "key": "concept-dar-75bab50b35a2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b8f6e0fe87b3",
+    "en": "Callback",
+    "key": "concept-dar-b8f6e0fe87b3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a88b3ef032f0",
+    "en": "Signal and Slot",
+    "key": "concept-dar-a88b3ef032f0",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9156005fb0ca",
+    "en": "GUI Thread",
+    "key": "concept-dar-9156005fb0ca",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1d7167429c70",
+    "en": "Worker Thread",
+    "key": "concept-dar-1d7167429c70",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-78b8904b259c",
+    "en": "Model–View",
+    "key": "concept-dar-78b8904b259c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3222f8d4aaf2",
+    "en": "MVC",
+    "key": "concept-dar-3222f8d4aaf2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c80a6746122a",
+    "en": "MVVM",
+    "key": "concept-dar-c80a6746122a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4cfe0e2f8b85",
+    "en": "Data Binding",
+    "key": "concept-dar-4cfe0e2f8b85",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d99ab9a17a3a",
+    "en": "Layout Manager",
+    "key": "concept-dar-d99ab9a17a3a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6f8c0d3586eb",
+    "en": "Size Policy",
+    "key": "concept-dar-6f8c0d3586eb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1a37ef444d12",
+    "en": "Dock Widget",
+    "key": "concept-dar-1a37ef444d12",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5188504fb9b9",
+    "en": "MDI",
+    "key": "concept-dar-5188504fb9b9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-cbc3ffe147c6",
+    "en": "System Tray",
+    "key": "concept-dar-cbc3ffe147c6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-162bd4c4a9e7",
+    "en": "Qt Widgets",
+    "key": "concept-dar-162bd4c4a9e7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9beba4503948",
+    "en": "Qt Quick",
+    "key": "concept-dar-9beba4503948",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-07327a807529",
+    "en": "QML",
+    "key": "concept-dar-07327a807529",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6b5d30b97ce2",
+    "en": "Qt Style Sheets",
+    "key": "concept-dar-6b5d30b97ce2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-cc65e8237bf4",
+    "en": "KV Language",
+    "key": "concept-dar-cc65e8237bf4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-58e42468628b",
+    "en": "TUI",
+    "key": "concept-dar-58e42468628b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bc333c04e576",
+    "en": "High-DPI Scaling",
+    "key": "concept-dar-bc333c04e576",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e72e6c353c6b",
+    "en": "Webview Bridge",
+    "key": "concept-dar-e72e6c353c6b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-88d40892e2fe",
+    "en": "Application Packaging",
+    "key": "concept-dar-88d40892e2fe",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-191fb9b3b28a",
+    "en": "Core Loop",
+    "key": "concept-dar-191fb9b3b28a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4d5c2abddb72",
+    "en": "Meta Loop",
+    "key": "concept-dar-4d5c2abddb72",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-68f090a83481",
+    "en": "Game Mechanic",
+    "key": "concept-dar-68f090a83481",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-dbe9e81b8cee",
+    "en": "Game Dynamics",
+    "key": "concept-dar-dbe9e81b8cee",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5ffd28d2eb8d",
+    "en": "Game Feel",
+    "key": "concept-dar-5ffd28d2eb8d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b18ff123c369",
+    "en": "Player Agency",
+    "key": "concept-dar-b18ff123c369",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f0bc4c7fd3fd",
+    "en": "Meaningful Choice",
+    "key": "concept-dar-f0bc4c7fd3fd",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d83528e152d0",
+    "en": "Risk–Reward",
+    "key": "concept-dar-d83528e152d0",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e5d0e866b80b",
+    "en": "Feedback Loop",
+    "key": "concept-dar-e5d0e866b80b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9a679cfd064b",
+    "en": "Positive Feedback Loop",
+    "key": "concept-dar-9a679cfd064b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8e2489a5962f",
+    "en": "Negative Feedback Loop",
+    "key": "concept-dar-8e2489a5962f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c038f0addbbd",
+    "en": "Progression System",
+    "key": "concept-dar-c038f0addbbd",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6d3213ebe256",
+    "en": "Skill Tree",
+    "key": "concept-dar-6d3213ebe256",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-af9f16055916",
+    "en": "Tech Tree",
+    "key": "concept-dar-af9f16055916",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-84e26fd65922",
+    "en": "Unlock",
+    "key": "concept-dar-84e26fd65922",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-768dcb9e44ce",
+    "en": "Difficulty Curve",
+    "key": "concept-dar-768dcb9e44ce",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1a904ebfccd1",
+    "en": "Dynamic Difficulty",
+    "key": "concept-dar-1a904ebfccd1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-16c51aa95070",
+    "en": "Resource Economy",
+    "key": "concept-dar-16c51aa95070",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3cf6e81f771b",
+    "en": "Source and Sink",
+    "key": "concept-dar-3cf6e81f771b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d4b2cf539395",
+    "en": "Crafting",
+    "key": "concept-dar-d4b2cf539395",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0efbbff99f37",
+    "en": "Loot Table",
+    "key": "concept-dar-0efbbff99f37",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ef460ee95bd3",
+    "en": "Random Number Generation",
+    "key": "concept-dar-ef460ee95bd3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-76b3a39cc11b",
+    "en": "Procedural Content Generation",
+    "key": "concept-dar-76b3a39cc11b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8fe90db8c797",
+    "en": "Emergent Gameplay",
+    "key": "concept-dar-8fe90db8c797",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d4f93bcfe83a",
+    "en": "Sandbox",
+    "key": "concept-dar-d4f93bcfe83a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-dfd00872ed64",
+    "en": "Permadeath",
+    "key": "concept-dar-dfd00872ed64",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f8cb0765419a",
+    "en": "Checkpoint",
+    "key": "concept-dar-f8cb0765419a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9715bb477abe",
+    "en": "Save State",
+    "key": "concept-dar-9715bb477abe",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4ca8dce48bc7",
+    "en": "New Game Plus",
+    "key": "concept-dar-4ca8dce48bc7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0b69f0533535",
+    "en": "Vertical Slice",
+    "key": "concept-dar-0b69f0533535",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-88c5460ad356",
+    "en": "Game Design Document",
+    "key": "concept-dar-88c5460ad356",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0146ba41e18b",
+    "en": "Hitbox",
+    "key": "concept-dar-0146ba41e18b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-dcd47283aa03",
+    "en": "Hurtbox",
+    "key": "concept-dar-dcd47283aa03",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-09961e47f98c",
+    "en": "Collision Shape",
+    "key": "concept-dar-09961e47f98c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-51b364eb06f5",
+    "en": "Invincibility Frames",
+    "key": "concept-dar-51b364eb06f5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-afbe7f683460",
+    "en": "Startup Frames",
+    "key": "concept-dar-afbe7f683460",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ce1f71a15050",
+    "en": "Active Frames",
+    "key": "concept-dar-ce1f71a15050",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e2acb28ea0e5",
+    "en": "Recovery Frames",
+    "key": "concept-dar-e2acb28ea0e5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3361cdc2db05",
+    "en": "Hitstun",
+    "key": "concept-dar-3361cdc2db05",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9e6dcb1c6b72",
+    "en": "Hit Stop",
+    "key": "concept-dar-9e6dcb1c6b72",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-085d356459c1",
+    "en": "Knockback",
+    "key": "concept-dar-085d356459c1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8d67d7046a5f",
+    "en": "Telegraph",
+    "key": "concept-dar-8d67d7046a5f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a10cb4ccae11",
+    "en": "Parry Window",
+    "key": "concept-dar-a10cb4ccae11",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ba350284504f",
+    "en": "Input Buffer",
+    "key": "concept-dar-ba350284504f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-635a967bfd14",
+    "en": "Coyote Time",
+    "key": "concept-dar-635a967bfd14",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4687b6f568fe",
+    "en": "Jump Buffer",
+    "key": "concept-dar-4687b6f568fe",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1a4f74aba5b3",
+    "en": "Variable Jump Height",
+    "key": "concept-dar-1a4f74aba5b3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e46fca9f5960",
+    "en": "Air Control",
+    "key": "concept-dar-e46fca9f5960",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-076fa673a17a",
+    "en": "Acceleration and Deceleration",
+    "key": "concept-dar-076fa673a17a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0019ceec6862",
+    "en": "Dead Zone",
+    "key": "concept-dar-0019ceec6862",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-235d8a1c08cd",
+    "en": "Aim Assist",
+    "key": "concept-dar-235d8a1c08cd",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-288ee118bf4a",
+    "en": "Lock-on",
+    "key": "concept-dar-288ee118bf4a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c5c958271b8e",
+    "en": "Cooldown",
+    "key": "concept-dar-c5c958271b8e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a9c10d34dc16",
+    "en": "Stamina System",
+    "key": "concept-dar-a9c10d34dc16",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8242243c244e",
+    "en": "Animation Cancel",
+    "key": "concept-dar-8242243c244e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5506e7db91fb",
+    "en": "Combo System",
+    "key": "concept-dar-5506e7db91fb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-67ff513e1d55",
+    "en": "Time to Kill",
+    "key": "concept-dar-67ff513e1d55",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a49b6dc06a45",
+    "en": "Damage Falloff",
+    "key": "concept-dar-a49b6dc06a45",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6cec4a8c6732",
+    "en": "Friendly Fire",
+    "key": "concept-dar-6cec4a8c6732",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6ad5b3b8456c",
+    "en": "First-person View",
+    "key": "concept-dar-6ad5b3b8456c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-292e3f136033",
+    "en": "Third-person View",
+    "key": "concept-dar-292e3f136033",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0aa94cd483c7",
+    "en": "Top-down View",
+    "key": "concept-dar-0aa94cd483c7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9d77a515f240",
+    "en": "Side-scrolling",
+    "key": "concept-dar-9d77a515f240",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-95fd413435b5",
+    "en": "Orthographic Projection",
+    "key": "concept-dar-95fd413435b5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-110abf9b445a",
+    "en": "Perspective Projection",
+    "key": "concept-dar-110abf9b445a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1f136821e276",
+    "en": "2.5D",
+    "key": "concept-dar-1f136821e276",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fb027996ec80",
+    "en": "Roguelike",
+    "key": "concept-dar-fb027996ec80",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3ab01165c121",
+    "en": "Roguelite",
+    "key": "concept-dar-3ab01165c121",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9a0b3745bfb2",
+    "en": "Metroidvania",
+    "key": "concept-dar-9a0b3745bfb2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6158834bd463",
+    "en": "Immersive Sim",
+    "key": "concept-dar-6158834bd463",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c2cc192994d6",
+    "en": "Survival Crafting",
+    "key": "concept-dar-c2cc192994d6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e10c0736cc78",
+    "en": "RTS",
+    "key": "concept-dar-e10c0736cc78",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fed47c0720fa",
+    "en": "Turn-based Strategy",
+    "key": "concept-dar-fed47c0720fa",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ddfb4a15eb86",
+    "en": "Tower Defense",
+    "key": "concept-dar-ddfb4a15eb86",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ce82c1bc0f16",
+    "en": "Deckbuilding",
+    "key": "concept-dar-ce82c1bc0f16",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-81a63d60d638",
+    "en": "HUD",
+    "key": "concept-dar-81a63d60d638",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f3edec607d8b",
+    "en": "Diegetic UI",
+    "key": "concept-dar-f3edec607d8b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e90044c84cf9",
+    "en": "Non-diegetic UI",
+    "key": "concept-dar-e90044c84cf9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e8cfb32ea3cb",
+    "en": "Spatial UI",
+    "key": "concept-dar-e8cfb32ea3cb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-be4a46c8cdc1",
+    "en": "Meta UI",
+    "key": "concept-dar-be4a46c8cdc1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-45bb64283687",
+    "en": "Health Bar",
+    "key": "concept-dar-45bb64283687",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-18eba456b53b",
+    "en": "Damage Number",
+    "key": "concept-dar-18eba456b53b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-70b1bf1d690e",
+    "en": "Interaction Prompt",
+    "key": "concept-dar-70b1bf1d690e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-315b6c42ca32",
+    "en": "Inventory Grid",
+    "key": "concept-dar-315b6c42ca32",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b52f0caf1981",
+    "en": "Hotbar",
+    "key": "concept-dar-b52f0caf1981",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-30ff39302f37",
+    "en": "Radial Menu",
+    "key": "concept-dar-30ff39302f37",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0f7d4d5c2efe",
+    "en": "Fog of War",
+    "key": "concept-dar-0f7d4d5c2efe",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f5b67a356add",
+    "en": "Finite State Machine",
+    "key": "concept-dar-f5b67a356add",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5cd15e048690",
+    "en": "Behavior Tree",
+    "key": "concept-dar-5cd15e048690",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b569fb792f89",
+    "en": "Utility AI",
+    "key": "concept-dar-b569fb792f89",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0b391b6b3a3d",
+    "en": "GOAP",
+    "key": "concept-dar-0b391b6b3a3d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5dec66dcbb8c",
+    "en": "Blackboard",
+    "key": "concept-dar-5dec66dcbb8c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1b955a06b5e8",
+    "en": "Steering Behavior",
+    "key": "concept-dar-1b955a06b5e8",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3679b0bfa61e",
+    "en": "Perception System",
+    "key": "concept-dar-3679b0bfa61e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8f31911d07e0",
+    "en": "Aggro",
+    "key": "concept-dar-8f31911d07e0",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-da93074fb164",
+    "en": "Spawn System",
+    "key": "concept-dar-da93074fb164",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b87ed595ef1b",
+    "en": "Encounter",
+    "key": "concept-dar-b87ed595ef1b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5b1492f718ad",
+    "en": "Narrative Design",
+    "key": "concept-dar-5b1492f718ad",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ea34b69ffcff",
+    "en": "Branching Dialogue",
+    "key": "concept-dar-ea34b69ffcff",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b886daf8258c",
+    "en": "Quest Graph",
+    "key": "concept-dar-b886daf8258c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fad171b0eb9c",
+    "en": "Environmental Storytelling",
+    "key": "concept-dar-fad171b0eb9c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-461d25299ca3",
+    "en": "Ludonarrative Consistency",
+    "key": "concept-dar-461d25299ca3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ff933ea044d5",
+    "en": "Bark",
+    "key": "concept-dar-ff933ea044d5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9242dca19b0d",
+    "en": "Cutscene",
+    "key": "concept-dar-9242dca19b0d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7d368035df16",
+    "en": "Entity Component System",
+    "key": "concept-dar-7d368035df16",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8490b4667f1a",
+    "en": "Prefab / Packed Scene",
+    "key": "concept-dar-8490b4667f1a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9d6b92be66d5",
+    "en": "Game Loop",
+    "key": "concept-dar-9d6b92be66d5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2c87c0685a04",
+    "en": "Fixed Timestep",
+    "key": "concept-dar-2c87c0685a04",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9b40139f4d28",
+    "en": "Delta Time",
+    "key": "concept-dar-9b40139f4d28",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8a6c79e3d98b",
+    "en": "Playtest",
+    "key": "concept-dar-8a6c79e3d98b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b3f44aefbd20",
+    "en": "Telemetry",
+    "key": "concept-dar-b3f44aefbd20",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3a9ef4395526",
+    "en": "Level Design",
+    "key": "concept-dar-3a9ef4395526",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3617a094b75f",
+    "en": "Affordance in Level Design",
+    "key": "concept-dar-3617a094b75f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-48c7c28e3d56",
+    "en": "Pacing",
+    "key": "concept-dar-48c7c28e3d56",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0e34c3cbe81b",
+    "en": "Traversal",
+    "key": "concept-dar-0e34c3cbe81b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5d89fb507dea",
+    "en": "Worldbuilding",
+    "key": "concept-dar-5d89fb507dea",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2b7957eb41f1",
+    "en": "Biome",
+    "key": "concept-dar-2b7957eb41f1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4a3dc785d185",
+    "en": "Terrain Splatting",
+    "key": "concept-dar-4a3dc785d185",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f5685c0fb1e9",
+    "en": "Terrain Erosion",
+    "key": "concept-dar-f5685c0fb1e9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-cf83a68e0acd",
+    "en": "Socket",
+    "key": "concept-dar-cf83a68e0acd",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5c5ede0ef965",
+    "en": "Floating Origin",
+    "key": "concept-dar-5c5ede0ef965",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0486ba25faa3",
+    "en": "Skybox",
+    "key": "concept-dar-0486ba25faa3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a1e2b293fec5",
+    "en": "Skydome",
+    "key": "concept-dar-a1e2b293fec5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-104142479978",
+    "en": "Day–Night Cycle",
+    "key": "concept-dar-104142479978",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-dee2d02248e3",
+    "en": "Weather System",
+    "key": "concept-dar-dee2d02248e3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2d263c380597",
+    "en": "Water Plane",
+    "key": "concept-dar-2d263c380597",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-019ce12167c2",
+    "en": "Water Flow Map",
+    "key": "concept-dar-019ce12167c2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0e791dccbaf1",
+    "en": "POI / Point of Interest",
+    "key": "concept-dar-0e791dccbaf1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-66b3480a57e9",
+    "en": "Set Dressing",
+    "key": "concept-dar-66b3480a57e9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-80d41426a4cd",
+    "en": "Collision Proxy",
+    "key": "concept-dar-80d41426a4cd",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bec6171276e6",
+    "en": "Wang Tiles",
+    "key": "concept-dar-bec6171276e6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1683a55eeee0",
+    "en": "Terrain Rules",
+    "key": "concept-dar-1683a55eeee0",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-69464f7b94e3",
+    "en": "Flow Field",
+    "key": "concept-dar-69464f7b94e3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-eb0f882933d4",
+    "en": "Seed",
+    "key": "concept-dar-eb0f882933d4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c0ba1313c297",
+    "en": "Perlin Noise",
+    "key": "concept-dar-c0ba1313c297",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d599af71db6a",
+    "en": "Simplex Noise",
+    "key": "concept-dar-d599af71db6a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c8755d71db8e",
+    "en": "Fractal Brownian Motion",
+    "key": "concept-dar-c8755d71db8e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-eaf8288da983",
+    "en": "Voronoi Diagram",
+    "key": "concept-dar-eaf8288da983",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4afe7c548909",
+    "en": "BSP Dungeon",
+    "key": "concept-dar-4afe7c548909",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-76fd019d7366",
+    "en": "Cellular Automata",
+    "key": "concept-dar-76fd019d7366",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b2a1603af7af",
+    "en": "Wave Function Collapse",
+    "key": "concept-dar-b2a1603af7af",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d4eca7a2d5b6",
+    "en": "Graph Grammar",
+    "key": "concept-dar-d4eca7a2d5b6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bfc83a726aed",
+    "en": "L-system",
+    "key": "concept-dar-bfc83a726aed",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2c511bd7c7bc",
+    "en": "GIS",
+    "key": "concept-dar-2c511bd7c7bc",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-72a124a91f8a",
+    "en": "Cartography",
+    "key": "concept-dar-72a124a91f8a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a852a0e0f3c1",
+    "en": "CRS",
+    "key": "concept-dar-a852a0e0f3c1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-75099b531490",
+    "en": "Map Projection",
+    "key": "concept-dar-75099b531490",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ffee68607195",
+    "en": "Latitude / Longitude",
+    "key": "concept-dar-ffee68607195",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a7515771d3fe",
+    "en": "Georeferencing",
+    "key": "concept-dar-a7515771d3fe",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-56e4bec1e733",
+    "en": "Basemap",
+    "key": "concept-dar-56e4bec1e733",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-67ac503913c6",
+    "en": "Raster Tile",
+    "key": "concept-dar-67ac503913c6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1509e452e1c0",
+    "en": "Vector Tile",
+    "key": "concept-dar-1509e452e1c0",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-793fb4f01a87",
+    "en": "XYZ Tile Scheme",
+    "key": "concept-dar-793fb4f01a87",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d6527eef4bb1",
+    "en": "GeoJSON",
+    "key": "concept-dar-d6527eef4bb1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5d5cecc2dacb",
+    "en": "Proportional Symbol Map",
+    "key": "concept-dar-5d5cecc2dacb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e927a41ade6b",
+    "en": "Isoline",
+    "key": "concept-dar-e927a41ade6b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-54853179ed91",
+    "en": "Chorochromatic Map",
+    "key": "concept-dar-54853179ed91",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-200458a776da",
+    "en": "Map Generalization",
+    "key": "concept-dar-200458a776da",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-79f90b8cac02",
+    "en": "Label Collision",
+    "key": "concept-dar-79f90b8cac02",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a93cbd09246b",
+    "en": "Marker Clustering",
+    "key": "concept-dar-a93cbd09246b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e1ca87f9e21e",
+    "en": "Geocoding",
+    "key": "concept-dar-e1ca87f9e21e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-dbf1cdfe45c3",
+    "en": "Reverse Geocoding",
+    "key": "concept-dar-dbf1cdfe45c3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-84278562ae06",
+    "en": "Geofencing",
+    "key": "concept-dar-84278562ae06",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9db3a96cdf3d",
+    "en": "Spatial Join",
+    "key": "concept-dar-9db3a96cdf3d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-07e6ee29fe0c",
+    "en": "Map Legend",
+    "key": "concept-dar-07e6ee29fe0c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ef9d9e33319b",
+    "en": "Scale Bar",
+    "key": "concept-dar-ef9d9e33319b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1beb3a7e3abf",
+    "en": "North Arrow",
+    "key": "concept-dar-1beb3a7e3abf",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4d7af1c8aafb",
+    "en": "DEM",
+    "key": "concept-dar-4d7af1c8aafb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-752c2a37fc6a",
+    "en": "Geospatial Buffer",
+    "key": "concept-dar-752c2a37fc6a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6d272b97d9c3",
+    "en": "Hard Edge / Smooth Shading",
+    "key": "concept-dar-6d272b97d9c3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-02227604d9ee",
+    "en": "Sculpting",
+    "key": "concept-dar-02227604d9ee",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9f9d31246e01",
+    "en": "Retopology",
+    "key": "concept-dar-9f9d31246e01",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-34ec5d4f42b1",
+    "en": "Baking",
+    "key": "concept-dar-34ec5d4f42b1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-747206d86359",
+    "en": "Spline",
+    "key": "concept-dar-747206d86359",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bc133a27d1b6",
+    "en": "Geometry Nodes",
+    "key": "concept-dar-bc133a27d1b6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1f5b86c44a03",
+    "en": "Photogrammetry",
+    "key": "concept-dar-1f5b86c44a03",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f6c0bd785c33",
+    "en": "Material",
+    "key": "concept-dar-f6c0bd785c33",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-853ddcb01478",
+    "en": "Shader",
+    "key": "concept-dar-853ddcb01478",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f4617136ff0c",
+    "en": "PBR",
+    "key": "concept-dar-f4617136ff0c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2fd266889d18",
+    "en": "Specular",
+    "key": "concept-dar-2fd266889d18",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5acb166bfe02",
+    "en": "Subsurface Scattering",
+    "key": "concept-dar-5acb166bfe02",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e02618410a46",
+    "en": "IOR",
+    "key": "concept-dar-e02618410a46",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-16c0c0c958a9",
+    "en": "Anisotropy",
+    "key": "concept-dar-16c0c0c958a9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-90da8d314c50",
+    "en": "Triplanar Mapping",
+    "key": "concept-dar-90da8d314c50",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-95aa603a219d",
+    "en": "Decal",
+    "key": "concept-dar-95aa603a219d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0b7ca44e1033",
+    "en": "IBL",
+    "key": "concept-dar-0b7ca44e1033",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-95af24c99d1e",
+    "en": "HDRI",
+    "key": "concept-dar-95af24c99d1e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-335e6a91ef31",
+    "en": "Key Light",
+    "key": "concept-dar-335e6a91ef31",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0c90049d9ad2",
+    "en": "Fill Light",
+    "key": "concept-dar-0c90049d9ad2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fb08936b3262",
+    "en": "Rim Light",
+    "key": "concept-dar-fb08936b3262",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1b9fdabf2e35",
+    "en": "Three-point Lighting",
+    "key": "concept-dar-1b9fdabf2e35",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8b2052944a80",
+    "en": "Lightmap",
+    "key": "concept-dar-8b2052944a80",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c72f8e720c0a",
+    "en": "Light Probe",
+    "key": "concept-dar-c72f8e720c0a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-615500b552f9",
+    "en": "Reflection Probe",
+    "key": "concept-dar-615500b552f9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-65641c24727d",
+    "en": "Global Illumination",
+    "key": "concept-dar-65641c24727d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0058d93d328b",
+    "en": "Volumetric Lighting",
+    "key": "concept-dar-0058d93d328b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1348a36b0ce8",
+    "en": "Color Temperature",
+    "key": "concept-dar-1348a36b0ce8",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-61cfb2f67f2a",
+    "en": "Tone Mapping",
+    "key": "concept-dar-61cfb2f67f2a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fe51a5ccfde1",
+    "en": "Rasterization",
+    "key": "concept-dar-fe51a5ccfde1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3ce7be03b22f",
+    "en": "Ray Tracing",
+    "key": "concept-dar-3ce7be03b22f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-df156f34532a",
+    "en": "Path Tracing",
+    "key": "concept-dar-df156f34532a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-322b11bb93a1",
+    "en": "Forward Rendering",
+    "key": "concept-dar-322b11bb93a1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ea8a30f211a5",
+    "en": "Deferred Rendering",
+    "key": "concept-dar-ea8a30f211a5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f35b8e34f9b6",
+    "en": "G-buffer",
+    "key": "concept-dar-f35b8e34f9b6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a9647ae34141",
+    "en": "Draw Call",
+    "key": "concept-dar-a9647ae34141",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-64dbf3c24bea",
+    "en": "Batching",
+    "key": "concept-dar-64dbf3c24bea",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3f512f8dcbf4",
+    "en": "GPU Instancing",
+    "key": "concept-dar-3f512f8dcbf4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1c9199cf36d2",
+    "en": "LOD",
+    "key": "concept-dar-1c9199cf36d2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-203af887cab7",
+    "en": "HLOD",
+    "key": "concept-dar-203af887cab7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0cea993a7c00",
+    "en": "Overdraw",
+    "key": "concept-dar-0cea993a7c00",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f5e593fed1ce",
+    "en": "Fill Rate",
+    "key": "concept-dar-f5e593fed1ce",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7822bf42857c",
+    "en": "Texture Compression",
+    "key": "concept-dar-7822bf42857c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8ba3ad1c5a3d",
+    "en": "Anti-aliasing",
+    "key": "concept-dar-8ba3ad1c5a3d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-34313c4fb56c",
+    "en": "Z-fighting",
+    "key": "concept-dar-34313c4fb56c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-47f8fcb7fe78",
+    "en": "Post-processing",
+    "key": "concept-dar-47f8fcb7fe78",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-31cf7ffc28b4",
+    "en": "Orbit Camera",
+    "key": "concept-dar-31cf7ffc28b4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c16312a576ff",
+    "en": "Screen-space Effect",
+    "key": "concept-dar-c16312a576ff",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ccae6193253d",
+    "en": "GPU Picking",
+    "key": "concept-dar-ccae6193253d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c40ef3e4b163",
+    "en": "Keyframe Animation",
+    "key": "concept-dar-c40ef3e4b163",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-04df56f9d567",
+    "en": "Animation Curve",
+    "key": "concept-dar-04df56f9d567",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-06bf82ebc1ec",
+    "en": "Overlapping Action",
+    "key": "concept-dar-06bf82ebc1ec",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f5ac99e7424c",
+    "en": "Secondary Action",
+    "key": "concept-dar-f5ac99e7424c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-120756a730e4",
+    "en": "Animation Timing",
+    "key": "concept-dar-120756a730e4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-258b4065f756",
+    "en": "Stagger",
+    "key": "concept-dar-258b4065f756",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-50d60461c3ef",
+    "en": "Rigging",
+    "key": "concept-dar-50d60461c3ef",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7923c90dd436",
+    "en": "Skinning",
+    "key": "concept-dar-7923c90dd436",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-69cbfc3e1fb4",
+    "en": "Weight Painting",
+    "key": "concept-dar-69cbfc3e1fb4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-21f9b999197e",
+    "en": "Inverse Kinematics",
+    "key": "concept-dar-21f9b999197e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4598b1bcaa7b",
+    "en": "Forward Kinematics",
+    "key": "concept-dar-4598b1bcaa7b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d855cb9ddbd6",
+    "en": "Blend Shape",
+    "key": "concept-dar-d855cb9ddbd6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5f0dd3cd60ad",
+    "en": "Animation Blending",
+    "key": "concept-dar-5f0dd3cd60ad",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8b2a4b9e9b1b",
+    "en": "Root Motion",
+    "key": "concept-dar-8b2a4b9e9b1b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-63502a196ba9",
+    "en": "Motion Capture",
+    "key": "concept-dar-63502a196ba9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a66af4f049fe",
+    "en": "Flipbook Animation",
+    "key": "concept-dar-a66af4f049fe",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-81294c03a7ee",
+    "en": "VFX Graph",
+    "key": "concept-dar-81294c03a7ee",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e27c1c45f18e",
+    "en": "Dissolve Effect",
+    "key": "concept-dar-e27c1c45f18e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d7aaed2d1eeb",
+    "en": "Distortion Effect",
+    "key": "concept-dar-d7aaed2d1eeb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-df4f7e2ee61d",
+    "en": "Signed Distance Field",
+    "key": "concept-dar-df4f7e2ee61d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-dabf0de9410e",
+    "en": "Foley",
+    "key": "concept-dar-dabf0de9410e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d948b1a74874",
+    "en": "Ambience",
+    "key": "concept-dar-d948b1a74874",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2879cf64d873",
+    "en": "Sound Cue",
+    "key": "concept-dar-2879cf64d873",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-769a3c8293c3",
+    "en": "Adaptive Music",
+    "key": "concept-dar-769a3c8293c3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e0c1c32aa1a6",
+    "en": "Horizontal Resequencing",
+    "key": "concept-dar-e0c1c32aa1a6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3314902f8602",
+    "en": "Vertical Layering",
+    "key": "concept-dar-3314902f8602",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f220c0191eb0",
+    "en": "Spatial Audio",
+    "key": "concept-dar-f220c0191eb0",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-75fed1529b2f",
+    "en": "Audio Attenuation",
+    "key": "concept-dar-75fed1529b2f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-69b647df8435",
+    "en": "Audio Occlusion",
+    "key": "concept-dar-69b647df8435",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-feb63931728b",
+    "en": "Reverb",
+    "key": "concept-dar-feb63931728b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-aea4a3aff879",
+    "en": "Ducking",
+    "key": "concept-dar-aea4a3aff879",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9403e8c3e274",
+    "en": "Audio Bus",
+    "key": "concept-dar-9403e8c3e274",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-028e458a6888",
+    "en": "Audio Loop",
+    "key": "concept-dar-028e458a6888",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-94ec401f7e4e",
+    "en": "Storyboard",
+    "key": "concept-dar-94ec401f7e4e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-36d355caa272",
+    "en": "Animatic",
+    "key": "concept-dar-36d355caa272",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-03fd43e7f99f",
+    "en": "Compositing",
+    "key": "concept-dar-03fd43e7f99f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-802e1c33a65b",
+    "en": "Alpha Channel",
+    "key": "concept-dar-802e1c33a65b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7f8b48a4d4d4",
+    "en": "Chroma Key",
+    "key": "concept-dar-7f8b48a4d4d4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-77f82604230e",
+    "en": "Rotoscoping",
+    "key": "concept-dar-77f82604230e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b0af07fde4ee",
+    "en": "LUT",
+    "key": "concept-dar-b0af07fde4ee",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-07581b7cd14e",
+    "en": "Brand Identity",
+    "key": "concept-dar-07581b7cd14e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a5a68f01ea4f",
+    "en": "Visual Identity",
+    "key": "concept-dar-a5a68f01ea4f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fba7a3112ef1",
+    "en": "Logotype / Wordmark",
+    "key": "concept-dar-fba7a3112ef1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3b294fa50448",
+    "en": "Logomark",
+    "key": "concept-dar-3b294fa50448",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6335b4fcb52c",
+    "en": "Brand Lockup",
+    "key": "concept-dar-6335b4fcb52c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e4193d7fa965",
+    "en": "Clear Space",
+    "key": "concept-dar-e4193d7fa965",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ff2921287cc6",
+    "en": "Brand Guidelines",
+    "key": "concept-dar-ff2921287cc6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0139043ffaa3",
+    "en": "Tone of Voice",
+    "key": "concept-dar-0139043ffaa3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ed38e17a827a",
+    "en": "Key Visual",
+    "key": "concept-dar-ed38e17a827a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-81b048bbf330",
+    "en": "Moodboard",
+    "key": "concept-dar-81b048bbf330",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3a7812ee392a",
+    "en": "Style Tile",
+    "key": "concept-dar-3a7812ee392a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1a0b0f72a20b",
+    "en": "Dieline",
+    "key": "concept-dar-1a0b0f72a20b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9fbabf7509fe",
+    "en": "Bleed",
+    "key": "concept-dar-9fbabf7509fe",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c34c7f524d4d",
+    "en": "Trim Line",
+    "key": "concept-dar-c34c7f524d4d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-de6c5f689699",
+    "en": "Safe Area (Print)",
+    "key": "concept-dar-de6c5f689699",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-cf5552ce427d",
+    "en": "Crop Marks",
+    "key": "concept-dar-cf5552ce427d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e3ad6d553836",
+    "en": "Spot Color",
+    "key": "concept-dar-e3ad6d553836",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5c6460dacb05",
+    "en": "Overprint",
+    "key": "concept-dar-5c6460dacb05",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c654f09761a0",
+    "en": "Knockout",
+    "key": "concept-dar-c654f09761a0",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b6fc84e16837",
+    "en": "Trapping",
+    "key": "concept-dar-b6fc84e16837",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-047f7697937e",
+    "en": "Halftone",
+    "key": "concept-dar-047f7697937e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6269c41adac3",
+    "en": "Emboss / Deboss",
+    "key": "concept-dar-6269c41adac3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e3301848e111",
+    "en": "Foil Stamping",
+    "key": "concept-dar-e3301848e111",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d3ea68c165b1",
+    "en": "Print Proof",
+    "key": "concept-dar-d3ea68c165b1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d135fff4e463",
+    "en": "PPI / DPI",
+    "key": "concept-dar-d135fff4e463",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7345a707ae1c",
+    "en": "Exhibition Design",
+    "key": "concept-dar-7345a707ae1c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e67cac290b1b",
+    "en": "Visual Merchandising",
+    "key": "concept-dar-e67cac290b1b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8f3e653f4c49",
+    "en": "Planogram",
+    "key": "concept-dar-8f3e653f4c49",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-03efb3cb8af0",
+    "en": "Facing",
+    "key": "concept-dar-03efb3cb8af0",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6735f5688afd",
+    "en": "Sightline in Space",
+    "key": "concept-dar-6735f5688afd",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-283fd32723c1",
+    "en": "Circulation",
+    "key": "concept-dar-283fd32723c1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f076a6bbb20b",
+    "en": "Zoning",
+    "key": "concept-dar-f076a6bbb20b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-68d39385f6a7",
+    "en": "Wayfinding",
+    "key": "concept-dar-68d39385f6a7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ee3d6bca7f62",
+    "en": "Signage",
+    "key": "concept-dar-ee3d6bca7f62",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d6dfff852370",
+    "en": "Ergonomics",
+    "key": "concept-dar-d6dfff852370",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0fa073a5ec1b",
+    "en": "Anthropometrics",
+    "key": "concept-dar-0fa073a5ec1b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-dc7b910f0e99",
+    "en": "Reach Envelope",
+    "key": "concept-dar-dc7b910f0e99",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fb22b056f844",
+    "en": "Exploded View",
+    "key": "concept-dar-fb22b056f844",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d250e0455f0c",
+    "en": "Orthographic Drawing",
+    "key": "concept-dar-d250e0455f0c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-975b46c5983d",
+    "en": "Section View",
+    "key": "concept-dar-975b46c5983d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-69caaeaba3d2",
+    "en": "Tolerance",
+    "key": "concept-dar-69caaeaba3d2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1c495ea7f9a9",
+    "en": "CMF",
+    "key": "concept-dar-1c495ea7f9a9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-037a5d4018fc",
+    "en": "DFM",
+    "key": "concept-dar-037a5d4018fc",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3345fe6a13c9",
+    "en": "Reference Board",
+    "key": "concept-dar-3345fe6a13c9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5dd3917b269e",
+    "en": "Competitive Audit",
+    "key": "concept-dar-5dd3917b269e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f69e4b454ffb",
+    "en": "Design Brief",
+    "key": "concept-dar-f69e4b454ffb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6f0cecf047af",
+    "en": "Design Rationale",
+    "key": "concept-dar-6f0cecf047af",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-df6a7fa4bb6b",
+    "en": "Low-fidelity Prototype",
+    "key": "concept-dar-df6a7fa4bb6b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6ae6943201eb",
+    "en": "High-fidelity Prototype",
+    "key": "concept-dar-6ae6943201eb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-95be4f2616de",
+    "en": "Interaction Specification",
+    "key": "concept-dar-95be4f2616de",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-69e500feb8b2",
+    "en": "State Matrix",
+    "key": "concept-dar-69e500feb8b2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f16df0780611",
+    "en": "Acceptance Criteria",
+    "key": "concept-dar-f16df0780611",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-75c3e926cd30",
+    "en": "Visual Regression Test",
+    "key": "concept-dar-75c3e926cd30",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1f8273ded863",
+    "en": "Snapshot Test",
+    "key": "concept-dar-1f8273ded863",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-126804887873",
+    "en": "Cross-browser Test",
+    "key": "concept-dar-126804887873",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bf4c5d8b714d",
+    "en": "Responsive QA",
+    "key": "concept-dar-bf4c5d8b714d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ccc2e115cb50",
+    "en": "Accessibility Audit",
+    "key": "concept-dar-ccc2e115cb50",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f9272a4cb0aa",
+    "en": "Cognitive Load",
+    "key": "concept-dar-f9272a4cb0aa",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1b2a6446da9b",
+    "en": "Recognition over Recall",
+    "key": "concept-dar-1b2a6446da9b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f6bfdfa7a35a",
+    "en": "Fitts's Law",
+    "key": "concept-dar-f6bfdfa7a35a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0f438bfa631c",
+    "en": "Hick–Hyman Law",
+    "key": "concept-dar-0f438bfa631c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ae802a076a03",
+    "en": "Affordance vs Signifier",
+    "key": "concept-dar-ae802a076a03",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-813297b305bb",
+    "en": "Dark Pattern",
+    "key": "concept-dar-813297b305bb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a3c7c7edf887",
+    "en": "Design Debt",
+    "key": "concept-dar-a3c7c7edf887",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2b590ac95226",
+    "en": "Content Model",
+    "key": "concept-dar-2b590ac95226",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b59a05a81951",
+    "en": "SVG",
+    "key": "concept-dar-b59a05a81951",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5378d6ce6195",
+    "en": "PNG",
+    "key": "concept-dar-5378d6ce6195",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-75b63a0ec595",
+    "en": "JPEG",
+    "key": "concept-dar-75b63a0ec595",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5a44a11c3913",
+    "en": "WebP",
+    "key": "concept-dar-5a44a11c3913",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-900be5d6f4b9",
+    "en": "AVIF",
+    "key": "concept-dar-900be5d6f4b9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3b835351f739",
+    "en": "OpenEXR",
+    "key": "concept-dar-3b835351f739",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-00033bb63990",
+    "en": "glTF",
+    "key": "concept-dar-00033bb63990",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5eb07c6e76ed",
+    "en": "GLB",
+    "key": "concept-dar-5eb07c6e76ed",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b5f074d9b545",
+    "en": "FBX",
+    "key": "concept-dar-b5f074d9b545",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2e58a7efa086",
+    "en": "OBJ",
+    "key": "concept-dar-2e58a7efa086",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-be52aed18412",
+    "en": "USD",
+    "key": "concept-dar-be52aed18412",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bf8ffb5cfe4d",
+    "en": "STL",
+    "key": "concept-dar-bf8ffb5cfe4d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d812d006391a",
+    "en": "3MF",
+    "key": "concept-dar-d812d006391a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f696263a7a84",
+    "en": "KTX2",
+    "key": "concept-dar-f696263a7a84",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c14a81a2968b",
+    "en": "Draco Compression",
+    "key": "concept-dar-c14a81a2968b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8b3a0a9e3f29",
+    "en": "WebGL",
+    "key": "concept-dar-8b3a0a9e3f29",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-05b9c41bacd7",
+    "en": "WebGPU",
+    "key": "concept-dar-05b9c41bacd7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fe5d92482c3b",
+    "en": "GLSL",
+    "key": "concept-dar-fe5d92482c3b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6061c247ad61",
+    "en": "WGSL",
+    "key": "concept-dar-6061c247ad61",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4026edb1f60b",
+    "en": "HLSL",
+    "key": "concept-dar-4026edb1f60b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a277f07d98d5",
+    "en": "OpenXR",
+    "key": "concept-dar-a277f07d98d5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a39e0b97cf90",
+    "en": "Sprite Sheet",
+    "key": "concept-dar-a39e0b97cf90",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1d21c0676320",
+    "en": "Nine-slice Scaling",
+    "key": "concept-dar-1d21c0676320",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8924c37270f8",
+    "en": "Font Subsetting",
+    "key": "concept-dar-8924c37270f8",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-775ecd89301d",
+    "en": "Tailwind CSS",
+    "key": "concept-dar-775ecd89301d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-155e885ae411",
+    "en": "Bootstrap",
+    "key": "concept-dar-155e885ae411",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e0584cf1f7fd",
+    "en": "Bulma",
+    "key": "concept-dar-e0584cf1f7fd",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-31e635dffce5",
+    "en": "Foundation",
+    "key": "concept-dar-31e635dffce5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6dc499c0cd9a",
+    "en": "Pico CSS",
+    "key": "concept-dar-6dc499c0cd9a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-89bbeca9c62a",
+    "en": "UIkit",
+    "key": "concept-dar-89bbeca9c62a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fe80e7d73090",
+    "en": "daisyUI",
+    "key": "concept-dar-fe80e7d73090",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9a7d1282f852",
+    "en": "Flowbite",
+    "key": "concept-dar-9a7d1282f852",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b729d14372c1",
+    "en": "UnoCSS",
+    "key": "concept-dar-b729d14372c1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-67a86c162f6d",
+    "en": "Open Props",
+    "key": "concept-dar-67a86c162f6d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-345d8dfcd1c7",
+    "en": "Sass",
+    "key": "concept-dar-345d8dfcd1c7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-50cea1a9eeed",
+    "en": "Less",
+    "key": "concept-dar-50cea1a9eeed",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-04396c19548d",
+    "en": "PostCSS",
+    "key": "concept-dar-04396c19548d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fe68a22b09b2",
+    "en": "Lightning CSS",
+    "key": "concept-dar-fe68a22b09b2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6424b761af9b",
+    "en": "Autoprefixer",
+    "key": "concept-dar-6424b761af9b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-12d7038e77e1",
+    "en": "styled-components",
+    "key": "concept-dar-12d7038e77e1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-21cbe3581ccd",
+    "en": "Emotion",
+    "key": "concept-dar-21cbe3581ccd",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8fa8e774c247",
+    "en": "vanilla-extract",
+    "key": "concept-dar-8fa8e774c247",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c36d95f4e132",
+    "en": "Panda CSS",
+    "key": "concept-dar-c36d95f4e132",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-002517a772fb",
+    "en": "Style Dictionary",
+    "key": "concept-dar-002517a772fb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d14a0021b71d",
+    "en": "React",
+    "key": "concept-dar-d14a0021b71d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-06858535ca81",
+    "en": "Vue",
+    "key": "concept-dar-06858535ca81",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6a0895be20dc",
+    "en": "Angular",
+    "key": "concept-dar-6a0895be20dc",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4dc647918ca6",
+    "en": "Svelte",
+    "key": "concept-dar-4dc647918ca6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f2a0f89cc362",
+    "en": "SolidJS",
+    "key": "concept-dar-f2a0f89cc362",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5222150203a9",
+    "en": "Preact",
+    "key": "concept-dar-5222150203a9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a8287fa0d0df",
+    "en": "Lit",
+    "key": "concept-dar-a8287fa0d0df",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-129d57a8ed45",
+    "en": "Alpine.js",
+    "key": "concept-dar-129d57a8ed45",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8729c18e54d1",
+    "en": "htmx",
+    "key": "concept-dar-8729c18e54d1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e2aa2ef3a9dd",
+    "en": "Next.js",
+    "key": "concept-dar-e2aa2ef3a9dd",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9947794faa15",
+    "en": "Nuxt",
+    "key": "concept-dar-9947794faa15",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fd61a4010645",
+    "en": "SvelteKit",
+    "key": "concept-dar-fd61a4010645",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d16b80390d65",
+    "en": "Astro",
+    "key": "concept-dar-d16b80390d65",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a59cbddda1d3",
+    "en": "Qwik",
+    "key": "concept-dar-a59cbddda1d3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-35a0d6164521",
+    "en": "Ember.js",
+    "key": "concept-dar-35a0d6164521",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-749c9af4a4ac",
+    "en": "jQuery",
+    "key": "concept-dar-749c9af4a4ac",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5426b047a23c",
+    "en": "shadcn/ui",
+    "key": "concept-dar-5426b047a23c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9ab2cf197985",
+    "en": "Radix Primitives",
+    "key": "concept-dar-9ab2cf197985",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2d76c7e3e0ce",
+    "en": "Radix Themes",
+    "key": "concept-dar-2d76c7e3e0ce",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-711f5ad66032",
+    "en": "Headless UI",
+    "key": "concept-dar-711f5ad66032",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fc76ba33f320",
+    "en": "React Aria",
+    "key": "concept-dar-fc76ba33f320",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-741628300160",
+    "en": "React Spectrum",
+    "key": "concept-dar-741628300160",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-49cf9b6de186",
+    "en": "MUI",
+    "key": "concept-dar-49cf9b6de186",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f9676751fd63",
+    "en": "Ant Design",
+    "key": "concept-dar-f9676751fd63",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5e51c207aca1",
+    "en": "Chakra UI",
+    "key": "concept-dar-5e51c207aca1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e01653dcd909",
+    "en": "Mantine",
+    "key": "concept-dar-e01653dcd909",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c8f6b4ca5f59",
+    "en": "Fluent UI React",
+    "key": "concept-dar-c8f6b4ca5f59",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-17c7932f4cd6",
+    "en": "Carbon React",
+    "key": "concept-dar-17c7932f4cd6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-dd0510b10c31",
+    "en": "Blueprint",
+    "key": "concept-dar-dd0510b10c31",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-cb0a41091d6f",
+    "en": "PrimeReact",
+    "key": "concept-dar-cb0a41091d6f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d622c34fb929",
+    "en": "React Bootstrap",
+    "key": "concept-dar-d622c34fb929",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9bd81b097171",
+    "en": "Base UI",
+    "key": "concept-dar-9bd81b097171",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-cdc00aa56354",
+    "en": "Ark UI",
+    "key": "concept-dar-cdc00aa56354",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e28337b056c2",
+    "en": "HeroUI",
+    "key": "concept-dar-e28337b056c2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c6cab34f98e8",
+    "en": "Vuetify",
+    "key": "concept-dar-c6cab34f98e8",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4d8bd68f5c46",
+    "en": "PrimeVue",
+    "key": "concept-dar-4d8bd68f5c46",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ff161b8f6492",
+    "en": "Quasar",
+    "key": "concept-dar-ff161b8f6492",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c45c8f01bc6b",
+    "en": "Element Plus",
+    "key": "concept-dar-c45c8f01bc6b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-342c9d1426de",
+    "en": "Naive UI",
+    "key": "concept-dar-342c9d1426de",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ffd7b274a641",
+    "en": "Ant Design Vue",
+    "key": "concept-dar-ffd7b274a641",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6d97356403de",
+    "en": "Nuxt UI",
+    "key": "concept-dar-6d97356403de",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b60843de40c9",
+    "en": "Angular Material",
+    "key": "concept-dar-b60843de40c9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8ad436960437",
+    "en": "Angular CDK",
+    "key": "concept-dar-8ad436960437",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0b31d952dcb7",
+    "en": "PrimeNG",
+    "key": "concept-dar-0b31d952dcb7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9da10fb5e64d",
+    "en": "NG-ZORRO",
+    "key": "concept-dar-9da10fb5e64d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c8625aa42493",
+    "en": "Bits UI",
+    "key": "concept-dar-c8625aa42493",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f788c8c69bd4",
+    "en": "Skeleton",
+    "key": "concept-dar-f788c8c69bd4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ed692ab73d48",
+    "en": "shadcn-svelte",
+    "key": "concept-dar-ed692ab73d48",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b3710b101c5f",
+    "en": "GSAP",
+    "key": "concept-dar-b3710b101c5f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8413e16fdde5",
+    "en": "Motion",
+    "key": "concept-dar-8413e16fdde5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2c8219d16889",
+    "en": "Anime.js",
+    "key": "concept-dar-2c8219d16889",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-365c14fa6f34",
+    "en": "React Spring",
+    "key": "concept-dar-365c14fa6f34",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-02d7ed1323e5",
+    "en": "Lottie Web",
+    "key": "concept-dar-02d7ed1323e5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d9c385355292",
+    "en": "Rive Runtimes",
+    "key": "concept-dar-d9c385355292",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5b74915ccbd1",
+    "en": "Popmotion",
+    "key": "concept-dar-5b74915ccbd1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-686b1eae9912",
+    "en": "AutoAnimate",
+    "key": "concept-dar-686b1eae9912",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0bd05e221a2e",
+    "en": "Animate.css",
+    "key": "concept-dar-0bd05e221a2e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f9258b0f7a21",
+    "en": "Lenis",
+    "key": "concept-dar-f9258b0f7a21",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a5001243b221",
+    "en": "AOS",
+    "key": "concept-dar-a5001243b221",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7cdd6d5bb11e",
+    "en": "tsParticles",
+    "key": "concept-dar-7cdd6d5bb11e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ebb1719568d6",
+    "en": "canvas-confetti",
+    "key": "concept-dar-ebb1719568d6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-55da1e46c2d0",
+    "en": "Typed.js",
+    "key": "concept-dar-55da1e46c2d0",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-768cd0184aa4",
+    "en": "Floating UI",
+    "key": "concept-dar-768cd0184aa4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-28e6f824f040",
+    "en": "dnd-kit",
+    "key": "concept-dar-28e6f824f040",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-baf45cba8a10",
+    "en": "SortableJS",
+    "key": "concept-dar-baf45cba8a10",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ce238c9af201",
+    "en": "interact.js",
+    "key": "concept-dar-ce238c9af201",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-aa5b7c422c31",
+    "en": "Swiper",
+    "key": "concept-dar-aa5b7c422c31",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4cbce996ba6c",
+    "en": "Embla Carousel",
+    "key": "concept-dar-4cbce996ba6c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-540a59423ecb",
+    "en": "React Hook Form",
+    "key": "concept-dar-540a59423ecb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-93263efb86bc",
+    "en": "Formik",
+    "key": "concept-dar-93263efb86bc",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d89e82857162",
+    "en": "Zod",
+    "key": "concept-dar-d89e82857162",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0d38463bb6b1",
+    "en": "Valibot",
+    "key": "concept-dar-0d38463bb6b1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a0b4cec30041",
+    "en": "TanStack Table",
+    "key": "concept-dar-a0b4cec30041",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-71ef3033aa71",
+    "en": "AG Grid",
+    "key": "concept-dar-71ef3033aa71",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d24f72253e92",
+    "en": "Handsontable",
+    "key": "concept-dar-d24f72253e92",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-236f8279476d",
+    "en": "Tabulator",
+    "key": "concept-dar-236f8279476d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-40665c03525f",
+    "en": "TanStack Virtual",
+    "key": "concept-dar-40665c03525f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6a45f846bf40",
+    "en": "React Virtuoso",
+    "key": "concept-dar-6a45f846bf40",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a77c4546a653",
+    "en": "TanStack Query",
+    "key": "concept-dar-a77c4546a653",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3b600a10b04e",
+    "en": "Zustand",
+    "key": "concept-dar-3b600a10b04e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5a02d232913c",
+    "en": "XState",
+    "key": "concept-dar-5a02d232913c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8df36555932e",
+    "en": "Redux Toolkit",
+    "key": "concept-dar-8df36555932e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6fd89771b380",
+    "en": "FullCalendar",
+    "key": "concept-dar-6fd89771b380",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-839044a75364",
+    "en": "D3.js",
+    "key": "concept-dar-839044a75364",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-40db541781cb",
+    "en": "Chart.js",
+    "key": "concept-dar-40db541781cb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-124359c006a2",
+    "en": "Apache ECharts",
+    "key": "concept-dar-124359c006a2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6e2ea63449db",
+    "en": "Plotly.js",
+    "key": "concept-dar-6e2ea63449db",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7e30d754006e",
+    "en": "Vega",
+    "key": "concept-dar-7e30d754006e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2beaafec02a1",
+    "en": "Vega-Lite",
+    "key": "concept-dar-2beaafec02a1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a3bac6e5135b",
+    "en": "Observable Plot",
+    "key": "concept-dar-a3bac6e5135b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-50babab04994",
+    "en": "Recharts",
+    "key": "concept-dar-50babab04994",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-af3e0022de16",
+    "en": "Nivo",
+    "key": "concept-dar-af3e0022de16",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fbc9abad9196",
+    "en": "visx",
+    "key": "concept-dar-fbc9abad9196",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-62288d53ad1f",
+    "en": "Victory",
+    "key": "concept-dar-62288d53ad1f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1366229183fb",
+    "en": "Highcharts",
+    "key": "concept-dar-1366229183fb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8d562a46204f",
+    "en": "ApexCharts",
+    "key": "concept-dar-8d562a46204f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6fb463c75e04",
+    "en": "uPlot",
+    "key": "concept-dar-6fb463c75e04",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4edfa7ce0508",
+    "en": "vis-timeline",
+    "key": "concept-dar-4edfa7ce0508",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-95f304d236c8",
+    "en": "VChart",
+    "key": "concept-dar-95f304d236c8",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c9e7ca33807f",
+    "en": "Konva",
+    "key": "concept-dar-c9e7ca33807f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-46df34514eb6",
+    "en": "Fabric.js",
+    "key": "concept-dar-46df34514eb6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0956b0c4c8ec",
+    "en": "Paper.js",
+    "key": "concept-dar-0956b0c4c8ec",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a146923c29e7",
+    "en": "p5.js",
+    "key": "concept-dar-a146923c29e7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-13de7f54196b",
+    "en": "Two.js",
+    "key": "concept-dar-13de7f54196b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ebc45fb556a9",
+    "en": "Rough.js",
+    "key": "concept-dar-ebc45fb556a9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b7c71b52d91f",
+    "en": "tldraw SDK",
+    "key": "concept-dar-b7c71b52d91f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5329715bf5fa",
+    "en": "Excalidraw",
+    "key": "concept-dar-5329715bf5fa",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-957b0dbac801",
+    "en": "React Flow",
+    "key": "concept-dar-957b0dbac801",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f2f1329c85c5",
+    "en": "Svelte Flow",
+    "key": "concept-dar-f2f1329c85c5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d5465098beb1",
+    "en": "Cytoscape.js",
+    "key": "concept-dar-d5465098beb1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0e5d18ad2184",
+    "en": "Sigma.js",
+    "key": "concept-dar-0e5d18ad2184",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c25629f5f4a6",
+    "en": "Graphology",
+    "key": "concept-dar-c25629f5f4a6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-864eed14dc27",
+    "en": "ELK.js",
+    "key": "concept-dar-864eed14dc27",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c98ce596a895",
+    "en": "Dagre",
+    "key": "concept-dar-c98ce596a895",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7339e9a52f7a",
+    "en": "Mermaid",
+    "key": "concept-dar-7339e9a52f7a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-301beb003f31",
+    "en": "JointJS",
+    "key": "concept-dar-301beb003f31",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d973c61dac07",
+    "en": "Tiptap",
+    "key": "concept-dar-d973c61dac07",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-087b68500621",
+    "en": "ProseMirror",
+    "key": "concept-dar-087b68500621",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-89d16ad67e3c",
+    "en": "Lexical",
+    "key": "concept-dar-89d16ad67e3c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4ae8ff49f564",
+    "en": "Monaco Editor",
+    "key": "concept-dar-4ae8ff49f564",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-94332c0f7186",
+    "en": "CodeMirror",
+    "key": "concept-dar-94332c0f7186",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-21d15a90c826",
+    "en": "Tkinter",
+    "key": "concept-dar-21d15a90c826",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b7d5bb249fdb",
+    "en": "tkinter.ttk",
+    "key": "concept-dar-b7d5bb249fdb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-088489268656",
+    "en": "CustomTkinter",
+    "key": "concept-dar-088489268656",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a25b1dfd047a",
+    "en": "ttkbootstrap",
+    "key": "concept-dar-a25b1dfd047a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4a38e7a401b5",
+    "en": "PySide6",
+    "key": "concept-dar-4a38e7a401b5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a8abf457a05a",
+    "en": "PyQt6",
+    "key": "concept-dar-a8abf457a05a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5509b027992a",
+    "en": "wxPython",
+    "key": "concept-dar-5509b027992a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-00ebc80363e8",
+    "en": "Kivy",
+    "key": "concept-dar-00ebc80363e8",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-95b8f87a63a4",
+    "en": "KivyMD",
+    "key": "concept-dar-95b8f87a63a4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-826d7621c277",
+    "en": "Dear PyGui",
+    "key": "concept-dar-826d7621c277",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d378f404bd79",
+    "en": "Toga",
+    "key": "concept-dar-d378f404bd79",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b8a5d5a8fcd7",
+    "en": "pywebview",
+    "key": "concept-dar-b8a5d5a8fcd7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2d307e876c15",
+    "en": "PyGObject",
+    "key": "concept-dar-2d307e876c15",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-13fcac5b060b",
+    "en": "PySimpleGUI",
+    "key": "concept-dar-13fcac5b060b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6935e0b9b5e2",
+    "en": "PyForms",
+    "key": "concept-dar-6935e0b9b5e2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9f8de2dd77f7",
+    "en": "Enaml",
+    "key": "concept-dar-9f8de2dd77f7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-db419d036741",
+    "en": "Flet",
+    "key": "concept-dar-db419d036741",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ff482245a6a4",
+    "en": "NiceGUI",
+    "key": "concept-dar-ff482245a6a4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3ea16dabea8e",
+    "en": "Streamlit",
+    "key": "concept-dar-3ea16dabea8e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-403b813ab9e1",
+    "en": "Gradio",
+    "key": "concept-dar-403b813ab9e1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3220410ab931",
+    "en": "Dash",
+    "key": "concept-dar-3220410ab931",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ab4aa97fbc6d",
+    "en": "Reflex",
+    "key": "concept-dar-ab4aa97fbc6d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b6acb867f502",
+    "en": "Solara",
+    "key": "concept-dar-b6acb867f502",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ddbbc4cdb31f",
+    "en": "Shiny for Python",
+    "key": "concept-dar-ddbbc4cdb31f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-16a8f89154a1",
+    "en": "ipywidgets",
+    "key": "concept-dar-16a8f89154a1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6278754d7cbc",
+    "en": "Voila",
+    "key": "concept-dar-6278754d7cbc",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-75fad5701701",
+    "en": "Textual",
+    "key": "concept-dar-75fad5701701",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-96b8dea92454",
+    "en": "Rich",
+    "key": "concept-dar-96b8dea92454",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-25a9af913863",
+    "en": "Urwid",
+    "key": "concept-dar-25a9af913863",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1d53b4130dce",
+    "en": "prompt_toolkit",
+    "key": "concept-dar-1d53b4130dce",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7beace348e67",
+    "en": "Matplotlib",
+    "key": "concept-dar-7beace348e67",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b53b9cc22196",
+    "en": "Seaborn",
+    "key": "concept-dar-b53b9cc22196",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1ff5ee84d737",
+    "en": "Plotly Python",
+    "key": "concept-dar-1ff5ee84d737",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-dd2e81a2a132",
+    "en": "Altair",
+    "key": "concept-dar-dd2e81a2a132",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fe26f5ac15fa",
+    "en": "Bokeh",
+    "key": "concept-dar-fe26f5ac15fa",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bb3f1f0d788a",
+    "en": "HoloViews",
+    "key": "concept-dar-bb3f1f0d788a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f6fd90512f90",
+    "en": "Datashader",
+    "key": "concept-dar-f6fd90512f90",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e9a458665c95",
+    "en": "PyQtGraph",
+    "key": "concept-dar-e9a458665c95",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a75f5f50cb19",
+    "en": "VisPy",
+    "key": "concept-dar-a75f5f50cb19",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9e458c6f23c5",
+    "en": "PyVista",
+    "key": "concept-dar-9e458c6f23c5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1e5f8c66e50b",
+    "en": "VTK",
+    "key": "concept-dar-1e5f8c66e50b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-811231d26992",
+    "en": "Open3D",
+    "key": "concept-dar-811231d26992",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b6b93a5af358",
+    "en": "Pillow",
+    "key": "concept-dar-b6b93a5af358",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-83b53318a327",
+    "en": "OpenCV",
+    "key": "concept-dar-83b53318a327",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-80b095b06d0e",
+    "en": "Manim",
+    "key": "concept-dar-80b095b06d0e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-61a7b4ad7608",
+    "en": "PyCairo",
+    "key": "concept-dar-61a7b4ad7608",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c8849f0f180e",
+    "en": "Electron",
+    "key": "concept-dar-c8849f0f180e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e211febec0df",
+    "en": "Tauri",
+    "key": "concept-dar-e211febec0df",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c01de86efba7",
+    "en": "Wails",
+    "key": "concept-dar-c01de86efba7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0aa9555b249e",
+    "en": "Neutralinojs",
+    "key": "concept-dar-0aa9555b249e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-74f02880255a",
+    "en": "Flutter",
+    "key": "concept-dar-74f02880255a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ede54132edfe",
+    "en": "React Native",
+    "key": "concept-dar-ede54132edfe",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-963d15347c9f",
+    "en": "Expo",
+    "key": "concept-dar-963d15347c9f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3b453d1c32e2",
+    "en": "Ionic",
+    "key": "concept-dar-3b453d1c32e2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2d5282892204",
+    "en": "Capacitor",
+    "key": "concept-dar-2d5282892204",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c203aa06e299",
+    "en": "SwiftUI",
+    "key": "concept-dar-c203aa06e299",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6fa205885c08",
+    "en": "AppKit",
+    "key": "concept-dar-6fa205885c08",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-44a6d5bf068f",
+    "en": "UIKit",
+    "key": "concept-dar-44a6d5bf068f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e3ba69e080da",
+    "en": "Jetpack Compose",
+    "key": "concept-dar-e3ba69e080da",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c6e080432ff3",
+    "en": "Compose Multiplatform",
+    "key": "concept-dar-c6e080432ff3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-133444dc527b",
+    "en": ".NET MAUI",
+    "key": "concept-dar-133444dc527b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-06a5a7ead3b4",
+    "en": "Avalonia",
+    "key": "concept-dar-06a5a7ead3b4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e8064f63b974",
+    "en": "WPF",
+    "key": "concept-dar-e8064f63b974",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-80c7bbe04809",
+    "en": "WinUI",
+    "key": "concept-dar-80c7bbe04809",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9041ec4df732",
+    "en": "Qt",
+    "key": "concept-dar-9041ec4df732",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3e5af3884a04",
+    "en": "GTK",
+    "key": "concept-dar-3e5af3884a04",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9669ae841fd5",
+    "en": "Dear ImGui",
+    "key": "concept-dar-9669ae841fd5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b5a7137e944d",
+    "en": "Slint",
+    "key": "concept-dar-b5a7137e944d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-cfd2a639eec9",
+    "en": "egui",
+    "key": "concept-dar-cfd2a639eec9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4c49a5d33038",
+    "en": "Iced",
+    "key": "concept-dar-4c49a5d33038",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7bdd617f262a",
+    "en": "Fyne",
+    "key": "concept-dar-7bdd617f262a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f6cb9d7b4c57",
+    "en": "LVGL",
+    "key": "concept-dar-f6cb9d7b4c57",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f99a2a3f6f7a",
+    "en": "Godot",
+    "key": "concept-dar-f99a2a3f6f7a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-cd07e2ad30a9",
+    "en": "Unity",
+    "key": "concept-dar-cd07e2ad30a9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1396add38426",
+    "en": "Unreal Engine",
+    "key": "concept-dar-1396add38426",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4fdb0b9d1299",
+    "en": "Phaser",
+    "key": "concept-dar-4fdb0b9d1299",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e96d9cc4732e",
+    "en": "PixiJS",
+    "key": "concept-dar-e96d9cc4732e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c41e0011d030",
+    "en": "PlayCanvas",
+    "key": "concept-dar-c41e0011d030",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-31e7e95d4d29",
+    "en": "Defold",
+    "key": "concept-dar-31e7e95d4d29",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fe02bd1aaaa0",
+    "en": "GameMaker",
+    "key": "concept-dar-fe02bd1aaaa0",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1de5fafcf902",
+    "en": "Construct",
+    "key": "concept-dar-1de5fafcf902",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-eb9b8e926df7",
+    "en": "GDevelop",
+    "key": "concept-dar-eb9b8e926df7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-90bdde9f674c",
+    "en": "Cocos Creator",
+    "key": "concept-dar-90bdde9f674c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-cf46d06d0adc",
+    "en": "LÖVE",
+    "key": "concept-dar-cf46d06d0adc",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-aa8b159e1160",
+    "en": "MonoGame",
+    "key": "concept-dar-aa8b159e1160",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3dc525af132b",
+    "en": "libGDX",
+    "key": "concept-dar-3dc525af132b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7106f87ae91f",
+    "en": "Bevy",
+    "key": "concept-dar-7106f87ae91f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-509df45debe2",
+    "en": "Pygame",
+    "key": "concept-dar-509df45debe2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bc5549790d65",
+    "en": "pygame-ce",
+    "key": "concept-dar-bc5549790d65",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0055ddf4934f",
+    "en": "Arcade",
+    "key": "concept-dar-0055ddf4934f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-36451c09cbbb",
+    "en": "Panda3D",
+    "key": "concept-dar-36451c09cbbb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5ef5e921b7e4",
+    "en": "Ursina",
+    "key": "concept-dar-5ef5e921b7e4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c43c584699b7",
+    "en": "Ren'Py",
+    "key": "concept-dar-c43c584699b7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8dd01192ecc4",
+    "en": "Rapier",
+    "key": "concept-dar-8dd01192ecc4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d61545f463f7",
+    "en": "Matter.js",
+    "key": "concept-dar-d61545f463f7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c109fe8c0157",
+    "en": "Box2D",
+    "key": "concept-dar-c109fe8c0157",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b25e0f1ae533",
+    "en": "Planck.js",
+    "key": "concept-dar-b25e0f1ae533",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-14a53079ea0f",
+    "en": "cannon-es",
+    "key": "concept-dar-14a53079ea0f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-71e6c5daaa58",
+    "en": "Ammo.js",
+    "key": "concept-dar-71e6c5daaa58",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-94121fc74763",
+    "en": "Jolt Physics",
+    "key": "concept-dar-94121fc74763",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-87a8b6449277",
+    "en": "Recast / Detour",
+    "key": "concept-dar-87a8b6449277",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-96b2c91bb2c5",
+    "en": "RmlUi",
+    "key": "concept-dar-96b2c91bb2c5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-60c320d71a6f",
+    "en": "NoesisGUI",
+    "key": "concept-dar-60c320d71a6f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1c8990ef76f9",
+    "en": "Unity UI Toolkit",
+    "key": "concept-dar-1c8990ef76f9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-83f2ed44af01",
+    "en": "Unreal UMG",
+    "key": "concept-dar-83f2ed44af01",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ae6d5d64a2af",
+    "en": "ink",
+    "key": "concept-dar-ae6d5d64a2af",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-963785f0579b",
+    "en": "Yarn Spinner",
+    "key": "concept-dar-963785f0579b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8945684559ba",
+    "en": "Twine",
+    "key": "concept-dar-8945684559ba",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4304a3ae36f2",
+    "en": "Three.js",
+    "key": "concept-dar-4304a3ae36f2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-dc9e2265f423",
+    "en": "Babylon.js",
+    "key": "concept-dar-dc9e2265f423",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-549d294d2dfc",
+    "en": "React Three Fiber",
+    "key": "concept-dar-549d294d2dfc",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2f5a68e522bc",
+    "en": "Drei",
+    "key": "concept-dar-2f5a68e522bc",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-31c7ecec3a24",
+    "en": "React Three Rapier",
+    "key": "concept-dar-31c7ecec3a24",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-33a6d95b18eb",
+    "en": "postprocessing",
+    "key": "concept-dar-33a6d95b18eb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-eab02703e776",
+    "en": "three-mesh-bvh",
+    "key": "concept-dar-eab02703e776",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5407559f7105",
+    "en": "OGL",
+    "key": "concept-dar-5407559f7105",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6ad5ba16b5df",
+    "en": "regl",
+    "key": "concept-dar-6ad5ba16b5df",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5ba6b841c895",
+    "en": "A-Frame",
+    "key": "concept-dar-5ba6b841c895",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ba845359389d",
+    "en": "model-viewer",
+    "key": "concept-dar-ba845359389d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-51123ff13fa3",
+    "en": "GaussianSplats3D",
+    "key": "concept-dar-51123ff13fa3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0d2d959c481c",
+    "en": "wgpu",
+    "key": "concept-dar-0d2d959c481c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2545e7d90f08",
+    "en": "ModernGL",
+    "key": "concept-dar-2545e7d90f08",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-db4da1e9c564",
+    "en": "pyglet",
+    "key": "concept-dar-db4da1e9c564",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b4fffc61b8a6",
+    "en": "Leaflet",
+    "key": "concept-dar-b4fffc61b8a6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-89cb80569436",
+    "en": "OpenLayers",
+    "key": "concept-dar-89cb80569436",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f910c46cb6b6",
+    "en": "MapLibre GL JS",
+    "key": "concept-dar-f910c46cb6b6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-76de2f13df5c",
+    "en": "Mapbox GL JS",
+    "key": "concept-dar-76de2f13df5c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-71ea1a1b4152",
+    "en": "CesiumJS",
+    "key": "concept-dar-71ea1a1b4152",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-59ce38d357d3",
+    "en": "deck.gl",
+    "key": "concept-dar-59ce38d357d3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ce198efa3e0d",
+    "en": "Turf.js",
+    "key": "concept-dar-ce198efa3e0d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ed54bdf4b4b6",
+    "en": "D3 Geo",
+    "key": "concept-dar-ed54bdf4b4b6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d86ff4626bc6",
+    "en": "PMTiles",
+    "key": "concept-dar-d86ff4626bc6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1da43c542abb",
+    "en": "Folium",
+    "key": "concept-dar-1da43c542abb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c737e9048b33",
+    "en": "GeoPandas",
+    "key": "concept-dar-c737e9048b33",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1116b8bcbb37",
+    "en": "Shapely",
+    "key": "concept-dar-1116b8bcbb37",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f40c84da4612",
+    "en": "Rasterio",
+    "key": "concept-dar-f40c84da4612",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-87c34de6f78b",
+    "en": "pyproj",
+    "key": "concept-dar-87c34de6f78b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b8f8e9c8024c",
+    "en": "Cartopy",
+    "key": "concept-dar-b8f8e9c8024c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5da425a6a9d6",
+    "en": "GDAL",
+    "key": "concept-dar-5da425a6a9d6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-75b4979b62f3",
+    "en": "Google Maps JavaScript API",
+    "key": "concept-dar-75b4979b62f3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-81b7b1f2f6fb",
+    "en": "Kakao Maps API",
+    "key": "concept-dar-81b7b1f2f6fb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-33862217215e",
+    "en": "NAVER Maps API",
+    "key": "concept-dar-33862217215e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c65e5af53615",
+    "en": "Figma",
+    "key": "concept-dar-c65e5af53615",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c8ce305b0f4d",
+    "en": "Penpot",
+    "key": "concept-dar-c8ce305b0f4d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-21b3cf76851d",
+    "en": "Sketch",
+    "key": "concept-dar-21b3cf76851d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fd4817a46984",
+    "en": "Framer",
+    "key": "concept-dar-fd4817a46984",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f2d152e7f7e7",
+    "en": "Webflow",
+    "key": "concept-dar-f2d152e7f7e7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bcf3c0db17a4",
+    "en": "Blender",
+    "key": "concept-dar-bcf3c0db17a4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e66074ad9376",
+    "en": "Houdini",
+    "key": "concept-dar-e66074ad9376",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-66e2571609e9",
+    "en": "Substance 3D Painter",
+    "key": "concept-dar-66e2571609e9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9ad0dfd3faac",
+    "en": "Substance 3D Designer",
+    "key": "concept-dar-9ad0dfd3faac",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a3a19eae30f2",
+    "en": "Aseprite",
+    "key": "concept-dar-a3a19eae30f2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e32c4e690a41",
+    "en": "Krita",
+    "key": "concept-dar-e32c4e690a41",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d3cde8799922",
+    "en": "Inkscape",
+    "key": "concept-dar-d3cde8799922",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e2b8b53c8f43",
+    "en": "GIMP",
+    "key": "concept-dar-e2b8b53c8f43",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d283c4a6d6ae",
+    "en": "Tiled",
+    "key": "concept-dar-d283c4a6d6ae",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8a4211a3d0cd",
+    "en": "LDtk",
+    "key": "concept-dar-8a4211a3d0cd",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-eea076bd2165",
+    "en": "QGIS",
+    "key": "concept-dar-eea076bd2165",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-52baf877557f",
+    "en": "Gaea",
+    "key": "concept-dar-52baf877557f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a0d181326047",
+    "en": "World Machine",
+    "key": "concept-dar-a0d181326047",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0e09d2154ff7",
+    "en": "Spine",
+    "key": "concept-dar-0e09d2154ff7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1875b482b840",
+    "en": "Rive Editor",
+    "key": "concept-dar-1875b482b840",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-458458abd7da",
+    "en": "Spline",
+    "key": "concept-dar-458458abd7da",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e1bdc983e1cf",
+    "en": "FMOD",
+    "key": "concept-dar-e1bdc983e1cf",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-60d26aa20db2",
+    "en": "Wwise",
+    "key": "concept-dar-60d26aa20db2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a08205af977b",
+    "en": "Audacity",
+    "key": "concept-dar-a08205af977b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0ca9a4d25e9b",
+    "en": "Lucide",
+    "key": "concept-dar-0ca9a4d25e9b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-94e1efd09c64",
+    "en": "Heroicons",
+    "key": "concept-dar-94e1efd09c64",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a0d6ffdab3aa",
+    "en": "Phosphor Icons",
+    "key": "concept-dar-a0d6ffdab3aa",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7196cf354f03",
+    "en": "Tabler Icons",
+    "key": "concept-dar-7196cf354f03",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6b85273d50c8",
+    "en": "Material Symbols",
+    "key": "concept-dar-6b85273d50c8",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ef2a785d46b9",
+    "en": "Font Awesome",
+    "key": "concept-dar-ef2a785d46b9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b9e15ffa019a",
+    "en": "Iconify",
+    "key": "concept-dar-b9e15ffa019a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-825249820727",
+    "en": "Storybook",
+    "key": "concept-dar-825249820727",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9641eb4bc504",
+    "en": "Playwright",
+    "key": "concept-dar-9641eb4bc504",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-85e3f4e301b7",
+    "en": "Cypress",
+    "key": "concept-dar-85e3f4e301b7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-22e1a69bb24c",
+    "en": "axe-core",
+    "key": "concept-dar-22e1a69bb24c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d5ff2aa0fd04",
+    "en": "Testing Library",
+    "key": "concept-dar-d5ff2aa0fd04",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6d60b674913b",
+    "en": "Lighthouse",
+    "key": "concept-dar-6d60b674913b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-97614910546f",
+    "en": "Vite",
+    "key": "concept-dar-97614910546f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5f0212390e2a",
+    "en": "PyInstaller",
+    "key": "concept-dar-5f0212390e2a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f7eb9e3203be",
+    "en": "Nuitka",
+    "key": "concept-dar-f7eb9e3203be",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e4c6db1056d9",
+    "en": "Briefcase",
+    "key": "concept-dar-e4c6db1056d9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e2751e340278",
+    "en": "Apple Human Interface Guidelines",
+    "key": "concept-dar-e2751e340278",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1a0de65826dc",
+    "en": "Material Design",
+    "key": "concept-dar-1a0de65826dc",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c4e30d805d8a",
+    "en": "IBM Carbon Design System",
+    "key": "concept-dar-c4e30d805d8a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5eead3b74cec",
+    "en": "Microsoft Fluent 2",
+    "key": "concept-dar-5eead3b74cec",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bb1d665ef15c",
+    "en": "Atlassian Design System",
+    "key": "concept-dar-bb1d665ef15c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c39373a3d3e5",
+    "en": "Adobe Spectrum",
+    "key": "concept-dar-c39373a3d3e5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f91095423a45",
+    "en": "Shopify Polaris",
+    "key": "concept-dar-f91095423a45",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-285cafa14c6a",
+    "en": "GOV.UK Design System",
+    "key": "concept-dar-285cafa14c6a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ce29164d749d",
+    "en": "USWDS",
+    "key": "concept-dar-ce29164d749d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-83faac8fb3aa",
+    "en": "WAI-ARIA APG",
+    "key": "concept-dar-83faac8fb3aa",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-da5c539693b8",
+    "en": "MDN Web Docs",
+    "key": "concept-dar-da5c539693b8",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5362ba881cd7",
+    "en": "web.dev",
+    "key": "concept-dar-5362ba881cd7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-08fc75aa8e0f",
+    "en": "Godot Documentation",
+    "key": "concept-dar-08fc75aa8e0f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4c38fefcd418",
+    "en": "Unreal Developer Documentation",
+    "key": "concept-dar-4c38fefcd418",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a24086091bd8",
+    "en": "Blender Manual",
+    "key": "concept-dar-a24086091bd8",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c5cbbb2e590d",
+    "en": "Qt for Python Documentation",
+    "key": "concept-dar-c5cbbb2e590d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ce89952941b6",
+    "en": "Awwwards",
+    "key": "concept-dar-ce89952941b6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5e050d1cf062",
+    "en": "Mobbin",
+    "key": "concept-dar-5e050d1cf062",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5dd0d3e453c2",
+    "en": "Page Flows",
+    "key": "concept-dar-5dd0d3e453c2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d160822f3275",
+    "en": "Land-book",
+    "key": "concept-dar-d160822f3275",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ab0b462ad7d0",
+    "en": "Lapa Ninja",
+    "key": "concept-dar-ab0b462ad7d0",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-798b6c25bb6e",
+    "en": "SiteInspire",
+    "key": "concept-dar-798b6c25bb6e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8d8c4ec4214e",
+    "en": "Godly",
+    "key": "concept-dar-8d8c4ec4214e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ef3d0d267370",
+    "en": "Dribbble",
+    "key": "concept-dar-ef3d0d267370",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9e89501c6473",
+    "en": "Behance",
+    "key": "concept-dar-9e89501c6473",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7623d201f02a",
+    "en": "ArtStation",
+    "key": "concept-dar-7623d201f02a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2a4d2713b0fb",
+    "en": "Polycount",
+    "key": "concept-dar-2a4d2713b0fb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9eea957cc2a6",
+    "en": "Game UI Database",
+    "key": "concept-dar-9eea957cc2a6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1cacac8d0287",
+    "en": "Interface In Game",
+    "key": "concept-dar-1cacac8d0287",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c0ffffbb8bf3",
+    "en": "Realtime VFX",
+    "key": "concept-dar-c0ffffbb8bf3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-59a4c3ec17e4",
+    "en": "Shadertoy",
+    "key": "concept-dar-59a4c3ec17e4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4d574ddec8ac",
+    "en": "CodePen",
+    "key": "concept-dar-4d574ddec8ac",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3a1f5ab4d8b4",
+    "en": "UIverse",
+    "key": "concept-dar-3a1f5ab4d8b4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-66c79327ef35",
+    "en": "Codrops",
+    "key": "concept-dar-66c79327ef35",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f54dc8b5a621",
+    "en": "Kenney Assets",
+    "key": "concept-dar-f54dc8b5a621",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6f491f3c2898",
+    "en": "Poly Haven",
+    "key": "concept-dar-6f491f3c2898",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-688ab850fcc9",
+    "en": "ambientCG",
+    "key": "concept-dar-688ab850fcc9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f78bf1dd5d82",
+    "en": "OpenGameArt",
+    "key": "concept-dar-f78bf1dd5d82",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7a37dfa692ef",
+    "en": "itch.io Game Assets",
+    "key": "concept-dar-7a37dfa692ef",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7ede95e8c658",
+    "en": "Fab",
+    "key": "concept-dar-7ede95e8c658",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a6d553c83650",
+    "en": "Sketchfab",
+    "key": "concept-dar-a6d553c83650",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ba4d75807f1a",
+    "en": "Google Fonts",
+    "key": "concept-dar-ba4d75807f1a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-32013130faee",
+    "en": "Fontsource",
+    "key": "concept-dar-32013130faee",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0c9f077d1e14",
+    "en": "Adobe Color",
+    "key": "concept-dar-0c9f077d1e14",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e8a415bc5166",
+    "en": "Coolors",
+    "key": "concept-dar-e8a415bc5166",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0b01376bd8be",
+    "en": "ColorBrewer",
+    "key": "concept-dar-0b01376bd8be",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-58713b82bd6f",
+    "en": "Icon",
+    "key": "concept-dar-58713b82bd6f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bb0c20f0e550",
+    "en": "Pictogram",
+    "key": "concept-dar-bb0c20f0e550",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-863196e87911",
+    "en": "Symbol",
+    "key": "concept-dar-863196e87911",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-87c8a3108367",
+    "en": "System Icon",
+    "key": "concept-dar-87c8a3108367",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ac67947185f8",
+    "en": "Functional Icon",
+    "key": "concept-dar-ac67947185f8",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3c2be3c81ab3",
+    "en": "Decorative Icon",
+    "key": "concept-dar-3c2be3c81ab3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-76e18b326fd2",
+    "en": "Informative Icon",
+    "key": "concept-dar-76e18b326fd2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8d0d338a3d9a",
+    "en": "Status Icon",
+    "key": "concept-dar-8d0d338a3d9a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2139ddad58e0",
+    "en": "Brand Icon",
+    "key": "concept-dar-2139ddad58e0",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8e01dfb81c62",
+    "en": "Icon Metaphor",
+    "key": "concept-dar-8e01dfb81c62",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e1e7395eaedf",
+    "en": "Isometric Icon",
+    "key": "concept-dar-e1e7395eaedf",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c9c0e1706a52",
+    "en": "Animated Icon",
+    "key": "concept-dar-c9c0e1706a52",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c64ad86fb1c7",
+    "en": "Pixel Snapping",
+    "key": "concept-dar-c64ad86fb1c7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f107c943ae2b",
+    "en": "Status Indicator",
+    "key": "concept-dar-f107c943ae2b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-73c3d7b33048",
+    "en": "Stale Data Indicator",
+    "key": "concept-dar-73c3d7b33048",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7d15542d033f",
+    "en": "Indeterminate State",
+    "key": "concept-dar-7d15542d033f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-18ab9064f702",
+    "en": "Permission Denied Indicator",
+    "key": "concept-dar-18ab9064f702",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8a4c814c20fa",
+    "en": "Status Effect Icon",
+    "key": "concept-dar-8a4c814c20fa",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5fbeb0a73f4d",
+    "en": "Crowd Control Indicator",
+    "key": "concept-dar-5fbeb0a73f4d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c5dcdf466df2",
+    "en": "Damage-over-Time Indicator",
+    "key": "concept-dar-c5dcdf466df2",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8432b2639148",
+    "en": "Aggro Indicator",
+    "key": "concept-dar-8432b2639148",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-493d40774ac9",
+    "en": "SVG Icon",
+    "key": "concept-dar-493d40774ac9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a3cfc7662800",
+    "en": "Raster Icon",
+    "key": "concept-dar-a3cfc7662800",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1cf7d879a778",
+    "en": "Icon Font",
+    "key": "concept-dar-1cf7d879a778",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-cd9d96ca4ef6",
+    "en": "SVG Sprite",
+    "key": "concept-dar-cd9d96ca4ef6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-acdf8ee7e97a",
+    "en": "Icon Atlas",
+    "key": "concept-dar-acdf8ee7e97a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fb52dadd9126",
+    "en": "Ligature Icon",
+    "key": "concept-dar-fb52dadd9126",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d4ab23332bd3",
+    "en": "CurrentColor Icon",
+    "key": "concept-dar-d4ab23332bd3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-53b63d833554",
+    "en": "Decorative Hiding",
+    "key": "concept-dar-53b63d833554",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-66187bdda16a",
+    "en": "Non-text Contrast",
+    "key": "concept-dar-66187bdda16a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ed5b88a5373e",
+    "en": "Redundant Coding",
+    "key": "concept-dar-ed5b88a5373e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c30f823d3b27",
+    "en": "Icon State Variant",
+    "key": "concept-dar-c30f823d3b27",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-698e00ab40ea",
+    "en": "RTL Mirroring",
+    "key": "concept-dar-698e00ab40ea",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fe34634da727",
+    "en": "Semantic Icon Naming",
+    "key": "concept-dar-fe34634da727",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-949bccd8155d",
+    "en": "Icon Subsetting",
+    "key": "concept-dar-949bccd8155d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e23e680a0b2a",
+    "en": "Animation",
+    "key": "concept-dar-e23e680a0b2a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-527335d3a22f",
+    "en": "Motion Design",
+    "key": "concept-dar-527335d3a22f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4f219e519ba5",
+    "en": "Tween",
+    "key": "concept-dar-4f219e519ba5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b37d886ca1ee",
+    "en": "Hero Transition",
+    "key": "concept-dar-b37d886ca1ee",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0b4d29c2e8d4",
+    "en": "FLIP Layout Animation",
+    "key": "concept-dar-0b4d29c2e8d4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d2de568ae042",
+    "en": "Master-detail Transition",
+    "key": "concept-dar-d2de568ae042",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-597af7ad8584",
+    "en": "View Transition Snapshot",
+    "key": "concept-dar-597af7ad8584",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-17b75cef9d6b",
+    "en": "Gesture-driven Transition",
+    "key": "concept-dar-17b75cef9d6b",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ae2d929e6248",
+    "en": "Interruptible Transition",
+    "key": "concept-dar-ae2d929e6248",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d1fbaca54a21",
+    "en": "Reversible Transition",
+    "key": "concept-dar-d1fbaca54a21",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-12af2aaecc15",
+    "en": "Scroll Scrubbing",
+    "key": "concept-dar-12af2aaecc15",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b520674f0430",
+    "en": "Scroll Timeline",
+    "key": "concept-dar-b520674f0430",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ea79e7a3cf62",
+    "en": "View Timeline",
+    "key": "concept-dar-ea79e7a3cf62",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-375b855f5e0c",
+    "en": "Inertial Scrolling",
+    "key": "concept-dar-375b855f5e0c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bb71285d45da",
+    "en": "Overscroll Effect",
+    "key": "concept-dar-bb71285d45da",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7bb1c0c7c380",
+    "en": "Drag Elasticity",
+    "key": "concept-dar-7bb1c0c7c380",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-67ece200bd90",
+    "en": "Velocity-based Animation",
+    "key": "concept-dar-67ece200bd90",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-4086f0a48a87",
+    "en": "Motion Hierarchy",
+    "key": "concept-dar-4086f0a48a87",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-eba652be633c",
+    "en": "Spatial Continuity",
+    "key": "concept-dar-eba652be633c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ab1420de4187",
+    "en": "Temporal Continuity",
+    "key": "concept-dar-ab1420de4187",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6cee45452602",
+    "en": "Motion Preference",
+    "key": "concept-dar-6cee45452602",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8b4049fd5067",
+    "en": "Static Fallback",
+    "key": "concept-dar-8b4049fd5067",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2ff33aeb08b9",
+    "en": "Essential Animation",
+    "key": "concept-dar-2ff33aeb08b9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-cc46a5bdc11e",
+    "en": "Pause / Stop Control",
+    "key": "concept-dar-cc46a5bdc11e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-271d44968788",
+    "en": "Flashing Content",
+    "key": "concept-dar-271d44968788",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fb6bdd54a8fa",
+    "en": "Compositor Animation",
+    "key": "concept-dar-fb6bdd54a8fa",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-14800a3e077e",
+    "en": "Layout Thrashing",
+    "key": "concept-dar-14800a3e077e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-897dc63e717c",
+    "en": "Animation State Machine",
+    "key": "concept-dar-897dc63e717c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b438861e7dce",
+    "en": "Animation Retargeting (UI)",
+    "key": "concept-dar-b438861e7dce",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3842e1ad2e28",
+    "en": "Animation Cancellation",
+    "key": "concept-dar-3842e1ad2e28",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bb05c0b073e9",
+    "en": "Exit Lifecycle",
+    "key": "concept-dar-bb05c0b073e9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0586565f4928",
+    "en": "Background Throttling",
+    "key": "concept-dar-0586565f4928",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-aff1bac79a66",
+    "en": "Motion Specification",
+    "key": "concept-dar-aff1bac79a66",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-afb74ca9782a",
+    "en": "Motion Regression Test",
+    "key": "concept-dar-afb74ca9782a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-244f08521194",
+    "en": "Frame-by-frame Animation",
+    "key": "concept-dar-244f08521194",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9cc3fa839317",
+    "en": "Sprite Animation",
+    "key": "concept-dar-9cc3fa839317",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b802bdc60044",
+    "en": "Skeletal Animation",
+    "key": "concept-dar-b802bdc60044",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7fc7eb129383",
+    "en": "Skin Weight",
+    "key": "concept-dar-7fc7eb129383",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ef7343374c08",
+    "en": "Pole Target",
+    "key": "concept-dar-ef7343374c08",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d7c9798940ac",
+    "en": "In-place Animation",
+    "key": "concept-dar-d7c9798940ac",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f60b7907e7c9",
+    "en": "Animation Retargeting",
+    "key": "concept-dar-f60b7907e7c9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-14c063955540",
+    "en": "Procedural Animation",
+    "key": "concept-dar-14c063955540",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-03628fd8c779",
+    "en": "Vertex Animation",
+    "key": "concept-dar-03628fd8c779",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c9de2b2e7366",
+    "en": "Vertex Animation Texture",
+    "key": "concept-dar-c9de2b2e7366",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-26ff71a6d51c",
+    "en": "Smear Frame",
+    "key": "concept-dar-26ff71a6d51c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6bdf0d2247e1",
+    "en": "Animation Smear",
+    "key": "concept-dar-6bdf0d2247e1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1312ebee8a33",
+    "en": "Animation Clip",
+    "key": "concept-dar-1312ebee8a33",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1e1dab6406db",
+    "en": "Blend Tree",
+    "key": "concept-dar-1e1dab6406db",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d4d777916459",
+    "en": "Blend Space",
+    "key": "concept-dar-d4d777916459",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-52a58fbcfbe0",
+    "en": "Additive Animation",
+    "key": "concept-dar-52a58fbcfbe0",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e4d994c0d9d3",
+    "en": "Animation Layer",
+    "key": "concept-dar-e4d994c0d9d3",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ebf1be106fbb",
+    "en": "Animation Mask",
+    "key": "concept-dar-ebf1be106fbb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9a5e617c6c40",
+    "en": "Animation Event / Notify",
+    "key": "concept-dar-9a5e617c6c40",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6140dccdb618",
+    "en": "Normalized Time",
+    "key": "concept-dar-6140dccdb618",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f66b6dfcd696",
+    "en": "Hit Reaction",
+    "key": "concept-dar-f66b6dfcd696",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-059cc2061580",
+    "en": "Recoil Animation",
+    "key": "concept-dar-059cc2061580",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-63c852fab781",
+    "en": "Recovery Animation",
+    "key": "concept-dar-63c852fab781",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b27162b40404",
+    "en": "Animation Synchronization",
+    "key": "concept-dar-b27162b40404",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5bc133b7c21c",
+    "en": "Motion Matching",
+    "key": "concept-dar-5bc133b7c21c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-7d3e0600f98a",
+    "en": "VFX",
+    "key": "concept-dar-7d3e0600f98a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-541862a26aca",
+    "en": "Real-time Visual Effects",
+    "key": "concept-dar-541862a26aca",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bd3889818249",
+    "en": "SFX",
+    "key": "concept-dar-bd3889818249",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-57607b764196",
+    "en": "Gameplay VFX",
+    "key": "concept-dar-57607b764196",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-09e10aebc420",
+    "en": "Environmental VFX",
+    "key": "concept-dar-09e10aebc420",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d6ce99fd25f1",
+    "en": "Cinematic VFX",
+    "key": "concept-dar-d6ce99fd25f1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2331dd2554a4",
+    "en": "Diegetic Effect",
+    "key": "concept-dar-2331dd2554a4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f63530c162e4",
+    "en": "World-space Effect",
+    "key": "concept-dar-f63530c162e4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-86c61582316f",
+    "en": "Anticipation Phase",
+    "key": "concept-dar-86c61582316f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bf8cc4f2ff93",
+    "en": "Build-up Phase",
+    "key": "concept-dar-bf8cc4f2ff93",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-10de33db1807",
+    "en": "Climax / Impact Phase",
+    "key": "concept-dar-10de33db1807",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-694eb482199f",
+    "en": "Dissipation Phase",
+    "key": "concept-dar-694eb482199f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-758ce7475733",
+    "en": "Aftermath",
+    "key": "concept-dar-758ce7475733",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1d36ad20a718",
+    "en": "Primary Shape",
+    "key": "concept-dar-1d36ad20a718",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-229c5b07bb11",
+    "en": "Secondary Detail",
+    "key": "concept-dar-229c5b07bb11",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ba188abc121a",
+    "en": "Visual Noise",
+    "key": "concept-dar-ba188abc121a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-307f536c77ab",
+    "en": "Effect Envelope",
+    "key": "concept-dar-307f536c77ab",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2c36c8cd4aeb",
+    "en": "Particle Attribute",
+    "key": "concept-dar-2c36c8cd4aeb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-30b7a513a3f7",
+    "en": "Custom Particle Data",
+    "key": "concept-dar-30b7a513a3f7",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-26eee31eb719",
+    "en": "Trail UV Mapping",
+    "key": "concept-dar-26eee31eb719",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-007235a8b49a",
+    "en": "Projected Decal",
+    "key": "concept-dar-007235a8b49a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-19a6978b16fd",
+    "en": "Mesh Decal",
+    "key": "concept-dar-19a6978b16fd",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-286a1de54880",
+    "en": "Volumetric Effect",
+    "key": "concept-dar-286a1de54880",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a50fc1a30acb",
+    "en": "Particle Light",
+    "key": "concept-dar-a50fc1a30acb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0c06cf6c09b5",
+    "en": "VFX Material",
+    "key": "concept-dar-0c06cf6c09b5",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-6616a5a30357",
+    "en": "Dissolve Edge",
+    "key": "concept-dar-6616a5a30357",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b2aa1ddd3404",
+    "en": "Emissive",
+    "key": "concept-dar-b2aa1ddd3404",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3d142622cb39",
+    "en": "Refraction",
+    "key": "concept-dar-3d142622cb39",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-065c5109dc00",
+    "en": "Normal Distortion",
+    "key": "concept-dar-065c5109dc00",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-54fe73b186db",
+    "en": "Volumetric Fog",
+    "key": "concept-dar-54fe73b186db",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2b27094fe450",
+    "en": "Color LUT",
+    "key": "concept-dar-2b27094fe450",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-95c17eac6ca0",
+    "en": "Screen Distortion",
+    "key": "concept-dar-95c17eac6ca0",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-66e9455a2ea1",
+    "en": "CPU Particles",
+    "key": "concept-dar-66e9455a2ea1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-becbdce50e89",
+    "en": "GPU Particles",
+    "key": "concept-dar-becbdce50e89",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-fa28711f59ed",
+    "en": "VFX LOD",
+    "key": "concept-dar-fa28711f59ed",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a80537e8b8fe",
+    "en": "Effect Culling",
+    "key": "concept-dar-a80537e8b8fe",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f56d6283b9ce",
+    "en": "Particle Bounds",
+    "key": "concept-dar-f56d6283b9ce",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a99d25b61448",
+    "en": "Scalability Settings",
+    "key": "concept-dar-a99d25b61448",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a844538cd2cb",
+    "en": "Effect Pooling",
+    "key": "concept-dar-a844538cd2cb",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b6c2ea5c67dc",
+    "en": "Warm-up Cost",
+    "key": "concept-dar-b6c2ea5c67dc",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a8514dae76f6",
+    "en": "Shader Variant",
+    "key": "concept-dar-a8514dae76f6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f68cefe4cdc6",
+    "en": "Transparent Sorting",
+    "key": "concept-dar-f68cefe4cdc6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d12c98dc4209",
+    "en": "Simulation Cache",
+    "key": "concept-dar-d12c98dc4209",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-0eb8bb6f0796",
+    "en": "Effect Budget",
+    "key": "concept-dar-0eb8bb6f0796",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-5e50d2413e08",
+    "en": "Gameplay Readability",
+    "key": "concept-dar-5e50d2413e08",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8e401e469fb6",
+    "en": "Effect Breakdown",
+    "key": "concept-dar-8e401e469fb6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-07629a5829c6",
+    "en": "VFX Flipbook Baking",
+    "key": "concept-dar-07629a5829c6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-b1c32bc1000e",
+    "en": "Material Symbols",
+    "key": "concept-dar-b1c32bc1000e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-87524011565a",
+    "en": "SF Symbols",
+    "key": "concept-dar-87524011565a",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1fc7048c0c88",
+    "en": "Bootstrap Icons",
+    "key": "concept-dar-1fc7048c0c88",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-79db9491ce8f",
+    "en": "Remix Icon",
+    "key": "concept-dar-79db9491ce8f",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-f6ed9b43bd25",
+    "en": "Simple Icons",
+    "key": "concept-dar-f6ed9b43bd25",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d55513710379",
+    "en": "React Icons",
+    "key": "concept-dar-d55513710379",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d78aabb83744",
+    "en": "Game-icons.net",
+    "key": "concept-dar-d78aabb83744",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-22c0ccc556ed",
+    "en": "QtAwesome",
+    "key": "concept-dar-22c0ccc556ed",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-047db90fa6cd",
+    "en": "Tween.js",
+    "key": "concept-dar-047db90fa6cd",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-cfd7a460aef4",
+    "en": "CSS Animations",
+    "key": "concept-dar-cfd7a460aef4",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-524ff8053d5d",
+    "en": "Web Animations API",
+    "key": "concept-dar-524ff8053d5d",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d81c89225d25",
+    "en": "GSAP ScrollTrigger",
+    "key": "concept-dar-d81c89225d25",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c11c29492d08",
+    "en": "GSAP Flip",
+    "key": "concept-dar-c11c29492d08",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-d610e1a7b919",
+    "en": "QIcon",
+    "key": "concept-dar-d610e1a7b919",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c32315579264",
+    "en": "QMovie",
+    "key": "concept-dar-c32315579264",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-216fd4df4f41",
+    "en": "QSvgRenderer",
+    "key": "concept-dar-216fd4df4f41",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-cad76bb3cb5c",
+    "en": "QPropertyAnimation",
+    "key": "concept-dar-cad76bb3cb5c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ceb871dbc3be",
+    "en": "QVariantAnimation",
+    "key": "concept-dar-ceb871dbc3be",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-c8e6a78e4b63",
+    "en": "QEasingCurve",
+    "key": "concept-dar-c8e6a78e4b63",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-eb41acf9cad9",
+    "en": "QParallelAnimationGroup",
+    "key": "concept-dar-eb41acf9cad9",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8fc8ac955ac1",
+    "en": "QSequentialAnimationGroup",
+    "key": "concept-dar-8fc8ac955ac1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-72a848977047",
+    "en": "Qt Quick Animation",
+    "key": "concept-dar-72a848977047",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-2e7fc1040a82",
+    "en": "Tkinter after / Canvas",
+    "key": "concept-dar-2e7fc1040a82",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-eb3e5daa2b33",
+    "en": "Kivy Animation",
+    "key": "concept-dar-eb3e5daa2b33",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-9f5d7cf432a0",
+    "en": "Unity Particle System",
+    "key": "concept-dar-9f5d7cf432a0",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-04d543499c7e",
+    "en": "Unity Visual Effect Graph",
+    "key": "concept-dar-04d543499c7e",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-47211aea04ef",
+    "en": "Niagara",
+    "key": "concept-dar-47211aea04ef",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-a782bd7d7812",
+    "en": "Godot GPUParticles2D / GPUParticles3D",
+    "key": "concept-dar-a782bd7d7812",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-00becb31e286",
+    "en": "Godot CPUParticles2D / CPUParticles3D",
+    "key": "concept-dar-00becb31e286",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-30c637fa2ecd",
+    "en": "Godot AnimationPlayer",
+    "key": "concept-dar-30c637fa2ecd",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-3114056908e1",
+    "en": "Godot AnimationTree",
+    "key": "concept-dar-3114056908e1",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-bec5f1e84727",
+    "en": "Godot Tween",
+    "key": "concept-dar-bec5f1e84727",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-da920940e9ea",
+    "en": "Effekseer",
+    "key": "concept-dar-da920940e9ea",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-76dde5a11abe",
+    "en": "PopcornFX",
+    "key": "concept-dar-76dde5a11abe",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-1fe34befebc8",
+    "en": "three.quarks",
+    "key": "concept-dar-1fe34befebc8",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-e19e6b1ebdb6",
+    "en": "Three.js TransformControls",
+    "key": "concept-dar-e19e6b1ebdb6",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-ca4e3ba5d71c",
+    "en": "drei GizmoHelper",
+    "key": "concept-dar-ca4e3ba5d71c",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-8e1c457cc157",
+    "en": "ImGuizmo",
+    "key": "concept-dar-8e1c457cc157",
+    "mode": "diagram",
+    "specific": false
+  },
+  {
+    "id": "dar-78a21d915700",
+    "en": "PixiJS ParticleContainer",
+    "key": "concept-dar-78a21d915700",
+    "mode": "diagram",
+    "specific": false
+  }
+]

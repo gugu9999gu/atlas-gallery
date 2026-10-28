@@ -1,0 +1,1186 @@
+# 미리보기 제작 백로그
+
+2026-10-28 · v3.1.0 · 대표 항목 2,109개 중 구체적 예시 999개, 잔여 개념 도식 1,110개.
+
+아래 항목은 미리보기가 전혀 없는 빈 카드가 아니라 **정의·적용 관계를 표시하는 도식**입니다. 실제 시각/동작 예시로 교체할 때만 상태를 변경합니다.
+
+새 렌더러는 항목 ID/정확한 영문명과 연결하고, 동의어·상하위 관계를 검토하며, 한/영·모바일·키보드·감소된 모션을 검사합니다. 제품/라이브러리는 공인 데모를 표방하지 않습니다.
+
+## 웹 라이브러리 — 116개
+
+- [ ] `dar-775ecd89301d` **Tailwind CSS** / Tailwind CSS
+- [ ] `dar-155e885ae411` **Bootstrap** / Bootstrap
+- [ ] `dar-e0584cf1f7fd` **Bulma** / Bulma
+- [ ] `dar-31e635dffce5` **Foundation** / Foundation
+- [ ] `dar-6dc499c0cd9a` **Pico CSS** / Pico CSS
+- [ ] `dar-89bbeca9c62a` **UIkit** / UIkit
+- [ ] `dar-fe80e7d73090` **daisyUI** / daisyUI
+- [ ] `dar-9a7d1282f852` **Flowbite** / Flowbite
+- [ ] `dar-b729d14372c1` **UnoCSS** / UnoCSS
+- [ ] `dar-67a86c162f6d` **Open Props** / Open Props
+- [ ] `dar-345d8dfcd1c7` **Sass** / Sass
+- [ ] `dar-50cea1a9eeed` **Less** / Less
+- [ ] `dar-04396c19548d` **PostCSS** / PostCSS
+- [ ] `dar-fe68a22b09b2` **Lightning CSS** / Lightning CSS
+- [ ] `dar-6424b761af9b` **Autoprefixer** / Autoprefixer
+- [ ] `dar-12d7038e77e1` **styled-components** / styled-components
+- [ ] `dar-21cbe3581ccd` **Emotion** / Emotion
+- [ ] `dar-8fa8e774c247` **vanilla-extract** / vanilla-extract
+- [ ] `dar-c36d95f4e132` **Panda CSS** / Panda CSS
+- [ ] `dar-002517a772fb` **Style Dictionary** / Style Dictionary
+- [ ] `dar-d14a0021b71d` **React** / React
+- [ ] `dar-06858535ca81` **Vue** / Vue
+- [ ] `dar-6a0895be20dc` **Angular** / Angular
+- [ ] `dar-4dc647918ca6` **Svelte** / Svelte
+- [ ] `dar-f2a0f89cc362` **SolidJS** / SolidJS
+- [ ] `dar-5222150203a9` **Preact** / Preact
+- [ ] `dar-a8287fa0d0df` **Lit** / Lit
+- [ ] `dar-129d57a8ed45` **Alpine.js** / Alpine.js
+- [ ] `dar-8729c18e54d1` **htmx** / htmx
+- [ ] `dar-e2aa2ef3a9dd` **Next.js** / Next.js
+- [ ] `dar-9947794faa15` **Nuxt** / Nuxt
+- [ ] `dar-fd61a4010645` **SvelteKit** / SvelteKit
+- [ ] `dar-d16b80390d65` **Astro** / Astro
+- [ ] `dar-a59cbddda1d3` **Qwik** / Qwik
+- [ ] `dar-35a0d6164521` **Ember.js** / Ember.js
+- [ ] `dar-749c9af4a4ac` **jQuery** / jQuery
+- [ ] `dar-5426b047a23c` **shadcn/ui** / shadcn/ui
+- [ ] `dar-9ab2cf197985` **Radix Primitives** / Radix Primitives
+- [ ] `dar-2d76c7e3e0ce` **Radix Themes** / Radix Themes
+- [ ] `dar-711f5ad66032` **Headless UI** / Headless UI
+- [ ] `dar-fc76ba33f320` **React Aria** / React Aria
+- [ ] `dar-741628300160` **React Spectrum** / React Spectrum
+- [ ] `dar-49cf9b6de186` **MUI** / MUI
+- [ ] `dar-f9676751fd63` **Ant Design** / Ant Design
+- [ ] `dar-5e51c207aca1` **Chakra UI** / Chakra UI
+- [ ] `dar-e01653dcd909` **Mantine** / Mantine
+- [ ] `dar-c8f6b4ca5f59` **Fluent UI React** / Fluent UI React
+- [ ] `dar-17c7932f4cd6` **Carbon React** / Carbon React
+- [ ] `dar-dd0510b10c31` **Blueprint** / Blueprint
+- [ ] `dar-cb0a41091d6f` **PrimeReact** / PrimeReact
+- [ ] `dar-d622c34fb929` **React Bootstrap** / React Bootstrap
+- [ ] `dar-9bd81b097171` **Base UI** / Base UI
+- [ ] `dar-cdc00aa56354` **Ark UI** / Ark UI
+- [ ] `dar-e28337b056c2` **HeroUI** / HeroUI
+- [ ] `dar-c6cab34f98e8` **Vuetify** / Vuetify
+- [ ] `dar-4d8bd68f5c46` **PrimeVue** / PrimeVue
+- [ ] `dar-ff161b8f6492` **Quasar** / Quasar
+- [ ] `dar-c45c8f01bc6b` **Element Plus** / Element Plus
+- [ ] `dar-342c9d1426de` **Naive UI** / Naive UI
+- [ ] `dar-ffd7b274a641` **Ant Design Vue** / Ant Design Vue
+- [ ] `dar-6d97356403de` **Nuxt UI** / Nuxt UI
+- [ ] `dar-b60843de40c9` **Angular Material** / Angular Material
+- [ ] `dar-8ad436960437` **Angular CDK** / Angular CDK
+- [ ] `dar-0b31d952dcb7` **PrimeNG** / PrimeNG
+- [ ] `dar-9da10fb5e64d` **NG-ZORRO** / NG-ZORRO
+- [ ] `dar-c8625aa42493` **Bits UI** / Bits UI
+- [ ] `dar-f788c8c69bd4` **Skeleton** / Skeleton
+- [ ] `dar-ed692ab73d48` **shadcn-svelte** / shadcn-svelte
+- [ ] `dar-5b74915ccbd1` **Popmotion** / Popmotion
+- [ ] `dar-f9258b0f7a21` **Lenis** / Lenis
+- [ ] `dar-a5001243b221` **AOS** / AOS
+- [ ] `dar-ebb1719568d6` **canvas-confetti** / canvas-confetti
+- [ ] `dar-55da1e46c2d0` **Typed.js** / Typed.js
+- [ ] `dar-768cd0184aa4` **Floating UI** / Floating UI
+- [ ] `dar-28e6f824f040` **dnd-kit** / dnd-kit
+- [ ] `dar-baf45cba8a10` **SortableJS** / SortableJS
+- [ ] `dar-ce238c9af201` **interact.js** / interact.js
+- [ ] `dar-aa5b7c422c31` **Swiper** / Swiper
+- [ ] `dar-4cbce996ba6c` **Embla Carousel** / Embla Carousel
+- [ ] `dar-540a59423ecb` **React Hook Form** / React Hook Form
+- [ ] `dar-93263efb86bc` **Formik** / Formik
+- [ ] `dar-d89e82857162` **Zod** / Zod
+- [ ] `dar-0d38463bb6b1` **Valibot** / Valibot
+- [ ] `dar-a0b4cec30041` **TanStack Table** / TanStack Table
+- [ ] `dar-71ef3033aa71` **AG Grid** / AG Grid
+- [ ] `dar-d24f72253e92` **Handsontable** / Handsontable
+- [ ] `dar-236f8279476d` **Tabulator** / Tabulator
+- [ ] `dar-40665c03525f` **TanStack Virtual** / TanStack Virtual
+- [ ] `dar-6a45f846bf40` **React Virtuoso** / React Virtuoso
+- [ ] `dar-a77c4546a653` **TanStack Query** / TanStack Query
+- [ ] `dar-3b600a10b04e` **Zustand** / Zustand
+- [ ] `dar-5a02d232913c` **XState** / XState
+- [ ] `dar-8df36555932e` **Redux Toolkit** / Redux Toolkit
+- [ ] `dar-6fd89771b380` **FullCalendar** / FullCalendar
+- [ ] `dar-c9e7ca33807f` **Konva** / Konva
+- [ ] `dar-46df34514eb6` **Fabric.js** / Fabric.js
+- [ ] `dar-0956b0c4c8ec` **Paper.js** / Paper.js
+- [ ] `dar-a146923c29e7` **p5.js** / p5.js
+- [ ] `dar-13de7f54196b` **Two.js** / Two.js
+- [ ] `dar-ebc45fb556a9` **Rough.js** / Rough.js
+- [ ] `dar-b7c71b52d91f` **tldraw SDK** / tldraw SDK
+- [ ] `dar-5329715bf5fa` **Excalidraw** / Excalidraw
+- [ ] `dar-957b0dbac801` **React Flow** / React Flow
+- [ ] `dar-f2f1329c85c5` **Svelte Flow** / Svelte Flow
+- [ ] `dar-d5465098beb1` **Cytoscape.js** / Cytoscape.js
+- [ ] `dar-0e5d18ad2184` **Sigma.js** / Sigma.js
+- [ ] `dar-c25629f5f4a6` **Graphology** / Graphology
+- [ ] `dar-864eed14dc27` **ELK.js** / ELK.js
+- [ ] `dar-c98ce596a895` **Dagre** / Dagre
+- [ ] `dar-7339e9a52f7a` **Mermaid** / Mermaid
+- [ ] `dar-301beb003f31` **JointJS** / JointJS
+- [ ] `dar-d973c61dac07` **Tiptap** / Tiptap
+- [ ] `dar-087b68500621` **ProseMirror** / ProseMirror
+- [ ] `dar-89d16ad67e3c` **Lexical** / Lexical
+- [ ] `dar-4ae8ff49f564` **Monaco Editor** / Monaco Editor
+- [ ] `dar-94332c0f7186` **CodeMirror** / CodeMirror
+
+## 게임 디자인 — 108개
+
+- [ ] `dar-191fb9b3b28a` **코어 루프** / Core Loop
+- [ ] `dar-4d5c2abddb72` **메타 루프** / Meta Loop
+- [ ] `dar-68f090a83481` **게임 메커닉** / Game Mechanic
+- [ ] `dar-dbe9e81b8cee` **게임 다이내믹스** / Game Dynamics
+- [ ] `dar-5ffd28d2eb8d` **게임 필** / Game Feel
+- [ ] `dar-b18ff123c369` **플레이어 행위 주도성** / Player Agency
+- [ ] `dar-f0bc4c7fd3fd` **의미 있는 선택** / Meaningful Choice
+- [ ] `dar-d83528e152d0` **위험과 보상** / Risk–Reward
+- [ ] `dar-e5d0e866b80b` **피드백 루프** / Feedback Loop
+- [ ] `dar-9a679cfd064b` **강화 피드백 루프** / Positive Feedback Loop
+- [ ] `dar-8e2489a5962f` **균형 피드백 루프** / Negative Feedback Loop
+- [ ] `dar-c038f0addbbd` **성장 시스템** / Progression System
+- [ ] `dar-6d3213ebe256` **스킬 트리** / Skill Tree
+- [ ] `dar-af9f16055916` **기술 트리** / Tech Tree
+- [ ] `dar-84e26fd65922` **해금** / Unlock
+- [ ] `dar-768dcb9e44ce` **난이도 곡선** / Difficulty Curve
+- [ ] `dar-1a904ebfccd1` **동적 난이도** / Dynamic Difficulty
+- [ ] `dar-16c51aa95070` **자원 경제** / Resource Economy
+- [ ] `dar-3cf6e81f771b` **자원 공급원·소모처** / Source and Sink
+- [ ] `dar-d4b2cf539395` **제작** / Crafting
+- [ ] `dar-0efbbff99f37` **전리품 테이블** / Loot Table
+- [ ] `dar-ef460ee95bd3` **난수 생성** / Random Number Generation
+- [ ] `dar-76b3a39cc11b` **절차적 콘텐츠 생성** / Procedural Content Generation
+- [ ] `dar-8fe90db8c797` **창발적 플레이** / Emergent Gameplay
+- [ ] `dar-d4f93bcfe83a` **샌드박스 구조** / Sandbox
+- [ ] `dar-dfd00872ed64` **영구 사망** / Permadeath
+- [ ] `dar-f8cb0765419a` **체크포인트** / Checkpoint
+- [ ] `dar-9715bb477abe` **저장 상태** / Save State
+- [ ] `dar-4ca8dce48bc7` **뉴게임 플러스** / New Game Plus
+- [ ] `dar-0b69f0533535` **버티컬 슬라이스** / Vertical Slice
+- [ ] `dar-88c5460ad356` **게임 디자인 문서** / Game Design Document
+- [ ] `dar-0146ba41e18b` **공격 판정 영역** / Hitbox
+- [ ] `dar-dcd47283aa03` **피격 판정 영역** / Hurtbox
+- [ ] `dar-09961e47f98c` **충돌 형태** / Collision Shape
+- [ ] `dar-51b364eb06f5` **무적 프레임** / Invincibility Frames
+- [ ] `dar-afbe7f683460` **발동 프레임** / Startup Frames
+- [ ] `dar-ce1f71a15050` **활성 프레임** / Active Frames
+- [ ] `dar-e2acb28ea0e5` **후딜레이 프레임** / Recovery Frames
+- [ ] `dar-3361cdc2db05` **피격 경직** / Hitstun
+- [ ] `dar-085d356459c1` **넉백** / Knockback
+- [ ] `dar-8d67d7046a5f` **공격 예고** / Telegraph
+- [ ] `dar-a10cb4ccae11` **패링 허용 구간** / Parry Window
+- [ ] `dar-ba350284504f` **입력 버퍼** / Input Buffer
+- [ ] `dar-635a967bfd14` **코요테 타임** / Coyote Time
+- [ ] `dar-4687b6f568fe` **점프 버퍼** / Jump Buffer
+- [ ] `dar-1a4f74aba5b3` **가변 점프 높이** / Variable Jump Height
+- [ ] `dar-e46fca9f5960` **공중 제어** / Air Control
+- [ ] `dar-076fa673a17a` **가속·감속** / Acceleration and Deceleration
+- [ ] `dar-0019ceec6862` **데드존** / Dead Zone
+- [ ] `dar-235d8a1c08cd` **조준 보조** / Aim Assist
+- [ ] `dar-288ee118bf4a` **표적 고정** / Lock-on
+- [ ] `dar-c5c958271b8e` **재사용 대기시간** / Cooldown
+- [ ] `dar-a9c10d34dc16` **스태미나 시스템** / Stamina System
+- [ ] `dar-5506e7db91fb` **콤보 시스템** / Combo System
+- [ ] `dar-67ff513e1d55` **처치 소요 시간** / Time to Kill
+- [ ] `dar-a49b6dc06a45` **거리별 피해 감소** / Damage Falloff
+- [ ] `dar-6cec4a8c6732` **아군 피해** / Friendly Fire
+- [ ] `dar-6ad5b3b8456c` **1인칭 시점** / First-person View
+- [ ] `dar-292e3f136033` **3인칭 시점** / Third-person View
+- [ ] `dar-0aa94cd483c7` **탑다운 시점** / Top-down View
+- [ ] `dar-9d77a515f240` **횡스크롤** / Side-scrolling
+- [ ] `dar-95fd413435b5` **직교 투영** / Orthographic Projection
+- [ ] `dar-110abf9b445a` **원근 투영** / Perspective Projection
+- [ ] `dar-1f136821e276` **2.5D 표현** / 2.5D
+- [ ] `dar-fb027996ec80` **로그라이크** / Roguelike
+- [ ] `dar-3ab01165c121` **로그라이트** / Roguelite
+- [ ] `dar-9a0b3745bfb2` **메트로배니아** / Metroidvania
+- [ ] `dar-6158834bd463` **이머시브 심** / Immersive Sim
+- [ ] `dar-c2cc192994d6` **생존 제작** / Survival Crafting
+- [ ] `dar-e10c0736cc78` **실시간 전략** / RTS
+- [ ] `dar-fed47c0720fa` **턴제 전략** / Turn-based Strategy
+- [ ] `dar-ddfb4a15eb86` **타워 디펜스** / Tower Defense
+- [ ] `dar-ce82c1bc0f16` **덱빌딩** / Deckbuilding
+- [ ] `dar-f3edec607d8b` **세계 내 UI** / Diegetic UI
+- [ ] `dar-e90044c84cf9` **세계 밖 UI** / Non-diegetic UI
+- [ ] `dar-e8cfb32ea3cb` **공간형 UI** / Spatial UI
+- [ ] `dar-be4a46c8cdc1` **메타 UI** / Meta UI
+- [ ] `dar-45bb64283687` **체력 바** / Health Bar
+- [ ] `dar-18eba456b53b` **피해 수치** / Damage Number
+- [ ] `dar-70b1bf1d690e` **상호작용 안내** / Interaction Prompt
+- [ ] `dar-315b6c42ca32` **인벤토리 격자** / Inventory Grid
+- [ ] `dar-b52f0caf1981` **단축 슬롯 바** / Hotbar
+- [ ] `dar-30ff39302f37` **원형 메뉴** / Radial Menu
+- [ ] `dar-0f7d4d5c2efe` **전장의 안개** / Fog of War
+- [ ] `dar-f5b67a356add` **유한 상태 기계** / Finite State Machine
+- [ ] `dar-5cd15e048690` **행동 트리** / Behavior Tree
+- [ ] `dar-b569fb792f89` **효용 기반 AI** / Utility AI
+- [ ] `dar-0b391b6b3a3d` **목표 지향 행동 계획** / GOAP
+- [ ] `dar-5dec66dcbb8c` **블랙보드** / Blackboard
+- [ ] `dar-1b955a06b5e8` **조향 행동** / Steering Behavior
+- [ ] `dar-3679b0bfa61e` **인지 시스템** / Perception System
+- [ ] `dar-8f31911d07e0` **어그로** / Aggro
+- [ ] `dar-da93074fb164` **생성 시스템** / Spawn System
+- [ ] `dar-b87ed595ef1b` **인카운터** / Encounter
+- [ ] `dar-5b1492f718ad` **내러티브 디자인** / Narrative Design
+- [ ] `dar-ea34b69ffcff` **분기 대화** / Branching Dialogue
+- [ ] `dar-b886daf8258c` **퀘스트 그래프** / Quest Graph
+- [ ] `dar-fad171b0eb9c` **환경 서사** / Environmental Storytelling
+- [ ] `dar-461d25299ca3` **플레이·서사 일관성** / Ludonarrative Consistency
+- [ ] `dar-ff933ea044d5` **상황 단발 대사** / Bark
+- [ ] `dar-9242dca19b0d` **컷신** / Cutscene
+- [ ] `dar-7d368035df16` **엔티티·컴포넌트·시스템** / Entity Component System
+- [ ] `dar-8490b4667f1a` **재사용 객체 묶음** / Prefab / Packed Scene
+- [ ] `dar-9d6b92be66d5` **게임 루프** / Game Loop
+- [ ] `dar-2c87c0685a04` **고정 시간 간격** / Fixed Timestep
+- [ ] `dar-9b40139f4d28` **델타 타임** / Delta Time
+- [ ] `dar-8a6c79e3d98b` **플레이테스트** / Playtest
+- [ ] `dar-b3f44aefbd20` **텔레메트리** / Telemetry
+
+## Python·데스크톱 — 58개
+
+- [ ] `dar-1b19a8a2094e` **GUI 툴킷** / GUI Toolkit
+- [ ] `dar-4e13d21092d7` **네이티브 위젯** / Native Widget
+- [ ] `dar-ac237e00809a` **직접 그리기 UI** / Custom-drawn UI
+- [ ] `dar-e3362b714417` **보존형 GUI** / Retained-mode GUI
+- [ ] `dar-c8dab7d14edb` **즉시형 GUI** / Immediate-mode GUI
+- [ ] `dar-75bab50b35a2` **이벤트 루프** / Event Loop
+- [ ] `dar-b8f6e0fe87b3` **콜백** / Callback
+- [ ] `dar-a88b3ef032f0` **시그널·슬롯** / Signal and Slot
+- [ ] `dar-9156005fb0ca` **GUI 스레드** / GUI Thread
+- [ ] `dar-1d7167429c70` **작업 스레드** / Worker Thread
+- [ ] `dar-78b8904b259c` **모델·뷰 구조** / Model–View
+- [ ] `dar-3222f8d4aaf2` **모델·뷰·컨트롤러** / MVC
+- [ ] `dar-c80a6746122a` **모델·뷰·뷰모델** / MVVM
+- [ ] `dar-4cfe0e2f8b85` **데이터 바인딩** / Data Binding
+- [ ] `dar-d99ab9a17a3a` **레이아웃 관리자** / Layout Manager
+- [ ] `dar-6f8c0d3586eb` **크기 정책** / Size Policy
+- [ ] `dar-1a37ef444d12` **도킹 위젯** / Dock Widget
+- [ ] `dar-5188504fb9b9` **다중 문서 인터페이스** / MDI
+- [ ] `dar-cbc3ffe147c6` **시스템 트레이** / System Tray
+- [ ] `dar-162bd4c4a9e7` **Qt 위젯** / Qt Widgets
+- [ ] `dar-9beba4503948` **Qt 퀵** / Qt Quick
+- [ ] `dar-07327a807529` **QML 언어** / QML
+- [ ] `dar-6b5d30b97ce2` **Qt 스타일 시트** / Qt Style Sheets
+- [ ] `dar-cc65e8237bf4` **KV 언어** / KV Language
+- [ ] `dar-58e42468628b` **터미널 사용자 인터페이스** / TUI
+- [ ] `dar-bc333c04e576` **고해상도 배율 처리** / High-DPI Scaling
+- [ ] `dar-e72e6c353c6b` **웹뷰 브리지** / Webview Bridge
+- [ ] `dar-88d40892e2fe` **애플리케이션 패키징** / Application Packaging
+- [ ] `dar-21d15a90c826` **Tkinter** / Tkinter
+- [ ] `dar-b7d5bb249fdb` **tkinter.ttk** / tkinter.ttk
+- [ ] `dar-088489268656` **CustomTkinter** / CustomTkinter
+- [ ] `dar-a25b1dfd047a` **ttkbootstrap** / ttkbootstrap
+- [ ] `dar-4a38e7a401b5` **PySide6** / PySide6
+- [ ] `dar-a8abf457a05a` **PyQt6** / PyQt6
+- [ ] `dar-5509b027992a` **wxPython** / wxPython
+- [ ] `dar-00ebc80363e8` **Kivy** / Kivy
+- [ ] `dar-95b8f87a63a4` **KivyMD** / KivyMD
+- [ ] `dar-826d7621c277` **Dear PyGui** / Dear PyGui
+- [ ] `dar-d378f404bd79` **Toga** / Toga
+- [ ] `dar-b8a5d5a8fcd7` **pywebview** / pywebview
+- [ ] `dar-2d307e876c15` **PyGObject** / PyGObject
+- [ ] `dar-13fcac5b060b` **PySimpleGUI** / PySimpleGUI
+- [ ] `dar-6935e0b9b5e2` **PyForms** / PyForms
+- [ ] `dar-9f8de2dd77f7` **Enaml** / Enaml
+- [ ] `dar-db419d036741` **Flet** / Flet
+- [ ] `dar-ff482245a6a4` **NiceGUI** / NiceGUI
+- [ ] `dar-3ea16dabea8e` **Streamlit** / Streamlit
+- [ ] `dar-403b813ab9e1` **Gradio** / Gradio
+- [ ] `dar-3220410ab931` **Dash** / Dash
+- [ ] `dar-ab4aa97fbc6d` **Reflex** / Reflex
+- [ ] `dar-b6acb867f502` **Solara** / Solara
+- [ ] `dar-ddbbc4cdb31f` **Shiny for Python** / Shiny for Python
+- [ ] `dar-16a8f89154a1` **ipywidgets** / ipywidgets
+- [ ] `dar-6278754d7cbc` **Voila** / Voila
+- [ ] `dar-75fad5701701` **Textual** / Textual
+- [ ] `dar-96b8dea92454` **Rich** / Rich
+- [ ] `dar-25a9af913863` **Urwid** / Urwid
+- [ ] `dar-1d53b4130dce` **prompt_toolkit** / prompt_toolkit
+
+## 게임 VFX — 58개
+
+- [ ] `dar-853ddcb01478` **셰이더** / Shader
+- [ ] `dar-95aa603a219d` **데칼** / Decal
+- [ ] `dar-61cfb2f67f2a` **톤 매핑** / Tone Mapping
+- [ ] `dar-a9647ae34141` **드로 콜** / Draw Call
+- [ ] `dar-64dbf3c24bea` **배칭** / Batching
+- [ ] `dar-3f512f8dcbf4` **GPU 인스턴싱** / GPU Instancing
+- [ ] `dar-0cea993a7c00` **오버드로** / Overdraw
+- [ ] `dar-f5e593fed1ce` **필레이트** / Fill Rate
+- [ ] `dar-47f8fcb7fe78` **후처리** / Post-processing
+- [ ] `dar-c16312a576ff` **화면 공간 효과** / Screen-space Effect
+- [ ] `dar-a66af4f049fe` **플립북 애니메이션** / Flipbook Animation
+- [ ] `dar-7d3e0600f98a` **시각 효과** / VFX
+- [ ] `dar-541862a26aca` **실시간 시각 효과** / Real-time Visual Effects
+- [ ] `dar-bd3889818249` **SFX·문맥별 효과 약어** / SFX
+- [ ] `dar-57607b764196` **게임플레이 VFX** / Gameplay VFX
+- [ ] `dar-09e10aebc420` **환경 VFX** / Environmental VFX
+- [ ] `dar-d6ce99fd25f1` **시네마틱 VFX** / Cinematic VFX
+- [ ] `dar-2331dd2554a4` **세계 내부 효과** / Diegetic Effect
+- [ ] `dar-f63530c162e4` **월드 공간 효과** / World-space Effect
+- [ ] `dar-86c61582316f` **이펙트 예고 단계** / Anticipation Phase
+- [ ] `dar-bf8cc4f2ff93` **빌드업 단계** / Build-up Phase
+- [ ] `dar-10de33db1807` **정점·충격 단계** / Climax / Impact Phase
+- [ ] `dar-694eb482199f` **소산 단계** / Dissipation Phase
+- [ ] `dar-758ce7475733` **여파** / Aftermath
+- [ ] `dar-1d36ad20a718` **주요 형태** / Primary Shape
+- [ ] `dar-229c5b07bb11` **보조 디테일** / Secondary Detail
+- [ ] `dar-ba188abc121a` **시각적 잡음** / Visual Noise
+- [ ] `dar-307f536c77ab` **이펙트 강도 곡선** / Effect Envelope
+- [ ] `dar-2c36c8cd4aeb` **입자 속성** / Particle Attribute
+- [ ] `dar-30b7a513a3f7` **사용자 입자 데이터** / Custom Particle Data
+- [ ] `dar-26eee31eb719` **트레일 UV 매핑** / Trail UV Mapping
+- [ ] `dar-007235a8b49a` **투영 데칼** / Projected Decal
+- [ ] `dar-19a6978b16fd` **메시 데칼** / Mesh Decal
+- [ ] `dar-286a1de54880` **볼류메트릭 효과** / Volumetric Effect
+- [ ] `dar-a50fc1a30acb` **입자 연동 조명** / Particle Light
+- [ ] `dar-0c06cf6c09b5` **이펙트 재질** / VFX Material
+- [ ] `dar-6616a5a30357` **디졸브 경계** / Dissolve Edge
+- [ ] `dar-b2aa1ddd3404` **발광 성분** / Emissive
+- [ ] `dar-3d142622cb39` **굴절** / Refraction
+- [ ] `dar-065c5109dc00` **법선 기반 왜곡** / Normal Distortion
+- [ ] `dar-54fe73b186db` **체적 안개** / Volumetric Fog
+- [ ] `dar-2b27094fe450` **색상 LUT** / Color LUT
+- [ ] `dar-95c17eac6ca0` **화면 왜곡** / Screen Distortion
+- [ ] `dar-66e9455a2ea1` **CPU 파티클** / CPU Particles
+- [ ] `dar-becbdce50e89` **GPU 파티클** / GPU Particles
+- [ ] `dar-fa28711f59ed` **이펙트 세부 수준** / VFX LOD
+- [ ] `dar-a80537e8b8fe` **이펙트 컬링** / Effect Culling
+- [ ] `dar-f56d6283b9ce` **입자 바운드** / Particle Bounds
+- [ ] `dar-a99d25b61448` **품질 확장 설정** / Scalability Settings
+- [ ] `dar-a844538cd2cb` **이펙트 풀링** / Effect Pooling
+- [ ] `dar-b6c2ea5c67dc` **준비 비용** / Warm-up Cost
+- [ ] `dar-a8514dae76f6` **셰이더 변형** / Shader Variant
+- [ ] `dar-f68cefe4cdc6` **반투명 정렬** / Transparent Sorting
+- [ ] `dar-d12c98dc4209` **시뮬레이션 캐시** / Simulation Cache
+- [ ] `dar-0eb8bb6f0796` **이펙트 예산** / Effect Budget
+- [ ] `dar-5e50d2413e08` **게임플레이 판독성** / Gameplay Readability
+- [ ] `dar-8e401e469fb6` **이펙트 분해 분석** / Effect Breakdown
+- [ ] `dar-07629a5829c6` **VFX 플립북 베이크** / VFX Flipbook Baking
+
+## 아이콘·모션·VFX 구현 — 57개
+
+- [ ] `dar-75ac70d863ca` **CSS 트랜지션** / CSS Transitions
+- [ ] `dar-7a8fef28336a` **뷰 트랜지션 API** / View Transition API
+- [ ] `dar-b3710b101c5f` **GSAP** / GSAP
+- [ ] `dar-8413e16fdde5` **Motion** / Motion
+- [ ] `dar-2c8219d16889` **Anime.js** / Anime.js
+- [ ] `dar-365c14fa6f34` **React Spring** / React Spring
+- [ ] `dar-02d7ed1323e5` **Lottie Web** / Lottie Web
+- [ ] `dar-d9c385355292` **Rive 런타임** / Rive Runtimes
+- [ ] `dar-686b1eae9912` **AutoAnimate** / AutoAnimate
+- [ ] `dar-0bd05e221a2e` **Animate.css** / Animate.css
+- [ ] `dar-7cdd6d5bb11e` **tsParticles** / tsParticles
+- [ ] `dar-80b095b06d0e` **Manim** / Manim
+- [ ] `dar-0ca9a4d25e9b` **Lucide** / Lucide
+- [ ] `dar-94e1efd09c64` **Heroicons** / Heroicons
+- [ ] `dar-a0d6ffdab3aa` **Phosphor Icons** / Phosphor Icons
+- [ ] `dar-7196cf354f03` **Tabler Icons** / Tabler Icons
+- [ ] `dar-ef2a785d46b9` **Font Awesome** / Font Awesome
+- [ ] `dar-b9e15ffa019a` **Iconify** / Iconify
+- [ ] `dar-b1c32bc1000e` **머티리얼 심볼** / Material Symbols
+- [ ] `dar-87524011565a` **SF Symbols** / SF Symbols
+- [ ] `dar-1fc7048c0c88` **Bootstrap Icons** / Bootstrap Icons
+- [ ] `dar-79db9491ce8f` **Remix Icon** / Remix Icon
+- [ ] `dar-f6ed9b43bd25` **Simple Icons** / Simple Icons
+- [ ] `dar-d55513710379` **React Icons** / React Icons
+- [ ] `dar-d78aabb83744` **Game-icons.net** / Game-icons.net
+- [ ] `dar-22c0ccc556ed` **QtAwesome** / QtAwesome
+- [ ] `dar-047db90fa6cd` **Tween.js** / Tween.js
+- [ ] `dar-cfd7a460aef4` **CSS 애니메이션** / CSS Animations
+- [ ] `dar-524ff8053d5d` **웹 애니메이션 API** / Web Animations API
+- [ ] `dar-d81c89225d25` **GSAP ScrollTrigger** / GSAP ScrollTrigger
+- [ ] `dar-c11c29492d08` **GSAP Flip** / GSAP Flip
+- [ ] `dar-d610e1a7b919` **Qt 아이콘** / QIcon
+- [ ] `dar-c32315579264` **Qt 이미지 애니메이션** / QMovie
+- [ ] `dar-216fd4df4f41` **Qt SVG 렌더러** / QSvgRenderer
+- [ ] `dar-cad76bb3cb5c` **Qt 속성 애니메이션** / QPropertyAnimation
+- [ ] `dar-ceb871dbc3be` **Qt 값 애니메이션** / QVariantAnimation
+- [ ] `dar-c8e6a78e4b63` **Qt 이징 곡선** / QEasingCurve
+- [ ] `dar-eb41acf9cad9` **Qt 병렬 애니메이션 그룹** / QParallelAnimationGroup
+- [ ] `dar-8fc8ac955ac1` **Qt 순차 애니메이션 그룹** / QSequentialAnimationGroup
+- [ ] `dar-72a848977047` **Qt Quick 애니메이션** / Qt Quick Animation
+- [ ] `dar-2e7fc1040a82` **Tkinter 타이머·캔버스** / Tkinter after / Canvas
+- [ ] `dar-eb3e5daa2b33` **Kivy 애니메이션** / Kivy Animation
+- [ ] `dar-9f5d7cf432a0` **Unity 파티클 시스템** / Unity Particle System
+- [ ] `dar-04d543499c7e` **Unity 비주얼 이펙트 그래프** / Unity Visual Effect Graph
+- [ ] `dar-47211aea04ef` **나이아가라** / Niagara
+- [ ] `dar-a782bd7d7812` **Godot GPU 파티클** / Godot GPUParticles2D / GPUParticles3D
+- [ ] `dar-00becb31e286` **Godot CPU 파티클** / Godot CPUParticles2D / CPUParticles3D
+- [ ] `dar-30c637fa2ecd` **Godot 애니메이션 플레이어** / Godot AnimationPlayer
+- [ ] `dar-3114056908e1` **Godot 애니메이션 트리** / Godot AnimationTree
+- [ ] `dar-bec5f1e84727` **Godot 트윈** / Godot Tween
+- [ ] `dar-da920940e9ea` **에펙시어** / Effekseer
+- [ ] `dar-76dde5a11abe` **PopcornFX** / PopcornFX
+- [ ] `dar-1fe34befebc8` **three.quarks** / three.quarks
+- [ ] `dar-e19e6b1ebdb6` **Three.js 변환 컨트롤** / Three.js TransformControls
+- [ ] `dar-ca4e3ba5d71c` **drei 기즈모 헬퍼** / drei GizmoHelper
+- [ ] `dar-8e1c457cc157` **ImGuizmo** / ImGuizmo
+- [ ] `dar-78a21d915700` **PixiJS 파티클 컨테이너** / PixiJS ParticleContainer
+
+## 웹·CSS — 56개
+
+- [ ] `dar-ef3ef6dddd9d` **스크롤텔링** / Scrollytelling
+- [ ] `dar-b83d02947ded` **콘텐츠 우선 설계** / Content-first Design
+- [ ] `dar-4531712194da` **우아한 성능 저하** / Graceful Degradation
+- [ ] `dar-7b2d06cacd74` **종속형 스타일 시트** / CSS
+- [ ] `dar-4e1841c5849b` **선택자** / Selector
+- [ ] `dar-d750ec014549` **캐스케이드** / Cascade
+- [ ] `dar-b30dc44b4d01` **명시도** / Specificity
+- [ ] `dar-986c3825c950` **상속** / Inheritance
+- [ ] `dar-5d03e189c8bc` **일반 흐름** / Normal Flow
+- [ ] `dar-d3325a365219` **블록 서식 문맥** / Block Formatting Context
+- [ ] `dar-7c8184f3f755` **내재적 크기** / Intrinsic Sizing
+- [ ] `dar-6deb0ccd0d7b` **최소·최대 콘텐츠 크기** / min-content / max-content
+- [ ] `dar-8edfdb87618d` **범위 제한 함수** / clamp()
+- [ ] `dar-29f0cb5a39b0` **최소·최대 선택 함수** / min() / max()
+- [ ] `dar-96155deaec6a` **CSS 계산 함수** / calc()
+- [ ] `dar-8aa070e009d1` **포함 블록** / Containing Block
+- [ ] `dar-317534e1dee4` **논리 속성** / Logical Properties
+- [ ] `dar-48610ac183e1` **뷰포트 단위** / Viewport Units
+- [ ] `dar-275d2e829f8a` **상대 단위** / Relative Units
+- [ ] `dar-56700cff4d7a` **CSS 사용자 정의 속성** / Custom Properties
+- [ ] `dar-84b4257e6a59` **캐스케이드 레이어** / CSS Cascade Layers
+- [ ] `dar-10439e4fd9b6` **CSS 중첩** / CSS Nesting
+- [ ] `dar-a0344b3be6df` **의사 클래스** / Pseudo-class
+- [ ] `dar-602879a08019` **의사 요소** / Pseudo-element
+- [ ] `dar-97778b8080ea` **관계형 선택자** / :has()
+- [ ] `dar-15fd468c3558` **키프레임 규칙** / CSS Keyframes
+- [ ] `dar-f880883ac8d3` **스크롤 여유 영역** / Scroll Margin
+- [ ] `dar-a02965325ca2` **CSS 앵커 포지셔닝** / CSS Anchor Positioning
+- [ ] `dar-a6063c12b30f` **콘텐츠 표시 최적화** / content-visibility
+- [ ] `dar-5a0d646b3359` **CSS 격리** / CSS Containment
+- [ ] `dar-7ceb41f16ee6` **BEM 명명법** / BEM
+- [ ] `dar-b554c71acdb1` **유틸리티 우선 CSS** / Utility-first CSS
+- [ ] `dar-c3aa3dacf8e8` **CSS 모듈** / CSS Modules
+- [ ] `dar-da2146259fbd` **CSS 인 JS** / CSS-in-JS
+- [ ] `dar-6ba2aa0d8bb8` **CSS 리셋** / CSS Reset
+- [ ] `dar-3ff68dd12bbe` **디자인 토큰 파이프라인** / Design Token Pipeline
+- [ ] `dar-8f4f52a146fd` **테마 제공자** / Theme Provider
+- [ ] `dar-f13a697d793f` **기능 쿼리** / Feature Query
+- [ ] `dar-03784e2dd7f4` **문서 객체 모델** / DOM
+- [ ] `dar-5912bb7c1248` **CSS 객체 모델** / CSSOM
+- [ ] `dar-e2b02f2cb21e` **레이아웃 계산** / Layout / Reflow
+- [ ] `dar-e3b9daf5c03b` **페인트** / Paint
+- [ ] `dar-73be0167b745` **합성** / Compositing
+- [ ] `dar-5ed4fd3c3b98` **핵심 렌더링 경로** / Critical Rendering Path
+- [ ] `dar-c6935fbfa3c2` **클라이언트 측 렌더링** / CSR
+- [ ] `dar-1d892b657a92` **서버 측 렌더링** / SSR
+- [ ] `dar-bc155cebac99` **정적 사이트 생성** / SSG
+- [ ] `dar-374fae2f5384` **하이드레이션** / Hydration
+- [ ] `dar-468e11bd8c6a` **아일랜드 아키텍처** / Islands Architecture
+- [ ] `dar-1b0ebe710e1e` **코드 분할** / Code Splitting
+- [ ] `dar-eed6cddce434` **미사용 코드 제거** / Tree Shaking
+- [ ] `dar-3e3708b7531a` **목록 가상화** / Virtualization
+- [ ] `dar-8fd635d0827e` **최대 콘텐츠 표시 시간** / LCP
+- [ ] `dar-3b1910ae945b` **누적 레이아웃 이동** / CLS
+- [ ] `dar-5b6925abbfd8` **상호작용 응답성 지표** / INP
+- [ ] `dar-f25fef7d971b` **성능 예산** / Performance Budget
+
+## 3D·렌더링 — 54개
+
+- [ ] `dar-6d272b97d9c3` **하드 엣지·스무스 셰이딩** / Hard Edge / Smooth Shading
+- [ ] `dar-02227604d9ee` **스컬프팅** / Sculpting
+- [ ] `dar-9f9d31246e01` **리토폴로지** / Retopology
+- [ ] `dar-34ec5d4f42b1` **베이킹** / Baking
+- [ ] `dar-747206d86359` **스플라인** / Spline
+- [ ] `dar-bc133a27d1b6` **지오메트리 노드** / Geometry Nodes
+- [ ] `dar-1f5b86c44a03` **사진측량 기반 모델링** / Photogrammetry
+- [ ] `dar-f6c0bd785c33` **재질** / Material
+- [ ] `dar-f4617136ff0c` **물리 기반 렌더링** / PBR
+- [ ] `dar-2fd266889d18` **정반사** / Specular
+- [ ] `dar-5acb166bfe02` **표면하 산란** / Subsurface Scattering
+- [ ] `dar-e02618410a46` **굴절률** / IOR
+- [ ] `dar-16c0c0c958a9` **이방성** / Anisotropy
+- [ ] `dar-90da8d314c50` **트라이플래너 매핑** / Triplanar Mapping
+- [ ] `dar-0b7ca44e1033` **이미지 기반 조명** / IBL
+- [ ] `dar-95af24c99d1e` **고명암비 환경 이미지** / HDRI
+- [ ] `dar-335e6a91ef31` **주광** / Key Light
+- [ ] `dar-0c90049d9ad2` **보조광** / Fill Light
+- [ ] `dar-fb08936b3262` **윤곽광** / Rim Light
+- [ ] `dar-1b9fdabf2e35` **삼점 조명** / Three-point Lighting
+- [ ] `dar-8b2052944a80` **라이트맵** / Lightmap
+- [ ] `dar-c72f8e720c0a` **라이트 프로브** / Light Probe
+- [ ] `dar-615500b552f9` **반사 프로브** / Reflection Probe
+- [ ] `dar-65641c24727d` **전역 조명** / Global Illumination
+- [ ] `dar-0058d93d328b` **볼류메트릭 조명** / Volumetric Lighting
+- [ ] `dar-1348a36b0ce8` **색온도** / Color Temperature
+- [ ] `dar-fe51a5ccfde1` **래스터화** / Rasterization
+- [ ] `dar-3ce7be03b22f` **레이 트레이싱** / Ray Tracing
+- [ ] `dar-df156f34532a` **패스 트레이싱** / Path Tracing
+- [ ] `dar-322b11bb93a1` **포워드 렌더링** / Forward Rendering
+- [ ] `dar-ea8a30f211a5` **디퍼드 렌더링** / Deferred Rendering
+- [ ] `dar-f35b8e34f9b6` **지오메트리 버퍼** / G-buffer
+- [ ] `dar-1c9199cf36d2` **세부 수준** / LOD
+- [ ] `dar-203af887cab7` **계층적 세부 수준** / HLOD
+- [ ] `dar-7822bf42857c` **텍스처 압축** / Texture Compression
+- [ ] `dar-8ba3ad1c5a3d` **안티앨리어싱** / Anti-aliasing
+- [ ] `dar-34313c4fb56c` **깊이 충돌** / Z-fighting
+- [ ] `dar-31cf7ffc28b4` **궤도 카메라** / Orbit Camera
+- [ ] `dar-ccae6193253d` **GPU 기반 선택 판정** / GPU Picking
+- [ ] `dar-4304a3ae36f2` **Three.js** / Three.js
+- [ ] `dar-dc9e2265f423` **Babylon.js** / Babylon.js
+- [ ] `dar-549d294d2dfc` **React Three Fiber** / React Three Fiber
+- [ ] `dar-2f5a68e522bc` **Drei** / Drei
+- [ ] `dar-31c7ecec3a24` **React Three Rapier** / React Three Rapier
+- [ ] `dar-33a6d95b18eb` **postprocessing** / postprocessing
+- [ ] `dar-eab02703e776` **three-mesh-bvh** / three-mesh-bvh
+- [ ] `dar-5407559f7105` **OGL** / OGL
+- [ ] `dar-6ad5ba16b5df` **regl** / regl
+- [ ] `dar-5ba6b841c895` **A-Frame** / A-Frame
+- [ ] `dar-ba845359389d` **model-viewer** / model-viewer
+- [ ] `dar-51123ff13fa3` **GaussianSplats3D** / GaussianSplats3D
+- [ ] `dar-0d2d959c481c` **wgpu** / wgpu
+- [ ] `dar-2545e7d90f08` **ModernGL** / ModernGL
+- [ ] `dar-db4da1e9c564` **pyglet** / pyglet
+
+## 시각·그래픽 — 52개
+
+- [ ] `dar-6e79e2d3035b` **디자인 시스템** / Design System
+- [ ] `dar-5ba35b70bda8` **컴포넌트 라이브러리** / Component Library
+- [ ] `dar-315ff4e2f3a8` **패턴 라이브러리** / Pattern Library
+- [ ] `dar-56c76dc21f77` **디자인 토큰** / Design Token
+- [ ] `dar-a7aa653e398e` **의미 기반 토큰** / Semantic Token
+- [ ] `dar-a20a9dd9e013` **타이포그래피 스케일** / Typography Scale
+- [ ] `dar-665fb415c686` **타이포그래피 위계** / Type Hierarchy
+- [ ] `dar-47349af8cdbf` **간격 스케일** / Spacing Scale
+- [ ] `dar-450879d0ce78` **표면 높이 위계** / Elevation
+- [ ] `dar-9935f0d5cd91` **그림자 토큰** / Shadow Token
+- [ ] `dar-e3890d08ce15` **선·테두리** / Stroke / Border
+- [ ] `dar-df3bf952dc81` **일러스트레이션 시스템** / Illustration System
+- [ ] `dar-3b0e485255df` **디자인 변형** / Design Variant
+- [ ] `dar-6fd583d4a6e1` **컴포넌트 상태** / Component State
+- [ ] `dar-ab2c1c5a269c` **아토믹 디자인** / Atomic Design
+- [ ] `dar-91232a2f620b` **와이어프레임** / Wireframe
+- [ ] `dar-5e954334387b` **목업** / Mockup
+- [ ] `dar-0b48cacf2751` **프로토타입** / Prototype
+- [ ] `dar-d2ea32afd202` **인터랙션 명세** / Interaction Spec
+- [ ] `dar-1fd919133cfe` **아트 디렉션** / Art Direction
+- [ ] `dar-1a5a5608f55b` **미니멀리즘** / Minimalism
+- [ ] `dar-d502c3b56db6` **맥시멀리즘** / Maximalism
+- [ ] `dar-1b5c8b3b178a` **스위스·국제 타이포그래피 스타일** / Swiss / International Style
+- [ ] `dar-0c6af8473a85` **바우하우스 계열 디자인** / Bauhaus-inspired Design
+- [ ] `dar-098c64ab7d2b` **브루탈리스트 웹디자인** / Brutalist Web Design
+- [ ] `dar-43fd8047c55b` **네오브루탈리즘** / Neo-brutalism
+- [ ] `dar-d6f2375db099` **플랫 디자인** / Flat Design
+- [ ] `dar-883cb89f7cd3` **스큐어모피즘** / Skeuomorphism
+- [ ] `dar-bc1cc2175ada` **뉴모피즘** / Neumorphism
+- [ ] `dar-18b30c012c56` **클레이모피즘** / Claymorphism
+- [ ] `dar-daa488b0e624` **벤토 레이아웃** / Bento Layout
+- [ ] `dar-c69e33170658` **에디토리얼 디자인** / Editorial Design
+- [ ] `dar-9571d74b074a` **Y2K 미학** / Y2K Aesthetic
+- [ ] `dar-c219f9245cbf` **레트로퓨처리즘** / Retro-futurism
+- [ ] `dar-2b54780d3fca` **사이버펑크 미학** / Cyberpunk Aesthetic
+- [ ] `dar-c05500d1c240` **솔라펑크 미학** / Solarpunk Aesthetic
+- [ ] `dar-a81b28b53ff7` **아르데코** / Art Deco
+- [ ] `dar-597010fc6f3b` **아르누보** / Art Nouveau
+- [ ] `dar-e9c59f688df3` **멤피스 스타일** / Memphis Style
+- [ ] `dar-b0d87ce69dac` **유기적 디자인** / Organic Design
+- [ ] `dar-e39aa25af783` **픽셀 아트** / Pixel Art
+- [ ] `dar-948236606365` **복셀 아트** / Voxel Art
+- [ ] `dar-55003ada25eb` **로우폴리 스타일** / Low-poly Style
+- [ ] `dar-6e714146d4d3` **셀 셰이딩** / Cel Shading
+- [ ] `dar-741bb1c9a2ee` **핸드페인티드 스타일** / Hand-painted Style
+- [ ] `dar-2a6e5e741891` **포토리얼리즘** / Photorealism
+- [ ] `dar-3e23389906b5` **스타일라이즈드 리얼리즘** / Stylized Realism
+- [ ] `dar-d75336f54599` **아이소메트릭 일러스트** / Isometric Illustration
+- [ ] `dar-5ee3fff7162b` **페이퍼컷 스타일** / Paper-cut Style
+- [ ] `dar-7f263502739b` **콜라주** / Collage
+- [ ] `dar-d248e4f4a8cf` **디더링 스타일** / Dithered Style
+- [ ] `dar-37976245ec19` **CRT 미학** / CRT Aesthetic
+
+## 레퍼런스 — 46개
+
+- [ ] `dar-e2751e340278` **Apple Human Interface Guidelines** / Apple Human Interface Guidelines
+- [ ] `dar-1a0de65826dc` **Material Design** / Material Design
+- [ ] `dar-c4e30d805d8a` **IBM Carbon Design System** / IBM Carbon Design System
+- [ ] `dar-5eead3b74cec` **Microsoft Fluent 2** / Microsoft Fluent 2
+- [ ] `dar-bb1d665ef15c` **Atlassian Design System** / Atlassian Design System
+- [ ] `dar-c39373a3d3e5` **Adobe Spectrum** / Adobe Spectrum
+- [ ] `dar-f91095423a45` **Shopify Polaris** / Shopify Polaris
+- [ ] `dar-285cafa14c6a` **GOV.UK Design System** / GOV.UK Design System
+- [ ] `dar-ce29164d749d` **USWDS** / USWDS
+- [ ] `dar-83faac8fb3aa` **WAI-ARIA APG** / WAI-ARIA APG
+- [ ] `dar-da5c539693b8` **MDN Web Docs** / MDN Web Docs
+- [ ] `dar-5362ba881cd7` **web.dev** / web.dev
+- [ ] `dar-08fc75aa8e0f` **Godot Documentation** / Godot Documentation
+- [ ] `dar-4c38fefcd418` **Unreal Developer Documentation** / Unreal Developer Documentation
+- [ ] `dar-a24086091bd8` **Blender Manual** / Blender Manual
+- [ ] `dar-c5cbbb2e590d` **Qt for Python Documentation** / Qt for Python Documentation
+- [ ] `dar-ce89952941b6` **Awwwards** / Awwwards
+- [ ] `dar-5e050d1cf062` **Mobbin** / Mobbin
+- [ ] `dar-5dd0d3e453c2` **Page Flows** / Page Flows
+- [ ] `dar-d160822f3275` **Land-book** / Land-book
+- [ ] `dar-ab0b462ad7d0` **Lapa Ninja** / Lapa Ninja
+- [ ] `dar-798b6c25bb6e` **SiteInspire** / SiteInspire
+- [ ] `dar-8d8c4ec4214e` **Godly** / Godly
+- [ ] `dar-ef3d0d267370` **Dribbble** / Dribbble
+- [ ] `dar-9e89501c6473` **Behance** / Behance
+- [ ] `dar-7623d201f02a` **ArtStation** / ArtStation
+- [ ] `dar-2a4d2713b0fb` **Polycount** / Polycount
+- [ ] `dar-9eea957cc2a6` **Game UI Database** / Game UI Database
+- [ ] `dar-1cacac8d0287` **Interface In Game** / Interface In Game
+- [ ] `dar-c0ffffbb8bf3` **Realtime VFX** / Realtime VFX
+- [ ] `dar-59a4c3ec17e4` **Shadertoy** / Shadertoy
+- [ ] `dar-4d574ddec8ac` **CodePen** / CodePen
+- [ ] `dar-3a1f5ab4d8b4` **UIverse** / UIverse
+- [ ] `dar-66c79327ef35` **Codrops** / Codrops
+- [ ] `dar-f54dc8b5a621` **Kenney Assets** / Kenney Assets
+- [ ] `dar-6f491f3c2898` **Poly Haven** / Poly Haven
+- [ ] `dar-688ab850fcc9` **ambientCG** / ambientCG
+- [ ] `dar-f78bf1dd5d82` **OpenGameArt** / OpenGameArt
+- [ ] `dar-7a37dfa692ef` **itch.io Game Assets** / itch.io Game Assets
+- [ ] `dar-7ede95e8c658` **Fab** / Fab
+- [ ] `dar-a6d553c83650` **Sketchfab** / Sketchfab
+- [ ] `dar-ba4d75807f1a` **Google Fonts** / Google Fonts
+- [ ] `dar-32013130faee` **Fontsource** / Fontsource
+- [ ] `dar-0c9f077d1e14` **Adobe Color** / Adobe Color
+- [ ] `dar-e8a415bc5166` **Coolors** / Coolors
+- [ ] `dar-0b01376bd8be` **ColorBrewer** / ColorBrewer
+
+## 지도·GIS — 45개
+
+- [ ] `dar-2c511bd7c7bc` **지리정보시스템** / GIS
+- [ ] `dar-72a124a91f8a` **지도학·지도 제작** / Cartography
+- [ ] `dar-a852a0e0f3c1` **좌표 참조 체계** / CRS
+- [ ] `dar-75099b531490` **지도 투영** / Map Projection
+- [ ] `dar-ffee68607195` **위도·경도** / Latitude / Longitude
+- [ ] `dar-a7515771d3fe` **지리 참조** / Georeferencing
+- [ ] `dar-56e4bec1e733` **기본 지도** / Basemap
+- [ ] `dar-67ac503913c6` **래스터 타일** / Raster Tile
+- [ ] `dar-1509e452e1c0` **벡터 타일** / Vector Tile
+- [ ] `dar-793fb4f01a87` **XYZ 타일 체계** / XYZ Tile Scheme
+- [ ] `dar-d6527eef4bb1` **GeoJSON** / GeoJSON
+- [ ] `dar-5d5cecc2dacb` **비례기호 지도** / Proportional Symbol Map
+- [ ] `dar-e927a41ade6b` **등치선** / Isoline
+- [ ] `dar-54853179ed91` **정성적 면 구분 지도** / Chorochromatic Map
+- [ ] `dar-200458a776da` **지도 일반화** / Map Generalization
+- [ ] `dar-79f90b8cac02` **라벨 충돌** / Label Collision
+- [ ] `dar-a93cbd09246b` **마커 클러스터링** / Marker Clustering
+- [ ] `dar-e1ca87f9e21e` **지오코딩** / Geocoding
+- [ ] `dar-dbf1cdfe45c3` **역지오코딩** / Reverse Geocoding
+- [ ] `dar-84278562ae06` **지오펜싱** / Geofencing
+- [ ] `dar-9db3a96cdf3d` **공간 결합** / Spatial Join
+- [ ] `dar-07e6ee29fe0c` **지도 범례** / Map Legend
+- [ ] `dar-ef9d9e33319b` **축척 막대** / Scale Bar
+- [ ] `dar-1beb3a7e3abf` **북쪽 표시** / North Arrow
+- [ ] `dar-4d7af1c8aafb` **수치 표고 모델** / DEM
+- [ ] `dar-752c2a37fc6a` **공간 버퍼** / Geospatial Buffer
+- [ ] `dar-b4fffc61b8a6` **Leaflet** / Leaflet
+- [ ] `dar-89cb80569436` **OpenLayers** / OpenLayers
+- [ ] `dar-f910c46cb6b6` **MapLibre GL JS** / MapLibre GL JS
+- [ ] `dar-76de2f13df5c` **Mapbox GL JS** / Mapbox GL JS
+- [ ] `dar-71ea1a1b4152` **CesiumJS** / CesiumJS
+- [ ] `dar-59ce38d357d3` **deck.gl** / deck.gl
+- [ ] `dar-ce198efa3e0d` **Turf.js** / Turf.js
+- [ ] `dar-ed54bdf4b4b6` **D3 Geo** / D3 Geo
+- [ ] `dar-d86ff4626bc6` **PMTiles** / PMTiles
+- [ ] `dar-1da43c542abb` **Folium** / Folium
+- [ ] `dar-c737e9048b33` **GeoPandas** / GeoPandas
+- [ ] `dar-1116b8bcbb37` **Shapely** / Shapely
+- [ ] `dar-f40c84da4612` **Rasterio** / Rasterio
+- [ ] `dar-87c34de6f78b` **pyproj** / pyproj
+- [ ] `dar-b8f8e9c8024c` **Cartopy** / Cartopy
+- [ ] `dar-5da425a6a9d6` **GDAL** / GDAL
+- [ ] `dar-75b4979b62f3` **Google Maps JavaScript API** / Google Maps JavaScript API
+- [ ] `dar-81b7b1f2f6fb` **Kakao Maps API** / Kakao Maps API
+- [ ] `dar-33862217215e` **NAVER Maps API** / NAVER Maps API
+
+## 브랜드·인쇄·공간 — 43개
+
+- [ ] `dar-07581b7cd14e` **브랜드 정체성** / Brand Identity
+- [ ] `dar-a5a68f01ea4f` **시각 정체성** / Visual Identity
+- [ ] `dar-fba7a3112ef1` **로고타이프·워드마크** / Logotype / Wordmark
+- [ ] `dar-3b294fa50448` **심벌마크** / Logomark
+- [ ] `dar-6335b4fcb52c` **브랜드 조합형** / Brand Lockup
+- [ ] `dar-e4193d7fa965` **최소 보호 여백** / Clear Space
+- [ ] `dar-ff2921287cc6` **브랜드 가이드라인** / Brand Guidelines
+- [ ] `dar-0139043ffaa3` **브랜드 언어 톤** / Tone of Voice
+- [ ] `dar-ed38e17a827a` **키 비주얼** / Key Visual
+- [ ] `dar-81b048bbf330` **무드보드** / Moodboard
+- [ ] `dar-3a7812ee392a` **스타일 타일** / Style Tile
+- [ ] `dar-1a0b0f72a20b` **칼선·전개도** / Dieline
+- [ ] `dar-9fbabf7509fe` **도련** / Bleed
+- [ ] `dar-c34c7f524d4d` **재단선** / Trim Line
+- [ ] `dar-de6c5f689699` **인쇄 안전 영역** / Safe Area (Print)
+- [ ] `dar-cf5552ce427d` **재단 표시** / Crop Marks
+- [ ] `dar-e3ad6d553836` **별색** / Spot Color
+- [ ] `dar-5c6460dacb05` **오버프린트** / Overprint
+- [ ] `dar-c654f09761a0` **녹아웃** / Knockout
+- [ ] `dar-b6fc84e16837` **트래핑** / Trapping
+- [ ] `dar-047f7697937e` **하프톤** / Halftone
+- [ ] `dar-6269c41adac3` **양각·음각** / Emboss / Deboss
+- [ ] `dar-e3301848e111` **박 가공** / Foil Stamping
+- [ ] `dar-d3ea68c165b1` **인쇄 교정** / Print Proof
+- [ ] `dar-d135fff4e463` **PPI·DPI** / PPI / DPI
+- [ ] `dar-7345a707ae1c` **전시 디자인** / Exhibition Design
+- [ ] `dar-e67cac290b1b` **비주얼 머천다이징** / Visual Merchandising
+- [ ] `dar-8f3e653f4c49` **상품 진열도** / Planogram
+- [ ] `dar-03efb3cb8af0` **진열 페이싱** / Facing
+- [ ] `dar-6735f5688afd` **공간 시야선** / Sightline in Space
+- [ ] `dar-283fd32723c1` **공간 동선** / Circulation
+- [ ] `dar-f076a6bbb20b` **구역화** / Zoning
+- [ ] `dar-68d39385f6a7` **길찾기 설계** / Wayfinding
+- [ ] `dar-ee3d6bca7f62` **사인 체계** / Signage
+- [ ] `dar-d6dfff852370` **인간공학** / Ergonomics
+- [ ] `dar-0fa073a5ec1b` **인체 치수** / Anthropometrics
+- [ ] `dar-dc7b910f0e99` **도달 범위** / Reach Envelope
+- [ ] `dar-fb22b056f844` **분해도** / Exploded View
+- [ ] `dar-d250e0455f0c` **정투상 도면** / Orthographic Drawing
+- [ ] `dar-975b46c5983d` **단면도** / Section View
+- [ ] `dar-69caaeaba3d2` **공차** / Tolerance
+- [ ] `dar-1c495ea7f9a9` **색·소재·마감** / CMF
+- [ ] `dar-037a5d4018fc` **제조 용이성 설계** / DFM
+
+## 설계·검증 — 42개
+
+- [ ] `dar-04dd8ace06ed` **정보 구조 설계** / Information Architecture (IA)
+- [ ] `dar-64a7fc9fab50` **사용자 흐름** / User Flow
+- [ ] `dar-e09f44244ea3` **작업 흐름** / Task Flow
+- [ ] `dar-6f898c58315e` **사용자 여정 지도** / User Journey Map
+- [ ] `dar-d783e29e433b` **서비스 블루프린트** / Service Blueprint
+- [ ] `dar-935948cbb920` **페르소나** / Persona
+- [ ] `dar-9b7a24a6d214` **수행 과업 관점** / Jobs To Be Done (JTBD)
+- [ ] `dar-edf8d697653d` **사용성 테스트** / Usability Testing
+- [ ] `dar-7d17b28695f3` **휴리스틱 평가** / Heuristic Evaluation
+- [ ] `dar-3bc66b146ab2` **인지적 워크스루** / Cognitive Walkthrough
+- [ ] `dar-684ed5a6d984` **A/B 테스트** / A/B Testing
+- [ ] `dar-3eb43daaf59d` **퍼널 분석** / Funnel Analysis
+- [ ] `dar-23f9a1de0dec` **히트맵 분석** / Heatmap Analysis
+- [ ] `dar-40d4bd0ca323` **카드 소팅** / Card Sorting
+- [ ] `dar-c32c873aa4d2` **트리 테스트** / Tree Testing
+- [ ] `dar-1e1fb144a0d5` **디자인 크리틱** / Design Critique
+- [ ] `dar-a01220fd37ad` **디자인 핸드오프** / Design Handoff
+- [ ] `dar-45e83dd66970` **어포던스** / Affordance
+- [ ] `dar-396ee9c708db` **시그니파이어** / Signifier
+- [ ] `dar-6fed3b688213` **피드백 루프** / Feedback Loop
+- [ ] `dar-3345fe6a13c9` **레퍼런스 보드** / Reference Board
+- [ ] `dar-5dd3917b269e` **경쟁 제품 분석** / Competitive Audit
+- [ ] `dar-f69e4b454ffb` **디자인 브리프** / Design Brief
+- [ ] `dar-6f0cecf047af` **디자인 근거** / Design Rationale
+- [ ] `dar-df6a7fa4bb6b` **저충실도 프로토타입** / Low-fidelity Prototype
+- [ ] `dar-6ae6943201eb` **고충실도 프로토타입** / High-fidelity Prototype
+- [ ] `dar-95be4f2616de` **인터랙션 명세** / Interaction Specification
+- [ ] `dar-69e500feb8b2` **상태 행렬** / State Matrix
+- [ ] `dar-f16df0780611` **인수 기준** / Acceptance Criteria
+- [ ] `dar-75c3e926cd30` **시각 회귀 테스트** / Visual Regression Test
+- [ ] `dar-1f8273ded863` **스냅숏 테스트** / Snapshot Test
+- [ ] `dar-126804887873` **브라우저 교차 테스트** / Cross-browser Test
+- [ ] `dar-bf4c5d8b714d` **반응형 검수** / Responsive QA
+- [ ] `dar-ccc2e115cb50` **접근성 감사** / Accessibility Audit
+- [ ] `dar-f9272a4cb0aa` **인지 부하** / Cognitive Load
+- [ ] `dar-1b2a6446da9b` **회상보다 재인** / Recognition over Recall
+- [ ] `dar-f6bfdfa7a35a` **피츠의 법칙** / Fitts's Law
+- [ ] `dar-0f438bfa631c` **힉·하이먼 법칙** / Hick–Hyman Law
+- [ ] `dar-ae802a076a03` **어포던스·시그니파이어** / Affordance vs Signifier
+- [ ] `dar-813297b305bb` **기만적 디자인 패턴** / Dark Pattern
+- [ ] `dar-a3c7c7edf887` **디자인 부채** / Design Debt
+- [ ] `dar-2b590ac95226` **콘텐츠 모델** / Content Model
+
+## 모션·사운드 — 40개
+
+- [ ] `dar-3b91d7023dc3` **등장 애니메이션** / Entrance Animation
+- [ ] `dar-062ca5cf5e1c` **퇴장 애니메이션** / Exit Animation
+- [ ] `dar-48430ce158a6` **페이드 인·아웃** / Fade In / Out
+- [ ] `dar-33493183cd83` **슬라이드 인·아웃** / Slide In / Out
+- [ ] `dar-b63a09cd4d89` **가속·감속 이징** / Ease-in / Ease-out
+- [ ] `dar-73dd62eaa300` **로티 애니메이션** / Lottie Animation
+- [ ] `dar-73dc5760b2e3` **라이브 애니메이션** / Rive Animation
+- [ ] `dar-f1f166433dc9` **블러 효과** / Blur Effect
+- [ ] `dar-2d34f4c380fd` **배경 블러** / Backdrop Blur
+- [ ] `dar-40060ccb344d` **글래스모피즘** / Glassmorphism
+- [ ] `dar-2e8318e2a883` **뉴모피즘** / Neumorphism
+- [ ] `dar-04df56f9d567` **애니메이션 곡선** / Animation Curve
+- [ ] `dar-f5ac99e7424c` **보조 동작** / Secondary Action
+- [ ] `dar-120756a730e4` **타이밍** / Animation Timing
+- [ ] `dar-258b4065f756` **시차 실행** / Stagger
+- [ ] `dar-69cbfc3e1fb4` **웨이트 페인팅** / Weight Painting
+- [ ] `dar-81294c03a7ee` **VFX 그래프** / VFX Graph
+- [ ] `dar-e27c1c45f18e` **디졸브 효과** / Dissolve Effect
+- [ ] `dar-d7aaed2d1eeb` **왜곡 효과** / Distortion Effect
+- [ ] `dar-df4f7e2ee61d` **부호 있는 거리장** / Signed Distance Field
+- [ ] `dar-dabf0de9410e` **폴리** / Foley
+- [ ] `dar-d948b1a74874` **환경음** / Ambience
+- [ ] `dar-2879cf64d873` **사운드 큐** / Sound Cue
+- [ ] `dar-769a3c8293c3` **적응형 음악** / Adaptive Music
+- [ ] `dar-e0c1c32aa1a6` **수평 음악 재배열** / Horizontal Resequencing
+- [ ] `dar-3314902f8602` **수직 음악 레이어링** / Vertical Layering
+- [ ] `dar-f220c0191eb0` **공간 음향** / Spatial Audio
+- [ ] `dar-75fed1529b2f` **음향 감쇠** / Audio Attenuation
+- [ ] `dar-69b647df8435` **음향 차폐** / Audio Occlusion
+- [ ] `dar-feb63931728b` **잔향** / Reverb
+- [ ] `dar-aea4a3aff879` **덕킹** / Ducking
+- [ ] `dar-9403e8c3e274` **오디오 버스** / Audio Bus
+- [ ] `dar-028e458a6888` **오디오 루프** / Audio Loop
+- [ ] `dar-94ec401f7e4e` **스토리보드** / Storyboard
+- [ ] `dar-36d355caa272` **애니매틱** / Animatic
+- [ ] `dar-03fd43e7f99f` **영상 합성** / Compositing
+- [ ] `dar-802e1c33a65b` **알파 채널** / Alpha Channel
+- [ ] `dar-7f8b48a4d4d4` **크로마키** / Chroma Key
+- [ ] `dar-77f82604230e` **로토스코핑** / Rotoscoping
+- [ ] `dar-b0af07fde4ee` **색 변환 룩업 테이블** / LUT
+
+## 아이콘·상태 표시 — 39개
+
+- [ ] `dar-1e3848e9f733` **접근 가능한 이름** / Accessible Name
+- [ ] `dar-b81c3cb4249e` **아이코노그래피** / Iconography
+- [ ] `dar-676fc24147ca` **글리프** / Glyph
+- [ ] `dar-81a63d60d638` **헤드업 디스플레이** / HUD
+- [ ] `dar-58713b82bd6f` **아이콘** / Icon
+- [ ] `dar-bb0c20f0e550` **픽토그램** / Pictogram
+- [ ] `dar-863196e87911` **심볼** / Symbol
+- [ ] `dar-87c8a3108367` **시스템 아이콘** / System Icon
+- [ ] `dar-ac67947185f8` **기능 아이콘** / Functional Icon
+- [ ] `dar-3c2be3c81ab3` **장식 아이콘** / Decorative Icon
+- [ ] `dar-76e18b326fd2` **정보 아이콘** / Informative Icon
+- [ ] `dar-8d0d338a3d9a` **상태 아이콘** / Status Icon
+- [ ] `dar-2139ddad58e0` **브랜드 아이콘** / Brand Icon
+- [ ] `dar-8e01dfb81c62` **아이콘 메타포** / Icon Metaphor
+- [ ] `dar-e1e7395eaedf` **아이소메트릭 아이콘** / Isometric Icon
+- [ ] `dar-c9c0e1706a52` **애니메이션 아이콘** / Animated Icon
+- [ ] `dar-c64ad86fb1c7` **픽셀 스냅** / Pixel Snapping
+- [ ] `dar-f107c943ae2b` **상태 표시기** / Status Indicator
+- [ ] `dar-73c3d7b33048` **오래된 데이터 표시** / Stale Data Indicator
+- [ ] `dar-7d15542d033f` **미확정·혼합 상태** / Indeterminate State
+- [ ] `dar-18ab9064f702` **권한 거부 표시** / Permission Denied Indicator
+- [ ] `dar-8a4c814c20fa` **상태이상 아이콘** / Status Effect Icon
+- [ ] `dar-5fbeb0a73f4d` **군중제어 표시** / Crowd Control Indicator
+- [ ] `dar-c5dcdf466df2` **지속 피해 표시** / Damage-over-Time Indicator
+- [ ] `dar-8432b2639148` **공격 대상·적대도 표시** / Aggro Indicator
+- [ ] `dar-493d40774ac9` **SVG 아이콘** / SVG Icon
+- [ ] `dar-a3cfc7662800` **래스터 아이콘** / Raster Icon
+- [ ] `dar-1cf7d879a778` **아이콘 폰트** / Icon Font
+- [ ] `dar-cd9d96ca4ef6` **SVG 스프라이트** / SVG Sprite
+- [ ] `dar-acdf8ee7e97a` **아이콘 아틀라스** / Icon Atlas
+- [ ] `dar-fb52dadd9126` **합자 아이콘** / Ligature Icon
+- [ ] `dar-d4ab23332bd3` **현재 글자색 연동 아이콘** / CurrentColor Icon
+- [ ] `dar-53b63d833554` **장식 요소 접근성 숨김** / Decorative Hiding
+- [ ] `dar-66187bdda16a` **비텍스트 대비** / Non-text Contrast
+- [ ] `dar-ed5b88a5373e` **중복 부호화** / Redundant Coding
+- [ ] `dar-c30f823d3b27` **아이콘 상태 변형** / Icon State Variant
+- [ ] `dar-698e00ab40ea` **우에서 좌로 읽기 반전** / RTL Mirroring
+- [ ] `dar-fe34634da727` **의미 기반 아이콘 명명** / Semantic Icon Naming
+- [ ] `dar-949bccd8155d` **아이콘 부분 추출** / Icon Subsetting
+
+## UI·UX — 38개
+
+- [ ] `dar-ebfe5f265026` **실시간 영역 안내** / Live Region Announcement
+- [ ] `dar-fcd3259a0e10` **햅틱 피드백** / Haptic Feedback
+- [ ] `dar-61b3f6bc4056` **더보기 버튼** / Overflow Button
+- [ ] `dar-545fc4be48bb` **드래그 앤 드롭** / Drag and Drop
+- [ ] `dar-85118b034eab` **스와이프 제스처** / Swipe Gesture
+- [ ] `dar-8d306986a6f2` **길게 누르기** / Long Press
+- [ ] `dar-25bf2e3d9322` **두 번 탭** / Double Tap
+- [ ] `dar-2399fd6c8cee` **핀치 확대·축소** / Pinch to Zoom
+- [ ] `dar-bd1958c91b73` **당겨서 새로고침** / Pull to Refresh
+- [ ] `dar-b9d67d8a392a` **밀어서 닫기** / Swipe to Dismiss
+- [ ] `dar-fc951dce1f65` **스와이프 액션** / Swipe Actions
+- [ ] `dar-2be2d32b44b6` **재정렬 목록** / Reorderable List
+- [ ] `dar-f35047952796` **드래그 정렬** / Sort by Dragging
+- [ ] `dar-708c2361303f` **키보드 단축키** / Keyboard Shortcut
+- [ ] `dar-2d873c2e10bf` **문맥 동작** / Contextual Actions
+- [ ] `dar-5a768048f84b` **호버 시 노출** / Hover Reveal
+- [ ] `dar-7a2021f20615` **실행 취소·다시 실행** / Undo / Redo
+- [ ] `dar-63839e533a64` **확인 패턴** / Confirmation Pattern
+- [ ] `dar-b17cb721f637` **디바운스** / Debounce
+- [ ] `dar-d8f689e7d1e3` **스로틀** / Throttle
+- [ ] `dar-57844d130862` **웹 콘텐츠 접근성 지침** / WCAG
+- [ ] `dar-8cfbdc21134f` **접근성 리치 인터넷 애플리케이션** / ARIA
+- [ ] `dar-9ea514a8f561` **의미론적 HTML** / Semantic HTML
+- [ ] `dar-42984ca1fae2` **키보드 탐색** / Keyboard Navigation
+- [ ] `dar-43bcd014d561` **포커스 순서** / Focus Order
+- [ ] `dar-128374930bb2` **포커스 트랩** / Focus Trap
+- [ ] `dar-bd7e946d5822` **포커스 표시기** / Focus Indicator
+- [ ] `dar-ee539945151c` **스크린 리더** / Screen Reader
+- [ ] `dar-b9b46b70c848` **명도 대비비** / Contrast Ratio
+- [ ] `dar-b8d2ae2a8b4e` **색상 외 정보 제공** / Color Independence
+- [ ] `dar-42b3d54116a8` **대체 텍스트** / Alt Text
+- [ ] `dar-b5e4c3947681` **자막** / Captions
+- [ ] `dar-c6fce7061f57` **고대비 모드** / High Contrast Mode
+- [ ] `dar-ec23650a6ab9` **본문 바로가기 링크** / Skip Link
+- [ ] `dar-0b387ee82481` **터치 접근성** / Touch Accessibility
+- [ ] `dar-d9e055025e0f` **오류 예방** / Error Prevention
+- [ ] `dar-8db576b6448a` **오류 식별** / Error Identification
+- [ ] `dar-098a884586fa` **점진적 향상** / Progressive Enhancement
+
+## UI·UX 모션 — 38개
+
+- [ ] `dar-6dee3ab1b41a` **마이크로인터랙션** / Microinteraction
+- [ ] `dar-689eb5b54bad` **트랜지션·전환** / Transition
+- [ ] `dar-d64eec28f2b4` **모션 감소** / Reduced Motion
+- [ ] `dar-06bf82ebc1ec` **겹치는 동작** / Overlapping Action
+- [ ] `dar-e23e680a0b2a` **애니메이션** / Animation
+- [ ] `dar-527335d3a22f` **모션 디자인** / Motion Design
+- [ ] `dar-4f219e519ba5` **트윈** / Tween
+- [ ] `dar-b37d886ca1ee` **히어로 전환** / Hero Transition
+- [ ] `dar-0b4d29c2e8d4` **FLIP 레이아웃 애니메이션** / FLIP Layout Animation
+- [ ] `dar-d2de568ae042` **목록·상세 전환** / Master-detail Transition
+- [ ] `dar-597af7ad8584` **뷰 전환 스냅샷** / View Transition Snapshot
+- [ ] `dar-17b75cef9d6b` **제스처 구동 전환** / Gesture-driven Transition
+- [ ] `dar-ae2d929e6248` **중단 가능한 전환** / Interruptible Transition
+- [ ] `dar-d1fbaca54a21` **되돌릴 수 있는 전환** / Reversible Transition
+- [ ] `dar-12af2aaecc15` **스크롤 스크러빙** / Scroll Scrubbing
+- [ ] `dar-b520674f0430` **스크롤 타임라인** / Scroll Timeline
+- [ ] `dar-ea79e7a3cf62` **뷰 타임라인** / View Timeline
+- [ ] `dar-375b855f5e0c` **관성 스크롤** / Inertial Scrolling
+- [ ] `dar-bb71285d45da` **오버스크롤 효과** / Overscroll Effect
+- [ ] `dar-7bb1c0c7c380` **드래그 탄성** / Drag Elasticity
+- [ ] `dar-67ece200bd90` **속도 기반 애니메이션** / Velocity-based Animation
+- [ ] `dar-4086f0a48a87` **모션 위계** / Motion Hierarchy
+- [ ] `dar-eba652be633c` **공간적 연속성** / Spatial Continuity
+- [ ] `dar-ab1420de4187` **시간적 연속성** / Temporal Continuity
+- [ ] `dar-6cee45452602` **모션 선호 설정** / Motion Preference
+- [ ] `dar-8b4049fd5067` **정적 대체 표현** / Static Fallback
+- [ ] `dar-2ff33aeb08b9` **필수 애니메이션** / Essential Animation
+- [ ] `dar-cc46a5bdc11e` **일시정지·중지 제어** / Pause / Stop Control
+- [ ] `dar-271d44968788` **번쩍이는 콘텐츠** / Flashing Content
+- [ ] `dar-fb6bdd54a8fa` **합성 단계 애니메이션** / Compositor Animation
+- [ ] `dar-14800a3e077e` **레이아웃 스래싱** / Layout Thrashing
+- [ ] `dar-897dc63e717c` **애니메이션 상태 머신** / Animation State Machine
+- [ ] `dar-b438861e7dce` **UI 애니메이션 목표 변경** / Animation Retargeting (UI)
+- [ ] `dar-3842e1ad2e28` **애니메이션 취소 처리** / Animation Cancellation
+- [ ] `dar-bb05c0b073e9` **퇴장 생명주기** / Exit Lifecycle
+- [ ] `dar-0586565f4928` **백그라운드 제한** / Background Throttling
+- [ ] `dar-aff1bac79a66` **모션 명세** / Motion Specification
+- [ ] `dar-afb74ca9782a` **모션 회귀 테스트** / Motion Regression Test
+
+## 게임 애니메이션 — 36개
+
+- [ ] `dar-9e6dcb1c6b72` **히트스톱** / Hit Stop
+- [ ] `dar-8242243c244e` **애니메이션 캔슬** / Animation Cancel
+- [ ] `dar-c40ef3e4b163` **키프레임 애니메이션** / Keyframe Animation
+- [ ] `dar-50d60461c3ef` **리깅** / Rigging
+- [ ] `dar-7923c90dd436` **스키닝** / Skinning
+- [ ] `dar-21f9b999197e` **역기구학·IK** / Inverse Kinematics
+- [ ] `dar-4598b1bcaa7b` **순기구학·FK** / Forward Kinematics
+- [ ] `dar-d855cb9ddbd6` **블렌드 셰이프** / Blend Shape
+- [ ] `dar-5f0dd3cd60ad` **애니메이션 블렌딩** / Animation Blending
+- [ ] `dar-8b2a4b9e9b1b` **루트 모션** / Root Motion
+- [ ] `dar-63502a196ba9` **모션 캡처** / Motion Capture
+- [ ] `dar-244f08521194` **프레임별 애니메이션** / Frame-by-frame Animation
+- [ ] `dar-9cc3fa839317` **스프라이트 애니메이션** / Sprite Animation
+- [ ] `dar-b802bdc60044` **스켈레탈 애니메이션** / Skeletal Animation
+- [ ] `dar-7fc7eb129383` **스킨 가중치** / Skin Weight
+- [ ] `dar-ef7343374c08` **폴 타깃** / Pole Target
+- [ ] `dar-d7c9798940ac` **제자리 애니메이션** / In-place Animation
+- [ ] `dar-f60b7907e7c9` **애니메이션 리타기팅** / Animation Retargeting
+- [ ] `dar-14c063955540` **절차적 애니메이션** / Procedural Animation
+- [ ] `dar-03628fd8c779` **정점 애니메이션** / Vertex Animation
+- [ ] `dar-c9de2b2e7366` **정점 애니메이션 텍스처·VAT** / Vertex Animation Texture
+- [ ] `dar-26ff71a6d51c` **스미어 프레임** / Smear Frame
+- [ ] `dar-6bdf0d2247e1` **애니메이션 스미어** / Animation Smear
+- [ ] `dar-1312ebee8a33` **애니메이션 클립** / Animation Clip
+- [ ] `dar-1e1dab6406db` **블렌드 트리** / Blend Tree
+- [ ] `dar-d4d777916459` **블렌드 스페이스** / Blend Space
+- [ ] `dar-52a58fbcfbe0` **가산 애니메이션** / Additive Animation
+- [ ] `dar-e4d994c0d9d3` **애니메이션 레이어** / Animation Layer
+- [ ] `dar-ebf1be106fbb` **애니메이션 마스크** / Animation Mask
+- [ ] `dar-9a5e617c6c40` **애니메이션 이벤트·노티파이** / Animation Event / Notify
+- [ ] `dar-6140dccdb618` **정규화된 시간** / Normalized Time
+- [ ] `dar-f66b6dfcd696` **피격 반응** / Hit Reaction
+- [ ] `dar-059cc2061580` **반동 애니메이션** / Recoil Animation
+- [ ] `dar-63c852fab781` **후딜레이 동작** / Recovery Animation
+- [ ] `dar-b27162b40404` **애니메이션 동기화** / Animation Synchronization
+- [ ] `dar-5bc133b7c21c` **모션 매칭** / Motion Matching
+
+## 게임 구현 — 36개
+
+- [ ] `dar-f99a2a3f6f7a` **Godot** / Godot
+- [ ] `dar-cd07e2ad30a9` **Unity** / Unity
+- [ ] `dar-1396add38426` **Unreal Engine** / Unreal Engine
+- [ ] `dar-4fdb0b9d1299` **Phaser** / Phaser
+- [ ] `dar-e96d9cc4732e` **PixiJS** / PixiJS
+- [ ] `dar-c41e0011d030` **PlayCanvas** / PlayCanvas
+- [ ] `dar-31e7e95d4d29` **Defold** / Defold
+- [ ] `dar-fe02bd1aaaa0` **GameMaker** / GameMaker
+- [ ] `dar-1de5fafcf902` **Construct** / Construct
+- [ ] `dar-eb9b8e926df7` **GDevelop** / GDevelop
+- [ ] `dar-90bdde9f674c` **Cocos Creator** / Cocos Creator
+- [ ] `dar-cf46d06d0adc` **LÖVE** / LÖVE
+- [ ] `dar-aa8b159e1160` **MonoGame** / MonoGame
+- [ ] `dar-3dc525af132b` **libGDX** / libGDX
+- [ ] `dar-7106f87ae91f` **Bevy** / Bevy
+- [ ] `dar-509df45debe2` **Pygame** / Pygame
+- [ ] `dar-bc5549790d65` **pygame-ce** / pygame-ce
+- [ ] `dar-0055ddf4934f` **Arcade** / Arcade
+- [ ] `dar-36451c09cbbb` **Panda3D** / Panda3D
+- [ ] `dar-5ef5e921b7e4` **Ursina** / Ursina
+- [ ] `dar-c43c584699b7` **Ren'Py** / Ren'Py
+- [ ] `dar-8dd01192ecc4` **Rapier** / Rapier
+- [ ] `dar-d61545f463f7` **Matter.js** / Matter.js
+- [ ] `dar-c109fe8c0157` **Box2D** / Box2D
+- [ ] `dar-b25e0f1ae533` **Planck.js** / Planck.js
+- [ ] `dar-14a53079ea0f` **cannon-es** / cannon-es
+- [ ] `dar-71e6c5daaa58` **Ammo.js** / Ammo.js
+- [ ] `dar-94121fc74763` **Jolt Physics** / Jolt Physics
+- [ ] `dar-87a8b6449277` **Recast / Detour** / Recast / Detour
+- [ ] `dar-96b2c91bb2c5` **RmlUi** / RmlUi
+- [ ] `dar-60c320d71a6f` **NoesisGUI** / NoesisGUI
+- [ ] `dar-1c8990ef76f9` **Unity UI Toolkit** / Unity UI Toolkit
+- [ ] `dar-83f2ed44af01` **Unreal UMG** / Unreal UMG
+- [ ] `dar-ae6d5d64a2af` **ink** / ink
+- [ ] `dar-963785f0579b` **Yarn Spinner** / Yarn Spinner
+- [ ] `dar-8945684559ba` **Twine** / Twine
+
+## 제작 도구 — 35개
+
+- [ ] `dar-c65e5af53615` **Figma** / Figma
+- [ ] `dar-c8ce305b0f4d` **Penpot** / Penpot
+- [ ] `dar-21b3cf76851d` **Sketch** / Sketch
+- [ ] `dar-fd4817a46984` **Framer** / Framer
+- [ ] `dar-f2d152e7f7e7` **Webflow** / Webflow
+- [ ] `dar-bcf3c0db17a4` **Blender** / Blender
+- [ ] `dar-e66074ad9376` **Houdini** / Houdini
+- [ ] `dar-66e2571609e9` **Substance 3D Painter** / Substance 3D Painter
+- [ ] `dar-9ad0dfd3faac` **Substance 3D Designer** / Substance 3D Designer
+- [ ] `dar-a3a19eae30f2` **Aseprite** / Aseprite
+- [ ] `dar-e32c4e690a41` **Krita** / Krita
+- [ ] `dar-d3cde8799922` **Inkscape** / Inkscape
+- [ ] `dar-e2b8b53c8f43` **GIMP** / GIMP
+- [ ] `dar-d283c4a6d6ae` **Tiled** / Tiled
+- [ ] `dar-8a4211a3d0cd` **LDtk** / LDtk
+- [ ] `dar-eea076bd2165` **QGIS** / QGIS
+- [ ] `dar-52baf877557f` **Gaea** / Gaea
+- [ ] `dar-a0d181326047` **World Machine** / World Machine
+- [ ] `dar-0e09d2154ff7` **Spine** / Spine
+- [ ] `dar-1875b482b840` **Rive Editor** / Rive Editor
+- [ ] `dar-458458abd7da` **Spline** / Spline
+- [ ] `dar-e1bdc983e1cf` **FMOD** / FMOD
+- [ ] `dar-60d26aa20db2` **Wwise** / Wwise
+- [ ] `dar-a08205af977b` **Audacity** / Audacity
+- [ ] `dar-6b85273d50c8` **Material Symbols** / Material Symbols
+- [ ] `dar-825249820727` **Storybook** / Storybook
+- [ ] `dar-9641eb4bc504` **Playwright** / Playwright
+- [ ] `dar-85e3f4e301b7` **Cypress** / Cypress
+- [ ] `dar-22e1a69bb24c` **axe-core** / axe-core
+- [ ] `dar-d5ff2aa0fd04` **Testing Library** / Testing Library
+- [ ] `dar-6d60b674913b` **Lighthouse** / Lighthouse
+- [ ] `dar-97614910546f` **Vite** / Vite
+- [ ] `dar-5f0212390e2a` **PyInstaller** / PyInstaller
+- [ ] `dar-f7eb9e3203be` **Nuitka** / Nuitka
+- [ ] `dar-e4c6db1056d9` **Briefcase** / Briefcase
+
+## 맵·레벨 디자인 — 32개
+
+- [ ] `dar-3a9ef4395526` **레벨 디자인** / Level Design
+- [ ] `dar-3617a094b75f` **레벨의 행동 가능성 단서** / Affordance in Level Design
+- [ ] `dar-48c7c28e3d56` **경험의 완급** / Pacing
+- [ ] `dar-0e34c3cbe81b` **공간 이동 행동** / Traversal
+- [ ] `dar-5d89fb507dea` **세계관 구축** / Worldbuilding
+- [ ] `dar-2b7957eb41f1` **바이옴** / Biome
+- [ ] `dar-4a3dc785d185` **지형 텍스처 혼합** / Terrain Splatting
+- [ ] `dar-f5685c0fb1e9` **지형 침식** / Terrain Erosion
+- [ ] `dar-cf83a68e0acd` **소켓** / Socket
+- [ ] `dar-5c5ede0ef965` **원점 이동** / Floating Origin
+- [ ] `dar-0486ba25faa3` **스카이박스** / Skybox
+- [ ] `dar-a1e2b293fec5` **스카이돔** / Skydome
+- [ ] `dar-104142479978` **낮밤 주기** / Day–Night Cycle
+- [ ] `dar-dee2d02248e3` **날씨 시스템** / Weather System
+- [ ] `dar-2d263c380597` **수면 평면** / Water Plane
+- [ ] `dar-019ce12167c2` **물 흐름 맵** / Water Flow Map
+- [ ] `dar-0e791dccbaf1` **주요 관심 지점** / POI / Point of Interest
+- [ ] `dar-66b3480a57e9` **환경 디테일 배치** / Set Dressing
+- [ ] `dar-80d41426a4cd` **충돌 대리 형상** / Collision Proxy
+- [ ] `dar-bec6171276e6` **왕 타일** / Wang Tiles
+- [ ] `dar-1683a55eeee0` **지형 연결 규칙** / Terrain Rules
+- [ ] `dar-69464f7b94e3` **흐름장** / Flow Field
+- [ ] `dar-eb0f882933d4` **시드** / Seed
+- [ ] `dar-c0ba1313c297` **펄린 노이즈** / Perlin Noise
+- [ ] `dar-d599af71db6a` **심플렉스 노이즈** / Simplex Noise
+- [ ] `dar-c8755d71db8e` **프랙탈 브라운 운동 합성** / Fractal Brownian Motion
+- [ ] `dar-eaf8288da983` **보로노이 다이어그램** / Voronoi Diagram
+- [ ] `dar-4afe7c548909` **BSP 던전** / BSP Dungeon
+- [ ] `dar-76fd019d7366` **셀룰러 오토마타** / Cellular Automata
+- [ ] `dar-b2a1603af7af` **웨이브 펑션 콜랩스** / Wave Function Collapse
+- [ ] `dar-d4eca7a2d5b6` **그래프 문법** / Graph Grammar
+- [ ] `dar-bfc83a726aed` **L 시스템** / L-system
+
+## 데이터 시각화 — 31개
+
+- [ ] `dar-839044a75364` **D3.js** / D3.js
+- [ ] `dar-40db541781cb` **Chart.js** / Chart.js
+- [ ] `dar-124359c006a2` **Apache ECharts** / Apache ECharts
+- [ ] `dar-6e2ea63449db` **Plotly.js** / Plotly.js
+- [ ] `dar-7e30d754006e` **Vega** / Vega
+- [ ] `dar-2beaafec02a1` **Vega-Lite** / Vega-Lite
+- [ ] `dar-a3bac6e5135b` **Observable Plot** / Observable Plot
+- [ ] `dar-50babab04994` **Recharts** / Recharts
+- [ ] `dar-af3e0022de16` **Nivo** / Nivo
+- [ ] `dar-fbc9abad9196` **visx** / visx
+- [ ] `dar-62288d53ad1f` **Victory** / Victory
+- [ ] `dar-1366229183fb` **Highcharts** / Highcharts
+- [ ] `dar-8d562a46204f` **ApexCharts** / ApexCharts
+- [ ] `dar-6fb463c75e04` **uPlot** / uPlot
+- [ ] `dar-4edfa7ce0508` **vis-timeline** / vis-timeline
+- [ ] `dar-95f304d236c8` **VChart** / VChart
+- [ ] `dar-7beace348e67` **Matplotlib** / Matplotlib
+- [ ] `dar-b53b9cc22196` **Seaborn** / Seaborn
+- [ ] `dar-1ff5ee84d737` **Plotly Python** / Plotly Python
+- [ ] `dar-dd2e81a2a132` **Altair** / Altair
+- [ ] `dar-fe26f5ac15fa` **Bokeh** / Bokeh
+- [ ] `dar-bb3f1f0d788a` **HoloViews** / HoloViews
+- [ ] `dar-f6fd90512f90` **Datashader** / Datashader
+- [ ] `dar-e9a458665c95` **PyQtGraph** / PyQtGraph
+- [ ] `dar-a75f5f50cb19` **VisPy** / VisPy
+- [ ] `dar-9e458c6f23c5` **PyVista** / PyVista
+- [ ] `dar-1e5f8c66e50b` **VTK** / VTK
+- [ ] `dar-811231d26992` **Open3D** / Open3D
+- [ ] `dar-b6b93a5af358` **Pillow** / Pillow
+- [ ] `dar-83b53318a327` **OpenCV** / OpenCV
+- [ ] `dar-61a7b4ad7608` **PyCairo** / PyCairo
+
+## 네이티브·모바일 — 26개
+
+- [ ] `dar-c8849f0f180e` **Electron** / Electron
+- [ ] `dar-e211febec0df` **Tauri** / Tauri
+- [ ] `dar-c01de86efba7` **Wails** / Wails
+- [ ] `dar-0aa9555b249e` **Neutralinojs** / Neutralinojs
+- [ ] `dar-74f02880255a` **Flutter** / Flutter
+- [ ] `dar-ede54132edfe` **React Native** / React Native
+- [ ] `dar-963d15347c9f` **Expo** / Expo
+- [ ] `dar-3b453d1c32e2` **Ionic** / Ionic
+- [ ] `dar-2d5282892204` **Capacitor** / Capacitor
+- [ ] `dar-c203aa06e299` **SwiftUI** / SwiftUI
+- [ ] `dar-6fa205885c08` **AppKit** / AppKit
+- [ ] `dar-44a6d5bf068f` **UIKit** / UIKit
+- [ ] `dar-e3ba69e080da` **Jetpack Compose** / Jetpack Compose
+- [ ] `dar-c6e080432ff3` **Compose Multiplatform** / Compose Multiplatform
+- [ ] `dar-133444dc527b` **.NET MAUI** / .NET MAUI
+- [ ] `dar-06a5a7ead3b4` **Avalonia** / Avalonia
+- [ ] `dar-e8064f63b974` **WPF** / WPF
+- [ ] `dar-80c7bbe04809` **WinUI** / WinUI
+- [ ] `dar-9041ec4df732` **Qt** / Qt
+- [ ] `dar-3e5af3884a04` **GTK** / GTK
+- [ ] `dar-9669ae841fd5` **Dear ImGui** / Dear ImGui
+- [ ] `dar-b5a7137e944d` **Slint** / Slint
+- [ ] `dar-cfd2a639eec9` **egui** / egui
+- [ ] `dar-4c49a5d33038` **Iced** / Iced
+- [ ] `dar-7bdd617f262a` **Fyne** / Fyne
+- [ ] `dar-f6cb9d7b4c57` **LVGL** / LVGL
+
+## 표준·자산 — 24개
+
+- [ ] `dar-b59a05a81951` **확장 가능 벡터 그래픽** / SVG
+- [ ] `dar-5378d6ce6195` **PNG 이미지** / PNG
+- [ ] `dar-75b63a0ec595` **JPEG 이미지** / JPEG
+- [ ] `dar-5a44a11c3913` **WebP 이미지** / WebP
+- [ ] `dar-900be5d6f4b9` **AVIF 이미지** / AVIF
+- [ ] `dar-3b835351f739` **OpenEXR** / OpenEXR
+- [ ] `dar-00033bb63990` **glTF** / glTF
+- [ ] `dar-5eb07c6e76ed` **GLB** / GLB
+- [ ] `dar-b5f074d9b545` **FBX** / FBX
+- [ ] `dar-2e58a7efa086` **OBJ** / OBJ
+- [ ] `dar-be52aed18412` **Universal Scene Description** / USD
+- [ ] `dar-bf8ffb5cfe4d` **STL** / STL
+- [ ] `dar-d812d006391a` **3MF** / 3MF
+- [ ] `dar-f696263a7a84` **KTX2** / KTX2
+- [ ] `dar-c14a81a2968b` **드라코 압축** / Draco Compression
+- [ ] `dar-8b3a0a9e3f29` **웹GL** / WebGL
+- [ ] `dar-05b9c41bacd7` **웹GPU** / WebGPU
+- [ ] `dar-fe5d92482c3b` **GLSL** / GLSL
+- [ ] `dar-6061c247ad61` **WGSL** / WGSL
+- [ ] `dar-4026edb1f60b` **HLSL** / HLSL
+- [ ] `dar-a277f07d98d5` **OpenXR** / OpenXR
+- [ ] `dar-a39e0b97cf90` **스프라이트 시트** / Sprite Sheet
+- [ ] `dar-1d21c0676320` **9분할 확대** / Nine-slice Scaling
+- [ ] `dar-8924c37270f8` **폰트 서브세팅** / Font Subsetting

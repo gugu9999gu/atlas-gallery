@@ -1,0 +1,21 @@
+{
+  "name": "atlas-gallery",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-28",
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "atlas-gallery.app",
+      "custom_domain": true
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "STATIC",
+      "bucket_name": "atlas-gallery-assets"
+    }
+  ],
+  "observability": {
+    "enabled": false
+  }
+}

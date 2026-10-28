@@ -6,6 +6,7 @@ on:
       - data/interaction-recipes.tsv
       - scripts/build-interactions.py
       - scripts/test-interactions.py
+      - scripts/review-webgl.py
       - worker-v32.mjs
       - wrangler-v32.jsonc
       - package.json
@@ -34,13 +35,16 @@ jobs:
           python scripts/build.py
           python scripts/test-previews.py
           python scripts/test-adfit.py
-      - name: Build and verify interactions, Three.js and reference pages
+      - name: Build and visually inspect the interactive collection
         run: |
           npm run check
           npm run build
+          python scripts/review-webgl.py
+      - name: Verify interaction, WebGL and crawlable reference behavior
+        run: |
           python scripts/test-interactions.py
           npx wrangler deploy --config wrangler-v32.jsonc --dry-run --outdir /tmp/atlas-worker-check
-      - name: Save verification reports only
+      - name: Save verification reports and rendered review images
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
@@ -48,5 +52,8 @@ jobs:
           path: |
             qa/interaction-tests-v32.json
             qa/build-v32.json
+            qa/webgl-review-v32.json
+            qa/v32-desktop.png
+            qa/v32-three-grid.png
           retention-days: 7
           if-no-files-found: warn

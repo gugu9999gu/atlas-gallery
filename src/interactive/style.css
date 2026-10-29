@@ -68,3 +68,12 @@
 .ix-scroll-space{height:190px}.ix-scroll-visual{display:grid;place-items:center;position:sticky;top:4px;margin:auto;width:76px;height:52px;border-radius:8px;background:#63a6b8;font-size:14px;font-weight:800;transform-origin:center}
 .ix-scroll-progress{height:7px;background:#091b2e;border-radius:6px;margin-top:9px;overflow:hidden}.ix-scroll-progress span{display:block;height:100%;width:0;background:#81e7cc}
 @media(prefers-reduced-motion:reduce){.ix-special .ix-motion-target,.ix-special .ix-zoom-object{transition-duration:0s!important}}
+
+/* Accessible radial buttons and visible toast feedback */
+.ix-toast{position:absolute;top:12px;left:12px;right:12px;z-index:15;background:#d7f9e9;color:#123b37;border:1px solid #67bea3;border-radius:10px;padding:9px 12px;font-size:14px;font-weight:750;box-shadow:0 9px 22px #0006}
+.ix-toast[hidden]{display:none}
+.ix-orbit-actions .ix-radial-action{position:absolute;left:calc(50% - 22px);top:95px;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid #b7d7f4;font-size:22px;color:#fff;background:#4a8cac;opacity:0;transition:transform .45s,opacity .3s;cursor:pointer;pointer-events:auto}
+.ix-stage.is-on .ix-orbit-actions .ix-radial-action:nth-child(1){transform:translate(-88px,-43px);opacity:1}
+.ix-stage.is-on .ix-orbit-actions .ix-radial-action:nth-child(2){transform:translate(0,-85px);opacity:1}
+.ix-stage.is-on .ix-orbit-actions .ix-radial-action:nth-child(3){transform:translate(88px,-43px);opacity:1}
+.ix-stage .ix-orbit-actions .ix-radial-action:focus-visible{outline:3px solid #aaffda;outline-offset:2px}

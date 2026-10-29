@@ -2,7 +2,7 @@
   'use strict';
   const kinds = new Set([
     'click-live','click-haptic','click-overflow','drag-drop','drag-swipe',
-    'drag-pinch','drag-sort','key-shortcut','click-context','click-micro',
+    'drag-pinch','drag-sort','drag-reorder','key-shortcut','click-context','click-micro',
     'click-history','click-confirm','input-debounce','track-throttle',
     'click-fade','click-slide','key-navigation','key-focus-trap',
     'key-focus','drag-gesture-transition','scroll-scrub','scroll-timeline'
@@ -73,7 +73,7 @@
       listen(pad,'pointermove',e=>{if(!points.has(e.pointerId))return;points.set(e.pointerId,{x:e.clientX,y:e.clientY});if(points.size===2){const [a,b]=[...points.values()],distance=Math.hypot(a.x-b.x,a.y-b.y);if(lastDistance!==null)zoom=clamp(zoom*distance/Math.max(1,lastDistance),.6,2);lastDistance=distance;drawZoom();}});
       const end=e=>{points.delete(e.pointerId);lastDistance=null;};listen(pad,'pointerup',end);listen(pad,'pointercancel',end);
       listen(pad,'keydown',e=>{if(['+','=','-'].includes(e.key)){e.preventDefault();change(e.key==='-'?-.15:.15);}});
-    } else if(kind==='drag-sort') {
+    } else if(kind==='drag-sort'||kind==='drag-reorder') {
       draw(box('REORDER ITEMS',`<ol class="ix-sort-list"><li><button type="button" class="ix-sort-item">01 · ALPHA</button></li><li><button type="button" class="ix-sort-item">02 · BETA</button></li><li><button type="button" class="ix-sort-item">03 · GAMMA</button></li></ol>`),tr('항목을 세로로 드래그하거나 방향키로 이동하세요.','Drag an item vertically or move it with arrow keys.'));
       const list=el('.ix-sort-list');let dragging=null;
       const shift=(item,dir)=>{const li=item.closest('li'),other=dir<0?li.previousElementSibling:li.nextElementSibling;if(!other)return;if(dir<0)list.insertBefore(li,other);else list.insertBefore(other,li);item.focus();say(tr('새 위치 ','New position ')+([...list.children].indexOf(li)+1)+' / 3');};

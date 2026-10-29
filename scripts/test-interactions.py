@@ -158,7 +158,7 @@ with sync_playwright() as p:
           await AtlasKit.mount(root,recipe,'en');
           const canvas=root.querySelector('canvas');if(!canvas)return {engine:root.dataset.engine,rendered:false};
           const data=canvas.getContext('2d').getImageData(0,0,canvas.width,canvas.height).data;
-          const values=new Set();for(let i=0;i<data.length;i+=400)values.add(data[i]+','+data[i+1]+','+data[i+2]);
+          const values=new Set();for(let i=0;i<data.length;i+=44)values.add(data[i]+','+data[i+1]+','+data[i+2]);
           root.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));
           return {engine:root.dataset.engine,rendered:root.dataset.rendered,colors:values.size,contexts:AtlasKit.stats().contexts};
         }''',recipe)

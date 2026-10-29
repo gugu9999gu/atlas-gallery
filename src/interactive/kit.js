@@ -3,19 +3,21 @@
  */
 (function(global){
 'use strict';
-const VERSION='3.2.1';
+const VERSION='3.2.2';
 const THREE_VERSION='0.180.0';
 const THREE_URL=global.ATLAS_THREE_URL||'/assets/vendor/three-0.180.0.module.min.js';
 let threePromise;
 const mounted=new Map();
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function markup(kind,language='ko'){
+ if(window.AtlasStudies?.supports(kind))return window.AtlasStudies.markup(kind,language);
  if(window.AtlasAdvanced?.supports(kind))return window.AtlasAdvanced.markup(kind,language);
  kind=({'press-long':'press-hold','drag-swipe-dismiss':'drag-dismiss','click-radial-legacy':'click-radial','drag-elasticity':'drag-elastic'})[kind]||kind;
  const ko=language==='ko',drag=kind.startsWith('drag-'),track=kind.startsWith('track-'),click=kind.startsWith('click-')||kind==='press-hold';
  return `<div class="ix-stage" data-kind="${kind}" lang="${language}" tabindex="0" role="group" aria-label="${ko?'직접 조작하는 예제':'Interactive example'}"><div class="ix-grid" aria-hidden="true"></div><div class="ix-light" aria-hidden="true"></div><div class="ix-trail" aria-hidden="true"></div><div class="ix-cross" aria-hidden="true"></div><div class="ix-tiles" aria-hidden="true">${Array.from({length:9},(_,i)=>`<i data-tile="${i}"></i>`).join('')}</div><div class="ix-object"><div class="ix-graphic" aria-hidden="true"><i></i><i></i><i></i></div><span class="ix-kicker">ATLAS / LAB</span><strong class="ix-head">${track?'FOLLOW':drag?'MOVE':click?'MAKE IT':'HELLO.'}</strong><div class="ix-line" aria-hidden="true"></div><div class="ix-extra">${ko?'다음 장면을 발견하세요.':'Discover the next scene.'}</div><div class="ix-alt" aria-hidden="true"><strong>ANOTHER<br>VIEW.</strong></div><div class="ix-check" aria-hidden="true"><svg viewBox="0 0 80 80"><path d="M15 40 32 56 65 22"/></svg></div><div class="ix-knob" aria-hidden="true"></div><div class="ix-meter" aria-hidden="true"></div></div><div class="ix-orbit-actions" aria-hidden="true"><i>＋</i><i>↗</i><i>★</i></div><span class="ix-follower" aria-hidden="true"></span><button type="button" class="ix-trigger">${ko?(drag?'드래그 / 방향키':track?'움직여 보세요':kind==='press-hold'?'길게 누르기':click?'클릭 / 탭':'호버 / 초점'):drag?'Drag / arrow keys':track?'Move pointer':kind==='press-hold'?'Press and hold':click?'Click / tap':'Hover / focus'}</button><input class="ix-range" type="range" min="0" max="100" value="50" aria-label="${ko?'전후 비교 비율':'Before and after split'}"${kind==='drag-compare'?'':' hidden'}><output class="ix-readout" aria-live="off">${ko?'직접 조작해 보세요':'Try the interaction'}</output></div>`;
 }
 function mountDOM(root,kind,language='ko',options={}){
+ if(window.AtlasStudies?.supports(kind))return window.AtlasStudies.mount(root,kind,language,options);
  if(window.AtlasAdvanced?.supports(kind))return window.AtlasAdvanced.mount(root,kind,language,options);
  kind=({'press-long':'press-hold','drag-swipe-dismiss':'drag-dismiss','click-radial-legacy':'click-radial','drag-elasticity':'drag-elastic'})[kind]||kind;
  const ko=language==='ko',abort=new AbortController(),signal=abort.signal;
@@ -187,7 +189,7 @@ function buildScene(THREE,kind){
   main=add(new THREE.PlaneGeometry(3.3,2.5,36,28),mat(0x62c3e1,{wireframe:true,side:THREE.DoubleSide}));main.rotation.x=-.65;base=main.geometry.attributes.position.array.slice();
  }else if(kind==='three-particles'){
   const pos=new Float32Array(450*3);for(let i=0;i<450;i++){const a=i*2.399963,r=Math.sqrt(i/450)*1.7;pos[i*3]=Math.cos(a)*r;pos[i*3+1]=Math.sin(a)*r;pos[i*3+2]=Math.sin(i*.17)*.4;}
-  const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.BufferAttribute(pos,3));base=pos.slice();points=new THREE.Points(geo,new THREE.PointsMaterial({color:0x9be9fd,size:.045,sizeAttenuation:true}));group.add(points);main=points;
+  const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.BufferAttribute(pos,3));base=pos.slice();points=new THREE.Points(geo,new THREE.PointsMaterial({color:0xb9f6ff,size:.055,sizeAttenuation:true}));group.add(points);main=points;
  }else if(kind==='three-instance'){
   grid=new THREE.InstancedMesh(new THREE.BoxGeometry(.19,.6,.19),mat(0x93b7ff),121);group.add(grid);main=grid;group.rotation.set(.5,.4,0);
  }else{
@@ -210,7 +212,7 @@ function buildScene(THREE,kind){
   if(kind==='three-light')point.position.set(x*3,y*2,2.5);
   if(kind==='three-orbit'){const a=state.orbitX||x*.8,e=state.orbitY||.25;camera.position.set(Math.sin(a)*5.3,Math.sin(e)*3,Math.cos(a)*5.3);camera.lookAt(0,0,0);}
   if(kind==='three-translate')group.position.set(x*.8,y*.6,0);
-  if(kind==='three-scale')group.scale.setScalar(.85+(x+1)*.32);
+  if(kind==='three-scale'){group.scale.setScalar(.68+(x+1)*.22);group.position.y=.16;}
   if(kind==='three-explode')parts.forEach((o,i)=>o.position.y=(i-2)*(state.toggled?.6:.2));
   if(kind==='three-ripple'){const p=main.geometry.attributes.position;for(let i=0;i<p.count;i++){const xx=base[i*3],yy=base[i*3+1],d=Math.hypot(xx-x,yy-y);p.setZ(i,Math.sin(d*5-t*3)*.14*Math.exp(-d*.4));}p.needsUpdate=true;}
   if(points){const p=points.geometry.attributes.position;for(let i=0;i<p.count;i++){const xx=base[i*3],yy=base[i*3+1],d=Math.max(.3,Math.hypot(xx-x,yy-y));p.setXYZ(i,xx+(xx-x)*.13/d,yy+(yy-y)*.13/d,base[i*3+2]+Math.sin(t+i*.07)*.08);}p.needsUpdate=true;}
@@ -271,6 +273,7 @@ function cleanup(){for(const [root,rec] of mounted)if(!root.isConnected){rec.dis
 function code(recipe,language='ko',css=''){
  const name=escape(recipe.title||recipe.en||recipe.key),ko=language==='ko';
  const header='<!doctype html>\n<html lang="'+language+'">\n<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+name+' — ATLAS example</title>\n<style>html{font-size:16px}body{margin:0;padding:24px;background:#edf1f8;font-family:system-ui,sans-serif;font-size:16px}main{max-width:640px;margin:auto}h1{font-size:24px}p{font-size:16px;line-height:1.7}.ix-demo{height:340px;border-radius:20px;overflow:hidden}button,input{font:inherit}\n'+css+'\n</style></head><body><main><h1>'+name+'</h1><p>'+(ko?'포인터·터치 또는 키보드로 조작하세요. 실제 개인정보나 서버 요청을 사용하지 않는 독립 실행 예제입니다.':'Use pointer, touch or keyboard input. This is a standalone demonstration without analytics or server requests.')+'</p><div id="demo" class="ix-demo"></div></main>\n';
+ if(recipe.engine==='dom'&&global.AtlasStudies?.supports(recipe.key))return header+'<script>\n'+global.AtlasStudies.source+'\nconst root=document.getElementById("demo");root.innerHTML=AtlasStudies.markup('+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');const example=AtlasStudies.mount(root.firstElementChild,'+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');window.addEventListener("pagehide",()=>example.dispose(),{once:true});\n</'+'script></body></html>';
  if(recipe.engine==='dom'&&global.AtlasAdvanced?.supports(recipe.key))return header+'<script>\n'+global.AtlasAdvanced.source+'\nconst root=document.getElementById("demo");root.innerHTML=AtlasAdvanced.markup('+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');const example=AtlasAdvanced.mount(root.firstElementChild,'+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');window.addEventListener("pagehide",()=>example.dispose(),{once:true});\n</'+'script></body></html>';
  if(recipe.engine==='three')return header+'<!-- Dependency: Three.js '+THREE_VERSION+' (MIT). Serve via HTTP(S), e.g. python -m http.server. CDN connection required. -->\n<script type="module">\nimport * as THREE from "https://cdn.jsdelivr.net/npm/three@'+THREE_VERSION+'/build/three.module.min.js";\n'+buildScene.toString()+'\n'+createThreePool.toString()+'\nconst root=document.getElementById("demo");const pool=createThreePool(THREE);const example=pool.mount(root,'+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');\nwindow.addEventListener("pagehide",()=>{example.dispose();pool.dispose();},{once:true});\n</'+'script></body></html>';
  return header+'<script>\n'+markup.toString()+'\n'+mountDOM.toString()+'\nconst root=document.getElementById("demo");root.innerHTML=markup('+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');\nconst example=mountDOM(root.firstElementChild,'+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');window.addEventListener("pagehide",()=>example.dispose(),{once:true});\n</'+'script></body></html>';

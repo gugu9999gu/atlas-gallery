@@ -22,7 +22,8 @@ URL=f'http://127.0.0.1:{server.server_port}/?qa=1&lang=ko&ads=off'
 all_metrics=[]; images=[]
 COLS=6;CW=248;CH=228;ROWS=max(1,(args.batch+COLS-1)//COLS)
 with sync_playwright() as p:
-  browser=p.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox','--use-angle=swiftshader'])
+  executable=os.getenv('CHROMIUM_PATH')
+  browser=p.chromium.launch(**({'executable_path':executable} if executable else {}),headless=True,args=['--no-sandbox','--use-angle=swiftshader'])
   page=browser.new_page(viewport={'width':COLS*CW+20,'height':ROWS*CH+25},device_scale_factor=1)
   errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
   content=(ROOT/'public/index.html').read_text(encoding='utf-8').replace("get('qa')==='1'","get('qa')!=='0'")
@@ -84,3 +85,7 @@ if args.render and images:
       im=Image.open(impath);c.paste(im,((k%2)*COLS*CW,(k//2)*ROWS*CH))
     name=OUT/f'sheet-{args.offset+j*args.batch:04d}.jpg';c.save(name,quality=78,optimize=True)
   print('sheets',len(list(OUT.glob('sheet-*'))))
+
+# Fail the audit job if any concrete layout regression is detected.
+if errors or any(counts[name] for name in ('collisions','offstage','small','blank')):
+  raise SystemExit('Visual preview audit failed: '+str(dict(counts))+', errors='+str(errors[:5]))

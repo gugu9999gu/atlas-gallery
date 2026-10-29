@@ -52,5 +52,9 @@ jobs:
           python scripts/test-previews.py
           python scripts/test-adfit.py
           python scripts/build.py
-      - name: Ensure committed data and build match editable source
-        run: git diff --exit-code -- public/index.html data/atlas-gallery-bilingual.json
+      - name: Verify reproducible build and unchanged source definitions
+        run: |
+          sha256sum public/index.html > /tmp/atlas-generated-build.sha256
+          python scripts/build.py
+          sha256sum -c /tmp/atlas-generated-build.sha256
+          git diff --exit-code -- data/atlas-gallery-bilingual.json

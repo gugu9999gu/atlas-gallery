@@ -138,6 +138,10 @@ with sync_playwright() as p:
             changed=stage.evaluate("e=>parseFloat(e.style.getPropertyValue('--px'))>e.clientWidth*.6")
         elif key in ('press-hold','press-long'):
             stage.focus();demo.keyboard.down('Enter');demo.wait_for_timeout(1100);demo.keyboard.up('Enter');changed=stage.evaluate("e=>e.classList.contains('is-checked')")
+        elif key=='click-double':
+            demo.locator('.ix-trigger').click()
+            demo.locator('.ix-trigger').click()
+            changed=stage.evaluate("e=>e.classList.contains('is-checked')")
         elif key=='drag-compare':
             demo.locator('.ix-range').fill('75');changed=stage.evaluate("e=>e.style.getPropertyValue('--split')==='75%'")
         elif key.startswith('drag-'):

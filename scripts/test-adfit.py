@@ -56,10 +56,18 @@ try:
   check('slots follow cards 16 and 40 in DOM order',positions==[16,40],positions)
   page.locator('#load-more').click();page.wait_for_timeout(100)
   check('further pagination never creates a third slot',page.locator('.ad-slot').count()==2 and page.evaluate('window.__adfitCalls.length')==2)
-  page.set_viewport_size({'width':390,'height':900});page.wait_for_timeout(250)
+  page.set_viewport_size({'width':390,'height':900})
+  page.wait_for_function('''() => {
+    const slot=document.querySelector('.ad-slot[data-slot="0"]');
+    return slot?.hidden===true && window.__adfitCalls?.length===2;
+  }''',timeout=6000)
   check('oversize desktop ad hidden without scaled creative',page.locator('.ad-slot[data-slot="0"]').is_hidden() and page.evaluate('window.__adfitCalls.length')==2)
   check('resized layout has no horizontal overflow',page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'))
-  page.set_viewport_size({'width':1440,'height':980});page.wait_for_timeout(250)
+  page.set_viewport_size({'width':1440,'height':980})
+  page.wait_for_function('''() => {
+    const slot=document.querySelector('.ad-slot[data-slot="0"]');
+    return slot?.hidden===false && window.__firstFrame?.isConnected && window.__adfitCalls?.length===2;
+  }''',timeout=6000)
   check('resize back reuses prior iframe',page.evaluate('window.__firstFrame.isConnected && window.__adfitCalls.length===2'))
   page.locator('[data-ad-settings]').click();page.locator('#ad-settings-dialog [data-ad-choice="denied"]').click();page.wait_for_timeout(200)
   check('withdrawal requests a clean reload',page.locator('#atlas-adfit-sdk').count()==0 and 'ads=off' in page.evaluate('window.__reloadURL'))

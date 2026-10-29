@@ -49,12 +49,86 @@ with sync_playwright() as p:
         check(f'no-overflow-at-{width}',page.evaluate('document.documentElement.scrollWidth<=innerWidth'))
     page.set_viewport_size({'width':1440,'height':1000})
     recipes=page.evaluate('atlasInteractiveQA.recipes()')
+    toast_id='dar-888fda81c920'
+    toast_recipes=[recipe for recipe in recipes if recipe['id']==toast_id]
+    check('canonical-toast-id-uses-real-popup-pattern',len(toast_recipes)==1 and toast_recipes[0]['key']=='ui-toast',toast_recipes)
+    check('ui-pattern-count-matches-build',len([recipe for recipe in recipes if recipe['key'].startswith('ui-')])==build.get('ui_motion_examples'),build.get('ui_motion_examples'))
+    toast_html=page.evaluate('(id)=>atlasInteractiveQA.code(id)',toast_id)
+    check('toast-copy-has-actual-renderer',all(x in toast_html for x in ['AtlasPatterns.mount','ix-p-toast','function initPatterns']),len(toast_html))
+    toast=context.new_page()
+    toast.set_content(toast_html,wait_until='domcontentloaded')
+    toast.wait_for_function("document.querySelector('.ix-pattern.is-open')",timeout=6000)
+    appeared=toast.locator('.ix-p-toast').get_attribute('aria-hidden')=='false'
+    toast.wait_for_function("!document.querySelector('.ix-pattern.is-open')",timeout=6000)
+    disappeared=toast.locator('.ix-p-toast').get_attribute('aria-hidden')=='true'
+    check('toast-autoplay-entrance-hold-exit',appeared and disappeared)
+    toast.locator('[data-action=trigger]').click()
+    check('toast-button-opens-same-popup',toast.locator('.ix-pattern').evaluate("e=>e.classList.contains('is-open')"))
+    toast.locator('[data-action=dismiss]').click()
+    check('toast-button-dismisses-popup',toast.locator('.ix-p-toast').get_attribute('aria-hidden')=='true')
+    toast.close()
+    quiet=context.new_page();quiet.emulate_media(reduced_motion='reduce')
+    quiet.set_content(toast_html,wait_until='domcontentloaded')
+    quiet.wait_for_timeout(1200)
+    check('reduced-motion-prevents-toast-autoplay',quiet.locator('.ix-p-toast').get_attribute('aria-hidden')=='true')
+    quiet.locator('[data-action=trigger]').click()
+    check('reduced-motion-keeps-manual-toast-functional',quiet.locator('.ix-p-toast').get_attribute('aria-hidden')=='false')
+    quiet.close()
     for recipe in [r for r in recipes if r['engine']=='dom']:
         code=page.evaluate('(id)=>atlasInteractiveQA.code(id)',recipe['id'])
         demo=context.new_page();de=[];demo.on('pageerror',lambda e:de.append(str(e)))
         demo.set_content(code,wait_until='domcontentloaded')
         stage=demo.locator('.ix-stage');rect=stage.bounding_box();key=recipe['key']
-        if key.startswith('study-'):
+        if key.startswith('ui-'):
+            if key in ('ui-toast','ui-snackbar','ui-banner','ui-inline'):
+                stage.locator('[data-action=trigger]').click()
+                changed=stage.evaluate("e=>e.classList.contains('is-open')") and stage.locator('[data-surface]').get_attribute('aria-hidden')=='false'
+                stage.locator('[data-action=dismiss]').click()
+                changed=changed and stage.locator('[data-surface]').get_attribute('aria-hidden')=='true'
+            elif key=='ui-tooltip':
+                stage.locator('[data-action=trigger]').focus()
+                changed=stage.evaluate("e=>e.classList.contains('is-open')")
+            elif key in ('ui-popover','ui-dropdown','ui-modal','ui-sheet','ui-drawer','ui-accordion','ui-fab'):
+                stage.locator('[data-action=trigger]').click()
+                changed=stage.evaluate("e=>e.classList.contains('is-open')") and stage.locator('[data-action=trigger]').get_attribute('aria-expanded')=='true'
+            elif key in ('ui-tabs','ui-segmented'):
+                stage.locator('[data-action=tab1]').click()
+                changed=stage.locator('[data-action=tab1]').get_attribute('aria-selected')=='true'
+                stage.locator('[data-action=tab1]').focus()
+                demo.keyboard.press('ArrowRight')
+                changed=changed and stage.locator('[data-action=tab0]').get_attribute('aria-selected')=='true'
+            elif key in ('ui-checkbox','ui-radio','ui-switch'):
+                stage.locator('input[data-control]').first.check()
+                changed=stage.locator('input[data-control]').first.is_checked()
+            elif key=='ui-slider':
+                stage.locator('input[data-control]').fill('75')
+                changed='75%' in stage.locator('[data-value]').inner_text()
+            elif key=='ui-steps':
+                stage.locator('[data-action=next]').click()
+                changed='active' in stage.locator('.ix-p-steps b').nth(1).get_attribute('class')
+            elif key=='ui-quantity':
+                stage.locator('[data-action=increment]').click()
+                changed=stage.locator('[data-value]').inner_text()=='2'
+            elif key=='ui-progress':
+                stage.locator('[data-action=trigger]').click()
+                changed=stage.locator('[data-control]').evaluate('e=>e.value>28')
+            elif key=='ui-skeleton':
+                changed=stage.locator('.ix-p-skeleton span').count()>3
+            elif key=='ui-carousel':
+                stage.locator('[data-action=next]').click()
+                changed=stage.locator('[data-value]').inner_text()=='2 / 3'
+            elif key=='ui-loading':
+                stage.locator('[data-action=trigger]').click()
+                changed=stage.evaluate("e=>e.classList.contains('is-busy')")
+            elif key=='ui-search':
+                stage.locator('[data-control]').fill('card')
+                changed=stage.evaluate("e=>e.classList.contains('is-open')")
+            elif key in ('ui-card','ui-button'):
+                stage.locator('[data-action=trigger]').click()
+                changed=stage.evaluate("e=>e.classList.contains('is-pressed')")
+            else:
+                changed=False
+        elif key.startswith('study-'):
             if key=='study-blur':
                 demo.locator('.ix-study-range').fill('8')
                 changed=stage.get_attribute('data-state')=='active' and '8' in demo.locator('.ix-study-status').inner_text()

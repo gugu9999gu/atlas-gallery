@@ -211,8 +211,8 @@ with sync_playwright() as p:
                 demo.keyboard.press('ArrowRight')
                 changed=demo.locator('[role=slider]').get_attribute('aria-valuenow')=='10'
             elif key in ('scroll-scrub','scroll-timeline'):
-                demo.locator('.ix-scroll-frame').evaluate('e=>{e.scrollTop=e.scrollHeight;}')
-                demo.wait_for_timeout(50)
+                demo.locator('.ix-scroll-frame').evaluate('e=>{e.scrollTop=e.scrollHeight-e.clientHeight;e.dispatchEvent(new Event("scroll",{bubbles:true}));}')
+                demo.wait_for_function("document.querySelector('.ix-scroll-progress span')?.style.width && parseFloat(document.querySelector('.ix-scroll-progress span').style.width)>0",timeout=2000)
                 changed=stage.locator('.ix-scroll-progress span').evaluate('e=>parseFloat(e.style.width)>0')
         elif key.startswith('hover-'):
             stage.hover();changed=stage.evaluate("e=>e.classList.contains('is-active')")

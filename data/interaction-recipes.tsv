@@ -115,3 +115,21 @@ study-contrast|High Contrast Mode|고대비 모드|dom|클릭·탭 피드백|밝
 study-color|Color Independence|색상 외 상태 전달|dom|클릭·탭 피드백|색만으로 의미를 전달하지 않고 상태 텍스트와 기호를 함께 변경합니다.|Communicate status with text and a symbol, not color alone.
 study-reduced|Reduced Motion|움직임 감소|dom|클릭·탭 피드백|시스템의 움직임 감소 설정을 존중하며 모션 없는 대체 상태를 안내합니다.|Respect prefers-reduced-motion and provide static feedback when motion is disabled.
 study-skip|Skip Link|건너뛰기 링크|dom|클릭·탭 피드백|예제 내부의 건너뛰기 링크로 키보드 초점을 본문 목적지로 이동합니다.|Move focus directly to the sample main-content target using a skip link.
+fnd-name|Accessible Name|접근 가능한 이름|dom|클릭·탭 피드백|아이콘 버튼의 접근 가능한 이름을 aria-label로 명확히 지정하고 이름 변경을 보여줍니다.|Change the accessible name of an icon button using aria-label.
+fnd-focus-order|Focus Order|초점 순서|dom|클릭·탭 피드백|실제 키보드 초점이 순차적으로 이동하는 버튼 그룹을 확인합니다.|Demonstrate focus moving through a group of native buttons in DOM order.
+fnd-contrast|Contrast Ratio|명도 대비|dom|클릭·탭 피드백|텍스트 명도를 바꾸고 WCAG의 명도 대비 계산법으로 수치를 갱신합니다.|Adjust text luminance and compute the resulting WCAG contrast ratio.
+fnd-touch|Touch Accessibility|터치 접근성|dom|클릭·탭 피드백|기본 28픽셀과 44픽셀 터치 영역의 크기를 직접 비교합니다.|Compare 28-pixel and 44-pixel touch target sizes.
+fnd-prevent|Error Prevention|오류 예방|dom|클릭·탭 피드백|위험한 동작을 확인·취소 단계로 나누어 실수로 실행되지 않도록 합니다.|Use a confirm or cancel step before a simulated destructive action.
+fnd-error|Error Identification|오류 식별|dom|클릭·탭 피드백|이메일 입력을 실제 검증하고 잘못된 값을 텍스트와 aria-invalid로 안내합니다.|Validate an email field with accessible text and aria-invalid status.
+fnd-type-scale|Typography Scale|타이포그래피 스케일|dom|호버·포커스|슬라이더로 예제 글자 크기를 직접 조정해 단계별 크기 차이를 확인합니다.|Use a slider to inspect different font sizes in a type scale.
+fnd-type-hierarchy|Type Hierarchy|타입 계층|dom|호버·포커스|크기와 굵기 계층을 명확하게 가진 구성과 평탄한 구성을 비교합니다.|Toggle a clear headline hierarchy versus a flattened text presentation.
+fnd-spacing|Spacing Scale|간격 스케일|dom|호버·포커스|4·8·16·24픽셀 간격을 순차 적용하여 요소들의 리듬을 비교합니다.|Cycle through spacing tokens of 4, 8, 16 and 24 pixels.
+fnd-elevation|Elevation|높이 표현|dom|호버·포커스|높이 단계에 따라 카드 위치와 그림자 확산을 바꿉니다.|Adjust card elevation by changing its position and shadow.
+fnd-shadow|Shadow Token|그림자 토큰|dom|호버·포커스|그림자 토큰의 오프셋과 흐림 단계가 카드에 실제 적용되는 것을 확인합니다.|Apply three actual shadow tokens to a sample card.
+fnd-stroke|Stroke / Border|선과 테두리|dom|호버·포커스|테두리 두께를 1~8픽셀로 바꾸어 시각적 무게를 비교합니다.|Change a visible border width from one to eight pixels.
+fnd-variant|Design Variant|디자인 변형|dom|클릭·탭 피드백|버튼의 Primary·Secondary·Ghost 변형을 실제로 전환합니다.|Cycle a button through primary, secondary and ghost styles.
+fnd-state|Component State|컴포넌트 상태|dom|클릭·탭 피드백|기본·로딩·성공·비활성 상태를 시연하고 disabled 및 aria-busy 속성을 갱신합니다.|Switch component states with real disabled and aria-busy attributes.
+fnd-bento|Bento Layout|벤토 레이아웃|dom|호버·포커스|여러 패널을 균등 격자와 강조형 벤토 배치로 전환합니다.|Switch between regular and featured-panel bento grid arrangements.
+fnd-specificity|Specificity|CSS 명시도|dom|호버·포커스|다른 유형의 CSS 선택자를 비교해 명시도 점수와 시각적 결과를 봅니다.|Compare selector specificity weights and their illustrative visual results.
+fnd-clamp|clamp()|CSS clamp()|dom|호버·포커스|가상 뷰포트 폭을 바꾸며 clamp 최소·선호·최대 글자 크기를 계산합니다.|Adjust a simulated viewport and calculate min-preferred-max clamp font sizes.
+fnd-scroll-margin|Scroll Margin|스크롤 마진|dom|드래그·제스처|고정 헤더 아래에 목표 콘텐츠가 위치하도록 스크롤 위치를 조정합니다.|Scroll to a target leaving space below a sticky header.

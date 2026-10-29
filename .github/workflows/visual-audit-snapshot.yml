@@ -46,7 +46,8 @@ jobs:
           cp -R src data scripts visual-review-snapshot/
           cp -R public/assets visual-review-snapshot/public/
           cp public/*.html public/*.json public/*.txt visual-review-snapshot/public/ || true
-          cp qa/preview-coverage.json qa/remaining-previews.json qa/build-v32.json qa/preview-progress-v322.json qa/preview-progress.json visual-review-snapshot/qa/
+          cp qa/preview-coverage.json qa/remaining-previews.json qa/build-v32.json qa/preview-progress.json visual-review-snapshot/qa/
+          if test -f qa/preview-progress-v323.json; then cp qa/preview-progress-v323.json visual-review-snapshot/qa/; fi
           cp -R qa/visual-audit visual-review-snapshot/qa/
           cp package.json requirements-test.txt visual-review-snapshot/
           printf '%s\n' "${GITHUB_SHA}" > visual-review-snapshot/revision.txt

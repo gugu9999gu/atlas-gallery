@@ -26,9 +26,10 @@ function mountDOM(root,kind,language='ko',options={}){
  if(['drag-reorder','drag-pull','drag-swipe-actions'].includes(kind)){object.style.touchAction='none';root.style.touchAction='pan-y';}
  if(kind==='drag-reorder'){root.querySelector('.ix-head').textContent='ITEM 2 / 3';say(ko?'위·아래로 드래그하여 순서를 바꾸세요.':'Drag up or down to reorder.');}
  if(kind==='drag-pull')root.querySelector('.ix-head').textContent='REFRESH';
- if(kind==='drag-swipe-actions')root.querySelector('.ix-head').textContent='SWIPE ←';
+ if(kind==='drag-swipe-actions'){root.querySelector('.ix-head').textContent='SWIPE ←';const action=document.createElement('span');action.textContent=ko?'보관':'Archive';action.setAttribute('aria-hidden','true');action.style.cssText='position:absolute;right:18px;top:50%;transform:translateY(-50%);padding:10px;border-radius:8px;background:#243a65;color:#fff;font:700 14px system-ui';root.append(action);}
  if(kind==='click-double')root.querySelector('.ix-head').textContent='DOUBLE TAP';
- if(kind==='click-toast')root.querySelector('.ix-head').textContent='NOTIFY';
+ if(kind==='click-toast'){root.querySelector('.ix-head').textContent='NOTIFY';out.setAttribute('aria-live','polite');out.setAttribute('role','status');}
+ if(kind==='drag-reorder')out.setAttribute('aria-live','polite');
  const animate=(el,frames,opts)=>{if(reduced())return null;const a=el.animate(frames,opts);animations.add(a);a.finished.catch(()=>{}).finally(()=>animations.delete(a));return a;};
  function active(value){root.classList.toggle('is-active',value);if(!value){root.style.setProperty('--mx','0px');root.style.setProperty('--my','0px');}}
  function move(x,y){

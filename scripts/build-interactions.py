@@ -6,8 +6,8 @@ from collections import Counter
 import json, re, hashlib, html, shutil
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'public'
-VERSION='3.2.0'
-DATE='2026-10-28'
+VERSION='3.2.1'
+DATE='2026-10-29'
 ORIGIN='https://atlas-gallery.app'
 
 def load(name):return json.loads((ROOT/'data'/name).read_text(encoding='utf-8'))
@@ -112,7 +112,8 @@ def main():
     for marker,v in [('ATLAS_DATA',db),('ATLAS_I18N',lang),('ATLAS_ADS',load('advertising.json'))]:text=text.replace('/*__'+marker+'__*/',embed(v))
     text=text.replace('/*__STYLE_0__*/',css)
     kit=(ROOT/'src/interactive/kit.js').read_text(encoding='utf-8')
-    kit_prefix='<script>'+kit+'</script>\n<script>window.ATLAS_INTERACTION_CSS='+embed((ROOT/'src/interactive/style.css').read_text(encoding='utf-8'))+';</script>\n'
+    advanced=(ROOT/'src/interactive/advanced.js').read_text(encoding='utf-8')
+    kit_prefix='<script>'+advanced+'</script>\n<script>'+kit+'</script>\n<script>window.ATLAS_INTERACTION_CSS='+embed((ROOT/'src/interactive/style.css').read_text(encoding='utf-8'))+';</script>\n'
     text=text.replace('<script>\n/*__APP_0__*/',kit_prefix+'<script>\n/*__APP_0__*/')
     if 'window.ATLAS_INTERACTION_CSS' not in text:text=text.replace('<script>/*__APP_0__*/',kit_prefix+'<script>/*__APP_0__*/')
     text=text.replace('/*__APP_0__*/',app)
@@ -121,7 +122,7 @@ def main():
     text=text.replace('<noscript>','<noscript><p><a href="/references/">전체 용어 설명 / All reference definitions</a></p>',1)
     OUT.mkdir(exist_ok=True);(OUT/'index.html').write_text(text,encoding='utf-8')
     asset=OUT/'assets';asset.mkdir(exist_ok=True)
-    (asset/'interaction-kit.js').write_text(kit,encoding='utf-8');(asset/'interaction-style.css').write_text((ROOT/'src/interactive/style.css').read_text(encoding='utf-8'),encoding='utf-8');(asset/'reference.css').write_text(REFERENCE_CSS,encoding='utf-8');(asset/'reference-demo.js').write_text(REFERENCE_DEMO,encoding='utf-8')
+    (asset/'interaction-kit.js').write_text(advanced+'\n'+kit,encoding='utf-8');(asset/'interaction-style.css').write_text((ROOT/'src/interactive/style.css').read_text(encoding='utf-8'),encoding='utf-8');(asset/'reference.css').write_text(REFERENCE_CSS,encoding='utf-8');(asset/'reference-demo.js').write_text(REFERENCE_DEMO,encoding='utf-8')
     vendor=ROOT/'node_modules/three/build';target=asset/'vendor';target.mkdir(exist_ok=True)
     if vendor.exists():
         shutil.copyfile(vendor/'three.module.min.js',target/'three-0.180.0.module.min.js');shutil.copyfile(vendor/'three.core.min.js',target/'three.core.min.js');shutil.copyfile(vendor.parent/'LICENSE',target/'THREE-LICENSE.txt')

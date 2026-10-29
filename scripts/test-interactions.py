@@ -55,7 +55,7 @@ with sync_playwright() as p:
         demo.set_content(code,wait_until='domcontentloaded')
         stage=demo.locator('.ix-stage');rect=stage.bounding_box();key=recipe['key']
         if key in {
-            'click-live','click-haptic','click-overflow','drag-drop','drag-swipe','drag-pinch','drag-sort',
+            'click-live','click-haptic','click-overflow','drag-drop','drag-swipe','drag-pinch','drag-sort','drag-reorder',
             'key-shortcut','click-context','click-micro','click-history','click-confirm','input-debounce',
             'track-throttle','click-fade','click-slide','key-navigation','key-focus-trap','key-focus',
             'drag-gesture-transition','scroll-scrub','scroll-timeline'
@@ -79,7 +79,7 @@ with sync_playwright() as p:
             elif key=='drag-pinch':
                 demo.locator('[data-action=plus]').click()
                 changed='115%' in stage.locator('.ix-readout').inner_text()
-            elif key=='drag-sort':
+            elif key in ('drag-sort','drag-reorder'):
                 demo.locator('.ix-sort-list button').first.focus()
                 demo.keyboard.press('ArrowDown')
                 changed='BETA' in stage.locator('.ix-sort-list button').first.inner_text()

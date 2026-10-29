@@ -17,7 +17,9 @@ Thread(target=server.serve_forever,daemon=True).start()
 base='http://127.0.0.1:'+str(server.server_port)
 build=json.loads((ROOT/'qa/build-v32.json').read_text())
 check('pinned-three-vendored',build['vendor_available'])
-check('72-recipes-and-24-real-three',build['recipes']==72 and build['three']==24)
+definitions=[line for line in (ROOT/'data/interaction-recipes.tsv').read_text(encoding='utf-8').splitlines() if line and not line.startswith('#')]
+check('manifest-recipes-and-24-real-three',build['recipes']==len(definitions) and build['three']==24,{'built':build['recipes'],'manifest':len(definitions)})
+check('coverage-progress-is-consistent',build['coverage']['specific']+build['coverage']['pending']==build['coverage']['total'] and build['coverage']['percentage']>=50,build['coverage'])
 check('bilingual-static-pages',len(list((ROOT/'public/reference').glob('*/index.html')))==build['canonical'] and len(list((ROOT/'public/en/reference').glob('*/index.html')))==build['canonical'])
 static_errors=[]
 for file in list((ROOT/'public/reference').glob('*/index.html'))+list((ROOT/'public/en/reference').glob('*/index.html')):
@@ -52,12 +54,89 @@ with sync_playwright() as p:
         demo=context.new_page();de=[];demo.on('pageerror',lambda e:de.append(str(e)))
         demo.set_content(code,wait_until='domcontentloaded')
         stage=demo.locator('.ix-stage');rect=stage.bounding_box();key=recipe['key']
-        if key.startswith('hover-'):
+        if key in {
+            'click-live','click-haptic','click-overflow','drag-drop','drag-swipe','drag-pinch','drag-sort',
+            'key-shortcut','click-context','click-micro','click-history','click-confirm','input-debounce',
+            'track-throttle','click-fade','click-slide','key-navigation','key-focus-trap','key-focus',
+            'drag-gesture-transition','scroll-scrub','scroll-timeline'
+        }:
+            if key=='click-live':
+                demo.locator('[data-action=polite]').click()
+                changed='상태 업데이트' in stage.locator('[role=status]').first.inner_text() or 'Status update' in stage.locator('[role=status]').first.inner_text()
+            elif key=='click-haptic':
+                demo.locator('[data-action=tap]').click()
+                changed=bool(stage.locator('.ix-readout').inner_text())
+            elif key=='click-overflow':
+                demo.locator('[data-action=menu]').click()
+                changed=stage.locator('[role=menu]').is_visible()
+            elif key=='drag-drop':
+                demo.locator('[data-action=token]').click()
+                changed=stage.locator('.ix-drop-zone').get_attribute('class').find('is-complete')>=0
+            elif key=='drag-swipe':
+                demo.locator('.ix-gesture-card').focus()
+                demo.keyboard.press('ArrowRight')
+                changed='right' in stage.locator('.ix-readout').inner_text().lower() or '오른쪽' in stage.locator('.ix-readout').inner_text()
+            elif key=='drag-pinch':
+                demo.locator('[data-action=plus]').click()
+                changed='115%' in stage.locator('.ix-readout').inner_text()
+            elif key=='drag-sort':
+                demo.locator('.ix-sort-list button').first.focus()
+                demo.keyboard.press('ArrowDown')
+                changed='BETA' in stage.locator('.ix-sort-list button').first.inner_text()
+            elif key=='key-shortcut':
+                demo.locator('[data-action=open]').click()
+                changed=stage.locator('.ix-command-palette').is_visible()
+            elif key=='click-context':
+                demo.locator('[data-action=target]').click()
+                changed=stage.locator('[role=menu]').is_visible()
+            elif key=='click-micro':
+                demo.locator('[data-action=pulse]').click()
+                changed='is-active' in stage.locator('.ix-pulse-indicator').get_attribute('class')
+            elif key=='click-history':
+                demo.locator('[data-action=add]').click()
+                demo.locator('[data-action=undo]').click()
+                demo.locator('[data-action=redo]').click()
+                changed=stage.locator('.ix-special-count').inner_text()=='1'
+            elif key=='click-confirm':
+                demo.locator('[data-action=request]').click()
+                demo.locator('[data-action=confirm]').click()
+                changed=stage.locator('[role=dialog]').is_hidden()
+            elif key=='input-debounce':
+                demo.locator('input.ix-text-input').fill('atlas')
+                demo.wait_for_timeout(460)
+                changed='atlas' in stage.locator('.ix-filter-result').inner_text()
+            elif key=='track-throttle':
+                pad=demo.locator('.ix-track-pad').bounding_box()
+                demo.mouse.move(pad['x']+pad['width']*.6,pad['y']+pad['height']*.4)
+                changed='1' in stage.locator('.ix-readout').inner_text()
+            elif key in ('click-fade','click-slide'):
+                demo.locator('[data-action=toggle]').click()
+                changed='is-hidden' in stage.locator('.ix-motion-target').get_attribute('class')
+            elif key=='key-navigation':
+                demo.locator('.ix-key-list button').first.focus()
+                demo.keyboard.press('ArrowDown')
+                changed=demo.locator('.ix-key-list button').nth(1).get_attribute('tabindex')=='0'
+            elif key=='key-focus-trap':
+                demo.locator('[data-action=open]').click()
+                demo.keyboard.press('Tab')
+                changed=stage.locator('[role=dialog]').is_visible() and demo.locator('[data-action=last]').evaluate('e=>document.activeElement===e')
+            elif key=='key-focus':
+                demo.locator('[data-action=one]').focus()
+                changed='Focused' in stage.locator('.ix-readout').inner_text() or '포커스' in stage.locator('.ix-readout').inner_text()
+            elif key=='drag-gesture-transition':
+                demo.locator('[role=slider]').focus()
+                demo.keyboard.press('ArrowRight')
+                changed=demo.locator('[role=slider]').get_attribute('aria-valuenow')=='10'
+            elif key in ('scroll-scrub','scroll-timeline'):
+                demo.locator('.ix-scroll-frame').evaluate('e=>{e.scrollTop=e.scrollHeight;}')
+                demo.wait_for_timeout(50)
+                changed=stage.locator('.ix-scroll-progress span').evaluate('e=>parseFloat(e.style.width)>0')
+        elif key.startswith('hover-'):
             stage.hover();changed=stage.evaluate("e=>e.classList.contains('is-active')")
         elif key.startswith('track-'):
             demo.mouse.move(rect['x']+rect['width']*.75,rect['y']+rect['height']*.3);demo.wait_for_timeout(30)
             changed=stage.evaluate("e=>parseFloat(e.style.getPropertyValue('--px'))>e.clientWidth*.6")
-        elif key=='press-hold':
+        elif key in ('press-hold','press-long'):
             stage.focus();demo.keyboard.down('Enter');demo.wait_for_timeout(1100);demo.keyboard.up('Enter');changed=stage.evaluate("e=>e.classList.contains('is-checked')")
         elif key=='drag-compare':
             demo.locator('.ix-range').fill('75');changed=stage.evaluate("e=>e.style.getPropertyValue('--split')==='75%'")

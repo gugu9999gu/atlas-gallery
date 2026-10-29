@@ -71,3 +71,9 @@ three-instance|Instanced Wave Grid|인스턴스 파동 격자|three|실시간 3D
 three-morph|3D Morph Target|3D 모프 타깃|three|실시간 3D|정점 위치를 두 형상 사이에서 보간하여 표면 모양을 바꿉니다.|Vertex positions interpolate between two shapes to change a surface's form.
 three-toon|Toon Shading|툰 셰이딩|three|실시간 3D|명암을 단순한 색 단계로 나눈 입체 재질을 보여줍니다.|A dimensional material demonstrates simplified bands of light and shade.
 click-morph|Morphing Action Icon|변형 액션 아이콘|dom|클릭·탭 피드백|누르면 더하기 아이콘이 닫기 아이콘으로 바뀌며 조작 상태를 알립니다.|Pressing transforms a plus action into a close symbol to expose the current control state.
+
+drag-reorder|Reorderable List Gesture|드래그 목록 순서 변경|dom|드래그·제스처|카드를 수직으로 이동해 항목의 순서를 변경하고 순서 변화를 확인합니다.|Drag the card vertically to reorder items and observe the updated position.
+drag-pull-refresh|Pull to Refresh Gesture|아래로 당겨 새로고침|dom|드래그·제스처|아래로 충분히 당기면 새로고침 동작을 모의 실행하고 상태를 안내합니다.|Pull down beyond the threshold to simulate refresh and announce the result.
+drag-swipe-actions|Swipe Actions Gesture|스와이프 액션 공개|dom|드래그·제스처|카드를 왼쪽으로 밀면 보조 액션이 표시되고 복귀할 수 있습니다.|Swipe left to reveal a secondary action, then restore the card.
+click-double|Double Tap Recognition|더블 탭 인식|dom|클릭·탭 피드백|두 번 빠르게 탭하거나 키보드로 실행해 이중 탭 인식을 확인합니다.|Double-tap within a short interval or use a keyboard shortcut.
+click-toast|Toast Notification Feedback|토스트 알림 피드백|dom|클릭·탭 피드백|버튼을 누르면 일정 시간 동안 상태 메시지가 표시되며 스크린 리더에도 전달됩니다.|Trigger a timed status message with an accessible live announcement.

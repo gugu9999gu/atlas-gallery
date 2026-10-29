@@ -72,8 +72,34 @@ three-morph|3D Morph Target|3D 모프 타깃|three|실시간 3D|정점 위치를
 three-toon|Toon Shading|툰 셰이딩|three|실시간 3D|명암을 단순한 색 단계로 나눈 입체 재질을 보여줍니다.|A dimensional material demonstrates simplified bands of light and shade.
 click-morph|Morphing Action Icon|변형 액션 아이콘|dom|클릭·탭 피드백|누르면 더하기 아이콘이 닫기 아이콘으로 바뀌며 조작 상태를 알립니다.|Pressing transforms a plus action into a close symbol to expose the current control state.
 
-drag-reorder|Reorderable List Gesture|드래그 목록 순서 변경|dom|드래그·제스처|카드를 수직으로 이동해 항목의 순서를 변경하고 순서 변화를 확인합니다.|Drag the card vertically to reorder items and observe the updated position.
-drag-pull-refresh|Pull to Refresh Gesture|아래로 당겨 새로고침|dom|드래그·제스처|아래로 충분히 당기면 새로고침 동작을 모의 실행하고 상태를 안내합니다.|Pull down beyond the threshold to simulate refresh and announce the result.
-drag-swipe-actions|Swipe Actions Gesture|스와이프 액션 공개|dom|드래그·제스처|카드를 왼쪽으로 밀면 보조 액션이 표시되고 복귀할 수 있습니다.|Swipe left to reveal a secondary action, then restore the card.
-click-double|Double Tap Recognition|더블 탭 인식|dom|클릭·탭 피드백|두 번 빠르게 탭하거나 키보드로 실행해 이중 탭 인식을 확인합니다.|Double-tap within a short interval or use a keyboard shortcut.
+drag-reorder|Reorderable List|드래그 목록 순서 변경|dom|드래그·제스처|카드를 수직으로 이동해 항목의 순서를 변경하고 순서 변화를 확인합니다.|Drag the card vertically to reorder items and observe the updated position.
+drag-pull-refresh|Pull to Refresh|아래로 당겨 새로고침|dom|드래그·제스처|아래로 충분히 당기면 새로고침 동작을 모의 실행하고 상태를 안내합니다.|Pull down beyond the threshold to simulate refresh and announce the result.
+drag-swipe-actions|Swipe Actions|스와이프 액션 공개|dom|드래그·제스처|카드를 왼쪽으로 밀면 보조 액션이 표시되고 복귀할 수 있습니다.|Swipe left to reveal a secondary action, then restore the card.
+click-double|Double Tap|더블 탭 인식|dom|클릭·탭 피드백|두 번 빠르게 탭하거나 키보드로 실행해 이중 탭 인식을 확인합니다.|Double-tap within a short interval or use a keyboard shortcut.
 click-toast|Toast Notification Feedback|토스트 알림 피드백|dom|클릭·탭 피드백|버튼을 누르면 일정 시간 동안 상태 메시지가 표시되며 스크린 리더에도 전달됩니다.|Trigger a timed status message with an accessible live announcement.
+click-live|Live Region Announcement|라이브 리전 알림|dom|클릭·탭 피드백|버튼을 누르면 ARIA live region에 우선순위별 상태 메시지를 전달합니다.|Buttons announce changes using polite or assertive ARIA live regions.
+click-haptic|Haptic Feedback|햅틱 피드백|dom|클릭·탭 피드백|사용자 입력 시 지원 기기에서 진동 API를 요청하며 미지원 환경은 시각적 상태를 안내합니다.|Requests Vibration API feedback on supported devices and visibly explains unsupported environments.
+click-overflow|Overflow Button|오버플로 버튼|dom|클릭·탭 피드백|더 보기 버튼으로 추가 메뉴를 펼치고 Escape 및 방향키로 조작합니다.|Opens a secondary actions menu with Escape and arrow-key interaction.
+drag-drop|Drag and Drop|드래그 앤 드롭|dom|드래그·제스처|대상을 포인터로 끌어 놓기 영역 안에 놓거나 키보드로 배치합니다.|Move a draggable token into a drop target with pointer or keyboard.
+drag-swipe|Swipe Gesture|스와이프 제스처|dom|드래그·제스처|수평 이동 임계값에 도달한 방향을 인식하고 이동 거리를 보여줍니다.|Recognizes horizontal swipe direction after a distance threshold.
+press-long|Long Press|길게 누르기|dom|드래그·제스처|입력을 일정 시간 유지해야 확정되는 동작을 보여줍니다.|Requires a sustained press before the action is confirmed.
+drag-pinch|Pinch to Zoom|핀치 확대·축소|dom|드래그·제스처|두 개의 동시 포인터 간 거리로 확대율을 조절하며 버튼으로도 조작합니다.|Zooms based on the distance between two pointers with accessible button alternatives.
+drag-swipe-dismiss|Swipe to Dismiss|스와이프로 닫기|dom|드래그·제스처|일정 거리 이상의 수평 스와이프로 카드를 제거하며 다시 복원할 수 있습니다.|Dismisses and restores a card based on swipe threshold.
+drag-sort|Sort by Dragging|드래그로 정렬|dom|드래그·제스처|목록 항목을 위아래로 끌거나 방향키로 이동해 실제 순서를 바꿉니다.|Reorders actual list items by vertical dragging or keyboard arrows.
+key-shortcut|Keyboard Shortcut|키보드 단축키|dom|클릭·탭 피드백|예제에 포커스를 둔 상태에서 Ctrl 또는 Command와 K로 명령 팔레트를 엽니다.|Opens an example command palette using a scoped Ctrl or Command plus K shortcut.
+click-context|Contextual Actions|컨텍스트 액션|dom|클릭·탭 피드백|우클릭, Shift+F10 또는 탭을 통해 상황별 보조 동작을 표시합니다.|Displays contextual actions through right-click, Shift+F10 or touch.
+click-micro|Microinteraction|마이크로인터랙션|dom|클릭·탭 피드백|상태 전환에 짧은 확대·복귀 애니메이션과 명확한 피드백을 동반합니다.|Adds a short scale-and-return motion and status feedback to a state change.
+click-history|Undo / Redo|실행 취소·다시 실행|dom|클릭·탭 피드백|동작 이력을 유지하여 Undo와 Redo를 실제로 실행합니다.|Maintains an editable history stack with working undo and redo actions.
+click-confirm|Confirmation Pattern|확인 패턴|dom|클릭·탭 피드백|확인 대화 영역에서 취소와 확정 경로를 분리하고 초점을 관리합니다.|Separates cancel and confirm flows in a focus-managed confirmation panel.
+input-debounce|Debounce|디바운스|dom|클릭·탭 피드백|연속 입력 중 처리를 지연하여 마지막 입력 뒤 한 번만 갱신합니다.|Delays processing during rapid typing and updates only after the final input.
+track-throttle|Throttle|스로틀|dom|포인터 추적|빈번한 포인터 이동을 시간 간격별로 제한해 업데이트 횟수를 보여줍니다.|Caps pointer updates to a fixed time interval and displays the processed sample count.
+click-fade|Fade In / Out|페이드 인·아웃|dom|클릭·탭 피드백|버튼 클릭으로 대상의 투명도를 실제로 전환합니다.|Toggles target visibility using a reversible opacity transition.
+click-slide|Slide In / Out|슬라이드 인·아웃|dom|클릭·탭 피드백|대상을 가로 방향으로 이동하며 표시 상태를 전환합니다.|Toggles a panel's position using a horizontal slide transition.
+key-navigation|Keyboard Navigation|키보드 탐색|dom|클릭·탭 피드백|방향키와 Home End로 목록 항목에 대한 로빙 초점을 이동합니다.|Uses roving tabindex and arrow, Home and End keys to navigate a list.
+key-focus-trap|Focus Trap|포커스 트랩|dom|클릭·탭 피드백|패널이 열린 동안 Tab 초점 순환을 내부로 제한하고 Escape로 닫습니다.|Traps Tab focus within an open panel and closes it on Escape.
+key-focus|Focus Indicator|포커스 표시|dom|호버·포커스|키보드로 버튼에 이동할 때 focus-visible 테두리를 보여줍니다.|Demonstrates an explicit focus-visible outline on keyboard-focused controls.
+click-radial-legacy|Radial Menu|방사형 메뉴|dom|클릭·탭 피드백|중앙 버튼을 누르면 원형 메뉴의 보조 작업이 펼쳐집니다.|Expands radial actions from a central control.
+drag-gesture-transition|Gesture-driven Transition|제스처 기반 전환|dom|드래그·제스처|드래그 위치에 따라 전후 장면의 마스크 진행률을 직접 바꿉니다.|Scrubs between two visual states using pointer movement or arrow keys.
+scroll-scrub|Scroll Scrubbing|스크롤 스크러빙|dom|드래그·제스처|콘텐츠 스크롤 위치를 애니메이션 진행률에 직접 연결합니다.|Connects local scroll progress directly to an animation position.
+scroll-timeline|Scroll Timeline|스크롤 타임라인|dom|드래그·제스처|스크롤의 시작과 끝을 기준으로 그래픽 속성을 단계적으로 변화시킵니다.|Maps the scroll range to progressive transforms and opacity.
+drag-elasticity|Drag Elasticity|드래그 탄성|dom|드래그·제스처|드래그한 대상이 놓일 때 원래 위치로 탄성 복귀합니다.|Returns a dragged element to its starting point with elastic motion.

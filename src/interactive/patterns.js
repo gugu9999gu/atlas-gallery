@@ -45,7 +45,7 @@ function markup(kind,language='ko'){
  }else if(kind==='ui-loading'){
   scene='<div class="ix-p-center"><button data-action="trigger" class="ix-p-loading"><i class="ix-p-spinner" aria-hidden="true"></i><span data-value>'+t('전송하기','Submit')+'</span></button></div>';
  }else if(kind==='ui-search'){
-  scene='<div class="ix-p-search"><label for="ix-pattern-search-'+(ko?'ko':'en')+'">'+t('컴포넌트 검색','Find a component')+'</label><input data-control type="search" autocomplete="off" placeholder="'+t('버튼, 카드 검색','Search buttons, cards')+'" aria-label="'+t('검색','Search')+'"/><div data-surface class="ix-p-suggestions"><button type="button" data-action="suggestion">'+t('버튼','Button')+'</button><button type="button" data-action="suggestion2">'+t('카드','Card')+'</button></div></div>';
+  scene='<div class="ix-p-search"><label>'+t('컴포넌트 검색','Find a component')+'</label><input data-control type="search" autocomplete="off" placeholder="'+t('버튼, 카드 검색','Search buttons, cards')+'" aria-label="'+t('검색','Search')+'"/><div data-surface class="ix-p-suggestions"><button type="button" data-action="suggestion">'+t('버튼','Button')+'</button><button type="button" data-action="suggestion2">'+t('카드','Card')+'</button></div></div>';
  }else if(kind==='ui-fab'){
   scene='<div class="ix-p-center"><div class="ix-p-fab-actions" data-surface>'+btn('option','＋','aria-label="'+t('추가','Add')+'"')+btn('option','★','aria-label="'+t('즐겨찾기','Favorite')+'"')+'</div>'+btn('trigger','＋','class="ix-p-fab" aria-label="'+t('빠른 작업 열기','Open quick actions')+'" aria-expanded="false"')+'</div>';
  }else if(kind==='ui-card'){
@@ -171,10 +171,10 @@ function mount(root,kind,language='ko',options={}){
  listen(document,'visibilitychange',onVisibility);
  let observer=null;
  if('IntersectionObserver'in global){
-  observer=new IntersectionObserver(entries=>{for(const item of entries){if(item.target!==root)continue;visible=item.isIntersecting&&item.intersectionRatio>.06;if(!visible){cancel(loopTimer);if(!engaged)setOpen(false);}else schedule(850);}}, {threshold:[0,.06,.25]});
+  observer=new IntersectionObserver(entries=>{for(const item of entries){if(item.target!==root)continue;visible=item.isIntersecting&&item.intersectionRatio>.06;root.classList.toggle('is-visible',visible);if(!visible){cancel(loopTimer);if(!engaged)setOpen(false);}else schedule(850);}}, {threshold:[0,.06,.25]});
   observer.observe(root);
- }else{visible=true;schedule(900);}
- setValue(kind==='ui-slider'?35:28);
+ }else{visible=true;root.classList.add('is-visible');schedule(900); }
+ if(kind==='ui-slider'||kind==='ui-progress')setValue(kind==='ui-slider'?35:28);
  return {kind,dispose(){alive=false;cancel(loopTimer);cancel(cycleTimer);for(const timer of timers)clearTimeout(timer);timers.clear();observer?.disconnect();signalController.abort();}};
 }
 global.AtlasPatterns={supports,markup,mount,source:'('+initPatterns.toString()+')(window);'};

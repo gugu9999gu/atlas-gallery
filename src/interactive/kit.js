@@ -10,13 +10,13 @@ let threePromise;
 const mounted=new Map();
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function markup(kind,language='ko'){
- if(global.AtlasAdvanced?.supports(kind))return global.AtlasAdvanced.markup(kind,language);
+ if(window.AtlasAdvanced?.supports(kind))return window.AtlasAdvanced.markup(kind,language);
  kind=({'press-long':'press-hold','drag-swipe-dismiss':'drag-dismiss','click-radial-legacy':'click-radial','drag-elasticity':'drag-elastic'})[kind]||kind;
  const ko=language==='ko',drag=kind.startsWith('drag-'),track=kind.startsWith('track-'),click=kind.startsWith('click-')||kind==='press-hold';
  return `<div class="ix-stage" data-kind="${kind}" lang="${language}" tabindex="0" role="group" aria-label="${ko?'직접 조작하는 예제':'Interactive example'}"><div class="ix-grid" aria-hidden="true"></div><div class="ix-light" aria-hidden="true"></div><div class="ix-trail" aria-hidden="true"></div><div class="ix-cross" aria-hidden="true"></div><div class="ix-tiles" aria-hidden="true">${Array.from({length:9},(_,i)=>`<i data-tile="${i}"></i>`).join('')}</div><div class="ix-object"><div class="ix-graphic" aria-hidden="true"><i></i><i></i><i></i></div><span class="ix-kicker">ATLAS / LAB</span><strong class="ix-head">${track?'FOLLOW':drag?'MOVE':click?'MAKE IT':'HELLO.'}</strong><div class="ix-line" aria-hidden="true"></div><div class="ix-extra">${ko?'다음 장면을 발견하세요.':'Discover the next scene.'}</div><div class="ix-alt" aria-hidden="true"><strong>ANOTHER<br>VIEW.</strong></div><div class="ix-check" aria-hidden="true"><svg viewBox="0 0 80 80"><path d="M15 40 32 56 65 22"/></svg></div><div class="ix-knob" aria-hidden="true"></div><div class="ix-meter" aria-hidden="true"></div></div><div class="ix-orbit-actions" aria-hidden="true"><i>＋</i><i>↗</i><i>★</i></div><span class="ix-follower" aria-hidden="true"></span><button type="button" class="ix-trigger">${ko?(drag?'드래그 / 방향키':track?'움직여 보세요':kind==='press-hold'?'길게 누르기':click?'클릭 / 탭':'호버 / 초점'):drag?'Drag / arrow keys':track?'Move pointer':kind==='press-hold'?'Press and hold':click?'Click / tap':'Hover / focus'}</button><input class="ix-range" type="range" min="0" max="100" value="50" aria-label="${ko?'전후 비교 비율':'Before and after split'}"${kind==='drag-compare'?'':' hidden'}><output class="ix-readout" aria-live="off">${ko?'직접 조작해 보세요':'Try the interaction'}</output></div>`;
 }
 function mountDOM(root,kind,language='ko',options={}){
- if(global.AtlasAdvanced?.supports(kind))return global.AtlasAdvanced.mount(root,kind,language,options);
+ if(window.AtlasAdvanced?.supports(kind))return window.AtlasAdvanced.mount(root,kind,language,options);
  kind=({'press-long':'press-hold','drag-swipe-dismiss':'drag-dismiss','click-radial-legacy':'click-radial','drag-elasticity':'drag-elastic'})[kind]||kind;
  const ko=language==='ko',abort=new AbortController(),signal=abort.signal;
  const object=root.querySelector('.ix-object'),out=root.querySelector('.ix-readout'),button=root.querySelector('.ix-trigger'),follower=root.querySelector('.ix-follower');

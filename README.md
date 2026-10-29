@@ -1,4 +1,15 @@
-# ATLAS Gallery v3.1.1
+# ATLAS Gallery v3.2.1
+
+## v3.2.1 추가 인터랙션 및 진행률 (2026-10-29)
+
+- 기존 미구현 디자인 용어 **30개**에 실행형 예제를 연결했습니다. 이 중 4개는 직전 추가했던 유사 신규 항목을 기존 정의 ID로 정리한 것이며, 26개는 이번 배치의 새 구현입니다.
+- 실행형 레시피 **103종**(DOM/CSS/Pointer/Keyboard 79종, Three.js 24종). 신규 도메인 용어를 중복 증가시키지 않도록 기존 canonical ID를 우선 보존합니다.
+- 원래 3.1의 2,109개 항목 중 도식으로 남아 있던 항목은 1,110개였습니다. v3.2.1의 빌드 산출물 `qa/preview-progress-v321.json`은 원래 미구현 ID와 실제 레시피 매핑을 대조해 진척도를 자동 계산합니다. 현재 소스 기반 계산 목표는 **1,088 / 2,167 = 50.21%**, 잔여 **1,079개**입니다.
+- 진행률은 코드와 미리보기 매핑 기준입니다. 개별 시각화의 의미 검증, 사용자 브라우저 전수 검증, 검색엔진 색인 및 실제 운영 배포 성공률과는 구별합니다.
+- `src/interactive/advanced.js`는 Live Region, 드래그 앤 드롭, 핀치 확대, 목록 재정렬, 단축키, Undo/Redo, 확인 패널, 디바운스/스로틀, 포커스 트랩, 스크롤 스크러빙 등 22가지 독립 조작 예제를 제공합니다.
+- 기존에 제공한 카드별 코드 복사, 한국어/영어 정적 설명 페이지, 최소 14px 글자, Three.js 렌더링, 사용자 동의형 AdFit 설정은 유지합니다.
+- 로컬 테스트: `npm run check && npm run build && python scripts/test-interactions.py`. GitHub Actions는 코드 검증 및 배포 dry-run만 수행하므로 별도의 운영 배포 확인이 필요합니다.
+
 
 배포 주소: https://atlas-gallery.app/
 저장소: https://github.com/gugu9999gu/atlas-gallery

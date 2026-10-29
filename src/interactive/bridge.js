@@ -3,7 +3,11 @@ const ixRecipes=new Map(entries.filter(e=>e.demo).map(e=>[e.id,{...e.demo,title:
 const ixOldArt=art,ixOldView=referenceView,ixOldNotice=previewNotice,ixOldControls=demoControls;
 referenceView=function(e){return e.demo?{html:'',mode:e.demo.engine==='three'?'webgl':'interactive',type:'실시간 모션 예시',key:e.demo.key,specific:true}:ixOldView(e);};
 art=function(e){
- if(!e.demo)return ixOldArt(e);
+ if(!e.demo){
+  const original=ixOldArt(e);
+  if((original.mode==='exact'||original.mode==='diagram')&&!waveRegistry.get(e.en)?.interactive&&original.html.startsWith('<div class="scene scene-reference '))original.html=original.html.replace('class="scene scene-reference ','class="scene scene-reference atlas-study-motion ');
+  return original;
+ }
  const engine=e.demo.engine==='three'?'THREE.JS / WEBGL':'HTML · CSS · JAVASCRIPT';
  return {html:`<div class="scene scene-live" data-preview-key="${esc(e.demo.key)}"><span class="live-engine-label">${engine}</span><div class="ix-demo" data-live-demo="${esc(e.id)}" data-engine="${esc(e.demo.engine)}">${e.demo.engine==='three'?`<p class="ix-three-loading">${tr('실제 3D 미리보기','Real 3D preview')}</p>`:AtlasKit.markup(e.demo.key,locale)}</div></div>`,mode:e.demo.engine==='three'?'webgl':'interactive',previewType:'실시간 모션 예시',key:e.demo.key,specific:true};
 };
@@ -22,7 +26,7 @@ comparisonMarkup=function(e){
  const ids=[e.id,...(e.compare_ids||[])],seen=new Set(),items=ids.map(id=>byId.get(id)).filter(x=>x&&!seen.has(x.id)&&seen.add(x.id)).slice(0,6);if(items.length<2)return '';
  return `<section class="drawer-section comparison-section"><h4>${tr('나란히 비교하기','Compare side by side')}</h4><div class="compare-grid">${items.map(x=>`<div class="compare-card ${x.id===e.id?'current':''}">${art(x).html}<button type="button" data-related="${esc(x.id)}"><h5>${esc(localTitle(x))}</h5></button><p>${esc(localText(x,'difference')||localText(x,'description'))}</p></div>`).join('')}</div></section>`;
 };
-let ixObserver,ixResizeTimer;
+let ixObserver,ixResizeTimer,ixStaticObserver;
 const ixMountedRoots=new WeakSet();
 function declutterCompactSvg(root=document){
  const svgs=root.querySelectorAll?.('.term-card .scene-reference .reference-svg')||[];
@@ -70,12 +74,15 @@ function hydrateLive(root=document){
  });
  requestAnimationFrame(()=>enforceMinimumText(root));
 }
+function hydrateStatic(root=document){
+ root.querySelectorAll('.atlas-study-motion').forEach(node=>{if(ixStaticObserver)ixStaticObserver.observe(node);else node.classList.add('atlas-motion-visible');});
+}
 const ixOldNext=renderNext;
-renderNext=function(count=PAGE){ixOldNext(count);hydrateLive(q('#cards'));};
+renderNext=function(count=PAGE){if(state.rendered===0)ixStaticObserver?.disconnect();ixOldNext(count);hydrateLive(q('#cards'));hydrateStatic(q('#cards'));};
 const ixOldDetail=renderDetail;
 renderDetail=function(id){ixOldDetail(id);const e=byId.get(id);if(!e)return;
  const actions=q('.drawer-actionbar');if(actions){const button=document.createElement('button');button.type='button';button.dataset.copyCode=e.id;button.innerHTML=icon('code')+' '+tr('코드 복사','Copy code');actions.prepend(button);}
- hydrateLive(q('#detail-body'));
+ hydrateLive(q('#detail-body'));hydrateStatic(q('#detail-body'));
 };
 const ixOldClose=closeDetail;
 closeDetail=function(){ixOldClose();AtlasKit.cleanup();};
@@ -123,8 +130,11 @@ document.addEventListener('click',event=>{
  const collection=event.target.closest('[data-live-collection]');if(collection){event.preventDefault();event.stopImmediatePropagation();collectionLive(collection.dataset.liveCollection);return;}
 },true);
 function enhanceInit(){
- if('IntersectionObserver'in window)ixObserver=new IntersectionObserver(items=>{for(const item of items)if(item.isIntersecting){ixObserver.unobserve(item.target);const e=byId.get(item.target.dataset.liveDemo);if(e?.demo)void AtlasKit.mount(item.target,e.demo,locale,{paused:()=>motionPaused});}},{rootMargin:'100px'});
- hydrateLive(document);enforceMinimumText(document);
+ if('IntersectionObserver'in window){
+  ixObserver=new IntersectionObserver(items=>{for(const item of items)if(item.isIntersecting){ixObserver.unobserve(item.target);const e=byId.get(item.target.dataset.liveDemo);if(e?.demo)void AtlasKit.mount(item.target,e.demo,locale,{paused:()=>motionPaused});}},{rootMargin:'100px'});
+  ixStaticObserver=new IntersectionObserver(items=>{for(const item of items)item.target.classList.toggle('atlas-motion-visible',item.isIntersecting&&item.intersectionRatio>.05);},{threshold:[0,.06]});
+ }
+ hydrateLive(document);hydrateStatic(document);enforceMinimumText(document);
  const preset=new URL(location.href).searchParams.get('collection');if(preset==='interactions'||preset==='three')collectionLive(preset==='three'?'three':'interactive');
  window.addEventListener('resize',()=>{clearTimeout(ixResizeTimer);ixResizeTimer=setTimeout(()=>enforceMinimumText(document),120);});
  const meta=document.createElement('link');meta.rel='alternate';meta.type='text/plain';meta.title='ATLAS machine-readable index';meta.href='/llms.txt';document.head.append(meta);

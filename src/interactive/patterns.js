@@ -71,7 +71,8 @@ function mount(root,kind,language='ko',options={}){
   if(manual)notify(on?t('예시가 열렸습니다.','Example opened.'):t('예시가 닫혔습니다.','Example closed.'));
  };
  function setIndex(n){
-  index=((n%3)+3)%3;
+  const count=(kind==='ui-tabs'||kind==='ui-segmented')?2:3;
+  index=((n%count)+count)%count;
   root.style.setProperty('--ix-index',String(index));
   const val=q('[data-value]');
   if(kind==='ui-carousel'&&val)val.textContent=(index+1)+' / 3';

@@ -54,7 +54,65 @@ with sync_playwright() as p:
         demo=context.new_page();de=[];demo.on('pageerror',lambda e:de.append(str(e)))
         demo.set_content(code,wait_until='domcontentloaded')
         stage=demo.locator('.ix-stage');rect=stage.bounding_box();key=recipe['key']
-        if key.startswith('study-'):
+        if key.startswith('fnd-'):
+            if key=='fnd-name':
+                demo.locator('[data-act=toggle]').click()
+                changed=demo.locator('.ix-fnd-icon').get_attribute('aria-label')!='Save'
+            elif key=='fnd-focus-order':
+                demo.locator('[data-act=focus]').click()
+                changed=demo.locator('.ix-fnd-focus-list button').nth(1).evaluate('e=>document.activeElement===e')
+            elif key=='fnd-contrast':
+                demo.locator('.ix-fnd-range input').fill('240')
+                changed=':1' in demo.locator('.ix-fnd-score').inner_text()
+            elif key=='fnd-touch':
+                demo.locator('[data-act=toggle]').click()
+                changed='ix-fnd-large' in stage.get_attribute('class')
+            elif key=='fnd-prevent':
+                demo.locator('[data-act=request]').click()
+                changed=demo.locator('[data-act=confirm]').is_visible()
+                demo.locator('[data-act=confirm]').click()
+                changed=changed and demo.locator('[data-act=request]').is_visible()
+            elif key=='fnd-error':
+                demo.locator('input[type=email]').fill('invalid')
+                demo.locator('[data-act=validate]').click()
+                changed=demo.locator('input[type=email]').get_attribute('aria-invalid')=='true'
+            elif key=='fnd-type-scale':
+                demo.locator('input[type=range]').fill('30')
+                changed=demo.locator('.ix-fnd-type-demo').evaluate('e=>e.style.fontSize==="30px"')
+            elif key=='fnd-type-hierarchy':
+                demo.locator('[data-act=toggle]').click()
+                changed='ix-fnd-flat' in stage.get_attribute('class')
+            elif key=='fnd-spacing':
+                demo.locator('[data-act=next]').click()
+                changed=demo.locator('.ix-fnd-spaces').evaluate('e=>e.style.gap==="8px"')
+            elif key=='fnd-elevation':
+                demo.locator('input[type=range]').fill('3')
+                changed='LEVEL 3' in demo.locator('.ix-fnd-elevated').inner_text()
+            elif key=='fnd-shadow':
+                demo.locator('[data-act=next]').click()
+                changed='SHADOW / 02' in demo.locator('.ix-fnd-shadow-card').inner_text()
+            elif key=='fnd-stroke':
+                demo.locator('input[type=range]').fill('5')
+                changed=demo.locator('.ix-fnd-stroke-card').evaluate('e=>e.style.borderWidth==="5px"')
+            elif key=='fnd-variant':
+                demo.locator('[data-act=next]').click()
+                changed=demo.locator('.ix-fnd-variant-sample').get_attribute('data-variant')=='secondary'
+            elif key=='fnd-state':
+                demo.locator('[data-act=next]').click()
+                changed=demo.locator('.ix-fnd-state-sample').get_attribute('aria-busy')=='true'
+            elif key=='fnd-bento':
+                demo.locator('[data-act=toggle]').click()
+                changed='ix-fnd-bento-alt' in stage.get_attribute('class')
+            elif key=='fnd-specificity':
+                demo.locator('[data-act=next]').click()
+                changed='1-0-0' in demo.locator('.ix-fnd-output').inner_text()
+            elif key=='fnd-clamp':
+                demo.locator('input[type=range]').fill('780')
+                changed=demo.locator('.ix-fnd-clamp-preview').evaluate('e=>e.style.fontSize==="32.0px"')
+            elif key=='fnd-scroll-margin':
+                demo.locator('[data-act=jump]').click()
+                changed=demo.locator('.ix-fnd-scroll').evaluate('e=>e.scrollTop>0')
+        elif key.startswith('study-'):
             if key=='study-blur':
                 demo.locator('.ix-study-range').fill('8')
                 changed=stage.get_attribute('data-state')=='active' and '8' in demo.locator('.ix-study-status').inner_text()

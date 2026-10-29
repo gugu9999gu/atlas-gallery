@@ -1,0 +1,14 @@
+{
+  "version": "3.2.3",
+  "checked_on": "2026-10-29",
+  "scope": "18 existing glossary entries upgraded to original interactive foundation previews",
+  "method": "Chromium standalone HTML interaction checks and 6-column 250px preview contact sheet; relative text clipping measured in mounted demo roots",
+  "preview_count": 18,
+  "standalone_passed": 18,
+  "javascript_errors": 0,
+  "direct_text_smaller_than_14px": 0,
+  "unintended_outer_preview_clipping": 0,
+  "intentionally_scrolled_descendants": 2,
+  "new_terms_added": 0,
+  "notes": "No claim of certified WCAG compliance or individual professional aesthetic sign-off; the previous batch separately audited all earlier entries."
+}

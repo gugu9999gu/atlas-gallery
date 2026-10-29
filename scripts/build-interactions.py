@@ -6,7 +6,7 @@ from collections import Counter
 import json, re, hashlib, html, shutil
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'public'
-VERSION='3.2.2'
+VERSION='3.2.3'
 DATE='2026-10-29'
 ORIGIN='https://atlas-gallery.app'
 
@@ -96,7 +96,7 @@ REFERENCE_DEMO='''document.addEventListener('DOMContentLoaded',()=>{const p=JSON
 
 def main():
     db,lang,added,upgraded=merge();canonical=[e for e in db['entries'] if not e.get('canonical_id')]
-    css='\n'.join((ROOT/'src'/p).read_text(encoding='utf-8') for p in ['style.css','advertising.css','interactive/style.css','interactive/layout.css','preview-visual-quality.css'])
+    css='\n'.join((ROOT/'src'/p).read_text(encoding='utf-8') for p in ['style.css','advertising.css','interactive/style.css','interactive/foundations.css','interactive/layout.css','preview-visual-quality.css'])
     css=minimum_css(css)
     app=(ROOT/'src/app.js').read_text(encoding='utf-8')
     modules='\n'.join((ROOT/'src/previews'/name).read_text(encoding='utf-8') for name in ['core.js','motion.js','vfx.js','maps.js','model.js','finalize.js'])
@@ -115,7 +115,8 @@ def main():
     kit=(ROOT/'src/interactive/kit.js').read_text(encoding='utf-8')
     advanced=(ROOT/'src/interactive/advanced.js').read_text(encoding='utf-8')
     studies=(ROOT/'src/interactive/studies.js').read_text(encoding='utf-8')
-    kit_prefix='<script>'+studies+'</script>\n<script>'+advanced+'</script>\n<script>'+kit+'</script>\n<script>window.ATLAS_INTERACTION_CSS='+embed((ROOT/'src/interactive/style.css').read_text(encoding='utf-8'))+';</script>\n'
+    foundations=(ROOT/'src/interactive/foundations.js').read_text(encoding='utf-8')
+    kit_prefix='<script>'+foundations+'</script>\n<script>'+studies+'</script>\n<script>'+advanced+'</script>\n<script>'+kit+'</script>\n<script>window.ATLAS_INTERACTION_CSS='+embed((ROOT/'src/interactive/style.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/foundations.css').read_text(encoding='utf-8'))+';</script>\n'
     text=text.replace('<script>\n/*__APP_0__*/',kit_prefix+'<script>\n/*__APP_0__*/')
     if 'window.ATLAS_INTERACTION_CSS' not in text:text=text.replace('<script>/*__APP_0__*/',kit_prefix+'<script>/*__APP_0__*/')
     text=text.replace('/*__APP_0__*/',app)
@@ -124,7 +125,7 @@ def main():
     text=text.replace('<noscript>','<noscript><p><a href="/references/">전체 용어 설명 / All reference definitions</a></p>',1)
     OUT.mkdir(exist_ok=True);(OUT/'index.html').write_text(text,encoding='utf-8')
     asset=OUT/'assets';asset.mkdir(exist_ok=True)
-    (asset/'interaction-kit.js').write_text(studies+'\n'+advanced+'\n'+kit,encoding='utf-8');(asset/'interaction-style.css').write_text((ROOT/'src/interactive/style.css').read_text(encoding='utf-8'),encoding='utf-8');(asset/'reference.css').write_text(REFERENCE_CSS,encoding='utf-8');(asset/'reference-demo.js').write_text(REFERENCE_DEMO,encoding='utf-8')
+    (asset/'interaction-kit.js').write_text(foundations+'\n'+studies+'\n'+advanced+'\n'+kit,encoding='utf-8');(asset/'interaction-style.css').write_text((ROOT/'src/interactive/style.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/foundations.css').read_text(encoding='utf-8'),encoding='utf-8');(asset/'reference.css').write_text(REFERENCE_CSS,encoding='utf-8');(asset/'reference-demo.js').write_text(REFERENCE_DEMO,encoding='utf-8')
     vendor=ROOT/'node_modules/three/build';target=asset/'vendor';target.mkdir(exist_ok=True)
     if vendor.exists():
         shutil.copyfile(vendor/'three.module.min.js',target/'three-0.180.0.module.min.js');shutil.copyfile(vendor/'three.core.min.js',target/'three.core.min.js');shutil.copyfile(vendor.parent/'LICENSE',target/'THREE-LICENSE.txt')
@@ -210,7 +211,7 @@ Operator: 스투피아드
     if progress['current']['specific']+progress['current']['pending']!=len(canonical):
         raise RuntimeError('Preview progress accounting mismatch')
     progress['current']['percentage']=round(progress['current']['specific']/len(canonical)*100,2)
-    (ROOT/'qa/preview-progress-v322.json').write_text(json.dumps(progress,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (ROOT/'qa/preview-progress-v323.json').write_text(json.dumps(progress,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     (ROOT/'qa/preview-progress.json').write_text(json.dumps(progress,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     receipt['coverage']=progress['current']
     (ROOT/'qa/build-v32.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');(ROOT/'qa/expanded-data-v32.json').write_text(embed(db)+'\n',encoding='utf-8')

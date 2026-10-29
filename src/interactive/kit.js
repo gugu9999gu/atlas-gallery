@@ -16,13 +16,19 @@ function markup(kind,language='ko'){
 function mountDOM(root,kind,language='ko',options={}){
  const ko=language==='ko',abort=new AbortController(),signal=abort.signal;
  const object=root.querySelector('.ix-object'),out=root.querySelector('.ix-readout'),button=root.querySelector('.ix-trigger'),follower=root.querySelector('.ix-follower');
- let alive=true,down=false,moved=false,on=false,raf=0,hold=0,startX=0,startY=0,dx=0,dy=0,px=0,py=0,fx=0,fy=0,vx=0,vy=0,previousX=0,previousY=0,last=0,count=128;
+ let alive=true,down=false,moved=false,on=false,raf=0,hold=0,startX=0,startY=0,dx=0,dy=0,px=0,py=0,fx=0,fy=0,vx=0,vy=0,previousX=0,previousY=0,last=0,count=128,doubleAt=0,order=2;
  const timers=new Set(),animations=new Set();
  const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
  const reduced=()=>matchMedia('(prefers-reduced-motion: reduce)').matches||options.paused?.()===true;
  const listen=(target,name,fn,opt={})=>target.addEventListener(name,fn,{...opt,signal});
  const later=(fn,ms)=>{const id=setTimeout(()=>{timers.delete(id);if(alive)fn();},ms);timers.add(id);return id;};
  const say=s=>{out.textContent=s;};
+ if(['drag-reorder','drag-pull','drag-swipe-actions'].includes(kind)){object.style.touchAction='none';root.style.touchAction='pan-y';}
+ if(kind==='drag-reorder'){root.querySelector('.ix-head').textContent='ITEM 2 / 3';say(ko?'위·아래로 드래그하여 순서를 바꾸세요.':'Drag up or down to reorder.');}
+ if(kind==='drag-pull')root.querySelector('.ix-head').textContent='REFRESH';
+ if(kind==='drag-swipe-actions')root.querySelector('.ix-head').textContent='SWIPE ←';
+ if(kind==='click-double')root.querySelector('.ix-head').textContent='DOUBLE TAP';
+ if(kind==='click-toast')root.querySelector('.ix-head').textContent='NOTIFY';
  const animate=(el,frames,opts)=>{if(reduced())return null;const a=el.animate(frames,opts);animations.add(a);a.finished.catch(()=>{}).finally(()=>animations.delete(a));return a;};
  function active(value){root.classList.toggle('is-active',value);if(!value){root.style.setProperty('--mx','0px');root.style.setProperty('--my','0px');}}
  function move(x,y){
@@ -57,8 +63,16 @@ function mountDOM(root,kind,language='ko',options={}){
   const b=root.getBoundingClientRect(),x=event?.clientX?event.clientX-b.left:b.width/2,y=event?.clientY?event.clientY-b.top:b.height/2;
   if(kind.startsWith('hover-')){active(!root.classList.contains('is-active'));return;}
   if(kind.startsWith('track-')){move(b.width*.73,b.height*.34);active(true);return;}
-  if(kind.startsWith('drag-')){if(kind==='drag-dismiss'){object.style.transform='';object.style.opacity='1';say(ko?'카드를 복원했습니다.':'Card restored.');}return;}
+  if(kind.startsWith('drag-')){if(kind==='drag-dismiss'){object.style.transform='';object.style.opacity='1';say(ko?'카드를 복원했습니다.':'Card restored.');}if(kind==='drag-swipe-actions'){dx=0;object.style.transform='';say(ko?'보조 액션을 닫았습니다.':'Action closed.');}if(kind==='drag-pull'){say(ko?'아래로 당겨 새로고침':'Pull down to refresh');}return;}
   if(kind==='press-hold')return;
+  if(kind==='click-double'){
+   const now=performance.now();if(doubleAt && now-doubleAt<420){doubleAt=0;root.classList.toggle('is-checked');say(ko?'더블 탭이 인식되었습니다.':'Double tap recognized.');animate(object,[{transform:'scale(1)'},{transform:'scale(1.12)'},{transform:'scale(1)'}],{duration:300});}
+   else{doubleAt=now;say(ko?'한 번 더 탭하세요. 키보드는 Enter 두 번.':'Tap again. Keyboard: Enter twice.');}
+   return;
+  }
+  if(kind==='click-toast'){
+   root.classList.add('is-checked');say(ko?'작업 완료 · 알림이 표시되었습니다.':'Action complete · notification shown.');later(()=>{root.classList.remove('is-checked');say(ko?'알림이 닫혔습니다.':'Notification dismissed.');},2400);return;
+  }
   if(kind==='click-ripple'||kind==='click-rings'||kind==='click-burst'||kind==='click-confetti'){burst(kind.slice(6),x,y);say(ko?'클릭 위치에서 시작':'Origin: clicked position');return;}
   on=!on;root.classList.toggle('is-on',on);button.setAttribute('aria-pressed',String(on));
   if(kind==='click-morph'){root.querySelector('.ix-head').textContent=on?'×':'＋';say(on?(ko?'닫기 상태':'Close state'):(ko?'열기 상태':'Open state'));}
@@ -76,7 +90,19 @@ function mountDOM(root,kind,language='ko',options={}){
   if(!down)return;down=false;
   if(kind==='press-hold'){cancelAnimationFrame(hold);hold=0;root.style.setProperty('--hold','0%');if(!on)say(ko?'취소되었습니다.':'Cancelled.');return;}
   object.style.transition=reduced()?'none':'transform .5s cubic-bezier(.2,1.5,.35,1), opacity .25s';
-  if(kind==='drag-elastic'){dx=dy=0;object.style.transform='translate(0,0)';}
+  if(kind==='drag-reorder'){
+   if(Math.abs(dy)>20){order=clamp(order+(dy>0?1:-1),1,3);root.querySelector('.ix-head').textContent='ITEM '+order+' / 3';say((ko?'목록 위치: ':'List position: ')+order+' / 3');}
+   dx=dy=0;object.style.transform='';
+  }
+  else if(kind==='drag-pull'){
+   const triggered=dy>55;dx=dy=0;object.style.transform='';
+   if(triggered){say(ko?'새로고침 완료 · 서버 요청 없음':'Refreshed locally · no server request');root.classList.add('is-checked');later(()=>root.classList.remove('is-checked'),1100);}
+   else say(ko?'조금 더 아래로 당겨 주세요.':'Pull further down.');
+  }
+  else if(kind==='drag-swipe-actions'){
+   const revealed=dx< -52;dx=revealed?-74:0;dy=0;object.style.transform=`translateX(${dx}px)`;say(revealed?(ko?'보조 액션 표시 · 버튼으로 닫기':'Action revealed · button closes'):(ko?'닫혔습니다.':'Closed.'));
+  }
+  else if(kind==='drag-elastic'){dx=dy=0;object.style.transform='translate(0,0)';}
   else if(kind==='drag-snap'){dx=Math.round(dx/30)*30;dy=Math.round(dy/30)*30;object.style.transform=`translate(${dx}px,${dy}px)`;say(`${dx}, ${dy} · SNAP`);}
   else if(kind==='drag-dismiss'){if(Math.abs(dx)>65){object.style.transform=`translateX(${Math.sign(dx)*320}px)`;object.style.opacity='0';say(ko?'제거됨 · 버튼으로 복원':'Dismissed · press button to restore');}else{object.style.transform='';say(ko?'복귀했습니다.':'Returned.');}dx=dy=0;}
  }
@@ -86,7 +112,7 @@ function mountDOM(root,kind,language='ko',options={}){
   const b=root.getBoundingClientRect();if(!reduced()||kind==='track-reticle')move(e.clientX-b.left,e.clientY-b.top);
   if(!down||!kind.startsWith('drag-')||kind==='drag-compare')return;
   const nx=e.clientX-startX,ny=e.clientY-startY;if(Math.hypot(nx,ny)>5)moved=true;
-  dx=clamp(nx,-b.width*.28,b.width*.28);dy=clamp(ny,-50,45);if(kind==='drag-dismiss')dy=0;
+  dx=clamp(nx,-b.width*.28,b.width*.28);dy=clamp(ny,-50,45);if(kind==='drag-dismiss'||kind==='drag-swipe-actions')dy=0;if(kind==='drag-pull'){dx=0;dy=clamp(ny,0,100);}if(kind==='drag-reorder'){dx=0;dy=clamp(ny,-70,70);}
   object.style.transition='none';object.style.transform=`translate(${dx}px,${dy}px)`;say(`${Math.round(dx)}, ${Math.round(dy)}`);
  });
  listen(root,'pointerdown',e=>{

@@ -27,3 +27,10 @@
   .analytics-feature .feature-art{display:none}
   .term-card .scene-diagram .concept-flow>p{-webkit-line-clamp:3;line-clamp:3}
 }
+
+/* Motion thumbnails: a stable first frame and a dedicated caption strip. */
+.term-card .scene:has(.native-motion) .reference-stage{display:block!important;width:100%!important;height:100%!important}
+.term-card .native-motion{width:100%!important;min-width:0;height:100%;padding-bottom:48px}
+.term-card .native-motion-caption{bottom:9px;left:9px;right:9px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-height:42px;text-overflow:ellipsis;font-size:14px}
+.native-particle-stage .native-burst-core{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);width:45px;height:45px;border-radius:50%;background:linear-gradient(140deg,#ffadbd,#d96989);color:#fff;font-size:27px;display:grid;place-items:center;box-shadow:0 6px 15px #cc66884a;z-index:1}
+.native-motion[data-motion-key="confetti"] .native-burst-core{background:linear-gradient(140deg,#ffc975,#eea257)}

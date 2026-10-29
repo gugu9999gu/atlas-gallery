@@ -3,7 +3,7 @@ from http.server import ThreadingHTTPServer,SimpleHTTPRequestHandler
 from functools import partial
 from threading import Thread
 import os, json, argparse, time, collections
-from PIL import Image, ImageOps, ImageDraw, ImageFont
+from PIL import Image, ImageOps, ImageDraw, ImageFont, ImageStat
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'qa'/'visual-audit'
@@ -68,6 +68,17 @@ with sync_playwright() as p:
     all_metrics+=metrics
     if args.render:
       path=OUT/f'page-{start:04d}.jpg';page.screenshot(path=str(path),type='jpeg',quality=74,animations='disabled');images.append(path)
+      image=Image.open(path).convert('RGB')
+      for j,measure in enumerate(metrics):
+        col,row=j%COLS,j//COLS
+        area=image.crop((10+col*CW+60,10+row*CH+64,10+col*CW+200,10+row*CH+184))
+        stat=ImageStat.Stat(area)
+        variance=sum(value*value for value in stat.stddev)/3
+        measure['pixel_variance']=round(variance,2)
+        # Real Three.js scene pixels are tested by the dedicated WebGL workflow.
+        if measure['mode']!='webgl' and variance<10:
+          measure['blank']=True
+          measure['low_information_warning']='Near-uniform first frame; inspect this motion preview.'
     print(f'{stop}/{end}: collisions={sum(m["collisions"]>0 for m in metrics)} offstage={sum(m["offstage"]>0 for m in metrics)} blank={sum(m["blank"] for m in metrics)}',flush=True)
   page.close();browser.close()
 server.shutdown()

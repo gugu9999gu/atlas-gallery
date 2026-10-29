@@ -6,7 +6,7 @@
   "scripts": {
     "build": "python3 scripts/build-interactions.py",
     "deploy": "wrangler deploy --config wrangler-v32.jsonc",
-    "check": "node --check src/interactive/kit.js && node --check src/interactive/advanced.js && node --check src/interactive/studies.js && node --check src/interactive/bridge.js && node --check worker-v32.mjs"
+    "check": "node --check src/interactive/kit.js && node --check src/interactive/advanced.js && node --check src/interactive/studies.js && node --check src/interactive/patterns.js && node --check src/interactive/bridge.js && node --check worker-v32.mjs"
   },
   "dependencies": {
     "three": "0.180.0"

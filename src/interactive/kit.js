@@ -189,7 +189,7 @@ function buildScene(THREE,kind){
   main=add(new THREE.PlaneGeometry(3.3,2.5,36,28),mat(0x62c3e1,{wireframe:true,side:THREE.DoubleSide}));main.rotation.x=-.65;base=main.geometry.attributes.position.array.slice();
  }else if(kind==='three-particles'){
   const pos=new Float32Array(450*3);for(let i=0;i<450;i++){const a=i*2.399963,r=Math.sqrt(i/450)*1.7;pos[i*3]=Math.cos(a)*r;pos[i*3+1]=Math.sin(a)*r;pos[i*3+2]=Math.sin(i*.17)*.4;}
-  const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.BufferAttribute(pos,3));base=pos.slice();points=new THREE.Points(geo,new THREE.PointsMaterial({color:0x9be9fd,size:.045,sizeAttenuation:true}));group.add(points);main=points;
+  const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.BufferAttribute(pos,3));base=pos.slice();points=new THREE.Points(geo,new THREE.PointsMaterial({color:0xb9f6ff,size:.055,sizeAttenuation:true}));group.add(points);main=points;
  }else if(kind==='three-instance'){
   grid=new THREE.InstancedMesh(new THREE.BoxGeometry(.19,.6,.19),mat(0x93b7ff),121);group.add(grid);main=grid;group.rotation.set(.5,.4,0);
  }else{
@@ -212,7 +212,7 @@ function buildScene(THREE,kind){
   if(kind==='three-light')point.position.set(x*3,y*2,2.5);
   if(kind==='three-orbit'){const a=state.orbitX||x*.8,e=state.orbitY||.25;camera.position.set(Math.sin(a)*5.3,Math.sin(e)*3,Math.cos(a)*5.3);camera.lookAt(0,0,0);}
   if(kind==='three-translate')group.position.set(x*.8,y*.6,0);
-  if(kind==='three-scale')group.scale.setScalar(.85+(x+1)*.32);
+  if(kind==='three-scale'){group.scale.setScalar(.68+(x+1)*.22);group.position.y=.16;}
   if(kind==='three-explode')parts.forEach((o,i)=>o.position.y=(i-2)*(state.toggled?.6:.2));
   if(kind==='three-ripple'){const p=main.geometry.attributes.position;for(let i=0;i<p.count;i++){const xx=base[i*3],yy=base[i*3+1],d=Math.hypot(xx-x,yy-y);p.setZ(i,Math.sin(d*5-t*3)*.14*Math.exp(-d*.4));}p.needsUpdate=true;}
   if(points){const p=points.geometry.attributes.position;for(let i=0;i<p.count;i++){const xx=base[i*3],yy=base[i*3+1],d=Math.max(.3,Math.hypot(xx-x,yy-y));p.setXYZ(i,xx+(xx-x)*.13/d,yy+(yy-y)*.13/d,base[i*3+2]+Math.sin(t+i*.07)*.08);}p.needsUpdate=true;}

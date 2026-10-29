@@ -43,6 +43,37 @@ def merge():
         e['demo']={'key':key,'engine':engine,'version':VERSION,'input':['pointer','touch','keyboard'],'code':'standalone-html','category':category}
         e['preview']={'engine':'three-webgl' if engine=='three' else 'dom-interactive','key':key,'classification':'interactive','sampleData':False}
         e['modified_on']=DATE
+
+    # Replace static mockups with behavior-accurate, keyboard-operable UI examples.
+    # Exact canonical names only; the supplied Toast ID remains stable.
+    ui_pattern_names={
+        'Toast':'ui-toast','Snackbar':'ui-snackbar','Tooltip':'ui-tooltip',
+        'Popover':'ui-popover','Modal Dialog':'ui-modal','Bottom Sheet':'ui-sheet',
+        'Modal Bottom Sheet':'ui-sheet','Drawer':'ui-drawer','Side Sheet':'ui-drawer',
+        'Banner':'ui-banner','Inline Notification':'ui-inline',
+        'Accordion':'ui-accordion','Tabs':'ui-tabs','Tab Bar':'ui-tabs',
+        'Segmented Button':'ui-segmented','Switch / Toggle Switch':'ui-switch',
+        'Checkbox':'ui-checkbox','Radio Button':'ui-radio','Slider':'ui-slider',
+        'Stepper / Step Indicator':'ui-steps','Quantity Stepper':'ui-quantity',
+        'Progress Bar':'ui-progress','Linear Progress Indicator':'ui-progress',
+        'Skeleton Loader':'ui-skeleton','Skeleton Screen':'ui-skeleton',
+        'Carousel':'ui-carousel','Loading Button':'ui-loading',
+        'Search Field':'ui-search','Floating Action Button (FAB)':'ui-fab',
+        'Dropdown Menu':'ui-dropdown','Primary Button':'ui-button','Card':'ui-card'
+    }
+    implemented_patterns=[]
+    for entry in db['entries']:
+        if entry.get('canonical_id') or entry.get('demo'):continue
+        key=('ui-toast' if entry['id']=='dar-888fda81c920' else ui_pattern_names.get(entry['en']))
+        if not key:continue
+        entry['demo']={'key':key,'engine':'dom','version':VERSION,
+                       'input':['pointer','touch','keyboard'],'code':'standalone-html',
+                       'category':entry['category'],'autoplay':'visible-only'}
+        entry['preview']={'engine':'dom-interactive','key':key,'classification':'interactive',
+                          'sampleData':True}
+        entry['modified_on']=DATE
+        implemented_patterns.append(entry['id'])
+    db['metadata']['ui_motion_preview_ids']=implemented_patterns
     for category,english in category_names.items():
         if not any(c['name']==category and c.get('domain')=='인터랙션 실습' for c in db['categories']):
             db['categories'].append({'id':'IX'+str(list(category_names).index(category)+1),'name':category,'domain':'인터랙션 실습','count':0})
@@ -96,7 +127,7 @@ REFERENCE_DEMO='''document.addEventListener('DOMContentLoaded',()=>{const p=JSON
 
 def main():
     db,lang,added,upgraded=merge();canonical=[e for e in db['entries'] if not e.get('canonical_id')]
-    css='\n'.join((ROOT/'src'/p).read_text(encoding='utf-8') for p in ['style.css','advertising.css','interactive/style.css','interactive/layout.css','preview-visual-quality.css'])
+    css='\n'.join((ROOT/'src'/p).read_text(encoding='utf-8') for p in ['style.css','advertising.css','interactive/style.css','interactive/patterns.css','interactive/layout.css','preview-visual-quality.css'])
     css=minimum_css(css)
     app=(ROOT/'src/app.js').read_text(encoding='utf-8')
     modules='\n'.join((ROOT/'src/previews'/name).read_text(encoding='utf-8') for name in ['core.js','motion.js','vfx.js','maps.js','model.js','finalize.js'])
@@ -115,7 +146,9 @@ def main():
     kit=(ROOT/'src/interactive/kit.js').read_text(encoding='utf-8')
     advanced=(ROOT/'src/interactive/advanced.js').read_text(encoding='utf-8')
     studies=(ROOT/'src/interactive/studies.js').read_text(encoding='utf-8')
-    kit_prefix='<script>'+studies+'</script>\n<script>'+advanced+'</script>\n<script>'+kit+'</script>\n<script>window.ATLAS_INTERACTION_CSS='+embed((ROOT/'src/interactive/style.css').read_text(encoding='utf-8'))+';</script>\n'
+    patterns=(ROOT/'src/interactive/patterns.js').read_text(encoding='utf-8')
+    interaction_css=(ROOT/'src/interactive/style.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/patterns.css').read_text(encoding='utf-8')
+    kit_prefix='<script>'+patterns+'</script>\n<script>'+studies+'</script>\n<script>'+advanced+'</script>\n<script>'+kit+'</script>\n<script>window.ATLAS_INTERACTION_CSS='+embed(interaction_css)+';</script>\n'
     text=text.replace('<script>\n/*__APP_0__*/',kit_prefix+'<script>\n/*__APP_0__*/')
     if 'window.ATLAS_INTERACTION_CSS' not in text:text=text.replace('<script>/*__APP_0__*/',kit_prefix+'<script>/*__APP_0__*/')
     text=text.replace('/*__APP_0__*/',app)
@@ -124,7 +157,7 @@ def main():
     text=text.replace('<noscript>','<noscript><p><a href="/references/">전체 용어 설명 / All reference definitions</a></p>',1)
     OUT.mkdir(exist_ok=True);(OUT/'index.html').write_text(text,encoding='utf-8')
     asset=OUT/'assets';asset.mkdir(exist_ok=True)
-    (asset/'interaction-kit.js').write_text(studies+'\n'+advanced+'\n'+kit,encoding='utf-8');(asset/'interaction-style.css').write_text((ROOT/'src/interactive/style.css').read_text(encoding='utf-8'),encoding='utf-8');(asset/'reference.css').write_text(REFERENCE_CSS,encoding='utf-8');(asset/'reference-demo.js').write_text(REFERENCE_DEMO,encoding='utf-8')
+    (asset/'interaction-kit.js').write_text(patterns+'\n'+studies+'\n'+advanced+'\n'+kit,encoding='utf-8');(asset/'interaction-style.css').write_text(interaction_css,encoding='utf-8');(asset/'reference.css').write_text(REFERENCE_CSS,encoding='utf-8');(asset/'reference-demo.js').write_text(REFERENCE_DEMO,encoding='utf-8')
     vendor=ROOT/'node_modules/three/build';target=asset/'vendor';target.mkdir(exist_ok=True)
     if vendor.exists():
         shutil.copyfile(vendor/'three.module.min.js',target/'three-0.180.0.module.min.js');shutil.copyfile(vendor/'three.core.min.js',target/'three.core.min.js');shutil.copyfile(vendor.parent/'LICENSE',target/'THREE-LICENSE.txt')
@@ -194,7 +227,7 @@ Operator: 스투피아드
             for language in ('ko','en'):redirects.append(ref_path(e,language)+' '+ref_path({'id':e['canonical_id']},language)+' 301')
     (OUT/'_redirects').write_text('\n'.join(redirects)+'\n',encoding='utf-8')
     (ROOT/'qa').mkdir(exist_ok=True)
-    receipt={'version':VERSION,'records':len(db['entries']),'canonical':len(canonical),'categories':len(db['categories']),'recipes':len(added)+len(upgraded),'new_ids':added,'upgraded_ids':upgraded,'three':sum(e.get('demo',{}).get('engine')=='three' for e in canonical),'reference_pages':len(canonical)*2,'index_sha256':hashlib.sha256((OUT/'index.html').read_bytes()).hexdigest(),'index_bytes':(OUT/'index.html').stat().st_size,'vendor_available':(target/'three-0.180.0.module.min.js').exists()}
+    receipt={'version':VERSION,'records':len(db['entries']),'canonical':len(canonical),'categories':len(db['categories']),'recipes':len(added)+len(upgraded),'new_ids':added,'upgraded_ids':upgraded,'three':sum(e.get('demo',{}).get('engine')=='three' for e in canonical),'reference_pages':len(canonical)*2,'ui_motion_examples':len(db['metadata']['ui_motion_preview_ids']),'index_sha256':hashlib.sha256((OUT/'index.html').read_bytes()).hexdigest(),'index_bytes':(OUT/'index.html').stat().st_size,'vendor_available':(target/'three-0.180.0.module.min.js').exists()}
     # v3.1 is a frozen baseline. Track only concrete previews newly implemented in this release.
     baseline=load_qa('preview-coverage.json')
     pending_before=load_qa('remaining-previews.json')

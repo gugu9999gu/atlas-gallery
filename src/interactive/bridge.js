@@ -24,6 +24,29 @@ comparisonMarkup=function(e){
 };
 let ixObserver,ixResizeTimer;
 const ixMountedRoots=new WeakSet();
+function declutterCompactSvg(root=document){
+ const svgs=root.querySelectorAll?.('.term-card .scene-reference .reference-svg')||[];
+ for(const svg of svgs){
+  const labels=[...svg.querySelectorAll('text')];
+  for(const node of labels)node.removeAttribute('data-preview-decluttered');
+  const scene=svg.closest('.scene'),outer=scene?.getBoundingClientRect();
+  if(!outer||outer.width<10||outer.height<10)continue;
+  const preview=scene.querySelector('.preview-label');
+  const occupied=preview?.getClientRects().length?[preview.getBoundingClientRect()]:[];
+  const area=r=>Math.max(0,r.width)*Math.max(0,r.height);
+  const collision=(a,b)=>Math.max(0,Math.min(a.right,b.right)-Math.max(a.left,b.left))*Math.max(0,Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top));
+  const priority=node=>{
+   const original=Number(node.dataset.originalFont||14),content=(node.textContent||'').trim();
+   return original*2+(content.length>3?10:0)+(/[a-z]/i.test(content)?8:0)-(/^[-+]?\d+(?:[.,%]\d+)?$/.test(content)?12:0);
+  };
+  labels.filter(node=>node.getClientRects().length).sort((a,b)=>priority(b)-priority(a)).forEach(node=>{
+   const rect=node.getBoundingClientRect(),inside=collision(rect,outer);
+   const clipped=area(rect)>0&&inside/area(rect)<.86;
+   const conflict=occupied.some(other=>collision(rect,other)>Math.min(area(rect),area(other))*.13);
+   if(clipped||conflict){node.dataset.previewDecluttered='true';}else occupied.push(rect);
+  });
+ }
+}
 function enforceMinimumText(root=document){
  const targets=[...(root.querySelectorAll?.('svg text')||[])];
  for(const el of targets){
@@ -36,7 +59,7 @@ function enforceMinimumText(root=document){
  for(const el of (root.querySelectorAll?.('button,input,select,textarea,small,output,span,p,a,b,strong,label,h1,h2,h3,h4,h5,h6,li,code,kbd,summary,div')||[])){
   if(![...el.childNodes].some(n=>n.nodeType===3&&n.textContent.trim()))continue;
   const size=parseFloat(getComputedStyle(el).fontSize);if(size>0&&size<14)el.style.setProperty('font-size','14px','important');
- }
+ } declutterCompactSvg(root);
 }
 function hydrateLive(root=document){
  AtlasKit.cleanup();

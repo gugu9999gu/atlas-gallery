@@ -54,7 +54,16 @@ with sync_playwright() as p:
         demo=context.new_page();de=[];demo.on('pageerror',lambda e:de.append(str(e)))
         demo.set_content(code,wait_until='domcontentloaded')
         stage=demo.locator('.ix-stage');rect=stage.bounding_box();key=recipe['key']
-        if key in {
+        if key.startswith('study-'):
+            if key=='study-blur':
+                demo.locator('.ix-study-range').fill('8')
+                changed=stage.get_attribute('data-state')=='active' and '8' in demo.locator('.ix-study-status').inner_text()
+            else:
+                demo.locator('.ix-study-trigger').click()
+                changed=stage.get_attribute('data-state')=='active'
+                if key=='study-skip':
+                    changed=changed and demo.locator('.ix-study-target').evaluate('e=>document.activeElement===e')
+        elif key in {
             'click-live','click-haptic','click-overflow','drag-drop','drag-swipe','drag-pinch','drag-sort','drag-reorder',
             'key-shortcut','click-context','click-micro','click-history','click-confirm','input-debounce',
             'track-throttle','click-fade','click-slide','key-navigation','key-focus-trap','key-focus',

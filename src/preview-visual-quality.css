@@ -1,0 +1,29 @@
+/* Visual QA adjustments: legible miniatures without changing full detail content. */
+.analytics-feature .feature-art{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;min-width:0}
+.analytics-feature .feature-art>div{width:auto;min-width:0;min-height:144px;padding:10px 6px 9px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;overflow:hidden}
+.analytics-feature .feature-art svg{width:100%;max-width:160px;height:85px;aspect-ratio:auto;overflow:visible;display:block}
+.analytics-feature .feature-art b{font-size:14px;line-height:1.35;white-space:normal;letter-spacing:0;padding:0;color:#3f5578}
+/* Compact cards are previews; their full definitions remain available in details. */
+.term-card .scene-diagram .reference-stage{padding:33px 10px 9px;align-items:flex-start}
+.term-card .scene-diagram .concept-board{width:100%;height:100%;max-height:100%;max-width:none;display:flex;flex-direction:column;justify-content:flex-start;gap:6px;padding:0;margin:0;overflow:hidden}
+.term-card .scene-diagram .concept-head{flex:none;display:block;min-height:0;max-width:100%}
+.term-card .scene-diagram .concept-head>span{display:none}
+.term-card .scene-diagram .concept-head>b{display:block;font-size:14px;line-height:1.35;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;color:#36548a}
+.term-card .scene-diagram .concept-flow{display:flex;flex-direction:column;align-items:stretch;gap:6px;min-height:0;overflow:hidden}
+.term-card .scene-diagram .concept-flow>span{display:block;flex:none;text-align:left;padding:5px 9px;line-height:1.35;border-radius:6px;max-height:none;min-height:0;font-size:14px;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.term-card .scene-diagram .concept-flow>i{display:none}
+.term-card .scene-diagram .concept-flow>p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;font-size:14px;line-height:1.4;color:#435b7b;max-height:none;min-height:0;overflow:hidden;text-overflow:ellipsis;padding:0;margin:0;background:transparent;border:0;word-break:keep-all}
+.term-card .scene-diagram .concept-application{display:none}
+.term-card .reference-svg-caption{display:none!important}
+.term-card .reference-svg text[data-preview-decluttered="true"]{display:none!important}
+.term-card .scene-reference .preview-label{top:5px;left:8px;max-width:calc(100% - 16px);font-size:14px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;z-index:5}
+.term-card .scene-reference .reference-stage{padding-top:28px;padding-bottom:7px}
+/* Give original UI previews room to breathe at actual accessible font sizes. */
+@media(max-width:580px){
+  .cards{grid-template-columns:1fr}
+  .term-card .scene{height:188px}
+  .term-card .scene .demo-scale,.term-card .scene .axis-svg{transform:scale(1)}
+  .mode-list .term-card .scene{width:140px}
+  .analytics-feature .feature-art{display:none}
+  .term-card .scene-diagram .concept-flow>p{-webkit-line-clamp:3;line-clamp:3}
+}

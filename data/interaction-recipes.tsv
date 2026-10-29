@@ -103,3 +103,15 @@ drag-gesture-transition|Gesture-driven Transition|제스처 기반 전환|dom|�
 scroll-scrub|Scroll Scrubbing|스크롤 스크러빙|dom|드래그·제스처|콘텐츠 스크롤 위치를 애니메이션 진행률에 직접 연결합니다.|Connects local scroll progress directly to an animation position.
 scroll-timeline|Scroll Timeline|스크롤 타임라인|dom|드래그·제스처|스크롤의 시작과 끝을 기준으로 그래픽 속성을 단계적으로 변화시킵니다.|Maps the scroll range to progressive transforms and opacity.
 drag-elasticity|Drag Elasticity|드래그 탄성|dom|드래그·제스처|드래그한 대상이 놓일 때 원래 위치로 탄성 복귀합니다.|Returns a dragged element to its starting point with elastic motion.
+study-transition|Transition|전환|dom|호버·포커스|요소가 현재 상태와 변경된 상태 사이에서 위치와 모양을 부드럽게 전환합니다.|CSS transitions interpolate between states without changing document layout.
+study-entrance|Entrance Animation|등장 애니메이션|dom|호버·포커스|숨겨진 요소가 진입 방향과 투명도 변화를 통해 나타납니다.|An element enters through visible opacity and position changes.
+study-exit|Exit Animation|퇴장 애니메이션|dom|호버·포커스|화면 요소가 위치와 투명도를 바꾸면서 사라집니다.|An element exits with coordinated position and opacity changes.
+study-ease|Ease-in / Ease-out|이즈 인·아웃|dom|호버·포커스|동일한 거리의 이동에 다른 시간 함수를 적용해 속도감을 비교합니다.|Compare motion driven by linear, ease-in and ease-in-out timing.
+study-blur|Blur Effect|블러 효과|dom|호버·포커스|슬라이더로 장식 대상의 흐림 정도만 변경하고 설명 텍스트는 선명하게 유지합니다.|Change decorative element blur with an accessible slider while keeping essential text sharp.
+study-backdrop|Backdrop Blur|배경 블러|dom|호버·포커스|반투명 카드 뒤의 그래픽에 backdrop-filter 효과를 적용합니다.|Toggle backdrop-filter on a translucent panel over a patterned background.
+study-glass|Glassmorphism|글래스모피즘|dom|호버·포커스|투명도·블러·윤곽선으로 유리 질감의 상태를 비교합니다.|Change translucency, blur and border to demonstrate a glass UI surface.
+study-neumorph|Neumorphism|뉴모피즘|dom|호버·포커스|양방향 그림자로 표면의 돌출·함몰 상태를 전환합니다.|Switch a soft raised surface to a recessed inset shadow state.
+study-contrast|High Contrast Mode|고대비 모드|dom|클릭·탭 피드백|밝은 글자와 어두운 배경을 대비시키는 고대비 표시 상태를 전환합니다.|Switch the sample to a high-contrast black-and-white presentation.
+study-color|Color Independence|색상 외 상태 전달|dom|클릭·탭 피드백|색만으로 의미를 전달하지 않고 상태 텍스트와 기호를 함께 변경합니다.|Communicate status with text and a symbol, not color alone.
+study-reduced|Reduced Motion|움직임 감소|dom|클릭·탭 피드백|시스템의 움직임 감소 설정을 존중하며 모션 없는 대체 상태를 안내합니다.|Respect prefers-reduced-motion and provide static feedback when motion is disabled.
+study-skip|Skip Link|건너뛰기 링크|dom|클릭·탭 피드백|예제 내부의 건너뛰기 링크로 키보드 초점을 본문 목적지로 이동합니다.|Move focus directly to the sample main-content target using a skip link.

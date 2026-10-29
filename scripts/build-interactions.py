@@ -11,6 +11,7 @@ DATE='2026-10-29'
 ORIGIN='https://atlas-gallery.app'
 
 def load(name):return json.loads((ROOT/'data'/name).read_text(encoding='utf-8'))
+def load_qa(name):return json.loads((ROOT/'qa'/name).read_text(encoding='utf-8'))
 def embed(v):return json.dumps(v,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c').replace('\u2028','\\u2028').replace('\u2029','\\u2029')
 def esc(v):return html.escape(str(v or ''),quote=True)
 def minimum_css(s):
@@ -193,6 +194,23 @@ Operator: 스투피아드
     (OUT/'_redirects').write_text('\n'.join(redirects)+'\n',encoding='utf-8')
     (ROOT/'qa').mkdir(exist_ok=True)
     receipt={'version':VERSION,'records':len(db['entries']),'canonical':len(canonical),'categories':len(db['categories']),'recipes':len(added)+len(upgraded),'new_ids':added,'upgraded_ids':upgraded,'three':sum(e.get('demo',{}).get('engine')=='three' for e in canonical),'reference_pages':len(canonical)*2,'index_sha256':hashlib.sha256((OUT/'index.html').read_bytes()).hexdigest(),'index_bytes':(OUT/'index.html').stat().st_size,'vendor_available':(target/'three-0.180.0.module.min.js').exists()}
+    # v3.1 is a frozen baseline. Track only concrete previews newly implemented in this release.
+    baseline=load_qa('preview-coverage.json')
+    pending_before=load_qa('remaining-previews.json')
+    pending_by_id={e['id']:e for e in pending_before}
+    completed_pending=sorted(e['id'] for e in canonical if e['id'] in pending_by_id and e.get('demo'))
+    fresh_ids=sorted(e['id'] for e in canonical if e['id'].startswith('atlas-ix-'))
+    actual_pending=[e for e in pending_before if e['id'] not in completed_pending]
+    progress={'version':VERSION,'baseline':{'total':baseline['canonical'],'specific':baseline['specific'],'pending':baseline['remaining']},
+      'current':{'total':len(canonical),'specific':baseline['specific']+len(completed_pending)+len(fresh_ids),
+                 'pending':len(actual_pending)},'implemented_original_ids':completed_pending,
+      'new_interaction_ids':fresh_ids,'remaining_ids':[e['id'] for e in actual_pending],
+      'definition':'Specific previews include the validated v3.1 baseline and subsequent source implementations; no browser-pass guarantee.'}
+    if progress['current']['specific']+progress['current']['pending']!=len(canonical):
+        raise RuntimeError('Preview progress accounting mismatch')
+    progress['current']['percentage']=round(progress['current']['specific']/len(canonical)*100,2)
+    (ROOT/'qa/preview-progress-v321.json').write_text(json.dumps(progress,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    receipt['coverage']=progress['current']
     (ROOT/'qa/build-v32.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+'\n',encoding='utf-8');(ROOT/'qa/expanded-data-v32.json').write_text(embed(db)+'\n',encoding='utf-8')
     print(json.dumps({k:v for k,v in receipt.items() if not k.endswith('_ids')},indent=2))
 if __name__=='__main__':main()

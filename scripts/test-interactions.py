@@ -108,7 +108,7 @@ with sync_playwright() as p:
                 changed='1-0-0' in demo.locator('.ix-fnd-output').inner_text()
             elif key=='fnd-clamp':
                 demo.locator('input[type=range]').fill('780')
-                changed=demo.locator('.ix-fnd-clamp-preview').evaluate('e=>e.style.fontSize==="32.0px"')
+                changed=demo.locator('.ix-fnd-clamp-preview').evaluate('e=>parseFloat(e.style.fontSize)===32')
             elif key=='fnd-scroll-margin':
                 demo.locator('[data-act=jump]').click()
                 changed=demo.locator('.ix-fnd-scroll').evaluate('e=>e.scrollTop>0')

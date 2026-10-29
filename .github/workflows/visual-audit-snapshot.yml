@@ -1,0 +1,44 @@
+name: ATLAS portable visual audit snapshot
+on:
+  push:
+    branches:
+      - feat/preview-visual-audit-20261029
+    paths:
+      - .github/workflows/visual-audit-snapshot.yml
+      - src/**
+      - data/**
+      - scripts/**
+      - qa/**
+      - package.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Build latest visual reference sources
+        run: |
+          npm install --no-audit --no-fund
+          npm run check
+          npm run build
+      - name: Package local browser review snapshot
+        run: |
+          mkdir -p visual-review-snapshot/public visual-review-snapshot/qa
+          cp -R src data scripts visual-review-snapshot/
+          cp -R public/assets visual-review-snapshot/public/
+          cp public/*.html public/*.json public/*.txt visual-review-snapshot/public/ || true
+          cp qa/preview-coverage.json qa/remaining-previews.json qa/build-v32.json qa/preview-progress-v321.json visual-review-snapshot/qa/
+          cp package.json requirements-test.txt visual-review-snapshot/
+          printf '%s\n' "${GITHUB_SHA}" > visual-review-snapshot/revision.txt
+      - name: Upload portable visual snapshot
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: atlas-visual-snapshot
+          path: visual-review-snapshot/
+          if-no-files-found: error
+          retention-days: 3

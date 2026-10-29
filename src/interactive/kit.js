@@ -3,17 +3,21 @@
  */
 (function(global){
 'use strict';
-const VERSION='3.2.0';
+const VERSION='3.2.1';
 const THREE_VERSION='0.180.0';
 const THREE_URL=global.ATLAS_THREE_URL||'/assets/vendor/three-0.180.0.module.min.js';
 let threePromise;
 const mounted=new Map();
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function markup(kind,language='ko'){
+ if(global.AtlasAdvanced?.supports(kind))return global.AtlasAdvanced.markup(kind,language);
+ kind=({'press-long':'press-hold','drag-swipe-dismiss':'drag-dismiss','click-radial-legacy':'click-radial','drag-elasticity':'drag-elastic'})[kind]||kind;
  const ko=language==='ko',drag=kind.startsWith('drag-'),track=kind.startsWith('track-'),click=kind.startsWith('click-')||kind==='press-hold';
  return `<div class="ix-stage" data-kind="${kind}" lang="${language}" tabindex="0" role="group" aria-label="${ko?'직접 조작하는 예제':'Interactive example'}"><div class="ix-grid" aria-hidden="true"></div><div class="ix-light" aria-hidden="true"></div><div class="ix-trail" aria-hidden="true"></div><div class="ix-cross" aria-hidden="true"></div><div class="ix-tiles" aria-hidden="true">${Array.from({length:9},(_,i)=>`<i data-tile="${i}"></i>`).join('')}</div><div class="ix-object"><div class="ix-graphic" aria-hidden="true"><i></i><i></i><i></i></div><span class="ix-kicker">ATLAS / LAB</span><strong class="ix-head">${track?'FOLLOW':drag?'MOVE':click?'MAKE IT':'HELLO.'}</strong><div class="ix-line" aria-hidden="true"></div><div class="ix-extra">${ko?'다음 장면을 발견하세요.':'Discover the next scene.'}</div><div class="ix-alt" aria-hidden="true"><strong>ANOTHER<br>VIEW.</strong></div><div class="ix-check" aria-hidden="true"><svg viewBox="0 0 80 80"><path d="M15 40 32 56 65 22"/></svg></div><div class="ix-knob" aria-hidden="true"></div><div class="ix-meter" aria-hidden="true"></div></div><div class="ix-orbit-actions" aria-hidden="true"><i>＋</i><i>↗</i><i>★</i></div><span class="ix-follower" aria-hidden="true"></span><button type="button" class="ix-trigger">${ko?(drag?'드래그 / 방향키':track?'움직여 보세요':kind==='press-hold'?'길게 누르기':click?'클릭 / 탭':'호버 / 초점'):drag?'Drag / arrow keys':track?'Move pointer':kind==='press-hold'?'Press and hold':click?'Click / tap':'Hover / focus'}</button><input class="ix-range" type="range" min="0" max="100" value="50" aria-label="${ko?'전후 비교 비율':'Before and after split'}"${kind==='drag-compare'?'':' hidden'}><output class="ix-readout" aria-live="off">${ko?'직접 조작해 보세요':'Try the interaction'}</output></div>`;
 }
 function mountDOM(root,kind,language='ko',options={}){
+ if(global.AtlasAdvanced?.supports(kind))return global.AtlasAdvanced.mount(root,kind,language,options);
+ kind=({'press-long':'press-hold','drag-swipe-dismiss':'drag-dismiss','click-radial-legacy':'click-radial','drag-elasticity':'drag-elastic'})[kind]||kind;
  const ko=language==='ko',abort=new AbortController(),signal=abort.signal;
  const object=root.querySelector('.ix-object'),out=root.querySelector('.ix-readout'),button=root.querySelector('.ix-trigger'),follower=root.querySelector('.ix-follower');
  let alive=true,down=false,moved=false,on=false,raf=0,hold=0,startX=0,startY=0,dx=0,dy=0,px=0,py=0,fx=0,fy=0,vx=0,vy=0,previousX=0,previousY=0,last=0,count=128,doubleAt=0,order=2;
@@ -23,9 +27,9 @@ function mountDOM(root,kind,language='ko',options={}){
  const listen=(target,name,fn,opt={})=>target.addEventListener(name,fn,{...opt,signal});
  const later=(fn,ms)=>{const id=setTimeout(()=>{timers.delete(id);if(alive)fn();},ms);timers.add(id);return id;};
  const say=s=>{out.textContent=s;};
- if(['drag-reorder','drag-pull','drag-swipe-actions'].includes(kind)){object.style.touchAction='none';root.style.touchAction='pan-y';}
+ if(['drag-reorder','drag-pull-refresh','drag-swipe-actions'].includes(kind)){object.style.touchAction='none';root.style.touchAction='pan-y';}
  if(kind==='drag-reorder'){root.querySelector('.ix-head').textContent='ITEM 2 / 3';say(ko?'위·아래로 드래그하여 순서를 바꾸세요.':'Drag up or down to reorder.');}
- if(kind==='drag-pull')root.querySelector('.ix-head').textContent='REFRESH';
+ if(kind==='drag-pull-refresh')root.querySelector('.ix-head').textContent='REFRESH';
  if(kind==='drag-swipe-actions'){root.querySelector('.ix-head').textContent='SWIPE ←';const action=document.createElement('span');action.textContent=ko?'보관':'Archive';action.setAttribute('aria-hidden','true');action.style.cssText='position:absolute;right:18px;top:50%;transform:translateY(-50%);padding:10px;border-radius:8px;background:#243a65;color:#fff;font:700 14px system-ui';root.append(action);}
  if(kind==='click-double')root.querySelector('.ix-head').textContent='DOUBLE TAP';
  if(kind==='click-toast'){root.querySelector('.ix-head').textContent='NOTIFY';out.setAttribute('aria-live','polite');out.setAttribute('role','status');}
@@ -64,7 +68,7 @@ function mountDOM(root,kind,language='ko',options={}){
   const b=root.getBoundingClientRect(),x=event?.clientX?event.clientX-b.left:b.width/2,y=event?.clientY?event.clientY-b.top:b.height/2;
   if(kind.startsWith('hover-')){active(!root.classList.contains('is-active'));return;}
   if(kind.startsWith('track-')){move(b.width*.73,b.height*.34);active(true);return;}
-  if(kind.startsWith('drag-')){if(kind==='drag-dismiss'){object.style.transform='';object.style.opacity='1';say(ko?'카드를 복원했습니다.':'Card restored.');}if(kind==='drag-swipe-actions'){dx=0;object.style.transform='';say(ko?'보조 액션을 닫았습니다.':'Action closed.');}if(kind==='drag-pull'){say(ko?'아래로 당겨 새로고침':'Pull down to refresh');}return;}
+  if(kind.startsWith('drag-')){if(kind==='drag-dismiss'){object.style.transform='';object.style.opacity='1';say(ko?'카드를 복원했습니다.':'Card restored.');}if(kind==='drag-swipe-actions'){dx=0;object.style.transform='';say(ko?'보조 액션을 닫았습니다.':'Action closed.');}if(kind==='drag-pull-refresh'){say(ko?'아래로 당겨 새로고침':'Pull down to refresh');}return;}
   if(kind==='press-hold')return;
   if(kind==='click-double'){
    const now=performance.now();if(doubleAt && now-doubleAt<420){doubleAt=0;root.classList.toggle('is-checked');say(ko?'더블 탭이 인식되었습니다.':'Double tap recognized.');animate(object,[{transform:'scale(1)'},{transform:'scale(1.12)'},{transform:'scale(1)'}],{duration:300});}
@@ -95,7 +99,7 @@ function mountDOM(root,kind,language='ko',options={}){
    if(Math.abs(dy)>20){order=clamp(order+(dy>0?1:-1),1,3);root.querySelector('.ix-head').textContent='ITEM '+order+' / 3';say((ko?'목록 위치: ':'List position: ')+order+' / 3');}
    dx=dy=0;object.style.transform='';
   }
-  else if(kind==='drag-pull'){
+  else if(kind==='drag-pull-refresh'){
    const triggered=dy>55;dx=dy=0;object.style.transform='';
    if(triggered){say(ko?'새로고침 완료 · 서버 요청 없음':'Refreshed locally · no server request');root.classList.add('is-checked');later(()=>root.classList.remove('is-checked'),1100);}
    else say(ko?'조금 더 아래로 당겨 주세요.':'Pull further down.');
@@ -113,7 +117,7 @@ function mountDOM(root,kind,language='ko',options={}){
   const b=root.getBoundingClientRect();if(!reduced()||kind==='track-reticle')move(e.clientX-b.left,e.clientY-b.top);
   if(!down||!kind.startsWith('drag-')||kind==='drag-compare')return;
   const nx=e.clientX-startX,ny=e.clientY-startY;if(Math.hypot(nx,ny)>5)moved=true;
-  dx=clamp(nx,-b.width*.28,b.width*.28);dy=clamp(ny,-50,45);if(kind==='drag-dismiss'||kind==='drag-swipe-actions')dy=0;if(kind==='drag-pull'){dx=0;dy=clamp(ny,0,100);}if(kind==='drag-reorder'){dx=0;dy=clamp(ny,-70,70);}
+  dx=clamp(nx,-b.width*.28,b.width*.28);dy=clamp(ny,-50,45);if(kind==='drag-dismiss'||kind==='drag-swipe-actions')dy=0;if(kind==='drag-pull-refresh'){dx=0;dy=clamp(ny,0,100);}if(kind==='drag-reorder'){dx=0;dy=clamp(ny,-70,70);}
   object.style.transition='none';object.style.transform=`translate(${dx}px,${dy}px)`;say(`${Math.round(dx)}, ${Math.round(dy)}`);
  });
  listen(root,'pointerdown',e=>{
@@ -250,6 +254,7 @@ function cleanup(){for(const [root,rec] of mounted)if(!root.isConnected){rec.dis
 function code(recipe,language='ko',css=''){
  const name=escape(recipe.title||recipe.en||recipe.key),ko=language==='ko';
  const header='<!doctype html>\n<html lang="'+language+'">\n<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+name+' — ATLAS example</title>\n<style>html{font-size:16px}body{margin:0;padding:24px;background:#edf1f8;font-family:system-ui,sans-serif;font-size:16px}main{max-width:640px;margin:auto}h1{font-size:24px}p{font-size:16px;line-height:1.7}.ix-demo{height:340px;border-radius:20px;overflow:hidden}button,input{font:inherit}\n'+css+'\n</style></head><body><main><h1>'+name+'</h1><p>'+(ko?'포인터·터치 또는 키보드로 조작하세요. 실제 개인정보나 서버 요청을 사용하지 않는 독립 실행 예제입니다.':'Use pointer, touch or keyboard input. This is a standalone demonstration without analytics or server requests.')+'</p><div id="demo" class="ix-demo"></div></main>\n';
+ if(recipe.engine==='dom'&&global.AtlasAdvanced?.supports(recipe.key))return header+'<script>\n'+global.AtlasAdvanced.source+'\nconst root=document.getElementById("demo");root.innerHTML=AtlasAdvanced.markup('+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');const example=AtlasAdvanced.mount(root.firstElementChild,'+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');window.addEventListener("pagehide",()=>example.dispose(),{once:true});\n</'+'script></body></html>';
  if(recipe.engine==='three')return header+'<!-- Dependency: Three.js '+THREE_VERSION+' (MIT). Serve via HTTP(S), e.g. python -m http.server. CDN connection required. -->\n<script type="module">\nimport * as THREE from "https://cdn.jsdelivr.net/npm/three@'+THREE_VERSION+'/build/three.module.min.js";\n'+buildScene.toString()+'\n'+createThreePool.toString()+'\nconst root=document.getElementById("demo");const pool=createThreePool(THREE);const example=pool.mount(root,'+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');\nwindow.addEventListener("pagehide",()=>{example.dispose();pool.dispose();},{once:true});\n</'+'script></body></html>';
  return header+'<script>\n'+markup.toString()+'\n'+mountDOM.toString()+'\nconst root=document.getElementById("demo");root.innerHTML=markup('+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');\nconst example=mountDOM(root.firstElementChild,'+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');window.addEventListener("pagehide",()=>example.dispose(),{once:true});\n</'+'script></body></html>';
 }

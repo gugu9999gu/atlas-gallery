@@ -1,3 +1,10 @@
+## 2026-10-30 — v3.2.8 source / v3.12 Cloudflare release
+
+- Linear Progress Indicator 불확정형 SVG 세그먼트에 로딩 트랙 224×10 내부 클리핑 적용.
+- 설계·검증 분야 기존 20개 카드에 실제 HTML/CSS/JavaScript 시연 및 한·영 코드 복사 추가.
+- 소스 구현 1,224/2,189, 예정 965개; 운영 v3.12 목표 직접 조작 431개, 도식 866개.
+- 기존 Worker/R2 배포는 버전별로 보존, 미리보기 검증 후 운영 전환.
+
 ## 2026-10-30 — ATLAS v3.2.7 source / operational v3.11
 
 - 기존 20개 미구현 항목을 실시간 아이콘·게임·UI 레퍼런스로 전환.

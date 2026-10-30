@@ -94,6 +94,17 @@ with sync_playwright() as pw:
                 failures.append('layout reflow failed')
             if e['en']=='Feedback Loop' and stage.locator('.bl-feedback-value').inner_text()=='40%':
                 failures.append('feedback value unchanged')
+            if e['en']=='Frame-by-frame Animation' and stage.locator('.bl-frame-counter').inner_text()!='02 / 06':
+                failures.append('Frame-by-frame preview did not step to frame 2')
+            if e['en']=='Sprite Animation' and stage.locator('.bl-sprite-strip').count()!=1:
+                failures.append('Sprite strip not rendered')
+            if e['en']=='Additive Animation' and stage.locator('.bl-additive-base .bl-additive-extra').count()!=1:
+                failures.append('Additive animation must compose nested motion')
+            if e['en']=='Animation Blending':
+                stage.locator('.bl-range').fill('70')
+                if stage.evaluate("e=>e.style.getPropertyValue('--bl-mix')")!='0.7' or 'B 70%' not in stage.locator('.bl-blend-value').inner_text():
+                    failures.append('Blending control did not update weighted composition')
+
             if e['en']=='Overscroll Effect':
                 block=stage.locator('.bl-elastic-track');bbox=block.bounding_box()
                 page.mouse.move(bbox['x']+bbox['width']/2,bbox['y']+bbox['height']/2)

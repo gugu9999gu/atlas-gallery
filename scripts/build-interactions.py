@@ -84,9 +84,9 @@ def merge():
     backlog_upgrades=[]
     for line in (ROOT/'data/backlog-studies.tsv').read_text(encoding='utf-8').splitlines():
         if not line.strip() or line.lstrip().startswith('#'):continue
-        key,en=line.split('|')
-        entry=existing.get(en.lower())
-        if not entry or entry.get('canonical_id') or entry.get('demo') or entry['id'] not in baseline_pending:
+        key,record_id,en=line.split('|')
+        entry=next((e for e in db['entries'] if e['id']==record_id),None)
+        if not entry or entry.get('en')!=en or entry.get('canonical_id') or entry.get('demo') or entry['id'] not in baseline_pending:
             raise RuntimeError('Backlog study must reference a pending canonical term: '+en)
         if any(k['id']==entry['id'] for k in backlog_upgrades):raise RuntimeError('Duplicate upgrade: '+en)
         entry['demo']={'key':key,'engine':'dom','version':VERSION,

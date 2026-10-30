@@ -1,0 +1,21 @@
+# exact canonical id|live key|English label
+dar-18ab9064f702|n27-permission|Permission Denied Indicator
+dar-66187bdda16a|n27-contrast|Non-text Contrast
+dar-c30f823d3b27|n27-iconstate|Icon State Variant
+dar-1d21c0676320|n27-nineslice|Nine-slice Scaling
+dar-635a967bfd14|n27-coyote|Coyote Time
+dar-4687b6f568fe|n27-jumpbuffer|Jump Buffer
+dar-1a4f74aba5b3|n27-variablejump|Variable Jump Height
+dar-c5c958271b8e|n27-cooldown|Cooldown
+dar-a9c10d34dc16|n27-stamina|Stamina System
+dar-0146ba41e18b|n27-hitbox|Hitbox
+dar-dcd47283aa03|n27-hurtbox|Hurtbox
+dar-51b364eb06f5|n27-invuln|Invincibility Frames
+dar-a10cb4ccae11|n27-parry|Parry Window
+dar-0019ceec6862|n27-deadzone|Dead Zone
+dar-9e6dcb1c6b72|n27-hitstop|Hit Stop
+dar-18eba456b53b|n27-damage|Damage Number
+dar-0f7d4d5c2efe|n27-fog|Fog of War
+dar-c038f0addbbd|n27-progression|Progression System
+dar-64a7fc9fab50|n27-userflow|User Flow
+dar-bf4c5d8b714d|n27-responsive|Responsive QA

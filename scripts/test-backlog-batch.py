@@ -17,8 +17,8 @@ CANONICAL=[e for e in DB['entries'] if not e.get('canonical_id')]
 RECIPES=[]
 for line in (ROOT/'data/backlog-studies.tsv').read_text(encoding='utf-8').splitlines():
     if not line or line.startswith('#'):continue
-    key,en=line.split('|')
-    matches=[e for e in CANONICAL if e['en']==en]
+    key,record_id,en=line.split('|')
+    matches=[e for e in CANONICAL if e['id']==record_id and e['en']==en]
     assert len(matches)==1,(key,en,len(matches))
     assert matches[0]['demo']['key']==key and matches[0]['demo']['engine']=='dom'
     RECIPES.append(matches[0])

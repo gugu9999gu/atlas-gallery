@@ -8,6 +8,7 @@ on:
       - scripts/test-interactions.py
       - scripts/test-motion-graphics.py
       - scripts/test-preview-layout.py
+      - scripts/test-card-prompts.py
       - scripts/review-webgl.py
       - worker-v32.mjs
       - wrangler-v32.jsonc
@@ -47,6 +48,7 @@ jobs:
           python scripts/test-interactions.py
           python scripts/test-motion-graphics.py
           python scripts/test-preview-layout.py
+          python scripts/test-card-prompts.py
           npx wrangler deploy --config wrangler-v32.jsonc --dry-run --outdir /tmp/atlas-worker-check
       - name: Save verification reports and rendered review images
         if: always()
@@ -57,6 +59,7 @@ jobs:
             qa/interaction-tests-v32.json
             qa/motion-graphics-v324.json
             qa/live-preview-layout-v325.json
+            qa/card-prompt-tests-v325.json
             qa/build-v32.json
             qa/webgl-review-v32.json
             qa/v32-desktop.png

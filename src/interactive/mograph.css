@@ -168,3 +168,6 @@ html.motion-paused .mg-stage .mg-anim,.mg-stage.mg-still .mg-anim,.mg-stage.mg-u
  .mg-stage .mg-typing{width:21ch!important}
  .mg-stage .mg-trace{stroke-dashoffset:26!important}
 }
+
+/* Follow the allocated preview height, including compact visual-audit thumbnails. */
+.mg-stage{min-height:0}

@@ -26,7 +26,9 @@ function scene(key,ko){
  if(key==='bl-frames'||key==='bl-sprite')return '<div class="bl-frames"><div class="bl-sprite-window"><div class="bl-sprite-strip bl-autoplay">'+['↑','↗','→','↘','↓','↙'].map(x=>'<span>'+x+'</span>').join('')+'</div></div><span class="bl-frame-counter">01 / 06</span></div>'+caption('개별 프레임 순서','Discrete frame sequence');
  if(key==='bl-procedural')return '<svg class="bl-wave-svg" viewBox="0 0 275 120" aria-hidden="true"><path class="bl-procedural-path" d="M0 60H275" stroke="#8febdf" stroke-width="4" fill="none" stroke-linecap="round"/></svg>'+caption('sin(x+t) · 시간 기반 곡선','Time-based sine-wave deformation');
  if(key==='bl-clip'||key==='bl-mask')return '<div class="bl-reveal-frame"><span>01 / BASE</span><div class="bl-reveal-layer bl-autoplay">02 / REVEAL</div></div>'+caption(key==='bl-mask'?'마스크가 가시 영역을 제어':'클리핑 경계가 공개 영역을 제어',key==='bl-mask'?'Mask controls visible area':'Clipping defines the reveal');
- if(key==='bl-layer'||key==='bl-additive'||key==='bl-blending')return '<div class="bl-layer-canvas"><div class="bl-layer-a bl-autoplay">A</div><div class="bl-layer-b bl-autoplay">B</div></div>'+caption(key==='bl-additive'?'기본 이동 + 추가 흔들림':key==='bl-blending'?'두 동작의 가중 혼합':'개별 레이어의 합성',key==='bl-additive'?'Base move + additional offset':key==='bl-blending'?'Weighted blend of two motions':'Independent animation layers');
+ if(key==='bl-additive')return '<div class="bl-additive-canvas"><div class="bl-additive-base bl-autoplay"><span class="bl-additive-extra bl-autoplay">◆</span></div></div>'+caption('기본 이동에 작은 움직임이 더해집니다','Secondary motion adds to the base translation');
+ if(key==='bl-blending')return '<div class="bl-layer-canvas"><div class="bl-layer-a">A</div><div class="bl-layer-b">B</div></div><strong class="bl-blend-value">A 60% / B 40%</strong>'+caption('가중치를 조절해 두 상태를 합성','Change weights to blend two states');
+ if(key==='bl-layer')return '<div class="bl-layer-canvas"><div class="bl-layer-a bl-autoplay">A</div><div class="bl-layer-b bl-autoplay">B</div></div>'+caption('독립적으로 움직이는 레이어','Independently animated layers');
  if(key==='bl-hierarchy')return '<div class="bl-hierarchy"><strong class="bl-h-main bl-autoplay">'+(ko?'주요 행동':'Primary')+'</strong><span class="bl-h-sub bl-autoplay">'+(ko?'보조 피드백':'Supporting feedback')+'</span><span class="bl-h-sub bl-autoplay">'+(ko?'세부 정보':'Secondary detail')+'</span></div>';
  if(key==='bl-stagger')return '<div class="bl-stagger">'+Array.from({length:5},(_,i)=>'<span class="bl-stagger-item bl-autoplay" style="--i:'+i+'">'+(i+1)+'</span>').join('')+'</div>'+caption('요소별 시작 시간 차이','Offset starts for each element');
  if(key==='bl-sync')return '<div class="bl-sync">'+[0,1,2].map(x=>'<span class="bl-sync-item bl-autoplay">'+(x+1)+'</span>').join('')+'</div>'+caption('공통 타임라인에 동기화','Shared animation timeline');
@@ -56,7 +58,7 @@ function markup(key,language='ko'){
  if(!supports(key))throw new Error('Unregistered ATLAS backlog preview: '+key);
  const ko=language==='ko',labels=BUTTONS[key]||['시연하기','Play example'];
  let extra='';
- if(['bl-feedback','bl-spec','bl-velocity'].includes(key))extra='<label class="bl-range-wrap">'+(ko?'값 조절':'Adjust')+' <input class="bl-range" type="range" min="10" max="90" value="40" step="10" aria-label="'+(ko?'예제 값':'Example value')+'"></label>';
+ if(['bl-feedback','bl-spec','bl-velocity','bl-blending'].includes(key))extra='<label class="bl-range-wrap">'+(ko?'값 조절':'Adjust')+' <input class="bl-range" type="range" min="10" max="90" value="40" step="10" aria-label="'+(ko?'예제 값':'Example value')+'"></label>';
  if(key==='bl-cancel')extra='<button type="button" class="bl-stop">'+(ko?'중지':'Cancel')+'</button>';
  return '<div class="bl-stage" data-kind="'+key+'" tabindex="0" role="group" aria-label="'+(ko?'실행 가능한 '+key.slice(3)+' 시연':'Runnable '+key.slice(3)+' study')+'"><div class="bl-art">'+scene(key,ko)+'</div><div class="bl-toolbar"><button type="button" class="bl-action">'+escape(ko?labels[0]:labels[1])+'</button>'+extra+'</div><output class="bl-status" role="status" aria-live="polite">'+(ko?'예제 안에서 조작해 보세요.':'Interact within this example.')+'</output></div>';
 }
@@ -80,9 +82,11 @@ function mount(root,key,language='ko',options={}){
   if(key==='bl-css-transition'||key==='bl-compositor'||key==='bl-clip'||key==='bl-mask'){
    say('상태와 스타일이 전환되었습니다.','Transitioned to the next visual state.');return;
   }
-  if(key==='bl-css-keyframes'||key==='bl-css-animation'||key==='bl-keyframe'||key==='bl-frames'||key==='bl-sprite'||key==='bl-stagger'||key==='bl-sync'||key==='bl-additive'||key==='bl-layer'){
+  if(key==='bl-css-keyframes'||key==='bl-css-animation'||key==='bl-keyframe'||key==='bl-sprite'||key==='bl-stagger'||key==='bl-sync'||key==='bl-additive'||key==='bl-layer'){
    const active=root.classList.contains('bl-playing');root.classList.remove('bl-playing');root.classList.remove('bl-restart');void root.offsetWidth;root.classList.add('bl-restart');if(active)root.classList.add('bl-playing');say('키프레임을 다시 재생했습니다.','Replayed the animation keyframes.');return;
   }
+  if(key==='bl-frames'){const n=state%6;const strip=root.querySelector('.bl-sprite-strip');strip.style.transform='translateX(-'+(n*50)+'px)';root.querySelector('.bl-frame-counter').textContent=String(n+1).padStart(2,'0')+' / 06';say('프레임 '+(n+1)+' / 6','Frame '+(n+1)+' / 6');return;}
+  if(key==='bl-blending'){const mix=state%2?.75:.25;root.style.setProperty('--bl-mix',String(mix));root.querySelector('.bl-blend-value').textContent='A '+Math.round((1-mix)*100)+'% / B '+Math.round(mix*100)+'%';say('가중치 변경: B '+Math.round(mix*100)+'%','Blend weight: B '+Math.round(mix*100)+'%');return;}
   if(key==='bl-waapi'||key==='bl-cancel'||key==='bl-notify'){
    lastAnimation?.cancel();
    const a=animate(object,[{transform:'translateX(0) scale(1)',opacity:.75},{transform:'translateX(112px) scale(1.15)',opacity:1},{transform:'translateX(0) scale(1)',opacity:.75}],{duration:850});
@@ -188,6 +192,7 @@ function mount(root,key,language='ko',options={}){
   if(key==='bl-feedback'){const v=Number(range.value);root.dataset.value=String(v);root.querySelector('.bl-feedback-track span').style.width=v+'%';root.querySelector('.bl-feedback-value').textContent=v+'%';}
   else if(key==='bl-spec'){root.querySelector('.bl-spec-value').textContent=(Number(range.value)*10+100)+'ms';}
   else if(key==='bl-velocity'){velocity=Number(range.value);root.dataset.velocity=String(velocity);}
+  else if(key==='bl-blending'){const mix=Number(range.value)/100;root.style.setProperty('--bl-mix',String(mix));root.querySelector('.bl-blend-value').textContent='A '+Math.round((1-mix)*100)+'% / B '+Math.round(mix*100)+'%';}
  },{signal});
  root.querySelectorAll('[data-secondary]').forEach(btn=>btn.addEventListener('click',()=>{say('보조 작업 선택: '+btn.textContent,'Selected: '+btn.textContent);root.querySelector('.bl-secondary-menu').hidden=true;action.setAttribute('aria-expanded','false');},{signal}));
  root.querySelector('.bl-scrollbox')?.addEventListener('scroll',updateScroll,{signal,passive:true});

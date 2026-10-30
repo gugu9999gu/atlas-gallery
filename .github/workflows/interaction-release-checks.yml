@@ -10,6 +10,8 @@ on:
       - scripts/test-preview-layout.py
       - scripts/test-card-prompts.py
       - scripts/test-backlog-batch.py
+      - scripts/test-next-studies.py
+      - data/next-studies.tsv
       - data/backlog-studies.tsv
       - scripts/review-webgl.py
       - worker-v32.mjs
@@ -52,6 +54,7 @@ jobs:
           python scripts/test-preview-layout.py
           python scripts/test-card-prompts.py
           python scripts/test-backlog-batch.py
+          python scripts/test-next-studies.py
           npx wrangler deploy --config wrangler-v32.jsonc --dry-run --outdir /tmp/atlas-worker-check
       - name: Save verification reports and rendered review images
         if: always()
@@ -64,6 +67,7 @@ jobs:
             qa/live-preview-layout-v325.json
             qa/card-prompt-tests-v325.json
             qa/backlog-batch-v326.json
+            qa/next-studies-v327.json
             qa/build-v32.json
             qa/webgl-review-v32.json
             qa/v32-desktop.png

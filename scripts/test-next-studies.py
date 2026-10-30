@@ -49,7 +49,7 @@ with sync_playwright() as pw:
                 if status.inner_text()==before and key not in ('n27-variablejump',):issues.append('No feedback '+key)
             elif key in ('n27-contrast','n27-nineslice','n27-deadzone'):
                 slider=stage.locator('[data-n27-range]')
-                slider.fill('80' if key!='n27-deadzone' else '60')
+                slider.fill('190' if key=='n27-nineslice' else '60' if key=='n27-deadzone' else '80')
                 if status.inner_text()==before:issues.append('No slider feedback '+key)
             if key=='n27-cooldown' and primary.is_enabled():issues.append('Cooldown did not disable action')
             if key=='n27-progression' and stage.locator('.n27-meter-fill').evaluate('e=>parseFloat(e.style.width)')<=0:issues.append('XP meter unchanged')

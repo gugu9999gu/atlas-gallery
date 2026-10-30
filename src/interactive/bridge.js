@@ -1,6 +1,7 @@
 /* Included inside the existing application closure, before init(). */
 const ixRecipes=new Map(entries.filter(e=>e.demo).map(e=>[e.id,{...e.demo,title:e.en}]));
 const ixOldArt=art,ixOldView=referenceView,ixOldNotice=previewNotice,ixOldControls=demoControls;
+function isImplementationPlanned(e){return e?.implementation_status==='planned'||(!e?.demo&&!referenceView(e).specific);}
 referenceView=function(e){return e.demo?{html:'',mode:e.demo.engine==='three'?'webgl':'interactive',type:'실시간 모션 예시',key:e.demo.key,specific:true}:ixOldView(e);};
 art=function(e){
  if(!e.demo){
@@ -11,14 +12,16 @@ art=function(e){
  const engine=e.demo.engine==='three'?'THREE.JS / WEBGL':e.demo.key.startsWith('mg-')?'CSS / SVG / JAVASCRIPT':'HTML · CSS · JAVASCRIPT';
  return {html:`<div class="scene scene-live" data-preview-key="${esc(e.demo.key)}"><span class="live-engine-label">${engine}</span><div class="ix-demo" data-live-demo="${esc(e.id)}" data-engine="${esc(e.demo.engine)}">${e.demo.engine==='three'?`<p class="ix-three-loading">${tr('실제 3D 미리보기','Real 3D preview')}</p>`:AtlasKit.markup(e.demo.key,locale)}</div></div>`,mode:e.demo.engine==='three'?'webgl':'interactive',previewType:'실시간 모션 예시',key:e.demo.key,specific:true};
 };
-previewNotice=function(e,a){if(e.demo?.key?.startsWith('mg-'))return tr('ATLAS가 CSS·SVG로 구현한 동작 원리 시연입니다. Adobe After Effects 및 전문 합성 도구의 실제 출력물과는 다를 수 있습니다. 재생·일시정지·배속 및 전체 HTML 코드 복사를 지원합니다.','An original CSS/SVG motion study by ATLAS, not an actual render from Adobe After Effects or a compositing tool. Replay, pause, speed control and full standalone HTML export are supported.');return e.demo?tr('이 예제는 카드 안에서 실제로 실행됩니다. 코드 복사는 같은 구현의 독립 HTML을 제공합니다. 마우스 움직임은 이 예제 내부에서만 처리하며 분석 서버로 전송하지 않습니다.','This example runs inside the card. Copy code returns standalone HTML using the same implementation. Pointer movement stays inside the example and is not transmitted to an analytics server.')+(e.demo.engine==='three'?tr(' Three.js 0.180.0 · 실제 WebGL 렌더링.',' Three.js 0.180.0 · real WebGL rendering.'):''):ixOldNotice(e,a);};
+previewNotice=function(e,a){if(isImplementationPlanned(e))return tr('구현 예정: 현재는 정의·적용 관계만 보여주는 개념 도식입니다. 실제 동작·라이브러리 실행 화면은 아직 제공되지 않습니다. 코드 복사는 이 설명용 도식만 복사합니다.','Planned: this card currently shows a conceptual diagram, not a running demo or the referenced library. Copy code exports only the explanatory diagram.');if(e.demo?.key?.startsWith('mg-'))return tr('ATLAS가 CSS·SVG로 구현한 동작 원리 시연입니다. Adobe After Effects 및 전문 합성 도구의 실제 출력물과는 다를 수 있습니다. 재생·일시정지·배속 및 전체 HTML 코드 복사를 지원합니다.','An original CSS/SVG motion study by ATLAS, not an actual render from Adobe After Effects or a compositing tool. Replay, pause, speed control and full standalone HTML export are supported.');return e.demo?tr('이 예제는 카드 안에서 실제로 실행됩니다. 코드 복사는 같은 구현의 독립 HTML을 제공합니다. 마우스 움직임은 이 예제 내부에서만 처리하며 분석 서버로 전송하지 않습니다.','This example runs inside the card. Copy code returns standalone HTML using the same implementation. Pointer movement stays inside the example and is not transmitted to an analytics server.')+(e.demo.engine==='three'?tr(' Three.js 0.180.0 · 실제 WebGL 렌더링.',' Three.js 0.180.0 · real WebGL rendering.'):''):ixOldNotice(e,a);};
 demoControls=function(e){return e.demo?'':ixOldControls(e);};
 const ixOldCard=card;
 function referencePath(e,language=locale){return (language==='en'?'/en':'')+'/reference/'+encodeURIComponent(e.canonical_id||e.id)+'/';}
 card=function(e){
  let html=ixOldCard(e);
- const kind=e.demo?.engine==='three'?'Three.js':e.demo?.key?.startsWith('mg-')?'CSS · SVG · JS':e.demo?'HTML · CSS · JS':waveRegistry.get(e.en)?.interactive?tr('SVG 모션 예시','SVG motion study'):tr('미리보기 코드','Preview code');
+ const planned=isImplementationPlanned(e);
+ const kind=planned?tr('개념 도식 코드','Concept diagram code'):e.demo?.engine==='three'?'Three.js':e.demo?.key?.startsWith('mg-')?'CSS · SVG · JS':e.demo?'HTML · CSS · JS':waveRegistry.get(e.en)?.interactive?tr('SVG 모션 예시','SVG motion study'):tr('미리보기 코드','Preview code');
  html=html.replace('<span class="card-link">'+t('more')+' '+icon('arrow')+'</span>','');
+ if(planned){const marker=tr('구현 예정','Planned');html=html.replace('<div class="card-meta">','<div class="card-meta"><span class="preview-pending" aria-label="'+esc(tr('실행형 미리보기 구현 예정','Interactive preview planned'))+'">'+marker+'</span>');html=html.replace(/<span class="preview-kind">[^<]*<\/span>/,'<span class="preview-kind pending-preview-kind">'+marker+'</span>');}
  // Show both language labels with independent, immediately adjacent copy icons.
  const originalNames=`<h4 class="card-title">${esc(localTitle(e))}</h4><div class="card-en" lang="${locale==='en'?'ko':'en'}">${esc(locale==='en'?e.ko:e.en)}</div>`;
  const names=(locale==='en'?[['en',e.en],['ko',e.ko]]:[['ko',e.ko],['en',e.en]]).map(([lang,name],i)=>{
@@ -90,13 +93,14 @@ const ixOldNext=renderNext;
 renderNext=function(count=PAGE){if(state.rendered===0)ixStaticObserver?.disconnect();ixOldNext(count);hydrateLive(q('#cards'));hydrateStatic(q('#cards'));};
 const ixOldDetail=renderDetail;
 renderDetail=function(id){ixOldDetail(id);const e=byId.get(id);if(!e)return;
+ if(isImplementationPlanned(e)){const heading=q('#detail-body .drawer-cat');if(heading){const label=document.createElement('span');label.className='preview-pending-detail';label.textContent=tr('구현 예정 · 개념 도식만 제공','Planned · conceptual diagram only');heading.after(label);}}
  const actions=q('.drawer-actionbar');if(actions){const button=document.createElement('button');button.type='button';button.dataset.copyCode=e.id;button.innerHTML=icon('code')+' '+tr('코드 복사','Copy code');actions.prepend(button);}
  hydrateLive(q('#detail-body'));hydrateStatic(q('#detail-body'));
 };
 const ixOldClose=closeDetail;
 closeDetail=function(){ixOldClose();AtlasKit.cleanup();};
 const ixOldPreviewControls=renderPreviewControls;
-renderPreviewControls=function(){const keep=previewFilter;ixOldPreviewControls();const select=q('#preview-filter');for(const [value,ko,en] of [['interactive','실행형 인터랙션','Live interactions'],['three','실제 3D · Three.js','Real 3D · Three.js']]){const o=document.createElement('option');o.value=value;o.textContent=tr(ko,en);select.append(o);}select.value=keep;};
+renderPreviewControls=function(){const keep=previewFilter;ixOldPreviewControls();const select=q('#preview-filter');const pendingOption=select.querySelector('option[value="diagram"]');if(pendingOption)pendingOption.textContent=tr('구현 예정 · 개념 도식','Planned · Concept diagrams');for(const [value,ko,en] of [['interactive','실행형 인터랙션','Live interactions'],['three','실제 3D · Three.js','Real 3D · Three.js']]){const o=document.createElement('option');o.value=value;o.textContent=tr(ko,en);select.append(o);}select.value=keep;const count=entries.filter(e=>isImplementationPlanned(e)).length;const stats=q('#preview-controls .controls-caption');if(stats)stats.textContent=tr('미리보기 구현 '+number(entries.length-count)+'개 · 구현 예정 '+number(count)+'개','Specific previews '+number(entries.length-count)+' · Planned '+number(count));};
 const ixOldFeature=renderFeature;
 renderFeature=function(){ixOldFeature();const feature=q('#analytics-feature');let lab=q('#interactive-feature');if(!lab){lab=document.createElement('section');lab.id='interactive-feature';lab.className='interactive-feature';feature.before(lab);}lab.innerHTML=`<div><span class="eyebrow">INTERACTION LAB / 3.2</span><h2>${tr('움직여 보고, 눌러 보고, 코드로 가져가세요.','Move it. Click it. Make it yours.')}</h2><p>${tr('호버·클릭·포인터 추적부터 실제 입체 카드까지. 카드에서 바로 실행하고 전체 HTML 코드를 복사하세요.','From hover and pointer effects to real 3D cards. Try each example in its card and copy the complete HTML.')}</p></div><div class="interactive-feature-actions"><button type="button" data-live-collection="interactive">${tr('인터랙션','Interactions')} <b>${ixRecipes.size}</b> ${icon('arrow')}</button><button type="button" data-live-collection="three">Three.js <b>${entries.filter(e=>e.demo?.engine==='three').length}</b></button><a href="${locale==='en'?'/en':''}/references/">${tr('검색 가능한 용어집','Crawlable glossary')} ↗</a></div>`;};
 function collectionLive(kind){

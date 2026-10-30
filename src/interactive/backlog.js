@@ -96,7 +96,7 @@ function mount(root,key,language='ko',options={}){
    else root.querySelectorAll('.bl-runner').forEach(dot=>animate(dot,[{transform:'translateX(0)'},{transform:'translateX(115px)'}],{duration:900,easing:dot.dataset.ease}));
    say('이징과 시간 경과를 비교합니다.','Comparing timing and easing.');return;
   }
-  if(key==='bl-budget'){root.querySelectorAll('.bl-budget-bar').forEach((el,i)=>el.style.setProperty('--h',((i*17+state*19)%54+12)+'px');say('가상 프레임 막대를 바꿨습니다.','Changed illustrative frame bars.');return;}
+  if(key==='bl-budget'){root.querySelectorAll('.bl-budget-bar').forEach((el,i)=>el.style.setProperty('--h',((i*17+state*19)%54+12)+'px'));say('가상 프레임 막대를 바꿨습니다.','Changed illustrative frame bars.');return;}
   if(key==='bl-reflow'||key==='bl-flip'){
    const tiles=[...root.querySelectorAll('.bl-tile')],first=tiles.map(x=>x.getBoundingClientRect());
    const grid=root.querySelector('.bl-grid');grid.classList.toggle('bl-wide');

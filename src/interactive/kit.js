@@ -3,13 +3,14 @@
  */
 (function(global){
 'use strict';
-const VERSION='3.2.6';
+const VERSION='3.2.7';
 const THREE_VERSION='0.180.0';
 const THREE_URL=global.ATLAS_THREE_URL||'/assets/vendor/three-0.180.0.module.min.js';
 let threePromise;
 const mounted=new Map();
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function markup(kind,language='ko'){
+ if(window.AtlasNext?.supports(kind))return window.AtlasNext.markup(kind,language);
  if(window.AtlasBacklog?.supports(kind))return window.AtlasBacklog.markup(kind,language);
  if(window.AtlasMotionGraphics?.supports(kind))return window.AtlasMotionGraphics.markup(kind,language);
  if(window.AtlasFoundations?.supports(kind))return window.AtlasFoundations.markup(kind,language);
@@ -21,6 +22,7 @@ function markup(kind,language='ko'){
  return `<div class="ix-stage" data-kind="${kind}" lang="${language}" tabindex="0" role="group" aria-label="${ko?'직접 조작하는 예제':'Interactive example'}"><div class="ix-grid" aria-hidden="true"></div><div class="ix-light" aria-hidden="true"></div><div class="ix-trail" aria-hidden="true"></div><div class="ix-cross" aria-hidden="true"></div><div class="ix-tiles" aria-hidden="true">${Array.from({length:9},(_,i)=>`<i data-tile="${i}"></i>`).join('')}</div><div class="ix-object"><div class="ix-graphic" aria-hidden="true"><i></i><i></i><i></i></div><span class="ix-kicker">ATLAS / LAB</span><strong class="ix-head">${track?'FOLLOW':drag?'MOVE':click?'MAKE IT':'HELLO.'}</strong><div class="ix-line" aria-hidden="true"></div><div class="ix-extra">${ko?'다음 장면을 발견하세요.':'Discover the next scene.'}</div><div class="ix-alt" aria-hidden="true"><strong>ANOTHER<br>VIEW.</strong></div><div class="ix-check" aria-hidden="true"><svg viewBox="0 0 80 80"><path d="M15 40 32 56 65 22"/></svg></div><div class="ix-knob" aria-hidden="true"></div><div class="ix-meter" aria-hidden="true"></div></div><div class="ix-orbit-actions" aria-hidden="true"><i>＋</i><i>↗</i><i>★</i></div><span class="ix-follower" aria-hidden="true"></span><button type="button" class="ix-trigger">${ko?(drag?'드래그 / 방향키':track?'움직여 보세요':kind==='press-hold'?'길게 누르기':click?'클릭 / 탭':'호버 / 초점'):drag?'Drag / arrow keys':track?'Move pointer':kind==='press-hold'?'Press and hold':click?'Click / tap':'Hover / focus'}</button><input class="ix-range" type="range" min="0" max="100" value="50" aria-label="${ko?'전후 비교 비율':'Before and after split'}"${kind==='drag-compare'?'':' hidden'}><output class="ix-readout" aria-live="off">${ko?'직접 조작해 보세요':'Try the interaction'}</output></div>`;
 }
 function mountDOM(root,kind,language='ko',options={}){
+ if(window.AtlasNext?.supports(kind))return window.AtlasNext.mount(root,kind,language,options);
  if(window.AtlasBacklog?.supports(kind))return window.AtlasBacklog.mount(root,kind,language,options);
  if(window.AtlasMotionGraphics?.supports(kind))return window.AtlasMotionGraphics.mount(root,kind,language,options);
  if(window.AtlasFoundations?.supports(kind))return window.AtlasFoundations.mount(root,kind,language,options);
@@ -281,6 +283,7 @@ function cleanup(){for(const [root,rec] of mounted)if(!root.isConnected){rec.dis
 function code(recipe,language='ko',css=''){
  const name=escape(recipe.title||recipe.en||recipe.key),ko=language==='ko';
  const header='<!doctype html>\n<html lang="'+language+'">\n<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+name+' — ATLAS example</title>\n<style>html{font-size:16px}body{margin:0;padding:24px;background:#edf1f8;font-family:system-ui,sans-serif;font-size:16px}main{max-width:640px;margin:auto}h1{font-size:24px}p{font-size:16px;line-height:1.7}.ix-demo{height:340px;border-radius:20px;overflow:hidden}button,input{font:inherit}\n'+css+'\n</style></head><body><main><h1>'+name+'</h1><p>'+(ko?'포인터·터치 또는 키보드로 조작하세요. 실제 개인정보나 서버 요청을 사용하지 않는 독립 실행 예제입니다.':'Use pointer, touch or keyboard input. This is a standalone demonstration without analytics or server requests.')+'</p><div id="demo" class="ix-demo"></div></main>\n';
+ if(recipe.engine==='dom'&&global.AtlasNext?.supports(recipe.key))return header+'<script>\n'+global.AtlasNext.source+'\nconst root=document.getElementById("demo");root.innerHTML=AtlasNext.markup('+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');const example=AtlasNext.mount(root.firstElementChild,'+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');window.addEventListener("pagehide",()=>example.dispose(),{once:true});\n</'+'script></body></html>';
  if(recipe.engine==='dom'&&global.AtlasBacklog?.supports(recipe.key))return header+'<script>\n'+global.AtlasBacklog.source+'\nconst root=document.getElementById("demo");root.innerHTML=AtlasBacklog.markup('+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');const example=AtlasBacklog.mount(root.firstElementChild,'+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');window.addEventListener("pagehide",()=>example.dispose(),{once:true});\n</'+'script></body></html>';
  if(recipe.engine==='dom'&&global.AtlasMotionGraphics?.supports(recipe.key))return header+'<script>\n'+global.AtlasMotionGraphics.source+'\nconst root=document.getElementById("demo");root.innerHTML=AtlasMotionGraphics.markup('+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');const example=AtlasMotionGraphics.mount(root.firstElementChild,'+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');window.addEventListener("pagehide",()=>example.dispose(),{once:true});\n</'+'script></body></html>';
  if(recipe.engine==='dom'&&global.AtlasFoundations?.supports(recipe.key))return header+'<script>\n'+global.AtlasFoundations.source+'\nconst root=document.getElementById("demo");root.innerHTML=AtlasFoundations.markup('+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');const example=AtlasFoundations.mount(root.firstElementChild,'+JSON.stringify(recipe.key)+','+JSON.stringify(language)+');window.addEventListener("pagehide",()=>example.dispose(),{once:true});\n</'+'script></body></html>';

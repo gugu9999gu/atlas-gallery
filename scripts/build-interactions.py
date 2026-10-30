@@ -6,7 +6,7 @@ from collections import Counter
 import json, re, hashlib, html, shutil
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'public'
-VERSION='3.2.4'
+VERSION='3.2.5'
 DATE='2026-10-30'
 ORIGIN='https://atlas-gallery.app'
 
@@ -140,7 +140,7 @@ REFERENCE_DEMO='''document.addEventListener('DOMContentLoaded',()=>{const p=JSON
 
 def main():
     db,lang,added,upgraded=merge();canonical=[e for e in db['entries'] if not e.get('canonical_id')]
-    css='\n'.join((ROOT/'src'/p).read_text(encoding='utf-8') for p in ['style.css','advertising.css','interactive/style.css','interactive/patterns.css','interactive/foundations.css','interactive/mograph.css','interactive/layout.css','preview-visual-quality.css'])
+    css='\n'.join((ROOT/'src'/p).read_text(encoding='utf-8') for p in ['style.css','advertising.css','interactive/style.css','interactive/patterns.css','interactive/foundations.css','interactive/mograph.css','interactive/layout.css','preview-visual-quality.css','interactive/card-prompts.css'])
     css=minimum_css(css)
     app=(ROOT/'src/app.js').read_text(encoding='utf-8')
     modules='\n'.join((ROOT/'src/previews'/name).read_text(encoding='utf-8') for name in ['core.js','motion.js','vfx.js','maps.js','model.js','finalize.js'])
@@ -149,7 +149,7 @@ def main():
     new="previewFilter==='all'||(previewFilter==='interactive'?!!e.demo:previewFilter==='three'?e.demo?.engine==='three':(previewFilter==='expanded'?waveRegistry.has(e.en):(previewFilter==='specific')===referenceView(e).specific))"
     if old not in app:raise RuntimeError('Expected preview filter not found')
     app=app.replace(old,new)
-    bridge=(ROOT/'src/interactive/bridge.js').read_text(encoding='utf-8')
+    bridge=(ROOT/'src/interactive/card-prompts.js').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/bridge.js').read_text(encoding='utf-8')
     if app.count('\ninit();\n')!=1:raise RuntimeError('Expected one app init')
     app=app.replace('\ninit();\n','\n'+bridge+'\ninit();enhanceInit();\n')
     app=re.sub(r'font-size="\$\{size\}"','font-size="${Math.max(14,size)}"',app)

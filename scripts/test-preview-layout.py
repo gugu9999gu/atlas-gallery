@@ -55,16 +55,26 @@ with sync_playwright() as pw:
         counts.append({'size':f'{width}x{height}','inspected':len(subset),'layout_errors':len(findings)})
         if findings:failures.append(f'{width}x{height}: '+json.dumps(findings[:6],ensure_ascii=False))
         if width==320:
-            node=page.locator('.ix-demo[data-key="mg-kinetic"] .mg-stage')
-            node.scroll_into_view_if_needed()
-            page.wait_for_function("document.querySelector('.ix-demo[data-key=mg-kinetic] .mg-stage')?.classList.contains('mg-playing')",timeout=7000)
-            first=node.locator('.mg-anim').first
-            before=first.evaluate('(el)=>({state:getComputedStyle(el).animationPlayState,time:el.getAnimations()[0]?.currentTime})')
-            page.wait_for_timeout(170)
-            after=first.evaluate('(el)=>({state:getComputedStyle(el).animationPlayState,time:el.getAnimations()[0]?.currentTime})')
-            if before['state']!='running' or after['time'] is None or after['time']<=before['time']:failures.append('Visible kinetic typography timeline does not advance')
-            node.locator('.mg-pause').click()
-            if first.evaluate('(el)=>getComputedStyle(el).animationPlayState')!='paused':failures.append('Pause did not stop the kinetic animation')
+            # Every motion study must have a working clock, pause/replay, and static reduced-motion frame.
+            for recipe in motion:
+                node=page.locator(f'.ix-demo[data-key="{recipe["key"]}"] .mg-stage')
+                node.scroll_into_view_if_needed()
+                page.wait_for_function('key=>document.querySelector(\'.ix-demo[data-key="\'+key+\'"] .mg-stage\')?.classList.contains("mg-playing")',arg=recipe['key'],timeout=7000)
+                first=node.locator('.mg-anim').first
+                before=first.evaluate('(el)=>({state:getComputedStyle(el).animationPlayState,time:el.getAnimations()[0]?.currentTime})')
+                page.wait_for_timeout(90)
+                after=first.evaluate('(el)=>({state:getComputedStyle(el).animationPlayState,time:el.getAnimations()[0]?.currentTime})')
+                if before['state']!='running' or after['time'] is None or after['time']<=before['time']:
+                    failures.append('Motion timeline did not advance: '+recipe['key'])
+                node.locator('.mg-pause').click()
+                if first.evaluate('(el)=>getComputedStyle(el).animationPlayState')!='paused':failures.append('Pause failed: '+recipe['key'])
+                node.locator('.mg-replay').click()
+                if node.locator('.mg-pause').get_attribute('aria-pressed')!='false':failures.append('Replay failed: '+recipe['key'])
+            page.emulate_media(reduced_motion='reduce')
+            page.wait_for_timeout(60)
+            states=page.evaluate("[...document.querySelectorAll('.mg-stage')].map(e=>({key:e.dataset.kind,still:e.classList.contains('mg-still'),animation:getComputedStyle(e.querySelector('.mg-anim')).animationName}))")
+            if any(not x['still'] or x['animation']!='none' for x in states):
+                failures.append('Reduced motion not respected: '+str([x for x in states if not x['still'] or x['animation']!='none'][:5]))
         page.close()
     browser.close()
 

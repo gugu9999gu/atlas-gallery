@@ -1,3 +1,13 @@
+# ATLAS Gallery v3.2.7 — 신규 미구현 항목 20개 실행형 보강 (2026-10-30)
+
+- 기존 canonical ID 20개에 **실제 조작 가능한** HTML/CSS/JavaScript 학습용 시연을 추가했습니다. 아이콘 상태 4종, 게임 조작·피드백 13종, 사용자 흐름·반응형 3종입니다.
+- 대표 항목: Permission Denied Indicator, Non-text Contrast, Icon State Variant, Nine-slice Scaling, Coyote Time, Jump Buffer, Variable Jump Height, Cooldown, Stamina System, Hitbox, Hurtbox, Invincibility Frames, Parry Window, Dead Zone, Hit Stop, Damage Number, Fog of War, Progression System, User Flow, Responsive QA.
+- 카드별 한·영 명칭 복사, 스크롤형 예시 프롬프트, 코드 복사, `구현 예정` 상태, 독립 HTML 예제 및 기존 기능을 유지합니다.
+- **GitHub 정적 소스 계열**은 2,189개 중 1,204개 구체적 시각/실행 예시(55.0%), 남은 985개 구현 예정으로 집계됩니다. 각 항목의 정확한 구현 상태는 빌드가 생성하는 `qa/preview-progress.json`에서 확인합니다.
+- **Cloudflare 운영 계열은 GitHub 소스와 별도**로 발전한 v3.10이었으며 2,153개 항목 중 906개가 도식이었습니다. 새 기능을 이 운영 계열에 안전하게 이식한 **ATLAS v3.11** 릴리스에서는 기존 391개 직접 조작 카드에 20개를 더해 411개, 도식은 886개입니다. 두 데이터셋의 숫자를 합산하지 않습니다.
+- 검증: `scripts/test-next-studies.py`, 기존 인터랙션/Three.js/광고/미리보기/모바일 테스트. R2 `releases/v310`과 `releases/v39`는 삭제하지 않고 유지하며 새 릴리스는 `releases/v311`을 사용합니다.
+- 실제 이용 가능한 기능은 HTML·CSS·브라우저 API의 원리 시연입니다. 게임 엔진의 네이티브 렌더링·실측 프레임·상용 툴과의 동등성을 주장하지 않습니다.
+
 # ATLAS Gallery v3.2.6
 
 ## v3.2.6 미구현 미리보기 계속 구현 / 구현 예정 상태 (2026-10-30)

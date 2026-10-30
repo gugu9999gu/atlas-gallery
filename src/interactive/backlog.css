@@ -122,3 +122,19 @@ html.motion-paused .bl-stage *{animation-play-state:paused!important;transition-
 .dark-mode .term-card .preview-pending,.dark-mode .preview-pending-detail{background:#29354b;color:#d5e3f4;border-color:#61718c}
 .dark-mode .term-card .pending-preview-kind{color:#bed0e8}
 @media(max-width:400px){.term-card .card-meta{gap:7px;flex-wrap:wrap}.term-card .preview-pending{padding:3px 6px}}
+
+
+/* Distinguish discrete frame stepping, sprite-sheet playback and weighted layer blending. */
+.bl-stage[data-kind="bl-frames"].bl-playing .bl-sprite-strip.bl-autoplay{animation:none!important}
+.bl-stage[data-kind="bl-frames"] .bl-sprite-strip{transition:none!important}
+.bl-stage[data-kind="bl-blending"] .bl-layer-a{opacity:calc(1 - var(--bl-mix,.4));transition:opacity .25s}
+.bl-stage[data-kind="bl-blending"] .bl-layer-b{opacity:var(--bl-mix,.4);mix-blend-mode:normal;transition:opacity .25s}
+.bl-stage[data-kind="bl-blending"].is-active .bl-layer-a,.bl-stage[data-kind="bl-blending"].is-active .bl-layer-b{transform:none}
+.bl-blend-value{display:block;font-size:14px;line-height:1.25;color:#e0f4fe;font-variant-numeric:tabular-nums}
+.bl-additive-canvas{position:relative;display:grid;place-items:center;width:180px;height:100px}
+.bl-additive-base{display:grid;place-items:center;width:82px;height:70px;border-radius:14px;background:#4b81b7;box-shadow:0 8px 20px #09142688}
+.bl-additive-extra{display:grid;place-items:center;width:50px;height:50px;border-radius:12px;background:#9de8d5;color:#163450;font-size:24px}
+.bl-stage.bl-playing .bl-additive-base{animation:bl-add-base 2s ease-in-out infinite}
+.bl-stage.bl-playing .bl-additive-extra{animation:bl-add-extra .56s ease-in-out infinite}
+@keyframes bl-add-base{0%,100%{transform:translateX(-30px)}50%{transform:translateX(30px)}}
+@keyframes bl-add-extra{0%,100%{transform:rotate(-10deg)}50%{transform:rotate(10deg) translateY(-8px)}}

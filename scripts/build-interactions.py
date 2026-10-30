@@ -6,8 +6,8 @@ from collections import Counter
 import json, re, hashlib, html, shutil
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'public'
-VERSION='3.2.3'
-DATE='2026-10-29'
+VERSION='3.2.4'
+DATE='2026-10-30'
 ORIGIN='https://atlas-gallery.app'
 
 def load(name):return json.loads((ROOT/'data'/name).read_text(encoding='utf-8'))
@@ -22,25 +22,31 @@ def minimum_css(s):
 def merge():
     db=load('atlas-gallery-bilingual.json');lang=load('i18n.json')
     category_names={'호버·포커스':'Hover and focus','포인터 추적':'Pointer tracking','클릭·탭 피드백':'Click and tap feedback','드래그·제스처':'Drag and gesture','실시간 3D':'Real-time 3D'}
+    motion_categories={'타이포·브랜드 모션':'Typography & brand motion','셰이프·마스크·레이어':'Shapes, masks & layers','타임라인·속도 설계':'Timeline & timing','합성·절차적 이펙트':'Compositing & procedural effects'}
     existing={e['en'].lower():e for e in db['entries'] if not e.get('canonical_id')}
     added=[];upgraded=[]
     for line in (ROOT/'data/interaction-recipes.tsv').read_text(encoding='utf-8').splitlines():
         if not line or line.startswith('#'):continue
         key,en,ko,engine,category,description,english=line.split('|')
+        is_mograph=key.startswith('mg-')
+        source=('https://helpx.adobe.com/kr/after-effects/desktop/animating-text/text-animation/animating-text.html' if category=='타이포·브랜드 모션' else
+                'https://helpx.adobe.com/kr/after-effects/desktop/animate-in-after-effects/animate-shape-paths-and-masks/animating-shape-paths-masks.html' if category=='셰이프·마스크·레이어' else
+                'https://helpx.adobe.com/after-effects/desktop/animate-in-after-effects/assorted-animation-tools/assorted-animation-tools.html' if category=='타임라인·속도 설계' else
+                'https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API') if is_mograph else ('https://threejs.org/docs/' if engine=='three' else 'https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events')
         if en.lower() in existing:
             e=existing[en.lower()];upgraded.append(e['id'])
         else:
-            e={'id':'atlas-ix-'+key,'domain':'인터랙션 실습','category':category,'kind':'용어·패턴','en':en,'ko':ko,'description':description,
-               'usage':'카드 안에서 포인터·터치·키보드로 직접 조작하고, 코드 복사로 독립 HTML 예제를 확인합니다.',
-               'notes':'직접 제작한 학습용 예제입니다. 제품 제공자의 공식 데모가 아니며, 적용 전에 접근성·성능·사용 목적을 검토하세요.',
-               'ecosystem':'Three.js 0.180.0 / WebGL' if engine=='three' else 'HTML / CSS / JavaScript / Pointer Events',
-               'aliases':en+'; '+ko,'source_url':'https://threejs.org/docs/' if engine=='three' else 'https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events',
-               'source_scope':'구현 API 참고문서','source_status':'공식 링크 수록·개별 본문 미확인','source_checked_on':'',
+            e={'id':'atlas-ix-'+key,'domain':'모션그래픽' if is_mograph else '인터랙션 실습','category':category,'kind':'용어·패턴','en':en,'ko':ko,'description':description,
+               'usage':('재생·일시정지·배속을 카드에서 조절하고 실행 가능한 HTML/CSS/SVG 예제를 복사합니다.' if is_mograph else '카드 안에서 포인터·터치·키보드로 직접 조작하고, 코드 복사로 독립 HTML 예제를 확인합니다.'),
+               'notes':('ATLAS가 CSS/SVG로 원리를 시연한 독자적 예시입니다. Adobe After Effects나 전문 합성·렌더링 엔진의 출력물과 동일하지 않으며 실제 효과 구현과 성능은 다를 수 있습니다. 움직임 감소 설정을 존중하세요.' if is_mograph else '직접 제작한 학습용 예제입니다. 제품 제공자의 공식 데모가 아니며, 적용 전에 접근성·성능·사용 목적을 검토하세요.'),
+               'ecosystem':'HTML / CSS Animations / SVG' if is_mograph else ('Three.js 0.180.0 / WebGL' if engine=='three' else 'HTML / CSS / JavaScript / Pointer Events'),
+               'aliases':en+'; '+ko,'source_url':source,
+               'source_scope':'모션 기법 분야 참고문서' if is_mograph else '구현 API 참고문서','source_status':'편집 설명을 보조하는 공식 분야 참고 링크' if is_mograph else '공식 링크 수록·개별 본문 미확인','source_checked_on':'',
                'origin':'ATLAS original interactive example','group':'concepts','term_class':'설명형 실무 명칭','related_ids':[],
-               'translations':{'en':{'description':english,'usage':'Interact with pointer, touch or keyboard inside the card. Copy code produces a standalone HTML example.',
-                 'notes':'An original learning example, not an official vendor demo. Review accessibility, performance and product requirements before reuse.'}}}
+               'translations':{'en':{'description':english,'usage':('Replay, pause and adjust speed on the card. Copy the runnable HTML/CSS/SVG study.' if is_mograph else 'Interact with pointer, touch or keyboard inside the card. Copy code produces a standalone HTML example.'),
+                 'notes':('Original ATLAS CSS/SVG illustration, not an output from After Effects or a professional compositor. Actual rendering and performance may differ. Respect reduced-motion preferences.' if is_mograph else 'An original learning example, not an official vendor demo. Review accessibility, performance and product requirements before reuse.')}}}
             db['entries'].append(e);existing[en.lower()]=e;added.append(e['id'])
-        e['demo']={'key':key,'engine':engine,'version':VERSION,'input':['pointer','touch','keyboard'],'code':'standalone-html','category':category}
+        e['demo']={'key':key,'engine':engine,'version':VERSION,'input':['pointer','touch','keyboard'] if not is_mograph else ['replay','pause','speed','keyboard'],'code':'standalone-html','category':category}
         e['preview']={'engine':'three-webgl' if engine=='three' else 'dom-interactive','key':key,'classification':'interactive','sampleData':False}
         e['modified_on']=DATE
 
@@ -79,10 +85,17 @@ def merge():
             db['categories'].append({'id':'IX'+str(list(category_names).index(category)+1),'name':category,'domain':'인터랙션 실습','count':0})
         lang['en']['categories'][category]=english
     lang['en']['domains']['인터랙션 실습']='Interaction Lab';lang['ko']['domains']['인터랙션 실습']='인터랙션 실습'
+    for index,(category,english) in enumerate(motion_categories.items(),1):
+        if not any(c['name']==category and c.get('domain')=='모션그래픽' for c in db['categories']):
+            db['categories'].append({'id':'MG'+str(index),'name':category,'domain':'모션그래픽','count':0})
+        lang['en']['categories'][category]=english
+        lang['ko']['categories'][category]=category
+    lang['en']['domains']['모션그래픽']='Motion Graphics';lang['ko']['domains']['모션그래픽']='모션그래픽'
     canonical=[e for e in db['entries'] if not e.get('canonical_id')]
     counts=Counter((e['domain'],e['category']) for e in canonical)
     for c in db['categories']:c['count']=counts[(c.get('domain'),c['name'])]
     db['metadata']['version']=VERSION;db['metadata']['modified_on']=DATE
+    db['metadata']['motion_graphics_edition']={'version':VERSION,'studies':sum(1 for e in canonical if e.get('demo',{}).get('key','').startswith('mg-')),'categories':len(motion_categories)}
     db['metadata']['interaction_edition']={'version':VERSION,'total':len(added)+len(upgraded),'new':len(added),'upgraded':len(upgraded),'three':sum(e.get('demo',{}).get('engine')=='three' for e in canonical)}
     return db,lang,added,upgraded
 
@@ -127,7 +140,7 @@ REFERENCE_DEMO='''document.addEventListener('DOMContentLoaded',()=>{const p=JSON
 
 def main():
     db,lang,added,upgraded=merge();canonical=[e for e in db['entries'] if not e.get('canonical_id')]
-    css='\n'.join((ROOT/'src'/p).read_text(encoding='utf-8') for p in ['style.css','advertising.css','interactive/style.css','interactive/patterns.css','interactive/foundations.css','interactive/layout.css','preview-visual-quality.css'])
+    css='\n'.join((ROOT/'src'/p).read_text(encoding='utf-8') for p in ['style.css','advertising.css','interactive/style.css','interactive/patterns.css','interactive/foundations.css','interactive/mograph.css','interactive/layout.css','preview-visual-quality.css'])
     css=minimum_css(css)
     app=(ROOT/'src/app.js').read_text(encoding='utf-8')
     modules='\n'.join((ROOT/'src/previews'/name).read_text(encoding='utf-8') for name in ['core.js','motion.js','vfx.js','maps.js','model.js','finalize.js'])
@@ -148,8 +161,9 @@ def main():
     studies=(ROOT/'src/interactive/studies.js').read_text(encoding='utf-8')
     patterns=(ROOT/'src/interactive/patterns.js').read_text(encoding='utf-8')
     foundations=(ROOT/'src/interactive/foundations.js').read_text(encoding='utf-8')
-    interaction_css=(ROOT/'src/interactive/style.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/patterns.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/foundations.css').read_text(encoding='utf-8')
-    kit_prefix='<script>'+foundations+'</script>\n<script>'+patterns+'</script>\n<script>'+studies+'</script>\n<script>'+advanced+'</script>\n<script>'+kit+'</script>\n<script>window.ATLAS_INTERACTION_CSS='+embed(interaction_css)+';</script>\n'
+    mograph=(ROOT/'src/interactive/mograph.js').read_text(encoding='utf-8')
+    interaction_css=(ROOT/'src/interactive/style.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/patterns.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/foundations.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/mograph.css').read_text(encoding='utf-8')
+    kit_prefix='<script>'+foundations+'</script>\n<script>'+patterns+'</script>\n<script>'+studies+'</script>\n<script>'+advanced+'</script>\n<script>'+mograph+'</script>\n<script>'+kit+'</script>\n<script>window.ATLAS_INTERACTION_CSS='+embed(interaction_css)+';</script>\n'
     text=text.replace('<script>\n/*__APP_0__*/',kit_prefix+'<script>\n/*__APP_0__*/')
     if 'window.ATLAS_INTERACTION_CSS' not in text:text=text.replace('<script>/*__APP_0__*/',kit_prefix+'<script>/*__APP_0__*/')
     text=text.replace('/*__APP_0__*/',app)
@@ -158,7 +172,7 @@ def main():
     text=text.replace('<noscript>','<noscript><p><a href="/references/">전체 용어 설명 / All reference definitions</a></p>',1)
     OUT.mkdir(exist_ok=True);(OUT/'index.html').write_text(text,encoding='utf-8')
     asset=OUT/'assets';asset.mkdir(exist_ok=True)
-    (asset/'interaction-kit.js').write_text(foundations+'\n'+patterns+'\n'+studies+'\n'+advanced+'\n'+kit,encoding='utf-8');(asset/'interaction-style.css').write_text(interaction_css,encoding='utf-8');(asset/'reference.css').write_text(REFERENCE_CSS,encoding='utf-8');(asset/'reference-demo.js').write_text(REFERENCE_DEMO,encoding='utf-8')
+    (asset/'interaction-kit.js').write_text(foundations+'\n'+patterns+'\n'+studies+'\n'+advanced+'\n'+mograph+'\n'+kit,encoding='utf-8');(asset/'interaction-style.css').write_text(interaction_css,encoding='utf-8');(asset/'reference.css').write_text(REFERENCE_CSS,encoding='utf-8');(asset/'reference-demo.js').write_text(REFERENCE_DEMO,encoding='utf-8')
     vendor=ROOT/'node_modules/three/build';target=asset/'vendor';target.mkdir(exist_ok=True)
     if vendor.exists():
         shutil.copyfile(vendor/'three.module.min.js',target/'three-0.180.0.module.min.js');shutil.copyfile(vendor/'three.core.min.js',target/'three.core.min.js');shutil.copyfile(vendor.parent/'LICENSE',target/'THREE-LICENSE.txt')

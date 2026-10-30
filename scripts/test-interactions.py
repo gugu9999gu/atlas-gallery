@@ -78,8 +78,17 @@ with sync_playwright() as p:
         code=page.evaluate('(id)=>atlasInteractiveQA.code(id)',recipe['id'])
         demo=context.new_page();de=[];demo.on('pageerror',lambda e:de.append(str(e)))
         demo.set_content(code,wait_until='domcontentloaded')
-        stage=demo.locator('.ix-stage');rect=stage.bounding_box();key=recipe['key']
-        if key.startswith('fnd-'):
+        key=recipe['key']
+        stage=demo.locator('.mg-stage' if key.startswith('mg-') else '.ix-stage')
+        rect=stage.bounding_box()
+        if key.startswith('mg-'):
+            demo.locator('.mg-pause').click()
+            changed=stage.get_attribute('class').find('mg-user-paused')>=0
+            demo.locator('.mg-replay').click()
+            changed=changed and stage.get_attribute('class').find('mg-user-paused')<0
+            demo.locator('.mg-rate').select_option('2')
+            changed=changed and stage.evaluate("e=>e.style.getPropertyValue('--mg-rate')")=='0.5'
+        elif key.startswith('fnd-'):
             if key=='fnd-name':
                 demo.locator('[data-act=toggle]').click()
                 changed=demo.locator('.ix-fnd-icon').get_attribute('aria-label')!='Save'

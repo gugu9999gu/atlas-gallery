@@ -8,16 +8,16 @@ art=function(e){
   if((original.mode==='exact'||original.mode==='diagram')&&!waveRegistry.get(e.en)?.interactive&&original.html.startsWith('<div class="scene scene-reference '))original.html=original.html.replace('class="scene scene-reference ','class="scene scene-reference atlas-study-motion ');
   return original;
  }
- const engine=e.demo.engine==='three'?'THREE.JS / WEBGL':'HTML · CSS · JAVASCRIPT';
+ const engine=e.demo.engine==='three'?'THREE.JS / WEBGL':e.demo.key.startsWith('mg-')?'CSS / SVG / JAVASCRIPT':'HTML · CSS · JAVASCRIPT';
  return {html:`<div class="scene scene-live" data-preview-key="${esc(e.demo.key)}"><span class="live-engine-label">${engine}</span><div class="ix-demo" data-live-demo="${esc(e.id)}" data-engine="${esc(e.demo.engine)}">${e.demo.engine==='three'?`<p class="ix-three-loading">${tr('실제 3D 미리보기','Real 3D preview')}</p>`:AtlasKit.markup(e.demo.key,locale)}</div></div>`,mode:e.demo.engine==='three'?'webgl':'interactive',previewType:'실시간 모션 예시',key:e.demo.key,specific:true};
 };
-previewNotice=function(e,a){return e.demo?tr('이 예제는 카드 안에서 실제로 실행됩니다. 코드 복사는 같은 구현의 독립 HTML을 제공합니다. 마우스 움직임은 이 예제 내부에서만 처리하며 분석 서버로 전송하지 않습니다.','This example runs inside the card. Copy code returns standalone HTML using the same implementation. Pointer movement stays inside the example and is not transmitted to an analytics server.')+(e.demo.engine==='three'?tr(' Three.js 0.180.0 · 실제 WebGL 렌더링.',' Three.js 0.180.0 · real WebGL rendering.'):''):ixOldNotice(e,a);};
+previewNotice=function(e,a){if(e.demo?.key?.startsWith('mg-'))return tr('ATLAS가 CSS·SVG로 구현한 동작 원리 시연입니다. Adobe After Effects 및 전문 합성 도구의 실제 출력물과는 다를 수 있습니다. 재생·일시정지·배속 및 전체 HTML 코드 복사를 지원합니다.','An original CSS/SVG motion study by ATLAS, not an actual render from Adobe After Effects or a compositing tool. Replay, pause, speed control and full standalone HTML export are supported.');return e.demo?tr('이 예제는 카드 안에서 실제로 실행됩니다. 코드 복사는 같은 구현의 독립 HTML을 제공합니다. 마우스 움직임은 이 예제 내부에서만 처리하며 분석 서버로 전송하지 않습니다.','This example runs inside the card. Copy code returns standalone HTML using the same implementation. Pointer movement stays inside the example and is not transmitted to an analytics server.')+(e.demo.engine==='three'?tr(' Three.js 0.180.0 · 실제 WebGL 렌더링.',' Three.js 0.180.0 · real WebGL rendering.'):''):ixOldNotice(e,a);};
 demoControls=function(e){return e.demo?'':ixOldControls(e);};
 const ixOldCard=card;
 function referencePath(e,language=locale){return (language==='en'?'/en':'')+'/reference/'+encodeURIComponent(e.canonical_id||e.id)+'/';}
 card=function(e){
  let html=ixOldCard(e);
- const kind=e.demo?.engine==='three'?'Three.js':e.demo?'HTML · CSS · JS':waveRegistry.get(e.en)?.interactive?tr('SVG 모션 예시','SVG motion study'):tr('미리보기 코드','Preview code');
+ const kind=e.demo?.engine==='three'?'Three.js':e.demo?.key?.startsWith('mg-')?'CSS · SVG · JS':e.demo?'HTML · CSS · JS':waveRegistry.get(e.en)?.interactive?tr('SVG 모션 예시','SVG motion study'):tr('미리보기 코드','Preview code');
  html=html.replace('<span class="card-link">'+t('more')+' '+icon('arrow')+'</span>','');
  const actions=`<div class="card-code-actions"><button type="button" class="copy-card-code" data-copy-code="${esc(e.id)}" aria-label="${esc(localTitle(e)+' · '+tr('코드 복사','Copy code'))}">${icon('copy')}<span>${tr('코드 복사','Copy code')}</span></button><span class="code-format">${esc(kind)}</span><a class="reference-permalink" href="${referencePath(e)}" title="${tr('설명 문서 열기','Read reference page')}">${icon('external')}<span class="sr-only">${tr('설명 문서','Reference page')}</span></a><button type="button" data-open="${esc(e.id)}" class="card-detail-button">${tr('자세히','Details')}</button></div>`;
  return html.replace(/<\/div><\/article>$/,actions+'</div></article>');

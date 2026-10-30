@@ -74,7 +74,8 @@ with sync_playwright() as p:
     quiet.locator('[data-action=trigger]').click()
     check('reduced-motion-keeps-manual-toast-functional',quiet.locator('.ix-p-toast').get_attribute('aria-hidden')=='false')
     quiet.close()
-    for recipe in [r for r in recipes if r['engine']=='dom']:
+    # The new bl-* studies render .bl-stage, validated by test-backlog-batch.py.
+    for recipe in [r for r in recipes if r['engine']=='dom' and not r['key'].startswith('bl-')]:
         code=page.evaluate('(id)=>atlasInteractiveQA.code(id)',recipe['id'])
         demo=context.new_page();de=[];demo.on('pageerror',lambda e:de.append(str(e)))
         demo.set_content(code,wait_until='domcontentloaded')

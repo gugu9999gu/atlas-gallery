@@ -6,7 +6,7 @@ from collections import Counter
 import json, re, hashlib, html, shutil
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'public'
-VERSION='3.2.5'
+VERSION='3.2.6'
 DATE='2026-10-30'
 ORIGIN='https://atlas-gallery.app'
 
@@ -79,6 +79,28 @@ def merge():
                           'sampleData':True}
         entry['modified_on']=DATE
         implemented_patterns.append(entry['id'])
+    # Upgrade only genuine baseline diagrams, retaining every canonical ID.
+    baseline_pending={row['id'] for row in load_qa('remaining-previews.json')}
+    backlog_upgrades=[]
+    for line in (ROOT/'data/backlog-studies.tsv').read_text(encoding='utf-8').splitlines():
+        if not line.strip() or line.lstrip().startswith('#'):continue
+        key,record_id,en=line.split('|')
+        entry=next((e for e in db['entries'] if e['id']==record_id),None)
+        if not entry or entry.get('en')!=en or entry.get('canonical_id') or entry.get('demo') or entry['id'] not in baseline_pending:
+            raise RuntimeError('Backlog study must reference a pending canonical term: '+en)
+        if any(k['id']==entry['id'] for k in backlog_upgrades):raise RuntimeError('Duplicate upgrade: '+en)
+        entry['demo']={'key':key,'engine':'dom','version':VERSION,
+                       'input':['pointer','touch','keyboard'],'code':'standalone-html','category':entry['category']}
+        entry['preview']={'engine':'dom-interactive','key':key,'classification':'interactive-study','sampleData':True}
+        entry['modified_on']=DATE
+        backlog_upgrades.append({'id':entry['id'],'en':en,'key':key})
+    if len(backlog_upgrades)!=44:raise RuntimeError('Expected exactly 44 implemented backlog studies')
+    db['metadata']['backlog_live_upgrade_ids']=[e['id'] for e in backlog_upgrades]
+    canonical_now=[e for e in db['entries'] if not e.get('canonical_id')]
+    for entry in canonical_now:
+        entry['implementation_status']='planned' if entry['id'] in baseline_pending and not entry.get('demo') else 'implemented'
+    db['metadata']['planned_preview_count']=sum(e['implementation_status']=='planned' for e in canonical_now)
+    db['metadata']['specific_preview_count']=len(canonical_now)-db['metadata']['planned_preview_count']
     db['metadata']['ui_motion_preview_ids']=implemented_patterns
     for category,english in category_names.items():
         if not any(c['name']==category and c.get('domain')=='인터랙션 실습' for c in db['categories']):
@@ -95,6 +117,7 @@ def merge():
     counts=Counter((e['domain'],e['category']) for e in canonical)
     for c in db['categories']:c['count']=counts[(c.get('domain'),c['name'])]
     db['metadata']['version']=VERSION;db['metadata']['modified_on']=DATE
+    db['metadata']['backlog_edition']={'version':VERSION,'upgraded':len(backlog_upgrades),'ids':[e['id'] for e in backlog_upgrades]}
     db['metadata']['motion_graphics_edition']={'version':VERSION,'studies':sum(1 for e in canonical if e.get('demo',{}).get('key','').startswith('mg-')),'categories':len(motion_categories)}
     db['metadata']['interaction_edition']={'version':VERSION,'total':len(added)+len(upgraded),'new':len(added),'upgraded':len(upgraded),'three':sum(e.get('demo',{}).get('engine')=='three' for e in canonical)}
     return db,lang,added,upgraded
@@ -120,6 +143,9 @@ def reference_document(e,language,db,lang):
         {'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'ATLAS Gallery','item':ORIGIN+'/'},{'@type':'ListItem','position':2,'name':'References' if english else '용어 색인','item':ORIGIN+glossary},{'@type':'ListItem','position':3,'name':name,'item':url}]}]}
     example_label=('Three.js / real WebGL' if english else 'Three.js / 실제 WebGL') if e.get('demo',{}).get('engine')=='three' else ('Interactive HTML / CSS / JavaScript' if english else '직접 조작하는 HTML / CSS / JavaScript') if e.get('demo') else ('Illustrative study, not original product code' if english else '설명용 시각 예시 · 제품 원본 코드가 아닙니다')
     code_note='The gallery card provides a direct Copy code button. New interactive examples export the same runnable implementation; older concepts export the illustrative preview, not the referenced library itself.' if english else '갤러리 카드의 코드 복사 버튼에서 바로 복사할 수 있습니다. 직접 조작 예제는 같은 실행 구현을, 기존 개념 항목은 설명용 미리보기 코드를 제공합니다. 라이브러리 자체의 원본 코드를 뜻하지 않습니다.'
+    if e.get('implementation_status')=='planned':
+        example_label='Planned — concept diagram only, not a working preview' if english else '구현 예정 · 현재는 개념 도식만 제공'
+        code_note='Interactive preview is planned. The gallery currently offers a concept illustration, not runnable vendor code.' if english else '실행형 미리보기 구현 예정입니다. 현재는 개념 설명 도식만 제공하며 해당 라이브러리의 실제 실행 코드가 아닙니다.'
     sibling_ids=list(dict.fromkeys(e.get('compare_ids',[])+e.get('related_ids',[])))[:8]
     index={x['id']:x for x in db['entries']}
     relatives=[index[i] for i in sibling_ids if i in index and not index[i].get('canonical_id') and i!=e['id']]
@@ -140,7 +166,7 @@ REFERENCE_DEMO='''document.addEventListener('DOMContentLoaded',()=>{const p=JSON
 
 def main():
     db,lang,added,upgraded=merge();canonical=[e for e in db['entries'] if not e.get('canonical_id')]
-    css='\n'.join((ROOT/'src'/p).read_text(encoding='utf-8') for p in ['style.css','advertising.css','interactive/style.css','interactive/patterns.css','interactive/foundations.css','interactive/mograph.css','interactive/layout.css','preview-visual-quality.css','interactive/card-prompts.css'])
+    css='\n'.join((ROOT/'src'/p).read_text(encoding='utf-8') for p in ['style.css','advertising.css','interactive/style.css','interactive/patterns.css','interactive/foundations.css','interactive/mograph.css','interactive/layout.css','preview-visual-quality.css','interactive/card-prompts.css','interactive/backlog.css'])
     css=minimum_css(css)
     app=(ROOT/'src/app.js').read_text(encoding='utf-8')
     modules='\n'.join((ROOT/'src/previews'/name).read_text(encoding='utf-8') for name in ['core.js','motion.js','vfx.js','maps.js','model.js','finalize.js'])
@@ -162,8 +188,9 @@ def main():
     patterns=(ROOT/'src/interactive/patterns.js').read_text(encoding='utf-8')
     foundations=(ROOT/'src/interactive/foundations.js').read_text(encoding='utf-8')
     mograph=(ROOT/'src/interactive/mograph.js').read_text(encoding='utf-8')
-    interaction_css=(ROOT/'src/interactive/style.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/patterns.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/foundations.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/mograph.css').read_text(encoding='utf-8')
-    kit_prefix='<script>'+foundations+'</script>\n<script>'+patterns+'</script>\n<script>'+studies+'</script>\n<script>'+advanced+'</script>\n<script>'+mograph+'</script>\n<script>'+kit+'</script>\n<script>window.ATLAS_INTERACTION_CSS='+embed(interaction_css)+';</script>\n'
+    backlog=(ROOT/'src/interactive/backlog.js').read_text(encoding='utf-8')
+    interaction_css=(ROOT/'src/interactive/style.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/patterns.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/foundations.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/mograph.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/backlog.css').read_text(encoding='utf-8')
+    kit_prefix='<script>'+foundations+'</script>\n<script>'+patterns+'</script>\n<script>'+studies+'</script>\n<script>'+advanced+'</script>\n<script>'+mograph+'</script>\n<script>'+backlog+'</script>\n<script>'+kit+'</script>\n<script>window.ATLAS_INTERACTION_CSS='+embed(interaction_css)+';</script>\n'
     text=text.replace('<script>\n/*__APP_0__*/',kit_prefix+'<script>\n/*__APP_0__*/')
     if 'window.ATLAS_INTERACTION_CSS' not in text:text=text.replace('<script>/*__APP_0__*/',kit_prefix+'<script>/*__APP_0__*/')
     text=text.replace('/*__APP_0__*/',app)
@@ -172,7 +199,7 @@ def main():
     text=text.replace('<noscript>','<noscript><p><a href="/references/">전체 용어 설명 / All reference definitions</a></p>',1)
     OUT.mkdir(exist_ok=True);(OUT/'index.html').write_text(text,encoding='utf-8')
     asset=OUT/'assets';asset.mkdir(exist_ok=True)
-    (asset/'interaction-kit.js').write_text(foundations+'\n'+patterns+'\n'+studies+'\n'+advanced+'\n'+mograph+'\n'+kit,encoding='utf-8');(asset/'interaction-style.css').write_text(interaction_css,encoding='utf-8');(asset/'reference.css').write_text(REFERENCE_CSS,encoding='utf-8');(asset/'reference-demo.js').write_text(REFERENCE_DEMO,encoding='utf-8')
+    (asset/'interaction-kit.js').write_text(foundations+'\n'+patterns+'\n'+studies+'\n'+advanced+'\n'+mograph+'\n'+backlog+'\n'+kit,encoding='utf-8');(asset/'interaction-style.css').write_text(interaction_css,encoding='utf-8');(asset/'reference.css').write_text(REFERENCE_CSS,encoding='utf-8');(asset/'reference-demo.js').write_text(REFERENCE_DEMO,encoding='utf-8')
     vendor=ROOT/'node_modules/three/build';target=asset/'vendor';target.mkdir(exist_ok=True)
     if vendor.exists():
         shutil.copyfile(vendor/'three.module.min.js',target/'three-0.180.0.module.min.js');shutil.copyfile(vendor/'three.core.min.js',target/'three.core.min.js');shutil.copyfile(vendor.parent/'LICENSE',target/'THREE-LICENSE.txt')
@@ -242,7 +269,7 @@ Operator: 스투피아드
             for language in ('ko','en'):redirects.append(ref_path(e,language)+' '+ref_path({'id':e['canonical_id']},language)+' 301')
     (OUT/'_redirects').write_text('\n'.join(redirects)+'\n',encoding='utf-8')
     (ROOT/'qa').mkdir(exist_ok=True)
-    receipt={'version':VERSION,'records':len(db['entries']),'canonical':len(canonical),'categories':len(db['categories']),'recipes':len(added)+len(upgraded),'new_ids':added,'upgraded_ids':upgraded,'three':sum(e.get('demo',{}).get('engine')=='three' for e in canonical),'reference_pages':len(canonical)*2,'ui_motion_examples':len(db['metadata']['ui_motion_preview_ids']),'index_sha256':hashlib.sha256((OUT/'index.html').read_bytes()).hexdigest(),'index_bytes':(OUT/'index.html').stat().st_size,'vendor_available':(target/'three-0.180.0.module.min.js').exists()}
+    receipt={'version':VERSION,'records':len(db['entries']),'canonical':len(canonical),'categories':len(db['categories']),'recipes':len(added)+len(upgraded),'new_ids':added,'upgraded_ids':upgraded,'three':sum(e.get('demo',{}).get('engine')=='three' for e in canonical),'reference_pages':len(canonical)*2,'ui_motion_examples':len(db['metadata']['ui_motion_preview_ids']),'backlog_upgrades':len(db['metadata']['backlog_live_upgrade_ids']),'index_sha256':hashlib.sha256((OUT/'index.html').read_bytes()).hexdigest(),'index_bytes':(OUT/'index.html').stat().st_size,'vendor_available':(target/'three-0.180.0.module.min.js').exists()}
     # v3.1 is a frozen baseline. Track only concrete previews newly implemented in this release.
     baseline=load_qa('preview-coverage.json')
     pending_before=load_qa('remaining-previews.json')
@@ -255,6 +282,7 @@ Operator: 스투피아드
                  'pending':len(actual_pending)},'implemented_original_ids':completed_pending,
       'new_interaction_ids':fresh_ids,'remaining_ids':[e['id'] for e in actual_pending],
       'definition':'Specific previews include the validated v3.1 baseline and subsequent source implementations; no browser-pass guarantee.'}
+    if progress['current']['pending']!=db['metadata']['planned_preview_count']:raise RuntimeError('Pending card status and progress do not match')
     if progress['current']['specific']+progress['current']['pending']!=len(canonical):
         raise RuntimeError('Preview progress accounting mismatch')
     progress['current']['percentage']=round(progress['current']['specific']/len(canonical)*100,2)

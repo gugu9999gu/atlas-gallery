@@ -1,0 +1,45 @@
+# Reviewed original studies. key|stable canonical ID|exact English title (never bind ambiguous names only)
+bl-css-transition|dar-75ac70d863ca|CSS Transitions
+bl-css-keyframes|dar-15fd468c3558|CSS Keyframes
+bl-css-animation|dar-cfd7a460aef4|CSS Animations
+bl-waapi|dar-524ff8053d5d|Web Animations API
+bl-cancel|dar-8242243c244e|Animation Cancel
+bl-keyframe|dar-c40ef3e4b163|Keyframe Animation
+bl-curve|dar-04df56f9d567|Animation Curve
+bl-timing|dar-120756a730e4|Animation Timing
+bl-stagger|dar-258b4065f756|Stagger
+bl-blending|dar-5f0dd3cd60ad|Animation Blending
+bl-scroll-story|dar-ef3ef6dddd9d|Scrollytelling
+bl-reflow|dar-e2b02f2cb21e|Layout / Reflow
+bl-budget|dar-f25fef7d971b|Performance Budget
+bl-view-transition|dar-7a8fef28336a|View Transition API
+bl-flip|dar-0b4d29c2e8d4|FLIP Layout Animation
+bl-interrupt|dar-ae2d929e6248|Interruptible Transition
+bl-reverse|dar-d1fbaca54a21|Reversible Transition
+bl-view-timeline|dar-ea79e7a3cf62|View Timeline
+bl-overscroll|dar-bb71285d45da|Overscroll Effect
+bl-velocity|dar-67ece200bd90|Velocity-based Animation
+bl-hierarchy|dar-4086f0a48a87|Motion Hierarchy
+bl-preference|dar-6cee45452602|Motion Preference
+bl-essential|dar-2ff33aeb08b9|Essential Animation
+bl-compositor|dar-fb6bdd54a8fa|Compositor Animation
+bl-state|dar-897dc63e717c|Animation State Machine
+bl-retarget|dar-b438861e7dce|Animation Retargeting (UI)
+bl-spec|dar-aff1bac79a66|Motion Specification
+bl-frames|dar-244f08521194|Frame-by-frame Animation
+bl-sprite|dar-9cc3fa839317|Sprite Animation
+bl-procedural|dar-14c063955540|Procedural Animation
+bl-clip|dar-1312ebee8a33|Animation Clip
+bl-additive|dar-52a58fbcfbe0|Additive Animation
+bl-layer|dar-e4d994c0d9d3|Animation Layer
+bl-mask|dar-ebf1be106fbb|Animation Mask
+bl-notify|dar-9a5e617c6c40|Animation Event / Notify
+bl-recoil|dar-059cc2061580|Recoil Animation
+bl-recovery|dar-63c852fab781|Recovery Animation
+bl-sync|dar-b27162b40404|Animation Synchronization
+bl-buffer|dar-ba350284504f|Input Buffer
+bl-secondary|dar-f5ac99e7424c|Secondary Action
+bl-feedback|dar-e5d0e866b80b|Feedback Loop
+bl-positive|dar-9a679cfd064b|Positive Feedback Loop
+bl-negative|dar-8e2489a5962f|Negative Feedback Loop
+bl-hit|dar-f66b6dfcd696|Hit Reaction

@@ -1,3 +1,14 @@
+# ATLAS Gallery v3.2.6
+
+## v3.2.6 미구현 미리보기 계속 구현 / 구현 예정 상태 (2026-10-30)
+
+- **기존 미구현 항목 44개**에 원본 실행형 HTML/CSS/JavaScript 미리보기를 연결합니다. 용어 ID와 기존 프롬프트·복사 기능을 보존합니다.
+- 주요 구현: CSS Transitions / Keyframes / Animations, Web Animations API, View Transition API(비지원 시 대체), FLIP, Scrollytelling, 스크롤 진행률, 이징 곡선, Frame-by-frame / Sprite Animation, Recoil / Recovery, 입력 버퍼, 보조 작업, 피드백 루프.
+- **실행형이 없는 카드에는 ‘구현 예정’ / 'Planned' 라벨**을 표시합니다. 카드의 개념 도식, 한·영 상세 정의, 미리보기 필터에도 동일하게 구분합니다. 미구현 상태에서 복사되는 코드는 실제 구현이 아니라 **설명용 도식 코드**임을 명시합니다.
+- 이전 **1,140 / 2,189**에서 44개를 업그레이드해 빌드 기준 목표는 **1,184 / 2,189**, **잔여 1,005개**입니다. 정확한 수치는 `qa/preview-progress.json` 및 CI 빌드 결과를 확인합니다.
+- 원본 구현 모듈 `src/interactive/backlog.js` 및 `src/interactive/backlog.css`, 정확한 매핑 `data/backlog-studies.tsv`, 회귀 검사 `scripts/test-backlog-batch.py`, 상세 설명 `docs/NEXT_PREVIEW_BATCH_V326.md`.
+- 구현 상태는 샘플/도식의 실제 연결 기준이며, 모든 시각 예시의 의미 정확성·전 기기 성능·Cloudflare 운영 사이트 배포를 자동 보증하지 않습니다.
+
 # ATLAS Gallery v3.2.5
 
 ## v3.2.5 카드별 명칭 복사·예시 프롬프트 (2026-10-30)

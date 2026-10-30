@@ -88,8 +88,9 @@ with sync_playwright() as pw:
             if e['en']=='Animation Cancel':
                 stage.locator('.bl-stop').click()
                 if stage.get_attribute('data-cancelled')!='true':failures.append('WAAPI cancel broken')
-            if e['en']=='View Transition API' and stage.locator('.bl-view-glyph').inner_text()!='B':
-                failures.append('view transition did not update DOM')
+            if e['en']=='View Transition API':
+                try:page.wait_for_function("document.querySelector('.bl-view-glyph')?.textContent==='B'",timeout=4000)
+                except Exception:failures.append('view transition did not update DOM')
             if e['en'] in ('Layout / Reflow','FLIP Layout Animation') and 'bl-wide' not in stage.locator('.bl-grid').get_attribute('class'):
                 failures.append('layout reflow failed')
             if e['en']=='Feedback Loop' and stage.locator('.bl-feedback-value').inner_text()=='40%':

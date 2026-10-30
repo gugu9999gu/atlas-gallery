@@ -46,7 +46,7 @@ try:
                 if ctrl.count():
                     ctrl.fill('75')
                 else:
-                    action=study.locator('[data-rs]').first
+                    action=study.locator('[data-rs="next"]').first if key=='rs-hick' else study.locator('[data-rs]').first
                     if action.count():action.click()
                     else:failures.append('No real control '+key)
                 after=study.locator('.rs-status').inner_text()

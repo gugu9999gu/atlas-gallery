@@ -41,6 +41,7 @@ try:
         page.goto(url,wait_until='domcontentloaded')
         stage=page.locator('.mg-stage[data-kind="mg-particle-burst"]')
         stage.wait_for(timeout=15000)
+        stage.scroll_into_view_if_needed()
         page.wait_for_function("document.querySelector('.mg-stage')?.classList.contains('mg-playing')",timeout=15000)
         assert page.locator('.mg-spark').count()==12,'Particle sample should have twelve radial particles'
         assert page.locator('.mg-anim').first.evaluate('(e)=>getComputedStyle(e).animationPlayState')=='running'

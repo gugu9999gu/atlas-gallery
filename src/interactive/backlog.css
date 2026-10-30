@@ -113,3 +113,12 @@
 @media(prefers-reduced-motion:reduce){.bl-stage *{animation:none!important;transition-duration:0s!important}.bl-stage .bl-sprite-strip{transform:translateX(-100px)!important}}
 html.motion-paused .bl-stage *{animation-play-state:paused!important;transition-duration:0s!important}
 @container (max-height:235px){.bl-art{padding:5px}.bl-status{min-height:24px}.bl-toolbar{min-height:38px;padding:4px}.bl-action{min-height:31px}.bl-scene-caption{font-size:14px}.bl-budget,.bl-timing,.bl-default-canvas{transform:scale(.87)}}
+
+
+/* Pending is a content-state label, not a disabled control. */
+.term-card .preview-pending{display:inline-flex;align-items:center;flex:0 0 auto;max-width:100%;padding:3px 8px;border:1px solid #aebad0;border-radius:7px;background:#eef1f5;color:#41536d;font-size:14px;font-weight:750;line-height:1.45;white-space:nowrap}
+.term-card .pending-preview-kind{color:#4f6079;font-weight:700}
+.preview-pending-detail{display:inline-flex;margin:12px 0 3px;padding:7px 11px;border:1px solid #aebbd2;border-radius:9px;background:#edf1f7;color:#394d6d;font-size:14px;font-weight:750;line-height:1.45}
+.dark-mode .term-card .preview-pending,.dark-mode .preview-pending-detail{background:#29354b;color:#d5e3f4;border-color:#61718c}
+.dark-mode .term-card .pending-preview-kind{color:#bed0e8}
+@media(max-width:400px){.term-card .card-meta{gap:7px;flex-wrap:wrap}.term-card .preview-pending{padding:3px 6px}}

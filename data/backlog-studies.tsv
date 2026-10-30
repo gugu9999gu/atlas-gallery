@@ -1,0 +1,45 @@
+# Original ATLAS runnable preview upgrades for existing canonical entries. key|exact English title
+bl-css-transition|CSS Transitions
+bl-css-keyframes|CSS Keyframes
+bl-css-animation|CSS Animations
+bl-waapi|Web Animations API
+bl-cancel|Animation Cancel
+bl-keyframe|Keyframe Animation
+bl-curve|Animation Curve
+bl-timing|Animation Timing
+bl-stagger|Stagger
+bl-blending|Animation Blending
+bl-scroll-story|Scrollytelling
+bl-reflow|Layout / Reflow
+bl-budget|Performance Budget
+bl-view-transition|View Transition API
+bl-flip|FLIP Layout Animation
+bl-interrupt|Interruptible Transition
+bl-reverse|Reversible Transition
+bl-view-timeline|View Timeline
+bl-overscroll|Overscroll Effect
+bl-velocity|Velocity-based Animation
+bl-hierarchy|Motion Hierarchy
+bl-preference|Motion Preference
+bl-essential|Essential Animation
+bl-compositor|Compositor Animation
+bl-state|Animation State Machine
+bl-retarget|Animation Retargeting (UI)
+bl-spec|Motion Specification
+bl-frames|Frame-by-frame Animation
+bl-sprite|Sprite Animation
+bl-procedural|Procedural Animation
+bl-clip|Animation Clip
+bl-additive|Additive Animation
+bl-layer|Animation Layer
+bl-mask|Animation Mask
+bl-notify|Animation Event / Notify
+bl-recoil|Recoil Animation
+bl-recovery|Recovery Animation
+bl-sync|Animation Synchronization
+bl-buffer|Input Buffer
+bl-secondary|Secondary Action
+bl-feedback|Feedback Loop
+bl-positive|Positive Feedback Loop
+bl-negative|Negative Feedback Loop
+bl-hit|Hit Reaction

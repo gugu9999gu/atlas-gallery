@@ -19,8 +19,17 @@ card=function(e){
  let html=ixOldCard(e);
  const kind=e.demo?.engine==='three'?'Three.js':e.demo?.key?.startsWith('mg-')?'CSS · SVG · JS':e.demo?'HTML · CSS · JS':waveRegistry.get(e.en)?.interactive?tr('SVG 모션 예시','SVG motion study'):tr('미리보기 코드','Preview code');
  html=html.replace('<span class="card-link">'+t('more')+' '+icon('arrow')+'</span>','');
+ // Show both language labels with independent, immediately adjacent copy icons.
+ const originalNames=`<h4 class="card-title">${esc(localTitle(e))}</h4><div class="card-en" lang="${locale==='en'?'ko':'en'}">${esc(locale==='en'?e.ko:e.en)}</div>`;
+ const names=(locale==='en'?[['en',e.en],['ko',e.ko]]:[['ko',e.ko],['en',e.en]]).map(([lang,name],i)=>{
+  const which=lang==='ko'?tr('한글명 복사','Copy Korean name'):tr('영문명 복사','Copy English name');
+  return `<div class="card-name-row ${i?'card-name-sub':''}">${i?`<div class="card-en" lang="${lang}">${esc(name)}</div>`:`<h4 class="card-title" lang="${lang}">${esc(name)}</h4>`}<button type="button" class="copy-card-name" data-copy-name="${lang}" aria-label="${esc(which+': '+name)}" title="${esc(which)}">${icon('copy')}</button></div>`;
+ }).join('');
+ html=html.replace(originalNames,`<div class="card-name-group">${names}</div>`);
+ const prompt=examplePromptFor(e,locale),promptLabel=tr('예시 프롬프트','Example prompt');
+ const promptSection=`<section class="card-prompt" aria-label="${promptLabel}"><div class="card-prompt-head"><strong>${promptLabel}</strong><button type="button" class="copy-card-prompt" data-copy-prompt="${esc(e.id)}" aria-label="${esc(localTitle(e)+' · '+tr('예시 프롬프트 복사','Copy example prompt'))}">${icon('copy')}<span>${tr('프롬프트 복사','Copy prompt')}</span></button></div><div class="card-prompt-scroll" tabindex="0" role="region" aria-label="${esc(localTitle(e)+' · '+tr('프롬프트 스크롤 영역','Scrollable prompt example'))}" lang="${locale}"><p>${esc(prompt)}</p></div></section>`;
  const actions=`<div class="card-code-actions"><button type="button" class="copy-card-code" data-copy-code="${esc(e.id)}" aria-label="${esc(localTitle(e)+' · '+tr('코드 복사','Copy code'))}">${icon('copy')}<span>${tr('코드 복사','Copy code')}</span></button><span class="code-format">${esc(kind)}</span><a class="reference-permalink" href="${referencePath(e)}" title="${tr('설명 문서 열기','Read reference page')}">${icon('external')}<span class="sr-only">${tr('설명 문서','Reference page')}</span></a><button type="button" data-open="${esc(e.id)}" class="card-detail-button">${tr('자세히','Details')}</button></div>`;
- return html.replace(/<\/div><\/article>$/,actions+'</div></article>');
+ return html.replace(/<\/div><\/article>$/,promptSection+actions+'</div></article>');
 };
 comparisonMarkup=function(e){
  const ids=[e.id,...(e.compare_ids||[])],seen=new Set(),items=ids.map(id=>byId.get(id)).filter(x=>x&&!seen.has(x.id)&&seen.add(x.id)).slice(0,6);if(items.length<2)return '';
@@ -125,7 +134,36 @@ async function copyCodeFromCard(button){
  if(!ok){manualCode(text);return;}
  const old=button.innerHTML;button.innerHTML=icon('check')+' '+tr('복사됨','Copied');button.classList.add('copied');announce(tr('독립 실행 HTML 코드를 복사했습니다.','Standalone HTML code copied.'));setTimeout(()=>{if(button.isConnected){button.innerHTML=old;button.classList.remove('copied');}},1800);
 }
+// Copy actions are captured before the full-card hit target opens the details.
+const cardCopyTimers=new WeakMap();
+function manualPlainCopy(text){
+ let dlg=q('#manual-card-copy-dialog');
+ if(!dlg){dlg=document.createElement('dialog');dlg.id='manual-card-copy-dialog';dlg.className='copy-code-dialog';document.body.append(dlg);}
+ dlg.innerHTML=`<h2>${tr('텍스트 직접 복사','Copy text manually')}</h2><p>${tr('브라우저에서 클립보드 복사가 제한되었습니다. 아래 텍스트를 선택해 복사하세요.','Clipboard access was blocked. Select and copy the text below.')}</p><textarea spellcheck="false" aria-label="${tr('복사할 텍스트','Text to copy')}"></textarea><form method="dialog"><button>${tr('닫기','Close')}</button></form>`;
+ dlg.querySelector('textarea').value=text;dlg.showModal();dlg.querySelector('textarea').focus();dlg.querySelector('textarea').select();
+}
+async function copyCardPlainText(button){
+ const e=byId.get(button.closest('.term-card')?.dataset.id||button.dataset.copyPrompt);if(!e)return;
+ const name=button.dataset.copyName,isPrompt=button.hasAttribute('data-copy-prompt');
+ const value=isPrompt?examplePromptFor(e,locale):name==='ko'?e.ko:name==='en'?e.en:'';
+ if(!value)return;
+ let copied=false;
+ try{if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(value);copied=true;}}catch{}
+ if(!copied){
+  const fallback=document.createElement('textarea');fallback.value=value;fallback.style.cssText='position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;font-size:16px';document.body.append(fallback);fallback.focus();fallback.select();
+  try{copied=document.execCommand('copy');}catch{}fallback.remove();
+ }
+ if(!copied){manualPlainCopy(value);return;}
+ const old=cardCopyTimers.get(button);if(old)clearTimeout(old.timer);
+ const initial=old||{html:button.innerHTML,label:button.getAttribute('aria-label')};
+ button.classList.add('copied');button.setAttribute('aria-label',tr('복사되었습니다','Copied'));
+ button.innerHTML=icon('check')+(isPrompt?`<span>${tr('복사됨','Copied')}</span>`:'');
+ announce(isPrompt?tr('예시 프롬프트를 복사했습니다.','Example prompt copied.'):name==='ko'?tr('한글명을 복사했습니다.','Korean name copied.'):tr('영문명을 복사했습니다.','English name copied.'));
+ const timer=setTimeout(()=>{if(button.isConnected){button.innerHTML=initial.html;button.setAttribute('aria-label',initial.label);button.classList.remove('copied');}cardCopyTimers.delete(button);},1700);
+ cardCopyTimers.set(button,{...initial,timer});
+}
 document.addEventListener('click',event=>{
+ const plain=event.target.closest('[data-copy-name],[data-copy-prompt]');if(plain){event.preventDefault();event.stopImmediatePropagation();void copyCardPlainText(plain);return;}
  const copy=event.target.closest('[data-copy-code]');if(copy){event.preventDefault();event.stopImmediatePropagation();void copyCodeFromCard(copy);return;}
  const collection=event.target.closest('[data-live-collection]');if(collection){event.preventDefault();event.stopImmediatePropagation();collectionLive(collection.dataset.liveCollection);return;}
 },true);
@@ -138,5 +176,5 @@ function enhanceInit(){
  const preset=new URL(location.href).searchParams.get('collection');if(preset==='interactions'||preset==='three')collectionLive(preset==='three'?'three':'interactive');
  window.addEventListener('resize',()=>{clearTimeout(ixResizeTimer);ixResizeTimer=setTimeout(()=>enforceMinimumText(document),120);});
  const meta=document.createElement('link');meta.rel='alternate';meta.type='text/plain';meta.title='ATLAS machine-readable index';meta.href='/llms.txt';document.head.append(meta);
- if(new URL(location.href).searchParams.get('qa')==='1')Object.defineProperty(window,'atlasInteractiveQA',{value:{recipes:()=>entries.filter(e=>e.demo).map(e=>({id:e.id,en:e.en,ko:e.ko,...e.demo})),code:id=>exportCode(byId.get(id)),stats:()=>AtlasKit.stats(),enforce:enforceMinimumText,collection:collectionLive,minimum:14}});
+ if(new URL(location.href).searchParams.get('qa')==='1')Object.defineProperty(window,'atlasInteractiveQA',{value:{recipes:()=>entries.filter(e=>e.demo).map(e=>({id:e.id,en:e.en,ko:e.ko,...e.demo})),code:id=>exportCode(byId.get(id)),stats:()=>AtlasKit.stats(),enforce:enforceMinimumText,collection:collectionLive,minimum:14,prompts:(language=locale)=>entries.map(e=>({id:e.id,ko:e.ko,en:e.en,prompt:examplePromptFor(e,language)}))}});
 }

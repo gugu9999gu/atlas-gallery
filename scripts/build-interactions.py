@@ -6,7 +6,7 @@ from collections import Counter
 import json, re, hashlib, html, shutil
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'public'
-VERSION='3.2.6'
+VERSION='3.2.7'
 DATE='2026-10-30'
 ORIGIN='https://atlas-gallery.app'
 
@@ -95,6 +95,20 @@ def merge():
         entry['modified_on']=DATE
         backlog_upgrades.append({'id':entry['id'],'en':en,'key':key})
     if len(backlog_upgrades)!=44:raise RuntimeError('Expected exactly 44 implemented backlog studies')
+    # Live source and production addon share the same 20 canonical ID/key mappings.
+    next_studies=[]
+    for row in (ROOT/'data/next-studies.tsv').read_text(encoding='utf-8').splitlines():
+        if not row or row.startswith('#'):continue
+        record_id,key,english=row.split('|')
+        entry=next((r for r in db['entries'] if r['id']==record_id),None)
+        if not entry or entry.get('en')!=english or entry.get('canonical_id') or entry.get('demo') or record_id not in baseline_pending:
+            raise RuntimeError('Invalid next-study canonical ID or already implemented: '+english)
+        entry['demo']={'key':key,'engine':'dom','version':VERSION,'input':['pointer','touch','keyboard'],'code':'standalone-html','category':entry['category']}
+        entry['preview']={'engine':'dom-interactive','key':key,'classification':'interactive-study','sampleData':True}
+        entry['modified_on']=DATE
+        next_studies.append(entry['id'])
+    if len(next_studies)!=20 or len(set(next_studies))!=20:raise RuntimeError('Expected exactly twenty real next studies')
+    db['metadata']['next_studies']={'version':VERSION,'upgrades':next_studies}
     db['metadata']['backlog_live_upgrade_ids']=[e['id'] for e in backlog_upgrades]
     canonical_now=[e for e in db['entries'] if not e.get('canonical_id')]
     for entry in canonical_now:
@@ -166,7 +180,7 @@ REFERENCE_DEMO='''document.addEventListener('DOMContentLoaded',()=>{const p=JSON
 
 def main():
     db,lang,added,upgraded=merge();canonical=[e for e in db['entries'] if not e.get('canonical_id')]
-    css='\n'.join((ROOT/'src'/p).read_text(encoding='utf-8') for p in ['style.css','advertising.css','interactive/style.css','interactive/patterns.css','interactive/foundations.css','interactive/mograph.css','interactive/layout.css','preview-visual-quality.css','interactive/card-prompts.css','interactive/backlog.css'])
+    css='\n'.join((ROOT/'src'/p).read_text(encoding='utf-8') for p in ['style.css','advertising.css','interactive/style.css','interactive/patterns.css','interactive/foundations.css','interactive/mograph.css','interactive/layout.css','preview-visual-quality.css','interactive/card-prompts.css','interactive/backlog.css','interactive/next-studies.css'])
     css=minimum_css(css)
     app=(ROOT/'src/app.js').read_text(encoding='utf-8')
     modules='\n'.join((ROOT/'src/previews'/name).read_text(encoding='utf-8') for name in ['core.js','motion.js','vfx.js','maps.js','model.js','finalize.js'])
@@ -189,8 +203,9 @@ def main():
     foundations=(ROOT/'src/interactive/foundations.js').read_text(encoding='utf-8')
     mograph=(ROOT/'src/interactive/mograph.js').read_text(encoding='utf-8')
     backlog=(ROOT/'src/interactive/backlog.js').read_text(encoding='utf-8')
-    interaction_css=(ROOT/'src/interactive/style.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/patterns.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/foundations.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/mograph.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/backlog.css').read_text(encoding='utf-8')
-    kit_prefix='<script>'+foundations+'</script>\n<script>'+patterns+'</script>\n<script>'+studies+'</script>\n<script>'+advanced+'</script>\n<script>'+mograph+'</script>\n<script>'+backlog+'</script>\n<script>'+kit+'</script>\n<script>window.ATLAS_INTERACTION_CSS='+embed(interaction_css)+';</script>\n'
+    next_studies=(ROOT/'src/interactive/next-studies.js').read_text(encoding='utf-8')
+    interaction_css=(ROOT/'src/interactive/style.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/patterns.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/foundations.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/mograph.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/backlog.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/interactive/next-studies.css').read_text(encoding='utf-8')
+    kit_prefix='<script>'+foundations+'</script>\n<script>'+patterns+'</script>\n<script>'+studies+'</script>\n<script>'+advanced+'</script>\n<script>'+mograph+'</script>\n<script>'+backlog+'</script>\n<script>'+next_studies+'</script>\n<script>'+kit+'</script>\n<script>window.ATLAS_INTERACTION_CSS='+embed(interaction_css)+';</script>\n'
     text=text.replace('<script>\n/*__APP_0__*/',kit_prefix+'<script>\n/*__APP_0__*/')
     if 'window.ATLAS_INTERACTION_CSS' not in text:text=text.replace('<script>/*__APP_0__*/',kit_prefix+'<script>/*__APP_0__*/')
     text=text.replace('/*__APP_0__*/',app)
@@ -199,7 +214,7 @@ def main():
     text=text.replace('<noscript>','<noscript><p><a href="/references/">전체 용어 설명 / All reference definitions</a></p>',1)
     OUT.mkdir(exist_ok=True);(OUT/'index.html').write_text(text,encoding='utf-8')
     asset=OUT/'assets';asset.mkdir(exist_ok=True)
-    (asset/'interaction-kit.js').write_text(foundations+'\n'+patterns+'\n'+studies+'\n'+advanced+'\n'+mograph+'\n'+backlog+'\n'+kit,encoding='utf-8');(asset/'interaction-style.css').write_text(interaction_css,encoding='utf-8');(asset/'reference.css').write_text(REFERENCE_CSS,encoding='utf-8');(asset/'reference-demo.js').write_text(REFERENCE_DEMO,encoding='utf-8')
+    (asset/'interaction-kit.js').write_text(foundations+'\n'+patterns+'\n'+studies+'\n'+advanced+'\n'+mograph+'\n'+backlog+'\n'+next_studies+'\n'+kit,encoding='utf-8');(asset/'interaction-style.css').write_text(interaction_css,encoding='utf-8');(asset/'reference.css').write_text(REFERENCE_CSS,encoding='utf-8');(asset/'reference-demo.js').write_text(REFERENCE_DEMO,encoding='utf-8')
     vendor=ROOT/'node_modules/three/build';target=asset/'vendor';target.mkdir(exist_ok=True)
     if vendor.exists():
         shutil.copyfile(vendor/'three.module.min.js',target/'three-0.180.0.module.min.js');shutil.copyfile(vendor/'three.core.min.js',target/'three.core.min.js');shutil.copyfile(vendor.parent/'LICENSE',target/'THREE-LICENSE.txt')
@@ -269,7 +284,7 @@ Operator: 스투피아드
             for language in ('ko','en'):redirects.append(ref_path(e,language)+' '+ref_path({'id':e['canonical_id']},language)+' 301')
     (OUT/'_redirects').write_text('\n'.join(redirects)+'\n',encoding='utf-8')
     (ROOT/'qa').mkdir(exist_ok=True)
-    receipt={'version':VERSION,'records':len(db['entries']),'canonical':len(canonical),'categories':len(db['categories']),'recipes':len(added)+len(upgraded),'new_ids':added,'upgraded_ids':upgraded,'three':sum(e.get('demo',{}).get('engine')=='three' for e in canonical),'reference_pages':len(canonical)*2,'ui_motion_examples':len(db['metadata']['ui_motion_preview_ids']),'backlog_upgrades':len(db['metadata']['backlog_live_upgrade_ids']),'index_sha256':hashlib.sha256((OUT/'index.html').read_bytes()).hexdigest(),'index_bytes':(OUT/'index.html').stat().st_size,'vendor_available':(target/'three-0.180.0.module.min.js').exists()}
+    receipt={'version':VERSION,'records':len(db['entries']),'canonical':len(canonical),'categories':len(db['categories']),'recipes':len(added)+len(upgraded),'new_ids':added,'upgraded_ids':upgraded,'three':sum(e.get('demo',{}).get('engine')=='three' for e in canonical),'reference_pages':len(canonical)*2,'ui_motion_examples':len(db['metadata']['ui_motion_preview_ids']),'backlog_upgrades':len(db['metadata']['backlog_live_upgrade_ids']),'next_upgrades':len(db['metadata']['next_studies']['upgrades']),'index_sha256':hashlib.sha256((OUT/'index.html').read_bytes()).hexdigest(),'index_bytes':(OUT/'index.html').stat().st_size,'vendor_available':(target/'three-0.180.0.module.min.js').exists()}
     # v3.1 is a frozen baseline. Track only concrete previews newly implemented in this release.
     baseline=load_qa('preview-coverage.json')
     pending_before=load_qa('remaining-previews.json')

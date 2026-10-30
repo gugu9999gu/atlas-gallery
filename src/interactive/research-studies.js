@@ -141,7 +141,7 @@ function mount(root,key,language='ko',options={}){
     else{count++;root.dataset.target=el.dataset.size;root.dataset.attempts=String(count);tell(el.dataset.size==='small'?'작은 목표 선택':'큰 목표 선택',el.dataset.size==='small'?'Small target hit.':'Large target hit.');}
     break;}
    case 'rs-hick':{
-    if(action==='next'){stage=(stage+1)%3;const n=[4,8,2][stage];const grid=q('.rs-choice-grid');grid.replaceChildren();for(let i=0;i<n;i++){const b=document.createElement('button');b.type='button';b.dataset.rs='choice';b.textContent=t('옵션 ','Option ')+(i+1);grid.append(b);}const estimate=(.1+.2*Math.log2(n+1)).toFixed(2);q('.rs-estimate').textContent=n+' '+t('가지 선택','choices')+' · '+estimate+'s';root.dataset.choices=String(n);tell('예시 결정 시간 '+estimate+'초','Illustrative model time '+estimate+' seconds');}
+    if(action==='next'){stage=(stage+1)%3;const n=[2,4,8][stage];const grid=q('.rs-choice-grid');grid.replaceChildren();for(let i=0;i<n;i++){const b=document.createElement('button');b.type='button';b.dataset.rs='choice';b.textContent=t('옵션 ','Option ')+(i+1);grid.append(b);}const estimate=(.1+.2*Math.log2(n+1)).toFixed(2);q('.rs-estimate').textContent=n+' '+t('가지 선택','choices')+' · '+estimate+'s';root.dataset.choices=String(n);tell('예시 결정 시간 '+estimate+'초','Illustrative model time '+estimate+' seconds');}
     else tell('옵션 선택: '+el.textContent,'Selected: '+el.textContent);
     break;}
    case 'rs-access':{const total=all('[data-check]:checked').length;root.dataset.passed=String(total);tell('점검 선택 '+total+'/3 · 인증 결과 아님','Checks selected '+total+'/3 · not certification');break;}

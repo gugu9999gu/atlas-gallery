@@ -1,7 +1,7 @@
 /* Included inside the existing application closure, before init(). */
 const ixRecipes=new Map(entries.filter(e=>e.demo).map(e=>[e.id,{...e.demo,title:e.en}]));
 const ixOldArt=art,ixOldView=referenceView,ixOldNotice=previewNotice,ixOldControls=demoControls;
-function isImplementationPlanned(e){return e?.implementation_status==='planned'||(!e?.demo&&!referenceView(e).specific);}
+function isImplementationPlanned(e){if(e?.implementation_status==='planned')return true;if(e?.implementation_status==='implemented')return false;return !e?.demo&&!referenceView(e).specific;}
 referenceView=function(e){return e.demo?{html:'',mode:e.demo.engine==='three'?'webgl':'interactive',type:'실시간 모션 예시',key:e.demo.key,specific:true}:ixOldView(e);};
 art=function(e){
  if(!e.demo){

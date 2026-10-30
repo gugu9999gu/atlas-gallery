@@ -133,3 +133,30 @@ fnd-bento|Bento Layout|벤토 레이아웃|dom|호버·포커스|여러 패널�
 fnd-specificity|Specificity|CSS 명시도|dom|호버·포커스|다른 유형의 CSS 선택자를 비교해 명시도 점수와 시각적 결과를 봅니다.|Compare selector specificity weights and their illustrative visual results.
 fnd-clamp|clamp()|CSS clamp()|dom|호버·포커스|가상 뷰포트 폭을 바꾸며 clamp 최소·선호·최대 글자 크기를 계산합니다.|Adjust a simulated viewport and calculate min-preferred-max clamp font sizes.
 fnd-scroll-margin|Scroll Margin|스크롤 마진|dom|드래그·제스처|고정 헤더 아래에 목표 콘텐츠가 위치하도록 스크롤 위치를 조정합니다.|Scroll to a target leaving space below a sticky header.
+# Motion graphics / original animated visual references, 2026-10-30
+mg-kinetic|Kinetic Typography|키네틱 타이포그래피|dom|타이포·브랜드 모션|글자의 이동과 시간차를 통해 정보의 강조와 리듬을 만드는 타이포그래피 애니메이션입니다.|Typography animated through position and timing to establish emphasis and rhythm.
+mg-character|Character Stagger|문자 순차 애니메이션|dom|타이포·브랜드 모션|글자마다 시작 시간을 조금씩 다르게 설정해 한 단어를 순차적으로 등장시킵니다.|Letters enter at staggered start times to create an ordered word-level motion.
+mg-text-reveal|Text Reveal Animation|텍스트 리빌 애니메이션|dom|타이포·브랜드 모션|잘린 영역을 통과해 텍스트가 드러나는 등장 표현입니다.|Text enters through a clipped region and becomes progressively visible.
+mg-typewriter|Typewriter Animation|타이프라이터 애니메이션|dom|타이포·브랜드 모션|문자 단위로 나타나는 텍스트의 입력 과정을 시각적으로 재현합니다.|Text is revealed in discrete character steps to simulate typing.
+mg-logo-reveal|Logo Reveal|로고 등장 애니메이션|dom|타이포·브랜드 모션|상징과 로고타입을 회전 및 투명도 전환으로 소개하는 짧은 브랜드 인트로입니다.|A brief brand introduction reveals a symbol and logotype using rotation and opacity.
+mg-lower-third|Lower Third Animation|로워 서드 애니메이션|dom|타이포·브랜드 모션|화면 아래쪽의 인물명·역할 등 정보 패널이 들어오고 나가는 동작입니다.|An identifying information panel animates into and out of the lower portion of a frame.
+mg-trim-paths|Trim Paths|패스 트리밍|dom|셰이프·마스크·레이어|벡터 경로의 표시 시작점과 끝점을 조절하는 원리를 선이 그려지는 예시로 보여줍니다.|An animated stroke illustrates revealing a range of a vector path by changing its visible start and end.
+mg-shape-morph|Shape Morphing|형태 모핑|dom|셰이프·마스크·레이어|하나의 윤곽이 시간에 따라 다른 윤곽으로 변하는 과정입니다. 예시는 모서리 형상 변경입니다.|An outline changes over time into another shape. This sample uses border-radius deformation.
+mg-mask-reveal|Mask Reveal|마스크 리빌|dom|셰이프·마스크·레이어|마스크의 가시 영역을 이동시켜 아래쪽 그래픽과 텍스트를 드러냅니다.|The visible mask region moves to reveal graphics or text underneath.
+mg-alpha-matte|Alpha Matte|알파 매트|dom|셰이프·마스크·레이어|매트 소스의 알파 투명도로 다른 레이어의 표시 영역을 결정합니다.|The matte source alpha channel determines which parts of another layer are visible.
+mg-luma-matte|Luma Matte|루마 매트|dom|셰이프·마스크·레이어|흑백 매트의 휘도값으로 다른 레이어의 불투명도를 제어합니다.|Luminance values from a grayscale matte govern the visibility of another layer.
+mg-layer-parallax|Layer Parallax|레이어 패럴랙스|dom|셰이프·마스크·레이어|서로 다른 깊이의 레이어를 다른 이동량으로 움직여 공간감을 표현합니다.|Layers at different apparent depths move at different distances to suggest depth.
+mg-stroke-draw|Stroke Draw Animation|선 그리기 애니메이션|dom|셰이프·마스크·레이어|선의 길이가 경로를 따라 증가하는 과정을 순차적으로 시연합니다.|A visible stroke grows along its path from one end to the other.
+mg-time-remap|Time Remapping|시간 재매핑|dom|타임라인·속도 설계|원본 동작의 재생 시간을 다시 배치하여 일부 구간을 빠르게 움직이거나 멈추게 합니다.|Playback time is remapped so some intervals accelerate while others slow or hold.
+mg-speed-ramp|Speed Ramping|속도 램핑|dom|타임라인·속도 설계|동작이나 클립의 속도를 구간별로 점진적으로 높였다가 낮춥니다.|Motion or clip playback speed gradually increases and decreases over a sequence.
+mg-hold-keyframe|Hold Keyframe|홀드 키프레임|dom|타임라인·속도 설계|다음 키프레임까지 중간값 없이 속성값을 유지하는 시간 제어 방식입니다.|A property retains its keyframed value without interpolating until the next keyframe.
+mg-seamless-loop|Seamless Loop|심리스 루프|dom|타임라인·속도 설계|처음과 끝을 자연스럽게 연결하여 반복 경계가 드러나지 않도록 만든 반복 동작입니다.|An animation repeats with its beginning and end aligned to conceal the loop boundary.
+mg-stagger|Staggered Animation|스태거 애니메이션|dom|타임라인·속도 설계|여러 레이어의 같은 동작을 시간차를 두고 실행합니다.|The same movement is offset in time across several layers.
+mg-motion-path|Motion Path Animation|모션 패스 애니메이션|dom|타임라인·속도 설계|오브젝트 위치를 곡선 경로를 따라 이동시키는 동작 설계입니다.|An object is animated through a sequence of positions following a curved motion path.
+mg-motion-blur|Motion Blur|모션 블러|dom|합성·절차적 이펙트|노출 시간 동안 이동한 물체의 흔적을 흐림으로 표현합니다. 이 예시는 CSS 흐림으로 원리를 근사합니다.|Motion appears blurred over an exposure interval. This CSS study approximates rather than physically renders motion blur.
+mg-echo-trails|Echo Trails|에코 트레일|dom|합성·절차적 이펙트|시간차가 있는 여러 위치를 겹쳐 이동 경로의 잔상을 표현합니다.|Offset copies of a moving element reveal the trail of earlier positions.
+mg-glitch|Glitch Transition|글리치 전환|dom|합성·절차적 이펙트|화면 조각의 어긋남과 불연속적인 변화로 디지털 오류 같은 전환을 만듭니다.|Displaced image strips and abrupt changes create a digital-error-like transition.
+mg-chromatic|Chromatic Aberration Animation|색수차 애니메이션|dom|합성·절차적 이펙트|색상 채널의 위치를 미세하게 분리해 색 번짐의 움직임을 표현합니다.|Separated color-channel layers create animated chromatic fringes.
+mg-light-sweep|Light Sweep|라이트 스윕|dom|합성·절차적 이펙트|밝은 하이라이트가 재질의 표면을 가로지르도록 움직여 반사광을 표현합니다.|A moving bright band sweeps across a surface to suggest a reflection.
+mg-particle-burst|Particle Burst|파티클 버스트|dom|합성·절차적 이펙트|한 지점에서 다수의 작은 입자가 짧은 시간 동안 방사형으로 퍼지는 효과입니다.|Multiple small particles emit radially from a single origin in a short burst.
+mg-liquid|Liquid Morphing|리퀴드 모핑|dom|합성·절차적 이펙트|점성이 있는 형태가 서로 합쳐지고 분리되는 모습을 필터와 도형 변화로 시연합니다.|Gooey shapes visually merge and separate using shape movement and image filtering.

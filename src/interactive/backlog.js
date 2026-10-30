@@ -209,5 +209,5 @@ function mount(root,key,language='ko',options={}){
   observer?.disconnect();abort.abort();if(raf)cancelAnimationFrame(raf);for(const id of timers)clearTimeout(id);for(const a of animations)a.cancel();lastAnimation?.cancel();
  }};
 }
-global.AtlasBacklog={supports,markup,mount,keys:[...KEYS],source:'('+initAtlasBacklog.toString()+')(window);'};
+global.AtlasBacklog={supports,markup,mount,keys:[...KINDS],source:'('+initAtlasBacklog.toString()+')(window);'};
 })(window);

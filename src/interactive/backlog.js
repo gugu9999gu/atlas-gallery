@@ -81,7 +81,7 @@ function mount(root,key,language='ko',options={}){
    say('상태와 스타일이 전환되었습니다.','Transitioned to the next visual state.');return;
   }
   if(key==='bl-css-keyframes'||key==='bl-css-animation'||key==='bl-keyframe'||key==='bl-frames'||key==='bl-sprite'||key==='bl-stagger'||key==='bl-sync'||key==='bl-additive'||key==='bl-layer'){
-   root.classList.remove('bl-restart');void root.offsetWidth;root.classList.add('bl-restart');say('키프레임을 다시 재생했습니다.','Replayed the animation keyframes.');return;
+   const active=root.classList.contains('bl-playing');root.classList.remove('bl-playing');root.classList.remove('bl-restart');void root.offsetWidth;root.classList.add('bl-restart');if(active)root.classList.add('bl-playing');say('키프레임을 다시 재생했습니다.','Replayed the animation keyframes.');return;
   }
   if(key==='bl-waapi'||key==='bl-cancel'||key==='bl-notify'){
    lastAnimation?.cancel();
@@ -131,7 +131,8 @@ function mount(root,key,language='ko',options={}){
    const positions=[[18,52],[57,18],[76,68]],p=positions[state%3],pin=root.querySelector('.bl-target-pin');pin.style.left=p[0]+'%';pin.style.top=p[1]+'%';
    say('다음 목적지로 이동했습니다.','Moved to the next destination.');return;
   }
-  if(key==='bl-essential'||key==='bl-preference'||key==='bl-state'||key==='bl-buffer'){
+  if(key==='bl-preference'){const glyph=root.querySelector('.bl-preference-visual .bl-object');if(!limited())animate(glyph,[{transform:'translateX(0)'},{transform:'translateX(85px)'},{transform:'translateX(0)'}],{duration:480});say(limited()?'움직임 감소: 정적 상태 유지':'시스템 모션 설정을 반영했습니다.',limited()?'Reduced motion: static state retained':'System motion preference respected.');return;}
+  if(key==='bl-essential'||key==='bl-state'||key==='bl-buffer'){
    const title=root.querySelector('.bl-state-title'),glyph=root.querySelector('.bl-state-glyph');
    if(key==='bl-buffer'){
     queued++;say('대기 중인 입력 '+queued,'Buffered inputs: '+queued);
@@ -139,8 +140,7 @@ function mount(root,key,language='ko',options={}){
     return;
    }
    const steps=key==='bl-state'?['IDLE','RUNNING','DONE']:['READY','COMPLETE'];const v=steps[state%steps.length];title.textContent=v;glyph.textContent=v==='DONE'||v==='COMPLETE'?'✓':v==='RUNNING'?'▶':'◇';
-   if(key==='bl-preference')say(limited()?'모션 감소를 적용하고 정보를 유지합니다.':'모션 설정을 반영했습니다.',limited()?'Motion reduced; information remains.':'System motion preference respected.');
-   else say('상태: '+v,'State: '+v);
+   say('상태: '+v,'State: '+v);
    if(!limited()&&key!=='bl-essential')animate(glyph,[{transform:'scale(.8)'},{transform:'scale(1.13)'},{transform:'scale(1)'}],{duration:420});
    return;
   }

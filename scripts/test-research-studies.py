@@ -75,23 +75,25 @@ try:
             page.close()
         page=browser.new_page(viewport={'width':1200,'height':850})
         page.goto(origin+'/?qa=1&lang=ko&ads=off',wait_until='domcontentloaded')
-        page.locator('#search').fill('Linear Progress Indicator')
-        card=page.locator('.term-card[data-id="dar-191b8376a8af"]')
-        card.wait_for(timeout=15000)
-        clip=card.locator('svg[data-progress-clip="linear-family"]')
-        clip.wait_for(timeout=8000)
-        if clip.get_attribute('overflow')!='hidden':failures.append('Linear progress clip viewport missing overflow=hidden')
+        # The source edition overrides this canonical card with a live UI.
+        # Explicitly exercise its original SVG family renderer in a real browser.
+        page.wait_for_function('window.atlasInteractiveQA && typeof atlasInteractiveQA.progressSvg==="function"')
+        page.evaluate("""()=>{const p=document.createElement('section');p.id='progress-clipping-probe';
+            p.className='scene scene-reference';p.style.cssText='position:relative;width:360px;height:250px;display:block';
+            p.innerHTML='<div class="reference-stage">'+atlasInteractiveQA.progressSvg('dar-191b8376a8af',68)+'</div>';
+            document.body.append(p)}""")
+        probe=page.locator('#progress-clipping-probe')
+        clip=probe.locator('svg[data-progress-clip="linear-family"]')
+        clip.wait_for(state='attached',timeout=8000)
+        if clip.get_attribute('overflow')!='hidden':failures.append('Linear progress clip missing overflow=hidden')
         if clip.locator('rect.native-segment').count()!=1:failures.append('Moving segment is not inside clip viewport')
-        if clip.evaluate('e=>getComputedStyle(e).overflowX')!='hidden':failures.append('SVG clipping not applied by browser')
-        if clip.evaluate('e=>Math.abs(e.viewBox.baseVal.width-224)>0.01'):failures.append('Clip viewBox differs from 224px bar')
-        # Ensure the same fix survives detailed view and new progress values.
-        card.locator('[data-open]').last.click()
-        detail=page.locator('#detail-body svg[data-progress-clip="linear-family"]')
-        detail.wait_for(timeout=8000)
-        assert detail.locator('rect.native-segment').count()==1
-        page.locator('#progress-demo').fill('25')
-        detail=page.locator('#detail-body svg[data-progress-clip="linear-family"]')
-        if detail.get_attribute('overflow')!='hidden':failures.append('Slider redraw lost clip viewport')
+        if clip.evaluate('e=>getComputedStyle(e).overflowX')!='hidden':failures.append('SVG viewport does not clip animated segment')
+        if clip.evaluate('e=>Math.abs(e.viewBox.baseVal.width-224)>0.01'):failures.append('Indeterminate bar clip differs from 224px track')
+        # Numeric redraw must retain the same clipping structure.
+        page.evaluate("""()=>{const stage=document.querySelector('#progress-clipping-probe .reference-stage');
+            stage.innerHTML=atlasInteractiveQA.progressSvg('dar-191b8376a8af',25)}""")
+        if probe.locator('svg[data-progress-clip="linear-family"] rect.native-segment').count()!=1:
+            failures.append('Progress value redraw lost clipping')
         page.close()
         reduced=browser.new_context(reduced_motion='reduce',viewport={'width':390,'height':760})
         sample=reduced.new_page()

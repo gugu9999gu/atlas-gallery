@@ -1,12 +1,12 @@
 {
   "name": "atlas-gallery",
-  "version": "3.2.4",
+  "version": "3.2.5",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "python3 scripts/build-interactions.py",
     "deploy": "wrangler deploy --config wrangler-v32.jsonc",
-    "check": "node --check src/interactive/mograph.js && node --check src/interactive/kit.js && node --check src/interactive/advanced.js && node --check src/interactive/studies.js && node --check src/interactive/patterns.js && node --check src/interactive/foundations.js && node --check src/interactive/bridge.js && node --check worker-v32.mjs"
+    "check": "node --check src/interactive/card-prompts.js && node --check src/interactive/mograph.js && node --check src/interactive/kit.js && node --check src/interactive/advanced.js && node --check src/interactive/studies.js && node --check src/interactive/patterns.js && node --check src/interactive/foundations.js && node --check src/interactive/bridge.js && node --check worker-v32.mjs"
   },
   "dependencies": {
     "three": "0.180.0"

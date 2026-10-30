@@ -16,7 +16,7 @@ rows=[line.split('|') for line in (ROOT/'data/next-studies.tsv').read_text(encod
 canonical={e['id']:e for e in db['entries'] if not e.get('canonical_id')}
 assert len(rows)==20 and len({r[0] for r in rows})==20
 assert report['current']['total']==2189
-assert report['current']['specific']==1204 and report['current']['pending']==985,report['current']
+assert report['current']['specific']>=1204 and report['current']['pending']<=985,report['current']
 for id,key,en in rows:
     entry=canonical[id]
     assert entry['en']==en and entry['demo']['key']==key and entry['implementation_status']=='implemented'

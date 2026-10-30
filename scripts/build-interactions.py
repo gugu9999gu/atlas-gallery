@@ -143,6 +143,9 @@ def reference_document(e,language,db,lang):
         {'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'ATLAS Gallery','item':ORIGIN+'/'},{'@type':'ListItem','position':2,'name':'References' if english else '용어 색인','item':ORIGIN+glossary},{'@type':'ListItem','position':3,'name':name,'item':url}]}]}
     example_label=('Three.js / real WebGL' if english else 'Three.js / 실제 WebGL') if e.get('demo',{}).get('engine')=='three' else ('Interactive HTML / CSS / JavaScript' if english else '직접 조작하는 HTML / CSS / JavaScript') if e.get('demo') else ('Illustrative study, not original product code' if english else '설명용 시각 예시 · 제품 원본 코드가 아닙니다')
     code_note='The gallery card provides a direct Copy code button. New interactive examples export the same runnable implementation; older concepts export the illustrative preview, not the referenced library itself.' if english else '갤러리 카드의 코드 복사 버튼에서 바로 복사할 수 있습니다. 직접 조작 예제는 같은 실행 구현을, 기존 개념 항목은 설명용 미리보기 코드를 제공합니다. 라이브러리 자체의 원본 코드를 뜻하지 않습니다.'
+    if e.get('implementation_status')=='planned':
+        example_label='Planned — concept diagram only, not a working preview' if english else '구현 예정 · 현재는 개념 도식만 제공'
+        code_note='Interactive preview is planned. The gallery currently offers a concept illustration, not runnable vendor code.' if english else '실행형 미리보기 구현 예정입니다. 현재는 개념 설명 도식만 제공하며 해당 라이브러리의 실제 실행 코드가 아닙니다.'
     sibling_ids=list(dict.fromkeys(e.get('compare_ids',[])+e.get('related_ids',[])))[:8]
     index={x['id']:x for x in db['entries']}
     relatives=[index[i] for i in sibling_ids if i in index and not index[i].get('canonical_id') and i!=e['id']]
@@ -279,6 +282,7 @@ Operator: 스투피아드
                  'pending':len(actual_pending)},'implemented_original_ids':completed_pending,
       'new_interaction_ids':fresh_ids,'remaining_ids':[e['id'] for e in actual_pending],
       'definition':'Specific previews include the validated v3.1 baseline and subsequent source implementations; no browser-pass guarantee.'}
+    if progress['current']['pending']!=db['metadata']['planned_preview_count']:raise RuntimeError('Pending card status and progress do not match')
     if progress['current']['specific']+progress['current']['pending']!=len(canonical):
         raise RuntimeError('Preview progress accounting mismatch')
     progress['current']['percentage']=round(progress['current']['specific']/len(canonical)*100,2)

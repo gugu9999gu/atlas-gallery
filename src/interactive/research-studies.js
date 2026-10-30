@@ -83,7 +83,7 @@ function markup(key,lang='ko'){
   body='<div class="rs-fitts">'+btn('target','작은 목표','Small target',ko,'data-size="small"')+btn('target','큰 목표','Large target',ko,'data-size="large"')+'</div>';
   controls=btn('toggle','거리 변경','Change distance',ko);hint=t('목표 크기·거리의 효과를 실험합니다. 실제 이동시간 통계가 아닙니다.','Explore target size and distance, without measured timing claims.');break;
  case 'rs-hick':
-  body='<div class="rs-hick"><div class="rs-choice-grid">'+Array.from({length:2},(_,i)=>btn('choice','옵션 '+(i+1),'Option '+(i+1),ko)).join('')+'</div><strong class="rs-estimate">2 '+t('가지 선택','choices')+' · 0.32s</strong></div>';
+  body='<div class="rs-hick"><div class="rs-choice-grid">'+Array.from({length:2},(_,i)=>btn('choice','옵션 '+(i+1),'Option '+(i+1),ko)).join('')+'</div><strong class="rs-estimate">2 '+t('가지 선택','choices')+' · 0.42s</strong></div>';
   controls=btn('next','선택지 증가','More choices',ko);hint=t('예시 모델 T=0.1+0.2 log₂(n+1), 실제 측정값 아님','Illustrative model T=0.1+0.2 log₂(n+1), not measured.');break;
  case 'rs-access':
   body='<div class="rs-checks">'+[t('이름·레이블','Accessible names'),t('키보드 조작','Keyboard access'),t('대비 점검','Contrast check')].map((label,i)=>'<label><input type="checkbox" data-check="'+i+'" '+(i?'':'checked')+' />'+label+'</label>').join('')+'</div>';
@@ -153,6 +153,7 @@ function mount(root,key,language='ko',options={}){
  // Delegation supports dynamic tree nodes and changed Hick–Hyman choices.
  on(root,'click',e=>{const b=e.target.closest('[data-rs]');if(!b||!root.contains(b))return;if(b.hasAttribute('data-rs-bound'))return;act(b.dataset.rs,b);});
  all('[data-rs]').forEach(b=>b.setAttribute('data-rs-bound','1'));
+ if(key==='rs-heatmap')all('.rs-heatmap button').forEach((cell,i)=>on(cell,'click',()=>{all('.rs-heatmap button').forEach(b=>b.classList.toggle('active',b===cell));root.dataset.selected=String(i+1);tell('가상 히트맵 영역 '+(i+1)+' 선택','Selected synthetic heatmap cell '+(i+1));}));
  on(root,'keydown',e=>{if(e.target===root&&(e.key==='Enter'||e.key===' ')){const button=q('[data-rs="next"]')||q('[data-rs="toggle"]');if(button){e.preventDefault();button.click();}}});
  const range=q('[data-rs-range]');on(range,'input',()=>{
   const n=Number(range.value);

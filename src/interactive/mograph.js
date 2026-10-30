@@ -13,7 +13,7 @@ const KEYS=new Set([
 let sequence=0;
 const supports=key=>KEYS.has(key);
 function item(className,text,animation,delay=0){
- return '<span class="mg-anim '+className+'" style="--mg-name:'+animation+';animation-delay:'+delay+'s">'+text+'</span>';
+ return '<span class="mg-anim '+className+'" style="--mg-name:'+animation+';--mg-delay:'+delay+'s">'+text+'</span>';
 }
 function scene(key,id){
  const brand='<span class="mg-small-cap">ATLAS / MOTION LAB</span>';
@@ -47,7 +47,7 @@ function scene(key,id){
  case 'mg-time-remap':
   return '<div class="mg-track"><span class="mg-track-line"></span>'+item('mg-orb','','mg-remap')+'<span class="mg-track-hint">FAST　 HOLD　 SLOW</span></div>';
  case 'mg-speed-ramp':
-  return '<div class="mg-track"><span class="mg-track-line"></span>'+item('mg-orb mg-orb-pink','','mg-ramp')+'<span class="mg-track-hint">ACCELERATION → DECELERATION</span></div>';
+  return '<div class="mg-track"><span class="mg-track-line"></span>'+item('mg-orb mg-orb-pink','','mg-ramp')+'<span class="mg-track-hint">FAST → SLOW</span></div>';
  case 'mg-hold-keyframe':
   return '<div class="mg-track"><span class="mg-track-line"></span>'+item('mg-square','','mg-hold')+'<span class="mg-track-hint">MOVE　▸　HOLD　▸　MOVE</span></div>';
  case 'mg-seamless-loop':
@@ -67,7 +67,7 @@ function scene(key,id){
  case 'mg-light-sweep':
   return '<div class="mg-sweep-card"><span>SHINE</span>'+item('mg-sweep-glint','','mg-sweep')+'</div>';
  case 'mg-particle-burst':
-  return '<div class="mg-particles"><span class="mg-particle-center">✦</span>'+Array.from({length:12},(_,i)=>{const a=i*Math.PI/6;return '<span class="mg-anim mg-spark" style="--mg-name:mg-burst;--dx:'+Math.round(Math.cos(a)*105)+'px;--dy:'+Math.round(Math.sin(a)*65)+'px;animation-delay:'+(i*.035)+'s"></span>';}).join('')+'</div>';
+  return '<div class="mg-particles"><span class="mg-particle-center">✦</span>'+Array.from({length:12},(_,i)=>{const a=i*Math.PI/6;return '<span class="mg-anim mg-spark" style="--mg-name:mg-burst;--dx:'+Math.round(Math.cos(a)*105)+'px;--dy:'+Math.round(Math.sin(a)*65)+'px;--mg-delay:'+(i*.035)+'s"></span>';}).join('')+'</div>';
  case 'mg-liquid':
   return '<div class="mg-liquid-field">'+item('mg-liquid-blob mg-liquid-a','','mg-liquid-one')+item('mg-liquid-blob mg-liquid-b','','mg-liquid-two')+'</div>';
  default:return '<div class="mg-placeholder">'+brand+'</div>';
@@ -77,7 +77,7 @@ function markup(key,language='ko'){
  if(!supports(key))throw new Error('Unknown motion graphics study: '+key);
  const ko=language==='ko',id='atlas-mg-'+(++sequence);
  return '<div class="mg-stage" data-kind="'+key+'" role="group" tabindex="0" lang="'+language+'" aria-label="'+(ko?'모션그래픽 애니메이션 미리보기':'Motion graphics animation preview')+'">'+
- '<div class="mg-art"><span class="mg-eyebrow">MOTION GRAPHICS / ATLAS</span>'+scene(key,id)+'</div>'+
+ '<div class="mg-art"><span class="mg-eyebrow">MOTION GRAPHICS / ATLAS</span><div class="mg-visual">'+scene(key,id)+'</div></div>'+
  '<div class="mg-controls"><button class="mg-replay" type="button">'+(ko?'다시 재생':'Replay')+'</button>'+
  '<button class="mg-pause" type="button" aria-pressed="false">'+(ko?'일시정지':'Pause')+'</button>'+
  '<label class="mg-rate-label">'+(ko?'배속':'Speed')+' <select class="mg-rate" aria-label="'+(ko?'재생 속도':'Playback speed')+'"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label></div>'+
@@ -91,7 +91,9 @@ function mount(root,key,language='ko',options={}){
  function update(){
   const still=motionPreference.matches||options.paused?.()===true||document.documentElement.classList.contains('motion-paused');
   root.classList.toggle('mg-still',still);
-  root.classList.toggle('mg-playing',visible&&!paused&&!still&&!document.hidden);
+  const running=visible&&!paused&&!still&&!document.hidden;
+  root.classList.toggle('mg-playing',running);
+  root.classList.toggle('mg-poster',!paused&&!running);
   root.classList.toggle('mg-user-paused',paused);
   pause.setAttribute('aria-pressed',String(paused));
   pause.textContent=ko?(paused?'재생':'일시정지'):(paused?'Play':'Pause');

@@ -11,7 +11,7 @@
 .mg-rate-label{display:flex;align-items:center;gap:4px;font-size:14px;white-space:nowrap}
 .mg-rate{appearance:auto;background:#233e64;color:#eff8ff;border:1px solid #557b9a;border-radius:7px;min-height:36px;padding:4px;font-size:14px}
 .mg-status{display:flex;align-items:center;justify-content:center;min-height:26px;padding:2px 6px;background:#16283e;color:#d1e4f8;font-size:14px;text-align:center}
-.mg-anim{animation-name:var(--mg-name,mg-pulse);animation-duration:calc(3s * var(--mg-rate));animation-timing-function:ease-in-out;animation-iteration-count:infinite;animation-fill-mode:both;animation-play-state:paused;transform-origin:center center}
+.mg-anim{animation-name:var(--mg-name,mg-pulse);animation-duration:calc(3s * var(--mg-rate));animation-timing-function:ease-in-out;animation-iteration-count:infinite;animation-fill-mode:both;animation-delay:calc(var(--mg-delay,0s) - 1s);animation-play-state:paused;transform-origin:center center}
 .mg-stage.mg-playing .mg-anim{animation-play-state:running}
 html.motion-paused .mg-stage .mg-anim,.mg-stage.mg-still .mg-anim,.mg-stage.mg-user-paused .mg-anim{animation-play-state:paused!important}
 .mg-type-stack{position:relative;display:flex;gap:3px;flex-direction:column;align-items:center;justify-content:center;font-weight:900;line-height:.9;letter-spacing:-.035em;color:#fff}
@@ -114,3 +114,60 @@ html.motion-paused .mg-stage .mg-anim,.mg-stage.mg-still .mg-anim,.mg-stage.mg-u
 @keyframes mg-liquid-two{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-34px,0) scale(.9)}}
 @keyframes mg-pulse{0%,100%{opacity:.5}50%{opacity:1}}
 @media(prefers-reduced-motion:reduce){.mg-stage .mg-anim{animation:none!important;animation-play-state:paused!important;opacity:1!important}.mg-stage .mg-trace{stroke-dashoffset:0!important}.mg-stage .mg-typing{width:100%!important}.mg-stage .mg-mask-top{clip-path:none!important}}
+
+/* Visual QA: a dedicated title strip prevents collisions with animated artwork. */
+.mg-stage{container-type:size}
+.mg-art{display:flex;flex-direction:column;align-items:stretch;justify-content:stretch;min-height:0}
+.mg-eyebrow{position:relative;top:auto;left:auto;flex:none;display:flex;align-items:center;min-height:34px;padding:7px 12px 5px;background:linear-gradient(90deg,#162b4a,#14243d);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mg-visual{position:relative;flex:1;min-height:0;width:100%;display:grid;place-items:center;overflow:hidden}
+.mg-visual>.mg-svg{max-height:100%}
+.mg-visual>.mg-lower-wrap{bottom:8px}
+/* Paused/offscreen thumbnails must show a representative, nonempty frame. */
+.mg-stage.mg-poster .mg-anim{animation:none!important;opacity:1!important;transform:none!important}
+.mg-stage.mg-poster .mg-typing{width:21ch!important}
+.mg-stage.mg-poster .mg-trace{stroke-dashoffset:26!important}
+.mg-stage.mg-poster .mg-mask-top{clip-path:inset(0 33% 0 0)!important}
+.mg-stage.mg-poster .mg-morph-blob{border-radius:40% 60% 53% 37%!important}
+.mg-stage.mg-poster .mg-path-orb{transform:translate(105px,28px)!important}
+.mg-stage.mg-poster .mg-spark{transform:translate(var(--dx),var(--dy)) scale(.55)!important;opacity:.9!important}
+.mg-stage.mg-poster .mg-svg [style*="mg-mask-shift"]{transform:translateX(152px)!important}
+.mg-stage.mg-poster .mg-svg [style*="mg-luma-shift"]{transform:translateX(208px)!important}
+.mg-stage.mg-poster .mg-marquee-track{transform:translateX(-100px)!important}
+.mg-stage.mg-poster .mg-echo:nth-of-type(2){transform:translateX(38px)!important}
+.mg-stage.mg-poster .mg-echo:nth-of-type(3){transform:translateX(65px)!important}
+.mg-stage.mg-poster .mg-echo:nth-of-type(4){transform:translateX(95px)!important}
+.mg-stage.mg-poster .mg-echo:nth-of-type(5){transform:translateX(130px)!important}
+/* Toolbar maintains legible labels on narrow thumbnails without wrapping. */
+.mg-controls button{white-space:nowrap;flex:1 1 auto}
+.mg-rate-label{flex:0 0 auto}
+@container (max-width: 270px){
+ .mg-controls{gap:4px;padding:4px}
+ .mg-controls button{min-width:67px;padding:4px 5px}
+ .mg-rate-label{gap:2px}
+ .mg-typing{font-size:18px}
+}
+@container (max-height: 215px){
+ .mg-eyebrow{min-height:32px;padding:5px 9px}
+ .mg-controls{min-height:45px;padding:4px 7px}
+ .mg-controls button{padding:5px 7px;min-height:33px}
+ .mg-rate{min-height:33px}
+ .mg-status{min-height:21px}
+ .mg-type-stack{transform:scale(.58)}
+ .mg-logo-wrap,.mg-depth,.mg-morph-field,.mg-path-track,.mg-particles,.mg-liquid-field{transform:scale(.62)}
+ .mg-lower-wrap{height:48px;min-height:48px;width:90%;left:5%;bottom:3px!important;gap:6px}
+ .mg-lower-accent{height:43px;width:5px}
+ .mg-lower-content{padding:4px 8px;gap:1px}
+ .mg-lower-content strong{font-size:14px}
+ .mg-lower-content span{font-size:14px}
+ .mg-underbar{top:calc(50% + 18px)}
+ .mg-sweep-card{transform:scale(.65)}
+ .mg-stagger-bars{transform:scale(.7)}
+}
+@media(prefers-reduced-motion:reduce){
+ .mg-stage .mg-anim{animation:none!important;opacity:1!important;transform:none!important}
+ .mg-stage .mg-typing{width:21ch!important}
+ .mg-stage .mg-trace{stroke-dashoffset:26!important}
+}
+
+/* Follow the allocated preview height, including compact visual-audit thumbnails. */
+.mg-stage{min-height:0}

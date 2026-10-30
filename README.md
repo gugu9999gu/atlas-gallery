@@ -5,9 +5,9 @@
 - 사용자 제보 카드 `dar-191b8376a8af` (선형 진행 표시기): 불확정형 초록색 세그먼트가 회색 로딩 트랙 밖으로 애니메이션되는 오류를 수정했습니다. 트랙과 동일한 224×10 SVG 뷰포트에 `overflow="hidden"`을 적용하며, 비교 뷰와 값 변경에서도 동일하게 유지합니다.
 - 기존 설계·검증 용어 20개를 카드를 누르고 값을 조정할 수 있는 독자적 HTML/CSS/JavaScript 미리보기로 구현했습니다. Information Architecture, Task Flow, User Journey Map, Service Blueprint, Persona, Card Sorting, Tree Testing, A/B Testing, Funnel Analysis, Heatmap Analysis, State Matrix, Visual Regression Test, Fitts's Law, Hick–Hyman Law 등이 포함됩니다.
 - 기존 용어 ID와 한·영 명칭 복사, 스크롤형 예시 프롬프트, 독립 실행형 HTML 코드 복사, 최소 14px 및 접근성·모션 감소 대응을 유지합니다. 수치·사용성 평가 결과는 **학습용 예시**이며 실제 조사·인증 결과가 아닙니다.
-- GitHub 소스: **2,189개 중 구현 1,224개(55.92%), 구현 예정 965개**. Cloudflare 운영판은 별도 계열로, v3.12 릴리스 목표가 **2,153개 중 구체적 예시 1,287개, 직접 조작 431개, 구현 예정 도식 866개**입니다. 서로 다른 기준을 합산하지 않습니다.
+- GitHub 소스: **2,189개 중 구현 1,224개(55.92%), 구현 예정 965개**. Cloudflare **운영 v3.12 배포·확인 완료**: **2,153개 중 구체적 예시 1,287개, 직접 조작 431개, 구현 예정 도식 866개**입니다. 서로 다른 기준을 합산하지 않습니다.
 - 테스트: `scripts/test-research-studies.py`에서 실행형 20개 한·영 조작과 내보내기, SVG 클리핑을 실제 Chromium에서 검사합니다. 기존 인터랙션·Three.js·AdFit·전체 시각 검사도 유지합니다.
-- `src/interactive/research-studies.js`, `src/interactive/research-studies.css`, `data/research-studies.tsv`, `docs/RESEARCH_PREVIEWS_AND_PROGRESS_CLIP_V328.md` 참조. 기존 Cloudflare v3.11 R2 자산은 롤백용으로 보존합니다.
+- `src/interactive/research-studies.js`, `src/interactive/research-studies.css`, `data/research-studies.tsv`, `docs/RESEARCH_PREVIEWS_AND_PROGRESS_CLIP_V328.md` 참조. Cloudflare Worker **v3.12.0이 트래픽 100%를 처리**합니다. 기존 v3.11 R2 자산과 Worker 버전은 롤백용으로 보존합니다. 사용자 제보 URL 및 신규 카드 소팅 페이지의 실제 운영 렌더링을 확인했습니다. 전체 기기·실제 광고 재고까지 확인한 것은 아닙니다.
 
 # ATLAS Gallery v3.2.7 — 신규 미구현 항목 20개 실행형 보강 (2026-10-30)
 

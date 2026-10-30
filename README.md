@@ -1,3 +1,16 @@
+# ATLAS Gallery v3.2.4
+
+## v3.2.4 모션그래픽 용어·실행형 미리보기 확장 (2026-10-30)
+
+- 기존 **모션그래픽** 관련 개념을 재사용하고, **26개의 실행형 모션그래픽 레퍼런스**를 추가했습니다. 새 레퍼런스는 기존 canonical ID가 있을 때 중복 정의 대신 해당 ID에 실시간 시연을 연결합니다.
+- 신규 전용 분야 **모션그래픽 / Motion Graphics**, 네 개 세부 분류: **타이포·브랜드 모션**, **셰이프·마스크·레이어**, **타임라인·속도 설계**, **합성·절차적 이펙트**.
+- 대표 미리보기: Kinetic Typography, Character Stagger, Lower Third, Trim Paths, Shape Morphing, Alpha Matte, Luma Matte, Time Remapping, Hold Keyframe, Seamless Loop, Motion Blur, Echo Trails, Glitch Transition, Particle Burst, Liquid Morphing.
+- 카드와 개별 설명 페이지에서 원본 **CSS / SVG 애니메이션을 실행**, **다시 재생·일시정지·0.5×/1×/2× 배속** 조작. 문서 보이지 않을 때 모션 중단, `prefers-reduced-motion` 및 사이트 전역 모션 중지 존중.
+- **코드 복사**는 같은 미리보기 소스로 구성한 독립 HTML/CSS/SVG 예제. 각 용어 한·영 정의, 정적 Markdown/HTML 설명, JSON-LD `DefinedTerm`, 검색 색인, 관련 Adobe 공식 분야 참고 링크 보존.
+- `src/interactive/mograph.js`와 `src/interactive/mograph.css`에 시각 구현, `data/interaction-recipes.tsv`에 설명을 관리합니다. 빌드는 `npm run build`; Chromium 회귀 테스트는 `python scripts/test-motion-graphics.py` (26개 정의·카드 실행·배속·일시정지·복사·영어·움직임 감소).
+- 전문가용 After Effects 프로젝트나 실제 합성 엔진 렌더링이 아니라 **직접 제작한 웹 기반 원리 시연**입니다. 블러·매트·리퀴드 표현의 결과는 전문 제작 도구와 다를 수 있습니다.
+- GitHub 커밋과 운영 Cloudflare 배포는 별도 작업입니다. CI는 빌드·검증 및 `wrangler --dry-run`만 수행합니다.
+
 # ATLAS Gallery v3.2.2
 
 ## v3.2.2 시각 품질 검수 및 추가 구현 (2026-10-29)

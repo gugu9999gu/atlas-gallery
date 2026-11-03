@@ -1,3 +1,15 @@
+# Cloudflare 운영 ATLAS v3.20.0 — 웹 성능·모션 실행형 16개 추가 및 배포 (2026-11-03)
+
+- 운영 사이트: https://atlas-gallery.app/?lang=ko&collection=v320
+- 기존 '구현 예정' 웹 렌더링·성능·모션 레퍼런스 16개를 실제 조작 가능한 시연으로 업그레이드했습니다. View Transition API, Critical Rendering Path, CSR, SSR, SSG, Hydration, Islands Architecture, Code Splitting, Tree Shaking, LCP, CLS, INP, Performance Budget, Animation Curve, Keyframe Animation, Stagger.
+- Cloudflare 운영판 기준 고유 레퍼런스 2,153개 / 직접 조작 595개 / 고유 인터랙션 레시피 583개 / 구체적 미리보기 1,451개 / 남은 구현 예정 도식 702개. 아래 v3.2.x GitHub 정적 소스 수치와 혼용하지 않습니다.
+- 운영 Worker v3.20.0이 트래픽 100%에 배포됐고 이전 v3.19 Worker와 R2 릴리스 자산은 롤백용으로 보존했습니다.
+- 스테이징 한글 390px·영문 320px·1440px 각 16/16 조작·복사 코드 생성·14px 글꼴·영역 넘침 검사, 키프레임/뷰 트랜지션 독립 HTML 실행 검사, 운영 한글 390px 렌더 16/16 및 320px 조작 검사 16/16 통과.
+- LCP·CLS·INP 숫자와 서버 렌더링·빌드 개념은 원리 설명용 모의 상태입니다. 실제 서비스 성능 실측이나 서버 렌더러와 동일하지 않습니다.
+- 자세한 소스와 배포 기록: production/v320/README.md
+
+---
+
 # Cloudflare 운영 ATLAS v3.19 — 지도·타일 16개 추가 구현 및 배포 (2026-11-03)
 
 - 실제 사이트: https://atlas-gallery.app/?lang=ko&collection=v319

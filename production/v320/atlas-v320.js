@@ -92,7 +92,7 @@ function mount(root,key=root.dataset.p320Key,lang=root.lang||'ko'){
   let html='',read='';
   const v=s.param;
   switch(key){
-   case 'perf-view':html=hero(s.alt?t('즉시 전환','Instant view'):s.phase%2?t('상세 보기','Detail view'):t('목록 보기','List view'),s.phase%2);read=(typeof document.startViewTransition==='function'?t('API 지원','API supported'):t('즉시 전환 대체','Instant fallback'))+' · '+v+'ms';break;
+   case 'perf-view':html=hero(s.alt?t('즉시 전환','Instant view'):s.phase%2?t('상세 보기','Detail view'):t('목록 보기','List view'),s.phase%2);read=(s.phase%2?t('상세 화면','Detail panel'):t('목록 화면','List panel'))+' · '+(typeof document.startViewTransition==='function'?t('API 지원','API supported'):t('즉시 전환 대체','Instant fallback'))+' · '+v+'ms';break;
    case 'perf-path':{const items=rules.critical(s.phase,s.alt?false:true);html=row(items.map((x,i)=>box(x.name,x.done)).join(''));read=t('완료 단계 ','Completed ')+(s.phase+1)+'/5 · '+(s.alt?t('차단 제거 모델','unblocked model'):t('CSS 차단 모델','CSS-blocking model'));break;}
    case 'perf-csr':html=s.rendered?hero(t('JS로 완성된 화면','Client-rendered view'),true):'<div style="width:70%;display:grid;gap:8px">'+['80%','96%','55%'].map(w=>'<div class="p320-skeleton" style="width:'+w+'"></div>').join('')+'</div>';read=s.rendered?t('클라이언트 DOM 구성 완료','Client DOM populated'):t('초기 빈/스켈레톤 DOM','Initial skeleton')+' · '+v+'KB ('+t('가상','synthetic')+')';break;
    case 'perf-ssr':html=s.alt?hero(t('CSR 초기 스켈레톤','CSR first paint'),false):hero(t('HTML에 이미 존재하는 제목','Title already in HTML'),true);read=(s.alt?'CSR comparison':s.hydrated?t('클라이언트 이벤트 활성','Client events attached'):t('HTML 초기 표시','HTML initially visible'))+' · '+v+'ms '+t('모의','mock');break;

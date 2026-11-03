@@ -1,0 +1,27 @@
+name: ATLAS v3.20 source and metric regression
+on:
+  push:
+    paths:
+      - production/v320/**
+      - .github/workflows/atlas-v320-qa.yml
+  pull_request:
+    paths:
+      - production/v320/**
+      - .github/workflows/atlas-v320-qa.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  frontend-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Check v3.20 JavaScript source
+        run: |
+          node --check production/v320/atlas-v320.js
+          node --check production/v320/worker.mjs
+      - name: Check deterministic metric and motion calculations
+        run: node production/v320/test-algorithms.mjs

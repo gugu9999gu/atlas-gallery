@@ -1,0 +1,27 @@
+name: ATLAS v3.19 source and algorithm regression
+on:
+  push:
+    paths:
+      - production/v319/**
+      - .github/workflows/atlas-v319-qa.yml
+  pull_request:
+    paths:
+      - production/v319/**
+      - .github/workflows/atlas-v319-qa.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  deterministic-algorithms:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Check v3.19 JavaScript
+        run: |
+          node --check production/v319/atlas-v319.js
+          node --check production/v319/worker.mjs
+      - name: Verify seeded map algorithms and standalone export generation
+        run: node production/v319/test-algorithms.mjs

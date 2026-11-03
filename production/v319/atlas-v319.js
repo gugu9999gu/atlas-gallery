@@ -111,7 +111,7 @@ function mount(root,key=root.dataset.mapKey,lang=root.lang||'ko'){
   const s=state,p=s.param,r=seeded(s.seed);let body='',caption='';
   if(key==='map-wang'){
    const cols=7,rows=5,tiles=rules.wang(cols,rows,p,s.seed),cw=36,ch=23;for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){const e=tiles[j*cols+i],x=14+i*cw,y=8+j*ch;body+=rect(x,y,cw,ch,'#20445b','#3d637b');for(const [k,[ax,ay,bx,by]] of [[0,[x+7,y,x+cw-7,y]],[1,[x+cw,y+5,x+cw,y+ch-5]],[2,[x+7,y+ch,x+cw-7,y+ch]],[3,[x,y+5,x,y+ch-5]]].entries()){body+=line(ax,ay,bx,by,colors[e[k]%colors.length],3);}body+=point(x+cw/2,y+ch/2,3,'#e7f4f5');}
-   caption=t('모서리 불일치 ','Mismatched edges ')+rules.wangValid(tiles,cols,rows)+' / 58';
+   if(s.alt){for(let y=0;y<rows;y++)for(let x=0;x<cols;x++){const px=14+x*cw,py=8+y*ch;if(x<cols-1)body+=point(px+cw,py+ch/2,3,'#eafcc2');if(y<rows-1)body+=point(px+cw/2,py+ch,3,'#eafcc2');}}caption=(s.alt?t('검사한 접합부 ','Checked joins '):t('모서리 불일치 ','Mismatched edges '))+(s.alt?'58 / 58':rules.wangValid(tiles,cols,rows)+' / 58');
   } else if(key==='map-seed'){
    const vals=rules.sample(p,35),other=rules.sample(p,35);for(let i=0;i<35;i++){const x=13+(i%7)*37,y=5+Math.floor(i/7)*25,v=vals[i];body+=rect(x,y,33,21,'hsl('+(160+Math.floor(v*140))+' 50% '+Math.floor(35+v*33)+'%)','#53758a');}
    caption=(s.alt?t('재실행 결과 동일: ','Replayed identical: '):t('의사난수 시드 ','Pseudo-random seed '))+(s.alt?String(vals.every((v,i)=>v===other[i])):String(p));
@@ -125,7 +125,7 @@ function mount(root,key=root.dataset.mapKey,lang=root.lang||'ko'){
    const isDem=key==='map-dem',arr=isDem?s.dem:s.erosion,w=isDem?20:12,h=isDem?10:7,geo=heights(isDem?arr.map(v=>v*p):arr,w,h,isDem?!s.alt:false);body=geo.html;caption=(isDem?t('고도 강조 ','Vertical exaggeration ')+p+'× · ':t('열 침식 단계 ','Thermal steps ')+(s.changes+' · '))+geo.min.toFixed(1)+'–'+geo.max.toFixed(1);
   } else if(key==='map-flow'){
    const data=terrain(12,6,s.seed),w=12,h=6;body=heights(data,w,h,false).html;for(let y=1;y<h-1;y++)for(let x=1;x<w-1;x++){const k=y*w+x,dx=data[k-1]-data[k+1],dy=data[k-w]-data[k+w],len=Math.hypot(dx,dy)||1,px=(x+.5)*280/w,py=(y+.5)*135/h,ex=px+dx/len*p*1.7,ey=py+dy/len*p*1.7;body+=line(px,py,ex,ey,'#d7effc',1.6)+point(ex,ey,1.5,'#f4e6b2');}
-   body+=point(s.tracer.x,s.tracer.y,6,'#f2ce83');caption=t('표식 위치 ','Tracer ')+Math.round(s.tracer.x)+', '+Math.round(s.tracer.y);
+   if(s.alt){const level=30;for(let y=0;y<h;y++)for(let x=0;x<w;x++)if(Math.abs(data[y*w+x]-level)<3){body+=point((x+.5)*280/w,(y+.5)*135/h,3,'#fff1c9');}}body+=point(s.tracer.x,s.tracer.y,6,'#f2ce83');caption=(s.alt?t('등고 샘플 · ','Contour samples · '):t('표식 위치 ','Tracer '))+Math.round(s.tracer.x)+', '+Math.round(s.tracer.y);
   } else if(key==='map-raster'){
    const n=p,c=280/n,rows=Math.max(3,Math.round(n*.45));for(let y=0;y<rows;y++)for(let x=0;x<n;x++){const v=(Math.sin(x*.4+s.seed*.12)+Math.cos(y*.65+s.seed*.08)+2)/4;const fill='hsl('+(100+Math.round(v*110))+' 48% '+Math.round(28+v*43)+'%)';body+=rect(x*c,y*135/rows,c+.2,135/rows+.2,fill,s.alt?'#e1eef0':fill);}
    caption=n+'×'+rows+' '+t('픽셀 격자','sampled pixels');
@@ -143,7 +143,7 @@ function mount(root,key=root.dataset.mapKey,lang=root.lang||'ko'){
    const sections=s.alt?4:2,width=200,px=width/sections;body=rect(30,35,width,16,'#d8ede5','#d8ede5');for(let i=0;i<sections;i++){body+=rect(30+i*px,35,px,16,i%2?'#e4eee8':'#234f67','#e5eef0')+text(30+i*px,72,String(Math.round(i*px*p)));}
    body+=text(230,72,String(width*p))+line(30,35,230,35,'#cbe9e1',1);caption='200px × '+p+' = '+(200*p)+' '+t('표시 단위','display units');
   } else if(key==='map-north'){
-   body='<g transform="rotate('+p+' 140 67)"><path d="M20 40L120 18L249 72L145 116Z" fill="#274d64" stroke="#7299a8" stroke-width="2"/><path d="M35 95L185 28" fill="none" stroke="#7fcaba" stroke-width="6"/><path d="M50 35L215 108" fill="none" stroke="#dfc08d" stroke-width="4"/></g>';const deg=p*Math.PI/180;const nx=140-45*Math.sin(deg),ny=67-45*Math.cos(deg);body+=line(140,67,nx,ny,'#eff3f8',4)+point(nx,ny,5,'#ecbb83')+text(nx,ny-10,'N','#f8efda');caption=t('회전각 ','Rotation ')+p+'° · '+t('북쪽 상대 방향','relative north');
+   body='<g transform="rotate('+p+' 140 67)"><path d="M20 40L120 18L249 72L145 116Z" fill="#274d64" stroke="#7299a8" stroke-width="2"/><path d="M35 95L185 28" fill="none" stroke="#7fcaba" stroke-width="6"/><path d="M50 35L215 108" fill="none" stroke="#dfc08d" stroke-width="4"/></g>';const deg=p*Math.PI/180;const nx=140+45*Math.sin(deg),ny=67-45*Math.cos(deg);body+=line(140,67,nx,ny,'#eff3f8',4)+point(nx,ny,5,'#ecbb83')+text(nx,ny-10,'N','#f8efda');caption=t('회전각 ','Rotation ')+p+'° · '+t('북쪽 상대 방향','relative north');
   } else if(key==='map-projection'){
    const toY=lat=>s.alt?67.5-rules.mercator(lat)*21:67.5-lat/90*62;
    body=rect(0,0,280,135,'#173950','#264e60');for(let lon=-180;lon<=180;lon+=60){const x=(lon+180)/360*280;body+=line(x,0,x,135,'#587b8d',.9);}for(let lat=-75;lat<=75;lat+=25){const y=toY(lat);body+=line(0,y,280,y,lat===0?'#e8cc8c':'#64899a',1);}const sample=toY(p);body+=line(0,sample,280,sample,'#94e7b9',3)+point(140,sample,6,'#fcdea1');caption=(s.alt?'Mercator':'Equirectangular')+' · '+p+'° → y '+sample.toFixed(1);

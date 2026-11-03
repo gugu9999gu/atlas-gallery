@@ -50,7 +50,7 @@ All new previews implement original JavaScript/SVG interactions with adjustable 
 - test-live.py: Playwright 320/390/1440px x Korean/English, 24 standalone HTML exports and canonical document checks.
 - GitHub Actions workflow: .github/workflows/atlas-v318-qa.yml. No completed CI result was confirmed in this session.
 
-Confirmed: 244 source syntax/algorithm/standalone-generation assertions passed; 12/12 Korean 390px staging cards passed interaction/range/reset/export/font/overflow test; production 390px rendered all 12; production 320px passed all 12 interaction/range/reset/export/font/overflow tests; production API reported v3.18 at 100% traffic.
+Confirmed: 234 source syntax/algorithm/standalone-generation assertions passed; 12/12 Korean 390px staging cards passed interaction/range/reset/export/font/overflow test; production 390px rendered all 12; production 320px passed all 12 interaction/range/reset/export/font/overflow tests; production API reported v3.18 at 100% traffic.
 
 Not confirmed: English/desktop full-matrix browser results and 24 isolated standalone HTML executions. Follow-up Cloudflare Browser Rendering requests returned HTTP 429. This is an original illustrative planar implementation, not GPS, real GIS data, geodesic accuracy, universal accessibility certification, or cross-browser certification.
 
